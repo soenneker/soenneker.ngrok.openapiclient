@@ -2,7 +2,7 @@
   "descriptionHash": "29B8BA12E1D521967E33462A32748278E7086E3923D36A99581C128B9A867C97997625441ABCD339F7E7A3B6445FEE6F60713568BF6D8B0201DFD7B4731764C6",
   "descriptionLocation": "../../../../openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "ngrokOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.ngrok.OpenApiClient",
