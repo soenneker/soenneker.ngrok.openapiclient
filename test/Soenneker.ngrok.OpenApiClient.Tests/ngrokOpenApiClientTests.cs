@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.ngrok.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class ngrokOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class ngrokOpenApiClientTests : HostedUnitTest
 {
-    public ngrokOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public ngrokOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
