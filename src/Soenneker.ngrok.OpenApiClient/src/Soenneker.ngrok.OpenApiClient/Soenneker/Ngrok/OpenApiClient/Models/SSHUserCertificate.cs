@@ -30,7 +30,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.</summary>
+        /// <summary>&quot;A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Ngrok.OpenApiClient.Models.SSHUserCertificate_critical_options? CriticalOptions { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{&quot;permit-pty&quot;: &quot;&quot;, &quot;permit-user-rc&quot;: &quot;&quot;}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.</summary>
+        /// <summary>&quot;A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\&quot;permit-pty\&quot;: \&quot;\&quot;, \&quot;permit-user-rc\&quot;: \&quot;\&quot;}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Ngrok.OpenApiClient.Models.SSHUserCertificate_extensions? Extensions { get; set; }

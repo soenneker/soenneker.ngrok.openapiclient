@@ -114,7 +114,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string Proto { get; set; }
 #endif
-        /// <summary>deprecated [replaced by URL]: URL of the hostport served by this endpoint</summary>
+        /// <summary>&quot;deprecated [replaced by URL]: URL of the hostport served by this endpoint&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicUrl { get; set; }
