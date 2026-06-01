@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Websocket_tcp_converter
 {
     /// <summary>
-    /// Builds and executes requests for operations under \edges\https\{edge_-id}\routes\{id}\websocket_tcp_converter
+    /// Builds and executes requests for operations under \edges\https\{edge-id}\routes\{id}\websocket_tcp_converter
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Websocket_tcp_converterRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Websocket_t
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Websocket_tcp_converterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge_%2Did}/routes/{id}/websocket_tcp_converter", pathParameters)
+        public Websocket_tcp_converterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge%2Did}/routes/{id}/websocket_tcp_converter", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Websocket_t
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Websocket_tcp_converterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge_%2Did}/routes/{id}/websocket_tcp_converter", rawUrl)
+        public Websocket_tcp_converterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge%2Did}/routes/{id}/websocket_tcp_converter", rawUrl)
         {
         }
         /// <summary>
@@ -53,40 +53,40 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Websocket_t
         /// <summary>
         /// Get
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Replace
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter?> PutAsync(global::Soenneker.Ngrok.OpenApiClient.Models.EdgeRouteWebsocketTCPConverterReplace body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter?> PutAsync(global::Soenneker.Ngrok.OpenApiClient.Models.EdgeRouteWebsocketTcpConverterReplace body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter> PutAsync(global::Soenneker.Ngrok.OpenApiClient.Models.EdgeRouteWebsocketTCPConverterReplace body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter> PutAsync(global::Soenneker.Ngrok.OpenApiClient.Models.EdgeRouteWebsocketTcpConverterReplace body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTCPConverter.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete
@@ -134,11 +134,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Websocket_t
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.EdgeRouteWebsocketTCPConverterReplace body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.EdgeRouteWebsocketTcpConverterReplace body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.EdgeRouteWebsocketTCPConverterReplace body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.EdgeRouteWebsocketTcpConverterReplace body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

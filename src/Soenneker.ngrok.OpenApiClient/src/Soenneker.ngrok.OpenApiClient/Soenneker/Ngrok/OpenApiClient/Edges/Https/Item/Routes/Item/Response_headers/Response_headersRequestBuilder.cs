@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Response_headers
 {
     /// <summary>
-    /// Builds and executes requests for operations under \edges\https\{edge_-id}\routes\{id}\response_headers
+    /// Builds and executes requests for operations under \edges\https\{edge-id}\routes\{id}\response_headers
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Response_headersRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Response_he
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Response_headersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge_%2Did}/routes/{id}/response_headers", pathParameters)
+        public Response_headersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge%2Did}/routes/{id}/response_headers", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Response_he
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Response_headersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge_%2Did}/routes/{id}/response_headers", rawUrl)
+        public Response_headersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge%2Did}/routes/{id}/response_headers", rawUrl)
         {
         }
         /// <summary>

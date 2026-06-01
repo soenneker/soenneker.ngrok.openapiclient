@@ -49,40 +49,40 @@ namespace Soenneker.Ngrok.OpenApiClient.Ssh_certificate_authorities
         /// <summary>
         /// List all SSH Certificate Authorities on this account
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthorityList"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthorityList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthorityList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Ssh_certificate_authorities.Ssh_certificate_authoritiesRequestBuilder.Ssh_certificate_authoritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthorityList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Ssh_certificate_authorities.Ssh_certificate_authoritiesRequestBuilder.Ssh_certificate_authoritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthorityList> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Ssh_certificate_authorities.Ssh_certificate_authoritiesRequestBuilder.Ssh_certificate_authoritiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthorityList> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Ssh_certificate_authorities.Ssh_certificate_authoritiesRequestBuilder.Ssh_certificate_authoritiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthorityList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthorityList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthorityList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthorityList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new SSH Certificate Authority
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthority"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthority"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthority?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthorityCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthority?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthorityCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthority> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthorityCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthority> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthorityCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthority>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthority.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthority>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthority.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all SSH Certificate Authorities on this account
@@ -111,11 +111,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Ssh_certificate_authorities
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthorityCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthorityCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.SSHCertificateAuthorityCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.SshCertificateAuthorityCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

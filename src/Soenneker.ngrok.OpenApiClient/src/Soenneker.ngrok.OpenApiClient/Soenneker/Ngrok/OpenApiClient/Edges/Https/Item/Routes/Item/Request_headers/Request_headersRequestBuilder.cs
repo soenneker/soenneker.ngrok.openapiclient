@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Request_headers
 {
     /// <summary>
-    /// Builds and executes requests for operations under \edges\https\{edge_-id}\routes\{id}\request_headers
+    /// Builds and executes requests for operations under \edges\https\{edge-id}\routes\{id}\request_headers
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Request_headersRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Request_hea
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Request_headersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge_%2Did}/routes/{id}/request_headers", pathParameters)
+        public Request_headersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge%2Did}/routes/{id}/request_headers", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Request_hea
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Request_headersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge_%2Did}/routes/{id}/request_headers", rawUrl)
+        public Request_headersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge%2Did}/routes/{id}/request_headers", rawUrl)
         {
         }
         /// <summary>

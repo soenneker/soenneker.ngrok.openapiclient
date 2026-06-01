@@ -17,10 +17,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The application_user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? ApplicationUser { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? ApplicationUser { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref ApplicationUser { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType ApplicationUser { get; set; }
 #endif
         /// <summary>The browser_session property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The edge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Edge { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Edge { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Edge { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Edge { get; set; }
 #endif
         /// <summary>The endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Endpoint { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Endpoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Endpoint { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Endpoint { get; set; }
 #endif
         /// <summary>timestamp when session expires in RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The route property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Route { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Route { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Route { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Route { get; set; }
 #endif
         /// <summary>URI of the application session API resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,16 +127,16 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "application_user", n => { ApplicationUser = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "application_user", n => { ApplicationUser = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "browser_session", n => { BrowserSession = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession>(global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "edge", n => { Edge = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
-                { "endpoint", n => { Endpoint = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "edge", n => { Edge = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
+                { "endpoint", n => { Endpoint = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_active", n => { LastActive = n.GetStringValue(); } },
                 { "public_url", n => { PublicUrl = n.GetStringValue(); } },
-                { "route", n => { Route = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "route", n => { Route = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -147,16 +147,16 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("application_user", ApplicationUser);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("application_user", ApplicationUser);
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession>("browser_session", BrowserSession);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("edge", Edge);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("endpoint", Endpoint);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("edge", Edge);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("endpoint", Endpoint);
             writer.WriteStringValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("last_active", LastActive);
             writer.WriteStringValue("public_url", PublicUrl);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("route", Route);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("route", Route);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -195,9 +195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponse"
                 }
               }
             }
@@ -298,7 +296,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/APIKeyCreate"
+                "$ref": "#/components/schemas/ApiKeyCreate"
               }
             }
           }
@@ -309,7 +307,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/APIKey"
+                  "$ref": "#/components/schemas/ApiKey"
                 }
               }
             }
@@ -358,7 +356,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/APIKeyList"
+                  "$ref": "#/components/schemas/ApiKeyList"
                 }
               }
             }
@@ -394,9 +392,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
                 }
               }
             }
@@ -430,7 +426,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/APIKey"
+                  "$ref": "#/components/schemas/ApiKey"
                 }
               }
             }
@@ -461,7 +457,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/APIKeyUpdate"
+                "$ref": "#/components/schemas/ApiKeyUpdate"
               }
             }
           }
@@ -472,7 +468,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/APIKey"
+                  "$ref": "#/components/schemas/ApiKey"
                 }
               }
             }
@@ -583,9 +579,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
                 }
               }
             }
@@ -696,9 +690,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
                 }
               }
             }
@@ -819,7 +811,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Item"
+                "$ref": "#/components/schemas/ItemValue"
               }
             }
           }
@@ -830,9 +822,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
                 }
               }
             }
@@ -866,7 +856,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Item"
+                "$ref": "#/components/schemas/ItemValue"
               }
             }
           }
@@ -877,9 +867,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
                 }
               }
             }
@@ -923,9 +911,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
                 }
               }
             }
@@ -1036,9 +1022,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
                 }
               }
             }
@@ -1138,7 +1122,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/HTTPResponseBackendCreate"
+                "$ref": "#/components/schemas/HttpResponseBackendCreate"
               }
             }
           }
@@ -1149,7 +1133,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPResponseBackend"
+                  "$ref": "#/components/schemas/HttpResponseBackend"
                 }
               }
             }
@@ -1187,7 +1171,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPResponseBackendList"
+                  "$ref": "#/components/schemas/HttpResponseBackendList"
                 }
               }
             }
@@ -1222,9 +1206,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
                 }
               }
             }
@@ -1257,7 +1239,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPResponseBackend"
+                  "$ref": "#/components/schemas/HttpResponseBackend"
                 }
               }
             }
@@ -1287,7 +1269,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/HTTPResponseBackendUpdate"
+                "$ref": "#/components/schemas/HttpResponseBackendUpdate"
               }
             }
           }
@@ -1298,7 +1280,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPResponseBackend"
+                  "$ref": "#/components/schemas/HttpResponseBackend"
                 }
               }
             }
@@ -1409,9 +1391,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
                 }
               }
             }
@@ -1598,9 +1578,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
                 }
               }
             }
@@ -1787,9 +1765,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson11"
                 }
               }
             }
@@ -1976,9 +1952,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson12"
                 }
               }
             }
@@ -2175,9 +2149,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson13"
                 }
               }
             }
@@ -2374,9 +2346,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson14"
                 }
               }
             }
@@ -2460,7 +2430,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes": {
+    "/edges/https/{edgeId}/routes": {
       "post": {
         "tags": [
           "EdgesHTTPSRoutes"
@@ -2473,7 +2443,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -2486,7 +2456,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/HTTPSEdgeRouteCreate"
+                "$ref": "#/components/schemas/HttpsEdgeRouteCreate"
               }
             }
           }
@@ -2497,7 +2467,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPSEdgeRoute"
+                  "$ref": "#/components/schemas/HttpsEdgeRoute"
                 }
               }
             }
@@ -2505,7 +2475,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}": {
+    "/edges/https/{edgeId}/routes/{id}": {
       "get": {
         "tags": [
           "EdgesHTTPSRoutes"
@@ -2518,7 +2488,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -2542,7 +2512,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPSEdgeRoute"
+                  "$ref": "#/components/schemas/HttpsEdgeRoute"
                 }
               }
             }
@@ -2561,7 +2531,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -2583,7 +2553,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/HTTPSEdgeRouteUpdate"
+                "$ref": "#/components/schemas/HttpsEdgeRouteUpdate"
               }
             }
           }
@@ -2594,7 +2564,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPSEdgeRoute"
+                  "$ref": "#/components/schemas/HttpsEdgeRoute"
                 }
               }
             }
@@ -2613,7 +2583,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -2637,9 +2607,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson15"
                 }
               }
             }
@@ -2664,7 +2632,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/HTTPSEdgeCreate"
+                "$ref": "#/components/schemas/HttpsEdgeCreate"
               }
             }
           }
@@ -2675,7 +2643,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPSEdge"
+                  "$ref": "#/components/schemas/HttpsEdge"
                 }
               }
             }
@@ -2714,7 +2682,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPSEdgeList"
+                  "$ref": "#/components/schemas/HttpsEdgeList"
                 }
               }
             }
@@ -2750,7 +2718,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPSEdge"
+                  "$ref": "#/components/schemas/HttpsEdge"
                 }
               }
             }
@@ -2782,7 +2750,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/HTTPSEdgeUpdate"
+                "$ref": "#/components/schemas/HttpsEdgeUpdate"
               }
             }
           }
@@ -2793,7 +2761,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPSEdge"
+                  "$ref": "#/components/schemas/HttpsEdge"
                 }
               }
             }
@@ -2827,9 +2795,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson16"
                 }
               }
             }
@@ -2861,7 +2827,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeMutualTLSReplace"
+                "$ref": "#/components/schemas/EdgeMutualTlsReplace"
               }
             }
           }
@@ -2872,7 +2838,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointMutualTLS"
+                  "$ref": "#/components/schemas/EndpointMutualTls"
                 }
               }
             }
@@ -2905,7 +2871,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointMutualTLS"
+                  "$ref": "#/components/schemas/EndpointMutualTls"
                 }
               }
             }
@@ -2938,9 +2904,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson17"
                 }
               }
             }
@@ -2972,7 +2936,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeTLSTerminationAtEdgeReplace"
+                "$ref": "#/components/schemas/EdgeTlsTerminationAtEdgeReplace"
               }
             }
           }
@@ -2983,7 +2947,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointTLSTermination"
+                  "$ref": "#/components/schemas/EndpointTlsTermination"
                 }
               }
             }
@@ -3016,7 +2980,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointTLSTermination"
+                  "$ref": "#/components/schemas/EndpointTlsTermination"
                 }
               }
             }
@@ -3049,9 +3013,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson18"
                 }
               }
             }
@@ -3059,7 +3021,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/backend": {
+    "/edges/https/{edgeId}/routes/{id}/backend": {
       "put": {
         "tags": [
           "EdgeRouteBackendModule"
@@ -3071,7 +3033,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3120,7 +3082,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3162,7 +3124,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3186,9 +3148,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson19"
                 }
               }
             }
@@ -3196,7 +3156,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/ip_restriction": {
+    "/edges/https/{edgeId}/routes/{id}/ip_restriction": {
       "put": {
         "tags": [
           "EdgeRouteIPRestrictionModule"
@@ -3208,7 +3168,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3228,7 +3188,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeRouteIPRestrictionReplace"
+                "$ref": "#/components/schemas/EdgeRouteIpRestrictionReplace"
               }
             }
           }
@@ -3239,7 +3199,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointIPPolicy"
+                  "$ref": "#/components/schemas/EndpointIpPolicy"
                 }
               }
             }
@@ -3257,7 +3217,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3281,7 +3241,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointIPPolicy"
+                  "$ref": "#/components/schemas/EndpointIpPolicy"
                 }
               }
             }
@@ -3299,7 +3259,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3323,9 +3283,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson20"
                 }
               }
             }
@@ -3333,7 +3291,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/request_headers": {
+    "/edges/https/{edgeId}/routes/{id}/request_headers": {
       "put": {
         "tags": [
           "EdgeRouteRequestHeadersModule"
@@ -3345,7 +3303,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3394,7 +3352,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3436,7 +3394,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3460,9 +3418,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson21"
                 }
               }
             }
@@ -3470,7 +3426,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/response_headers": {
+    "/edges/https/{edgeId}/routes/{id}/response_headers": {
       "put": {
         "tags": [
           "EdgeRouteResponseHeadersModule"
@@ -3482,7 +3438,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3531,7 +3487,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3573,7 +3529,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3597,9 +3553,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson22"
                 }
               }
             }
@@ -3607,7 +3561,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/compression": {
+    "/edges/https/{edgeId}/routes/{id}/compression": {
       "put": {
         "tags": [
           "EdgeRouteCompressionModule"
@@ -3619,7 +3573,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3668,7 +3622,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3710,7 +3664,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3734,9 +3688,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson23"
                 }
               }
             }
@@ -3744,7 +3696,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/circuit_breaker": {
+    "/edges/https/{edgeId}/routes/{id}/circuit_breaker": {
       "put": {
         "tags": [
           "EdgeRouteCircuitBreakerModule"
@@ -3756,7 +3708,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3805,7 +3757,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3847,7 +3799,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3871,9 +3823,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson24"
                 }
               }
             }
@@ -3881,7 +3831,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/webhook_verification": {
+    "/edges/https/{edgeId}/routes/{id}/webhook_verification": {
       "put": {
         "tags": [
           "EdgeRouteWebhookVerificationModule"
@@ -3893,7 +3843,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3942,7 +3892,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3984,7 +3934,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4008,9 +3958,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson25"
                 }
               }
             }
@@ -4018,7 +3966,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/oauth": {
+    "/edges/https/{edgeId}/routes/{id}/oauth": {
       "put": {
         "tags": [
           "EdgeRouteOAuthModule"
@@ -4030,7 +3978,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4079,7 +4027,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4121,7 +4069,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4145,9 +4093,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson26"
                 }
               }
             }
@@ -4155,7 +4101,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/saml": {
+    "/edges/https/{edgeId}/routes/{id}/saml": {
       "put": {
         "tags": [
           "EdgeRouteSAMLModule"
@@ -4167,7 +4113,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4187,7 +4133,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeRouteSAMLReplace"
+                "$ref": "#/components/schemas/EdgeRouteSamlReplace"
               }
             }
           }
@@ -4198,7 +4144,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointSAML"
+                  "$ref": "#/components/schemas/EndpointSaml"
                 }
               }
             }
@@ -4216,7 +4162,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4240,7 +4186,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointSAML"
+                  "$ref": "#/components/schemas/EndpointSaml"
                 }
               }
             }
@@ -4258,7 +4204,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4282,9 +4228,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson27"
                 }
               }
             }
@@ -4292,7 +4236,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/oidc": {
+    "/edges/https/{edgeId}/routes/{id}/oidc": {
       "put": {
         "tags": [
           "EdgeRouteOIDCModule"
@@ -4304,7 +4248,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4324,7 +4268,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeRouteOIDCReplace"
+                "$ref": "#/components/schemas/EdgeRouteOidcReplace"
               }
             }
           }
@@ -4335,7 +4279,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointOIDC"
+                  "$ref": "#/components/schemas/EndpointOidc"
                 }
               }
             }
@@ -4353,7 +4297,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4377,7 +4321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointOIDC"
+                  "$ref": "#/components/schemas/EndpointOidc"
                 }
               }
             }
@@ -4395,7 +4339,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4419,9 +4363,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson28"
                 }
               }
             }
@@ -4429,7 +4371,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/websocket_tcp_converter": {
+    "/edges/https/{edgeId}/routes/{id}/websocket_tcp_converter": {
       "put": {
         "tags": [
           "EdgeRouteWebsocketTCPConverterModule"
@@ -4441,7 +4383,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4461,7 +4403,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeRouteWebsocketTCPConverterReplace"
+                "$ref": "#/components/schemas/EdgeRouteWebsocketTcpConverterReplace"
               }
             }
           }
@@ -4472,7 +4414,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointWebsocketTCPConverter"
+                  "$ref": "#/components/schemas/EndpointWebsocketTcpConverter"
                 }
               }
             }
@@ -4490,7 +4432,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4514,7 +4456,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointWebsocketTCPConverter"
+                  "$ref": "#/components/schemas/EndpointWebsocketTcpConverter"
                 }
               }
             }
@@ -4532,7 +4474,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4556,9 +4498,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson29"
                 }
               }
             }
@@ -4566,7 +4506,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/user_agent_filter": {
+    "/edges/https/{edgeId}/routes/{id}/user_agent_filter": {
       "put": {
         "tags": [
           "EdgeRouteUserAgentFilterModule"
@@ -4578,7 +4518,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4627,7 +4567,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4669,7 +4609,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4693,9 +4633,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson30"
                 }
               }
             }
@@ -4703,7 +4641,7 @@
         }
       }
     },
-    "/edges/https/{edge_id}/routes/{id}/traffic_policy": {
+    "/edges/https/{edgeId}/routes/{id}/traffic_policy": {
       "put": {
         "tags": [
           "EdgeRouteTrafficPolicyModule"
@@ -4715,7 +4653,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4764,7 +4702,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4806,7 +4744,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "edge_id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -4830,9 +4768,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson31"
                 }
               }
             }
@@ -4857,7 +4793,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TCPEdgeCreate"
+                "$ref": "#/components/schemas/TcpEdgeCreate"
               }
             }
           }
@@ -4868,7 +4804,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TCPEdge"
+                  "$ref": "#/components/schemas/TcpEdge"
                 }
               }
             }
@@ -4907,7 +4843,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TCPEdgeList"
+                  "$ref": "#/components/schemas/TcpEdgeList"
                 }
               }
             }
@@ -4943,7 +4879,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TCPEdge"
+                  "$ref": "#/components/schemas/TcpEdge"
                 }
               }
             }
@@ -4975,7 +4911,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TCPEdgeUpdate"
+                "$ref": "#/components/schemas/TcpEdgeUpdate"
               }
             }
           }
@@ -4986,7 +4922,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TCPEdge"
+                  "$ref": "#/components/schemas/TcpEdge"
                 }
               }
             }
@@ -5020,9 +4956,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson32"
                 }
               }
             }
@@ -5131,9 +5065,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson33"
                 }
               }
             }
@@ -5165,7 +5097,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeIPRestrictionReplace"
+                "$ref": "#/components/schemas/EdgeIpRestrictionReplace"
               }
             }
           }
@@ -5176,7 +5108,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointIPPolicy"
+                  "$ref": "#/components/schemas/EndpointIpPolicy"
                 }
               }
             }
@@ -5209,7 +5141,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointIPPolicy"
+                  "$ref": "#/components/schemas/EndpointIpPolicy"
                 }
               }
             }
@@ -5242,9 +5174,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson34"
                 }
               }
             }
@@ -5353,9 +5283,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson35"
                 }
               }
             }
@@ -5380,7 +5308,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TLSEdgeCreate"
+                "$ref": "#/components/schemas/TlsEdgeCreate"
               }
             }
           }
@@ -5391,7 +5319,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TLSEdge"
+                  "$ref": "#/components/schemas/TlsEdge"
                 }
               }
             }
@@ -5430,7 +5358,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TLSEdgeList"
+                  "$ref": "#/components/schemas/TlsEdgeList"
                 }
               }
             }
@@ -5466,7 +5394,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TLSEdge"
+                  "$ref": "#/components/schemas/TlsEdge"
                 }
               }
             }
@@ -5498,7 +5426,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TLSEdgeUpdate"
+                "$ref": "#/components/schemas/TlsEdgeUpdate"
               }
             }
           }
@@ -5509,7 +5437,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TLSEdge"
+                  "$ref": "#/components/schemas/TlsEdge"
                 }
               }
             }
@@ -5543,9 +5471,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
                 }
               }
             }
@@ -5654,9 +5580,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
                 }
               }
             }
@@ -5688,7 +5612,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeIPRestrictionReplace"
+                "$ref": "#/components/schemas/EdgeIpRestrictionReplace"
               }
             }
           }
@@ -5699,7 +5623,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointIPPolicy"
+                  "$ref": "#/components/schemas/EndpointIpPolicy"
                 }
               }
             }
@@ -5732,7 +5656,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointIPPolicy"
+                  "$ref": "#/components/schemas/EndpointIpPolicy"
                 }
               }
             }
@@ -5765,9 +5689,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
                 }
               }
             }
@@ -5799,7 +5721,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeMutualTLSReplace"
+                "$ref": "#/components/schemas/EdgeMutualTlsReplace"
               }
             }
           }
@@ -5810,7 +5732,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointMutualTLS"
+                  "$ref": "#/components/schemas/EndpointMutualTls"
                 }
               }
             }
@@ -5843,7 +5765,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointMutualTLS"
+                  "$ref": "#/components/schemas/EndpointMutualTls"
                 }
               }
             }
@@ -5876,9 +5798,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
                 }
               }
             }
@@ -5910,7 +5830,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EdgeTLSTerminationReplace"
+                "$ref": "#/components/schemas/EdgeTlsTerminationReplace"
               }
             }
           }
@@ -5921,7 +5841,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointTLSTermination"
+                  "$ref": "#/components/schemas/EndpointTlsTermination"
                 }
               }
             }
@@ -5954,7 +5874,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EndpointTLSTermination"
+                  "$ref": "#/components/schemas/EndpointTlsTermination"
                 }
               }
             }
@@ -5987,9 +5907,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson40"
                 }
               }
             }
@@ -6098,9 +6016,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson41"
                 }
               }
             }
@@ -6322,9 +6238,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson42"
                 }
               }
             }
@@ -6445,9 +6359,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson43"
                 }
               }
             }
@@ -6645,9 +6557,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson44"
                 }
               }
             }
@@ -6732,7 +6642,7 @@
         }
       }
     },
-    "/event_subscriptions/{subscription_id}/sources": {
+    "/event_subscriptions/{subscriptionId}/sources": {
       "post": {
         "tags": [
           "EventSources"
@@ -6745,7 +6655,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscription_id",
+            "name": "subscriptionId",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
@@ -6788,7 +6698,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscription_id",
+            "name": "subscriptionId",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
@@ -6811,7 +6721,7 @@
         }
       }
     },
-    "/event_subscriptions/{subscription_id}/sources/{type}": {
+    "/event_subscriptions/{subscriptionId}/sources/{type}": {
       "delete": {
         "tags": [
           "EventSources"
@@ -6824,7 +6734,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscription_id",
+            "name": "subscriptionId",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
@@ -6848,9 +6758,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson45"
                 }
               }
             }
@@ -6869,7 +6777,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscription_id",
+            "name": "subscriptionId",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
@@ -6912,7 +6820,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscription_id",
+            "name": "subscriptionId",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
@@ -6970,7 +6878,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IPPolicyCreate"
+                "$ref": "#/components/schemas/IpPolicyCreate"
               }
             }
           }
@@ -6981,7 +6889,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPPolicy"
+                  "$ref": "#/components/schemas/IpPolicy"
                 }
               }
             }
@@ -7030,7 +6938,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPPolicyList"
+                  "$ref": "#/components/schemas/IpPolicyList"
                 }
               }
             }
@@ -7066,9 +6974,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson46"
                 }
               }
             }
@@ -7102,7 +7008,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPPolicy"
+                  "$ref": "#/components/schemas/IpPolicy"
                 }
               }
             }
@@ -7133,7 +7039,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IPPolicyUpdate"
+                "$ref": "#/components/schemas/IpPolicyUpdate"
               }
             }
           }
@@ -7144,7 +7050,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPPolicy"
+                  "$ref": "#/components/schemas/IpPolicy"
                 }
               }
             }
@@ -7169,7 +7075,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IPPolicyRuleCreate"
+                "$ref": "#/components/schemas/IpPolicyRuleCreate"
               }
             }
           }
@@ -7180,7 +7086,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPPolicyRule"
+                  "$ref": "#/components/schemas/IpPolicyRule"
                 }
               }
             }
@@ -7229,7 +7135,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPPolicyRuleList"
+                  "$ref": "#/components/schemas/IpPolicyRuleList"
                 }
               }
             }
@@ -7265,9 +7171,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson47"
                 }
               }
             }
@@ -7301,7 +7205,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPPolicyRule"
+                  "$ref": "#/components/schemas/IpPolicyRule"
                 }
               }
             }
@@ -7332,7 +7236,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IPPolicyRuleUpdate"
+                "$ref": "#/components/schemas/IpPolicyRuleUpdate"
               }
             }
           }
@@ -7343,7 +7247,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPPolicyRule"
+                  "$ref": "#/components/schemas/IpPolicyRule"
                 }
               }
             }
@@ -7368,7 +7272,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IPRestrictionCreate"
+                "$ref": "#/components/schemas/IpRestrictionCreate"
               }
             }
           }
@@ -7379,7 +7283,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPRestriction"
+                  "$ref": "#/components/schemas/IpRestriction"
                 }
               }
             }
@@ -7428,7 +7332,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPRestrictionList"
+                  "$ref": "#/components/schemas/IpRestrictionList"
                 }
               }
             }
@@ -7464,9 +7368,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson48"
                 }
               }
             }
@@ -7500,7 +7402,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPRestriction"
+                  "$ref": "#/components/schemas/IpRestriction"
                 }
               }
             }
@@ -7531,7 +7433,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IPRestrictionUpdate"
+                "$ref": "#/components/schemas/IpRestrictionUpdate"
               }
             }
           }
@@ -7542,7 +7444,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPRestriction"
+                  "$ref": "#/components/schemas/IpRestriction"
                 }
               }
             }
@@ -7663,9 +7565,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson49"
                 }
               }
             }
@@ -7862,9 +7762,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson50"
                 }
               }
             }
@@ -7976,9 +7874,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson51"
                 }
               }
             }
@@ -8014,9 +7910,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson52"
                 }
               }
             }
@@ -8180,9 +8074,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson53"
                 }
               }
             }
@@ -8337,9 +8229,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson54"
                 }
               }
             }
@@ -8440,7 +8330,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SSHCertificateAuthorityCreate"
+                "$ref": "#/components/schemas/SshCertificateAuthorityCreate"
               }
             }
           }
@@ -8451,7 +8341,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHCertificateAuthority"
+                  "$ref": "#/components/schemas/SshCertificateAuthority"
                 }
               }
             }
@@ -8500,7 +8390,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHCertificateAuthorityList"
+                  "$ref": "#/components/schemas/SshCertificateAuthorityList"
                 }
               }
             }
@@ -8536,9 +8426,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson55"
                 }
               }
             }
@@ -8572,7 +8460,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHCertificateAuthority"
+                  "$ref": "#/components/schemas/SshCertificateAuthority"
                 }
               }
             }
@@ -8603,7 +8491,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SSHCertificateAuthorityUpdate"
+                "$ref": "#/components/schemas/SshCertificateAuthorityUpdate"
               }
             }
           }
@@ -8614,7 +8502,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHCertificateAuthority"
+                  "$ref": "#/components/schemas/SshCertificateAuthority"
                 }
               }
             }
@@ -8639,7 +8527,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SSHCredentialCreate"
+                "$ref": "#/components/schemas/SshCredentialCreate"
               }
             }
           }
@@ -8650,7 +8538,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHCredential"
+                  "$ref": "#/components/schemas/SshCredential"
                 }
               }
             }
@@ -8699,7 +8587,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHCredentialList"
+                  "$ref": "#/components/schemas/SshCredentialList"
                 }
               }
             }
@@ -8735,9 +8623,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson56"
                 }
               }
             }
@@ -8771,7 +8657,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHCredential"
+                  "$ref": "#/components/schemas/SshCredential"
                 }
               }
             }
@@ -8802,7 +8688,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SSHCredentialUpdate"
+                "$ref": "#/components/schemas/SshCredentialUpdate"
               }
             }
           }
@@ -8813,7 +8699,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHCredential"
+                  "$ref": "#/components/schemas/SshCredential"
                 }
               }
             }
@@ -8838,7 +8724,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SSHHostCertificateCreate"
+                "$ref": "#/components/schemas/SshHostCertificateCreate"
               }
             }
           }
@@ -8849,7 +8735,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHHostCertificate"
+                  "$ref": "#/components/schemas/SshHostCertificate"
                 }
               }
             }
@@ -8888,7 +8774,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHHostCertificateList"
+                  "$ref": "#/components/schemas/SshHostCertificateList"
                 }
               }
             }
@@ -8924,9 +8810,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson57"
                 }
               }
             }
@@ -8960,7 +8844,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHHostCertificate"
+                  "$ref": "#/components/schemas/SshHostCertificate"
                 }
               }
             }
@@ -8991,7 +8875,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SSHHostCertificateUpdate"
+                "$ref": "#/components/schemas/SshHostCertificateUpdate"
               }
             }
           }
@@ -9002,7 +8886,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHHostCertificate"
+                  "$ref": "#/components/schemas/SshHostCertificate"
                 }
               }
             }
@@ -9027,7 +8911,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SSHUserCertificateCreate"
+                "$ref": "#/components/schemas/SshUserCertificateCreate"
               }
             }
           }
@@ -9038,7 +8922,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHUserCertificate"
+                  "$ref": "#/components/schemas/SshUserCertificate"
                 }
               }
             }
@@ -9077,7 +8961,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHUserCertificateList"
+                  "$ref": "#/components/schemas/SshUserCertificateList"
                 }
               }
             }
@@ -9113,9 +8997,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson58"
                 }
               }
             }
@@ -9149,7 +9031,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHUserCertificate"
+                  "$ref": "#/components/schemas/SshUserCertificate"
                 }
               }
             }
@@ -9180,7 +9062,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SSHUserCertificateUpdate"
+                "$ref": "#/components/schemas/SshUserCertificateUpdate"
               }
             }
           }
@@ -9191,7 +9073,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SSHUserCertificate"
+                  "$ref": "#/components/schemas/SshUserCertificate"
                 }
               }
             }
@@ -9216,7 +9098,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TLSCertificateCreate"
+                "$ref": "#/components/schemas/TlsCertificateCreate"
               }
             }
           }
@@ -9227,7 +9109,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TLSCertificate"
+                  "$ref": "#/components/schemas/TlsCertificate"
                 }
               }
             }
@@ -9276,7 +9158,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TLSCertificateList"
+                  "$ref": "#/components/schemas/TlsCertificateList"
                 }
               }
             }
@@ -9312,9 +9194,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson59"
                 }
               }
             }
@@ -9348,7 +9228,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TLSCertificate"
+                  "$ref": "#/components/schemas/TlsCertificate"
                 }
               }
             }
@@ -9379,7 +9259,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TLSCertificateUpdate"
+                "$ref": "#/components/schemas/TlsCertificateUpdate"
               }
             }
           }
@@ -9390,7 +9270,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TLSCertificate"
+                  "$ref": "#/components/schemas/TlsCertificate"
                 }
               }
             }
@@ -9631,9 +9511,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson60"
                 }
               }
             }
@@ -9731,7 +9609,7 @@
       "Empty": {
         "type": "object"
       },
-      "Item": {
+      "ItemValue": {
         "type": "object",
         "properties": {
           "id": {
@@ -9787,7 +9665,7 @@
           }
         }
       },
-      "Ref": {
+      "RefType": {
         "type": "object",
         "properties": {
           "id": {
@@ -10029,7 +9907,7 @@
           }
         }
       },
-      "APIKeyCreate": {
+      "ApiKeyCreate": {
         "type": "object",
         "properties": {
           "description": {
@@ -10046,7 +9924,7 @@
           }
         }
       },
-      "APIKeyUpdate": {
+      "ApiKeyUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -10063,7 +9941,7 @@
           }
         }
       },
-      "APIKey": {
+      "ApiKey": {
         "type": "object",
         "properties": {
           "id": {
@@ -10096,13 +9974,13 @@
           }
         }
       },
-      "APIKeyList": {
+      "ApiKeyList": {
         "type": "object",
         "properties": {
           "keys": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/APIKey"
+              "$ref": "#/components/schemas/ApiKey"
             },
             "description": "the list of API keys for this account\n"
           },
@@ -10135,7 +10013,7 @@
             "$ref": "#/components/schemas/BrowserSession"
           },
           "application_user": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "created_at": {
             "type": "string",
@@ -10150,13 +10028,13 @@
             "description": "timestamp when session expires in RFC 3339 format\n"
           },
           "endpoint": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "edge": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "route": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           }
         }
       },
@@ -10330,7 +10208,7 @@
             "description": "version of the ngrok agent that started this ngrok tunnel session\n"
           },
           "credential": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "id": {
             "type": "string",
@@ -10491,7 +10369,7 @@
           }
         }
       },
-      "HTTPResponseBackend": {
+      "HttpResponseBackend": {
         "type": "object",
         "properties": {
           "id": {
@@ -10519,8 +10397,7 @@
             "description": "body to return as fixed content\n"
           },
           "headers": {
-            "type": "object",
-            "description": "headers to return\n"
+            "$ref": "#/components/schemas/HttpResponseBackendHeadersProperty"
           },
           "status_code": {
             "type": "integer",
@@ -10528,7 +10405,7 @@
           }
         }
       },
-      "HTTPResponseBackendCreate": {
+      "HttpResponseBackendCreate": {
         "type": "object",
         "properties": {
           "description": {
@@ -10544,8 +10421,7 @@
             "description": "body to return as fixed content\n"
           },
           "headers": {
-            "type": "object",
-            "description": "headers to return\n"
+            "$ref": "#/components/schemas/HttpResponseBackendCreateHeadersProperty"
           },
           "status_code": {
             "type": "integer",
@@ -10553,7 +10429,7 @@
           }
         }
       },
-      "HTTPResponseBackendUpdate": {
+      "HttpResponseBackendUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -10573,8 +10449,7 @@
             "description": "body to return as fixed content\n"
           },
           "headers": {
-            "type": "object",
-            "description": "headers to return\n"
+            "$ref": "#/components/schemas/HttpResponseBackendUpdateHeadersProperty"
           },
           "status_code": {
             "type": "integer",
@@ -10582,13 +10457,13 @@
           }
         }
       },
-      "HTTPResponseBackendList": {
+      "HttpResponseBackendList": {
         "type": "object",
         "properties": {
           "backends": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/HTTPResponseBackend"
+              "$ref": "#/components/schemas/HttpResponseBackend"
             },
             "description": "n/a"
           },
@@ -10630,11 +10505,11 @@
             "description": "the address to forward to\n"
           },
           "tls": {
-            "$ref": "#/components/schemas/StaticBackendTLS"
+            "$ref": "#/components/schemas/StaticBackendTls"
           }
         }
       },
-      "StaticBackendTLS": {
+      "StaticBackendTls": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -10659,7 +10534,7 @@
             "description": "the address to forward to\n"
           },
           "tls": {
-            "$ref": "#/components/schemas/StaticBackendTLS"
+            "$ref": "#/components/schemas/StaticBackendTls"
           }
         }
       },
@@ -10683,7 +10558,7 @@
             "description": "the address to forward to\n"
           },
           "tls": {
-            "$ref": "#/components/schemas/StaticBackendTLS"
+            "$ref": "#/components/schemas/StaticBackendTls"
           }
         }
       },
@@ -10731,13 +10606,12 @@
             "description": "arbitrary user-defined machine-readable data of this backend. Optional\n"
           },
           "labels": {
-            "type": "object",
-            "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+            "$ref": "#/components/schemas/TunnelGroupBackendLabelsProperty"
           },
           "tunnels": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Ref"
+              "$ref": "#/components/schemas/RefType"
             },
             "description": "tunnels matching this backend\n"
           }
@@ -10755,8 +10629,7 @@
             "description": "arbitrary user-defined machine-readable data of this backend. Optional\n"
           },
           "labels": {
-            "type": "object",
-            "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+            "$ref": "#/components/schemas/TunnelGroupBackendCreateLabelsProperty"
           }
         }
       },
@@ -10776,8 +10649,7 @@
             "description": "arbitrary user-defined machine-readable data of this backend. Optional\n"
           },
           "labels": {
-            "type": "object",
-            "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+            "$ref": "#/components/schemas/TunnelGroupBackendUpdateLabelsProperty"
           }
         }
       },
@@ -10825,8 +10697,7 @@
             "description": "arbitrary user-defined machine-readable data of this backend. Optional\n"
           },
           "backends": {
-            "type": "object",
-            "description": "the ids of the child backends to their weights [0-10000]\n"
+            "$ref": "#/components/schemas/WeightedBackendBackendsProperty"
           }
         }
       },
@@ -10842,8 +10713,7 @@
             "description": "arbitrary user-defined machine-readable data of this backend. Optional\n"
           },
           "backends": {
-            "type": "object",
-            "description": "the ids of the child backends to their weights [0-10000]\n"
+            "$ref": "#/components/schemas/WeightedBackendCreateBackendsProperty"
           }
         }
       },
@@ -10863,8 +10733,7 @@
             "description": "arbitrary user-defined machine-readable data of this backend. Optional\n"
           },
           "backends": {
-            "type": "object",
-            "description": "the ids of the child backends to their weights [0-10000]\n"
+            "$ref": "#/components/schemas/WeightedBackendUpdateBackendsProperty"
           }
         }
       },
@@ -11209,7 +11078,7 @@
           }
         }
       },
-      "EndpointMutualTLS": {
+      "EndpointMutualTls": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11219,13 +11088,13 @@
           "certificate_authorities": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Ref"
+              "$ref": "#/components/schemas/RefType"
             },
             "description": "PEM-encoded CA certificates that will be used to validate. Multiple CAs may be provided by concatenating them together.\n"
           }
         }
       },
-      "EndpointMutualTLSMutate": {
+      "EndpointMutualTlsMutate": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11241,7 +11110,7 @@
           }
         }
       },
-      "EndpointTLSTermination": {
+      "EndpointTlsTermination": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11258,7 +11127,7 @@
           }
         }
       },
-      "EndpointTLSTerminationAtEdge": {
+      "EndpointTlsTerminationAtEdge": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11279,8 +11148,7 @@
             "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
           },
           "add": {
-            "type": "object",
-            "description": "a map of header key to header value that will be injected into the HTTP Request before being sent to the upstream application server\n"
+            "$ref": "#/components/schemas/EndpointRequestHeadersAddProperty"
           },
           "remove": {
             "type": "array",
@@ -11299,8 +11167,7 @@
             "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
           },
           "add": {
-            "type": "object",
-            "description": "a map of header key to header value that will be injected into the HTTP Response returned to the HTTP client\n"
+            "$ref": "#/components/schemas/EndpointResponseHeadersAddProperty"
           },
           "remove": {
             "type": "array",
@@ -11311,7 +11178,7 @@
           }
         }
       },
-      "EndpointIPPolicy": {
+      "EndpointIpPolicy": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11321,13 +11188,13 @@
           "ip_policies": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Ref"
+              "$ref": "#/components/schemas/RefType"
             },
             "description": "list of all IP policies that will be used to check if a source IP is allowed access to the endpoint\n"
           }
         }
       },
-      "EndpointIPPolicyMutate": {
+      "EndpointIpPolicyMutate": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11719,7 +11586,7 @@
           }
         }
       },
-      "EndpointSAML": {
+      "EndpointSaml": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11787,7 +11654,7 @@
           }
         }
       },
-      "EndpointSAMLMutate": {
+      "EndpointSamlMutate": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11835,7 +11702,7 @@
           }
         }
       },
-      "EndpointOIDC": {
+      "EndpointOidc": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11887,7 +11754,7 @@
             "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
           },
           "backend": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           }
         }
       },
@@ -11904,7 +11771,7 @@
           }
         }
       },
-      "EndpointWebsocketTCPConverter": {
+      "EndpointWebsocketTcpConverter": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -11962,7 +11829,7 @@
           }
         }
       },
-      "HTTPSEdgeRouteCreate": {
+      "HttpsEdgeRouteCreate": {
         "required": [
           "match_type",
           "match"
@@ -11993,7 +11860,7 @@
             "$ref": "#/components/schemas/EndpointBackendMutate"
           },
           "ip_restriction": {
-            "$ref": "#/components/schemas/EndpointIPPolicyMutate"
+            "$ref": "#/components/schemas/EndpointIpPolicyMutate"
           },
           "circuit_breaker": {
             "$ref": "#/components/schemas/EndpointCircuitBreaker"
@@ -12014,13 +11881,13 @@
             "$ref": "#/components/schemas/EndpointOAuth"
           },
           "saml": {
-            "$ref": "#/components/schemas/EndpointSAMLMutate"
+            "$ref": "#/components/schemas/EndpointSamlMutate"
           },
           "oidc": {
-            "$ref": "#/components/schemas/EndpointOIDC"
+            "$ref": "#/components/schemas/EndpointOidc"
           },
           "websocket_tcp_converter": {
-            "$ref": "#/components/schemas/EndpointWebsocketTCPConverter"
+            "$ref": "#/components/schemas/EndpointWebsocketTcpConverter"
           },
           "user_agent_filter": {
             "$ref": "#/components/schemas/EndpointUserAgentFilter"
@@ -12030,7 +11897,7 @@
           }
         }
       },
-      "HTTPSEdgeRouteUpdate": {
+      "HttpsEdgeRouteUpdate": {
         "type": "object",
         "properties": {
           "edge_id": {
@@ -12061,7 +11928,7 @@
             "$ref": "#/components/schemas/EndpointBackendMutate"
           },
           "ip_restriction": {
-            "$ref": "#/components/schemas/EndpointIPPolicyMutate"
+            "$ref": "#/components/schemas/EndpointIpPolicyMutate"
           },
           "circuit_breaker": {
             "$ref": "#/components/schemas/EndpointCircuitBreaker"
@@ -12082,13 +11949,13 @@
             "$ref": "#/components/schemas/EndpointOAuth"
           },
           "saml": {
-            "$ref": "#/components/schemas/EndpointSAMLMutate"
+            "$ref": "#/components/schemas/EndpointSamlMutate"
           },
           "oidc": {
-            "$ref": "#/components/schemas/EndpointOIDC"
+            "$ref": "#/components/schemas/EndpointOidc"
           },
           "websocket_tcp_converter": {
-            "$ref": "#/components/schemas/EndpointWebsocketTCPConverter"
+            "$ref": "#/components/schemas/EndpointWebsocketTcpConverter"
           },
           "user_agent_filter": {
             "$ref": "#/components/schemas/EndpointUserAgentFilter"
@@ -12098,7 +11965,7 @@
           }
         }
       },
-      "HTTPSEdgeRoute": {
+      "HttpsEdgeRoute": {
         "type": "object",
         "properties": {
           "edge_id": {
@@ -12137,7 +12004,7 @@
             "$ref": "#/components/schemas/EndpointBackend"
           },
           "ip_restriction": {
-            "$ref": "#/components/schemas/EndpointIPPolicy"
+            "$ref": "#/components/schemas/EndpointIpPolicy"
           },
           "circuit_breaker": {
             "$ref": "#/components/schemas/EndpointCircuitBreaker"
@@ -12158,13 +12025,13 @@
             "$ref": "#/components/schemas/EndpointOAuth"
           },
           "saml": {
-            "$ref": "#/components/schemas/EndpointSAML"
+            "$ref": "#/components/schemas/EndpointSaml"
           },
           "oidc": {
-            "$ref": "#/components/schemas/EndpointOIDC"
+            "$ref": "#/components/schemas/EndpointOidc"
           },
           "websocket_tcp_converter": {
-            "$ref": "#/components/schemas/EndpointWebsocketTCPConverter"
+            "$ref": "#/components/schemas/EndpointWebsocketTcpConverter"
           },
           "user_agent_filter": {
             "$ref": "#/components/schemas/EndpointUserAgentFilter"
@@ -12174,13 +12041,13 @@
           }
         }
       },
-      "HTTPSEdgeList": {
+      "HttpsEdgeList": {
         "type": "object",
         "properties": {
           "https_edges": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/HTTPSEdge"
+              "$ref": "#/components/schemas/HttpsEdge"
             },
             "description": "the list of all HTTPS Edges on this account\n"
           },
@@ -12194,7 +12061,7 @@
           }
         }
       },
-      "HTTPSEdgeCreate": {
+      "HttpsEdgeCreate": {
         "type": "object",
         "properties": {
           "description": {
@@ -12213,14 +12080,14 @@
             "description": "hostports served by this edge\n"
           },
           "mutual_tls": {
-            "$ref": "#/components/schemas/EndpointMutualTLSMutate"
+            "$ref": "#/components/schemas/EndpointMutualTlsMutate"
           },
           "tls_termination": {
-            "$ref": "#/components/schemas/EndpointTLSTerminationAtEdge"
+            "$ref": "#/components/schemas/EndpointTlsTerminationAtEdge"
           }
         }
       },
-      "HTTPSEdgeUpdate": {
+      "HttpsEdgeUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -12243,14 +12110,14 @@
             "description": "hostports served by this edge\n"
           },
           "mutual_tls": {
-            "$ref": "#/components/schemas/EndpointMutualTLSMutate"
+            "$ref": "#/components/schemas/EndpointMutualTlsMutate"
           },
           "tls_termination": {
-            "$ref": "#/components/schemas/EndpointTLSTerminationAtEdge"
+            "$ref": "#/components/schemas/EndpointTlsTerminationAtEdge"
           }
         }
       },
-      "HTTPSEdge": {
+      "HttpsEdge": {
         "type": "object",
         "properties": {
           "id": {
@@ -12281,15 +12148,15 @@
             "description": "hostports served by this edge\n"
           },
           "mutual_tls": {
-            "$ref": "#/components/schemas/EndpointMutualTLS"
+            "$ref": "#/components/schemas/EndpointMutualTls"
           },
           "tls_termination": {
-            "$ref": "#/components/schemas/EndpointTLSTermination"
+            "$ref": "#/components/schemas/EndpointTlsTermination"
           },
           "routes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/HTTPSEdgeRoute"
+              "$ref": "#/components/schemas/HttpsEdgeRoute"
             },
             "description": "routes\n"
           }
@@ -12307,7 +12174,7 @@
           }
         }
       },
-      "EdgeIPRestrictionReplace": {
+      "EdgeIpRestrictionReplace": {
         "type": "object",
         "properties": {
           "id": {
@@ -12315,11 +12182,11 @@
             "description": "n/a"
           },
           "module": {
-            "$ref": "#/components/schemas/EndpointIPPolicyMutate"
+            "$ref": "#/components/schemas/EndpointIpPolicyMutate"
           }
         }
       },
-      "EdgeMutualTLSReplace": {
+      "EdgeMutualTlsReplace": {
         "type": "object",
         "properties": {
           "id": {
@@ -12327,11 +12194,11 @@
             "description": "n/a"
           },
           "module": {
-            "$ref": "#/components/schemas/EndpointMutualTLSMutate"
+            "$ref": "#/components/schemas/EndpointMutualTlsMutate"
           }
         }
       },
-      "EdgeTLSTerminationReplace": {
+      "EdgeTlsTerminationReplace": {
         "type": "object",
         "properties": {
           "id": {
@@ -12339,11 +12206,11 @@
             "description": "n/a"
           },
           "module": {
-            "$ref": "#/components/schemas/EndpointTLSTermination"
+            "$ref": "#/components/schemas/EndpointTlsTermination"
           }
         }
       },
-      "EdgeTLSTerminationAtEdgeReplace": {
+      "EdgeTlsTerminationAtEdgeReplace": {
         "type": "object",
         "properties": {
           "id": {
@@ -12351,7 +12218,7 @@
             "description": "n/a"
           },
           "module": {
-            "$ref": "#/components/schemas/EndpointTLSTerminationAtEdge"
+            "$ref": "#/components/schemas/EndpointTlsTerminationAtEdge"
           }
         }
       },
@@ -12383,7 +12250,7 @@
           }
         }
       },
-      "EdgeRouteIPRestrictionReplace": {
+      "EdgeRouteIpRestrictionReplace": {
         "type": "object",
         "properties": {
           "edge_id": {
@@ -12395,7 +12262,7 @@
             "description": "n/a"
           },
           "module": {
-            "$ref": "#/components/schemas/EndpointIPPolicyMutate"
+            "$ref": "#/components/schemas/EndpointIpPolicyMutate"
           }
         }
       },
@@ -12495,7 +12362,7 @@
           }
         }
       },
-      "EdgeRouteSAMLReplace": {
+      "EdgeRouteSamlReplace": {
         "type": "object",
         "properties": {
           "edge_id": {
@@ -12507,11 +12374,11 @@
             "description": "n/a"
           },
           "module": {
-            "$ref": "#/components/schemas/EndpointSAMLMutate"
+            "$ref": "#/components/schemas/EndpointSamlMutate"
           }
         }
       },
-      "EdgeRouteOIDCReplace": {
+      "EdgeRouteOidcReplace": {
         "type": "object",
         "properties": {
           "edge_id": {
@@ -12523,11 +12390,11 @@
             "description": "n/a"
           },
           "module": {
-            "$ref": "#/components/schemas/EndpointOIDC"
+            "$ref": "#/components/schemas/EndpointOidc"
           }
         }
       },
-      "EdgeRouteWebsocketTCPConverterReplace": {
+      "EdgeRouteWebsocketTcpConverterReplace": {
         "type": "object",
         "properties": {
           "edge_id": {
@@ -12539,7 +12406,7 @@
             "description": "n/a"
           },
           "module": {
-            "$ref": "#/components/schemas/EndpointWebsocketTCPConverter"
+            "$ref": "#/components/schemas/EndpointWebsocketTcpConverter"
           }
         }
       },
@@ -12575,13 +12442,13 @@
           }
         }
       },
-      "TCPEdgeList": {
+      "TcpEdgeList": {
         "type": "object",
         "properties": {
           "tcp_edges": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TCPEdge"
+              "$ref": "#/components/schemas/TcpEdge"
             },
             "description": "the list of all TCP Edges on this account\n"
           },
@@ -12595,7 +12462,7 @@
           }
         }
       },
-      "TCPEdgeCreate": {
+      "TcpEdgeCreate": {
         "type": "object",
         "properties": {
           "description": {
@@ -12617,14 +12484,14 @@
             "$ref": "#/components/schemas/EndpointBackendMutate"
           },
           "ip_restriction": {
-            "$ref": "#/components/schemas/EndpointIPPolicyMutate"
+            "$ref": "#/components/schemas/EndpointIpPolicyMutate"
           },
           "traffic_policy": {
             "$ref": "#/components/schemas/EndpointTrafficPolicy"
           }
         }
       },
-      "TCPEdgeUpdate": {
+      "TcpEdgeUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -12650,14 +12517,14 @@
             "$ref": "#/components/schemas/EndpointBackendMutate"
           },
           "ip_restriction": {
-            "$ref": "#/components/schemas/EndpointIPPolicyMutate"
+            "$ref": "#/components/schemas/EndpointIpPolicyMutate"
           },
           "traffic_policy": {
             "$ref": "#/components/schemas/EndpointTrafficPolicy"
           }
         }
       },
-      "TCPEdge": {
+      "TcpEdge": {
         "type": "object",
         "properties": {
           "id": {
@@ -12691,20 +12558,20 @@
             "$ref": "#/components/schemas/EndpointBackend"
           },
           "ip_restriction": {
-            "$ref": "#/components/schemas/EndpointIPPolicy"
+            "$ref": "#/components/schemas/EndpointIpPolicy"
           },
           "traffic_policy": {
             "$ref": "#/components/schemas/EndpointTrafficPolicy"
           }
         }
       },
-      "TLSEdgeList": {
+      "TlsEdgeList": {
         "type": "object",
         "properties": {
           "tls_edges": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TLSEdge"
+              "$ref": "#/components/schemas/TlsEdge"
             },
             "description": "the list of all TLS Edges on this account\n"
           },
@@ -12718,7 +12585,7 @@
           }
         }
       },
-      "TLSEdgeCreate": {
+      "TlsEdgeCreate": {
         "type": "object",
         "properties": {
           "description": {
@@ -12740,20 +12607,20 @@
             "$ref": "#/components/schemas/EndpointBackendMutate"
           },
           "ip_restriction": {
-            "$ref": "#/components/schemas/EndpointIPPolicyMutate"
+            "$ref": "#/components/schemas/EndpointIpPolicyMutate"
           },
           "mutual_tls": {
-            "$ref": "#/components/schemas/EndpointMutualTLSMutate"
+            "$ref": "#/components/schemas/EndpointMutualTlsMutate"
           },
           "tls_termination": {
-            "$ref": "#/components/schemas/EndpointTLSTermination"
+            "$ref": "#/components/schemas/EndpointTlsTermination"
           },
           "traffic_policy": {
             "$ref": "#/components/schemas/EndpointTrafficPolicy"
           }
         }
       },
-      "TLSEdgeUpdate": {
+      "TlsEdgeUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -12779,20 +12646,20 @@
             "$ref": "#/components/schemas/EndpointBackendMutate"
           },
           "ip_restriction": {
-            "$ref": "#/components/schemas/EndpointIPPolicyMutate"
+            "$ref": "#/components/schemas/EndpointIpPolicyMutate"
           },
           "mutual_tls": {
-            "$ref": "#/components/schemas/EndpointMutualTLSMutate"
+            "$ref": "#/components/schemas/EndpointMutualTlsMutate"
           },
           "tls_termination": {
-            "$ref": "#/components/schemas/EndpointTLSTermination"
+            "$ref": "#/components/schemas/EndpointTlsTermination"
           },
           "traffic_policy": {
             "$ref": "#/components/schemas/EndpointTrafficPolicy"
           }
         }
       },
-      "TLSEdge": {
+      "TlsEdge": {
         "type": "object",
         "properties": {
           "id": {
@@ -12826,13 +12693,13 @@
             "$ref": "#/components/schemas/EndpointBackend"
           },
           "ip_restriction": {
-            "$ref": "#/components/schemas/EndpointIPPolicy"
+            "$ref": "#/components/schemas/EndpointIpPolicy"
           },
           "mutual_tls": {
-            "$ref": "#/components/schemas/EndpointMutualTLS"
+            "$ref": "#/components/schemas/EndpointMutualTls"
           },
           "tls_termination": {
-            "$ref": "#/components/schemas/EndpointTLSTermination"
+            "$ref": "#/components/schemas/EndpointTlsTermination"
           },
           "traffic_policy": {
             "$ref": "#/components/schemas/EndpointTrafficPolicy"
@@ -12895,16 +12762,16 @@
             "description": "user-supplied description of the associated tunnel\n"
           },
           "domain": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "tcp_addr": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "tunnel": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "edge": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "upstream_url": {
             "type": "string",
@@ -12919,7 +12786,7 @@
             "description": "the url of the endpoint\n"
           },
           "principal": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "traffic_policy": {
             "type": "string",
@@ -12933,7 +12800,7 @@
             "description": "the bindings associated with this endpoint\n"
           },
           "tunnel_session": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "uri": {
             "type": "string",
@@ -13197,7 +13064,7 @@
         "type": "object",
         "properties": {
           "auth": {
-            "$ref": "#/components/schemas/AWSAuth"
+            "$ref": "#/components/schemas/AwsAuth"
           },
           "delivery_stream_arn": {
             "type": "string",
@@ -13209,7 +13076,7 @@
         "type": "object",
         "properties": {
           "auth": {
-            "$ref": "#/components/schemas/AWSAuth"
+            "$ref": "#/components/schemas/AwsAuth"
           },
           "stream_arn": {
             "type": "string",
@@ -13221,7 +13088,7 @@
         "type": "object",
         "properties": {
           "auth": {
-            "$ref": "#/components/schemas/AWSAuth"
+            "$ref": "#/components/schemas/AwsAuth"
           },
           "log_group_arn": {
             "type": "string",
@@ -13287,18 +13154,18 @@
           }
         }
       },
-      "AWSAuth": {
+      "AwsAuth": {
         "type": "object",
         "properties": {
           "role": {
-            "$ref": "#/components/schemas/AWSRole"
+            "$ref": "#/components/schemas/AwsRole"
           },
           "creds": {
-            "$ref": "#/components/schemas/AWSCredentials"
+            "$ref": "#/components/schemas/AwsCredentials"
           }
         }
       },
-      "AWSRole": {
+      "AwsRole": {
         "required": [
           "role_arn"
         ],
@@ -13310,7 +13177,7 @@
           }
         }
       },
-      "AWSCredentials": {
+      "AwsCredentials": {
         "required": [
           "aws_access_key_id",
           "aws_secret_access_key"
@@ -13438,7 +13305,7 @@
           "destinations": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Ref"
+              "$ref": "#/components/schemas/RefType"
             },
             "description": "Destinations to which these events will be sent\n"
           }
@@ -13532,7 +13399,7 @@
         },
         "description": "This is needed instead of Paging because the parameters are different. We also don't need the typical pagination params because pagination of this isn't necessary or supported.\n"
       },
-      "IPPolicyCreate": {
+      "IpPolicyCreate": {
         "type": "object",
         "properties": {
           "description": {
@@ -13545,7 +13412,7 @@
           }
         }
       },
-      "IPPolicyUpdate": {
+      "IpPolicyUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -13562,7 +13429,7 @@
           }
         }
       },
-      "IPPolicy": {
+      "IpPolicy": {
         "type": "object",
         "properties": {
           "id": {
@@ -13587,13 +13454,13 @@
           }
         }
       },
-      "IPPolicyList": {
+      "IpPolicyList": {
         "type": "object",
         "properties": {
           "ip_policies": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IPPolicy"
+              "$ref": "#/components/schemas/IpPolicy"
             },
             "description": "the list of all IP policies on this account\n"
           },
@@ -13607,7 +13474,7 @@
           }
         }
       },
-      "IPPolicyRuleCreate": {
+      "IpPolicyRuleCreate": {
         "required": [
           "cidr",
           "ip_policy_id",
@@ -13637,7 +13504,7 @@
           }
         }
       },
-      "IPPolicyRuleUpdate": {
+      "IpPolicyRuleUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -13658,7 +13525,7 @@
           }
         }
       },
-      "IPPolicyRule": {
+      "IpPolicyRule": {
         "type": "object",
         "properties": {
           "id": {
@@ -13686,7 +13553,7 @@
             "description": "an IP or IP range specified in CIDR notation. IPv4 and IPv6 are both supported.\n"
           },
           "ip_policy": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "action": {
             "type": "string",
@@ -13694,13 +13561,13 @@
           }
         }
       },
-      "IPPolicyRuleList": {
+      "IpPolicyRuleList": {
         "type": "object",
         "properties": {
           "ip_policy_rules": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IPPolicyRule"
+              "$ref": "#/components/schemas/IpPolicyRule"
             },
             "description": "the list of all IP policy rules on this account\n"
           },
@@ -13714,7 +13581,7 @@
           }
         }
       },
-      "IPRestrictionCreate": {
+      "IpRestrictionCreate": {
         "required": [
           "type",
           "ip_policy_ids"
@@ -13746,7 +13613,7 @@
           }
         }
       },
-      "IPRestrictionUpdate": {
+      "IpRestrictionUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -13774,7 +13641,7 @@
           }
         }
       },
-      "IPRestriction": {
+      "IpRestriction": {
         "type": "object",
         "properties": {
           "id": {
@@ -13808,19 +13675,19 @@
           "ip_policies": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Ref"
+              "$ref": "#/components/schemas/RefType"
             },
             "description": "the set of IP policies that are used to enforce the restriction\n"
           }
         }
       },
-      "IPRestrictionList": {
+      "IpRestrictionList": {
         "type": "object",
         "properties": {
           "ip_restrictions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IPRestriction"
+              "$ref": "#/components/schemas/IpRestriction"
             },
             "description": "the list of all IP restrictions on this account\n"
           },
@@ -14023,7 +13890,7 @@
             "description": "DNS CNAME target for a custom hostname, or null if the reserved domain is a subdomain of an ngrok owned domain (e.g. *.ngrok.app)\n"
           },
           "certificate": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "certificate_management_policy": {
             "$ref": "#/components/schemas/ReservedDomainCertPolicy"
@@ -14205,13 +14072,13 @@
             "description": "Arbitrary user-defined metadata for this Secret\n"
           },
           "created_by": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "last_updated_by": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "vault": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "vault_name": {
             "type": "string",
@@ -14314,7 +14181,7 @@
           }
         }
       },
-      "SSHCertificateAuthorityCreate": {
+      "SshCertificateAuthorityCreate": {
         "type": "object",
         "properties": {
           "description": {
@@ -14339,7 +14206,7 @@
           }
         }
       },
-      "SSHCertificateAuthorityUpdate": {
+      "SshCertificateAuthorityUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -14356,7 +14223,7 @@
           }
         }
       },
-      "SSHCertificateAuthority": {
+      "SshCertificateAuthority": {
         "type": "object",
         "properties": {
           "id": {
@@ -14389,13 +14256,13 @@
           }
         }
       },
-      "SSHCertificateAuthorityList": {
+      "SshCertificateAuthorityList": {
         "type": "object",
         "properties": {
           "ssh_certificate_authorities": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SSHCertificateAuthority"
+              "$ref": "#/components/schemas/SshCertificateAuthority"
             },
             "description": "the list of all certificate authorities on this account\n"
           },
@@ -14409,7 +14276,7 @@
           }
         }
       },
-      "SSHCredentialCreate": {
+      "SshCredentialCreate": {
         "required": [
           "public_key"
         ],
@@ -14440,7 +14307,7 @@
           }
         }
       },
-      "SSHCredentialUpdate": {
+      "SshCredentialUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -14464,7 +14331,7 @@
           }
         }
       },
-      "SSHCredential": {
+      "SshCredential": {
         "type": "object",
         "properties": {
           "id": {
@@ -14504,13 +14371,13 @@
           }
         }
       },
-      "SSHCredentialList": {
+      "SshCredentialList": {
         "type": "object",
         "properties": {
           "ssh_credentials": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SSHCredential"
+              "$ref": "#/components/schemas/SshCredential"
             },
             "description": "the list of all ssh credentials on this account\n"
           },
@@ -14524,7 +14391,7 @@
           }
         }
       },
-      "SSHHostCertificateCreate": {
+      "SshHostCertificateCreate": {
         "required": [
           "ssh_certificate_authority_id",
           "public_key"
@@ -14564,7 +14431,7 @@
           }
         }
       },
-      "SSHHostCertificateUpdate": {
+      "SshHostCertificateUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -14581,7 +14448,7 @@
           }
         }
       },
-      "SSHHostCertificate": {
+      "SshHostCertificate": {
         "type": "object",
         "properties": {
           "id": {
@@ -14637,13 +14504,13 @@
           }
         }
       },
-      "SSHHostCertificateList": {
+      "SshHostCertificateList": {
         "type": "object",
         "properties": {
           "ssh_host_certificates": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SSHHostCertificate"
+              "$ref": "#/components/schemas/SshHostCertificate"
             },
             "description": "the list of all ssh host certificates on this account\n"
           },
@@ -14657,7 +14524,7 @@
           }
         }
       },
-      "SSHUserCertificateCreate": {
+      "SshUserCertificateCreate": {
         "required": [
           "ssh_certificate_authority_id",
           "public_key"
@@ -14680,12 +14547,10 @@
             "description": "the list of principals included in the ssh user certificate. This is the list of usernames that the certificate holder may sign in as on a machine authorizing the signing certificate authority. Dangerously, if no principals are specified, this certificate may be used to log in as any user.\n"
           },
           "critical_options": {
-            "type": "object",
-            "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+            "$ref": "#/components/schemas/SshUserCertificateCreateCriticalOptionsProperty"
           },
           "extensions": {
-            "type": "object",
-            "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+            "$ref": "#/components/schemas/SshUserCertificateCreateExtensionsProperty"
           },
           "valid_after": {
             "type": "string",
@@ -14705,7 +14570,7 @@
           }
         }
       },
-      "SSHUserCertificateUpdate": {
+      "SshUserCertificateUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -14722,7 +14587,7 @@
           }
         }
       },
-      "SSHUserCertificate": {
+      "SshUserCertificate": {
         "type": "object",
         "properties": {
           "id": {
@@ -14765,12 +14630,10 @@
             "description": "the list of principals included in the ssh user certificate. This is the list of usernames that the certificate holder may sign in as on a machine authorizing the signing certificate authority. Dangerously, if no principals are specified, this certificate may be used to log in as any user.\n"
           },
           "critical_options": {
-            "type": "object",
-            "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+            "$ref": "#/components/schemas/SshUserCertificateCriticalOptionsProperty"
           },
           "extensions": {
-            "type": "object",
-            "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+            "$ref": "#/components/schemas/SshUserCertificateExtensionsProperty"
           },
           "valid_after": {
             "type": "string",
@@ -14786,13 +14649,13 @@
           }
         }
       },
-      "SSHUserCertificateList": {
+      "SshUserCertificateList": {
         "type": "object",
         "properties": {
           "ssh_user_certificates": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SSHUserCertificate"
+              "$ref": "#/components/schemas/SshUserCertificate"
             },
             "description": "the list of all ssh user certificates on this account\n"
           },
@@ -14806,7 +14669,7 @@
           }
         }
       },
-      "TLSCertificateCreate": {
+      "TlsCertificateCreate": {
         "required": [
           "certificate_pem",
           "private_key_pem"
@@ -14831,7 +14694,7 @@
           }
         }
       },
-      "TLSCertificateUpdate": {
+      "TlsCertificateUpdate": {
         "type": "object",
         "properties": {
           "id": {
@@ -14848,7 +14711,7 @@
           }
         }
       },
-      "TLSCertificate": {
+      "TlsCertificate": {
         "type": "object",
         "properties": {
           "id": {
@@ -14880,7 +14743,7 @@
             "description": "subject common name from the leaf of this TLS certificate\n"
           },
           "subject_alternative_names": {
-            "$ref": "#/components/schemas/TLSCertificateSANs"
+            "$ref": "#/components/schemas/TlsCertificateSaNs"
           },
           "issued_at": {
             "type": "string",
@@ -14942,13 +14805,13 @@
           }
         }
       },
-      "TLSCertificateList": {
+      "TlsCertificateList": {
         "type": "object",
         "properties": {
           "tls_certificates": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TLSCertificate"
+              "$ref": "#/components/schemas/TlsCertificate"
             },
             "description": "the list of all TLS certificates on this account\n"
           },
@@ -14962,7 +14825,7 @@
           }
         }
       },
-      "TLSCertificateSANs": {
+      "TlsCertificateSaNs": {
         "type": "object",
         "properties": {
           "dns_names": {
@@ -15009,19 +14872,18 @@
             "description": "identifier of tune region where the tunnel is running\n"
           },
           "tunnel_session": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "endpoint": {
-            "$ref": "#/components/schemas/Ref"
+            "$ref": "#/components/schemas/RefType"
           },
           "labels": {
-            "type": "object",
-            "description": "the labels the tunnel group backends will match against, if this is a backend tunnel\n"
+            "$ref": "#/components/schemas/TunnelLabelsProperty"
           },
           "backends": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Ref"
+              "$ref": "#/components/schemas/RefType"
             },
             "description": "tunnel group backends served by this backend tunnel\n"
           },
@@ -15150,9 +15012,442 @@
           }
         }
       },
+      "HttpResponseBackendHeaders": {
+        "type": "object",
+        "description": "headers to return\n"
+      },
+      "HttpResponseBackendCreateHeaders": {
+        "type": "object",
+        "description": "headers to return\n"
+      },
+      "HttpResponseBackendUpdateHeaders": {
+        "type": "object",
+        "description": "headers to return\n"
+      },
+      "TunnelGroupBackendLabels": {
+        "type": "object",
+        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+      },
+      "TunnelGroupBackendCreateLabels": {
+        "type": "object",
+        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+      },
+      "TunnelGroupBackendUpdateLabels": {
+        "type": "object",
+        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+      },
+      "WeightedBackendBackends": {
+        "type": "object",
+        "description": "the ids of the child backends to their weights [0-10000]\n"
+      },
+      "WeightedBackendCreateBackends": {
+        "type": "object",
+        "description": "the ids of the child backends to their weights [0-10000]\n"
+      },
+      "WeightedBackendUpdateBackends": {
+        "type": "object",
+        "description": "the ids of the child backends to their weights [0-10000]\n"
+      },
+      "EndpointRequestHeadersAdd": {
+        "type": "object",
+        "description": "a map of header key to header value that will be injected into the HTTP Request before being sent to the upstream application server\n"
+      },
+      "EndpointResponseHeadersAdd": {
+        "type": "object",
+        "description": "a map of header key to header value that will be injected into the HTTP Response returned to the HTTP client\n"
+      },
+      "SshUserCertificateCreateCriticalOptions": {
+        "type": "object",
+        "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+      },
+      "SshUserCertificateCreateExtensions": {
+        "type": "object",
+        "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+      },
+      "SshUserCertificateCriticalOptions": {
+        "type": "object",
+        "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+      },
+      "SshUserCertificateExtensions": {
+        "type": "object",
+        "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+      },
+      "TunnelLabels": {
+        "type": "object",
+        "description": "the labels the tunnel group backends will match against, if this is a backend tunnel\n"
+      },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
+      },
+      "DefaultResponse": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson2": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson3": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson4": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson5": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson6": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson7": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson8": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson9": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson10": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson11": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson12": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson13": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson14": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson15": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson16": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson17": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson18": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson19": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson20": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson21": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson22": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson23": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson24": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson25": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson26": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson27": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson28": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson29": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson30": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson31": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson32": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson33": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson34": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson35": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson36": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson37": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson38": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson39": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson40": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson41": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson42": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson43": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson44": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson45": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson46": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson47": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson48": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson49": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson50": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson51": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson52": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson53": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson54": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson55": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson56": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson57": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson58": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson59": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson60": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "HttpResponseBackendHeadersProperty": {
+        "type": "object",
+        "description": "headers to return\n"
+      },
+      "HttpResponseBackendCreateHeadersProperty": {
+        "type": "object",
+        "description": "headers to return\n"
+      },
+      "HttpResponseBackendUpdateHeadersProperty": {
+        "type": "object",
+        "description": "headers to return\n"
+      },
+      "TunnelGroupBackendLabelsProperty": {
+        "type": "object",
+        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+      },
+      "TunnelGroupBackendCreateLabelsProperty": {
+        "type": "object",
+        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+      },
+      "TunnelGroupBackendUpdateLabelsProperty": {
+        "type": "object",
+        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+      },
+      "WeightedBackendBackendsProperty": {
+        "type": "object",
+        "description": "the ids of the child backends to their weights [0-10000]\n"
+      },
+      "WeightedBackendCreateBackendsProperty": {
+        "type": "object",
+        "description": "the ids of the child backends to their weights [0-10000]\n"
+      },
+      "WeightedBackendUpdateBackendsProperty": {
+        "type": "object",
+        "description": "the ids of the child backends to their weights [0-10000]\n"
+      },
+      "EndpointRequestHeadersAddProperty": {
+        "type": "object",
+        "description": "a map of header key to header value that will be injected into the HTTP Request before being sent to the upstream application server\n"
+      },
+      "EndpointResponseHeadersAddProperty": {
+        "type": "object",
+        "description": "a map of header key to header value that will be injected into the HTTP Response returned to the HTTP client\n"
+      },
+      "SshUserCertificateCreateCriticalOptionsProperty": {
+        "type": "object",
+        "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+      },
+      "SshUserCertificateCreateExtensionsProperty": {
+        "type": "object",
+        "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+      },
+      "SshUserCertificateCriticalOptionsProperty": {
+        "type": "object",
+        "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+      },
+      "SshUserCertificateExtensionsProperty": {
+        "type": "object",
+        "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+      },
+      "TunnelLabelsProperty": {
+        "type": "object",
+        "description": "the labels the tunnel group backends will match against, if this is a backend tunnel\n"
       }
     },
     "parameters": {

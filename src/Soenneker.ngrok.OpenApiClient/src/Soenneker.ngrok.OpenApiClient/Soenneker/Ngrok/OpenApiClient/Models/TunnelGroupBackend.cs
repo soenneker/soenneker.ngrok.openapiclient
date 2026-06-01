@@ -41,10 +41,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>labels to watch for tunnels on, e.g. app-&gt;foo, dc-&gt;bar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend_labels? Labels { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendLabelsProperty? Labels { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend_labels Labels { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendLabelsProperty Labels { get; set; }
 #endif
         /// <summary>arbitrary user-defined machine-readable data of this backend. Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>tunnels matching this backend</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>? Tunnels { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>? Tunnels { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.Ref> Tunnels { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType> Tunnels { get; set; }
 #endif
         /// <summary>URI of the TunnelGroupBackend API resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,9 +98,9 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend_labels>(global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend_labels.CreateFromDiscriminatorValue); } },
+                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendLabelsProperty>(global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendLabelsProperty.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
-                { "tunnels", n => { Tunnels = n.GetCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tunnels", n => { Tunnels = n.GetCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -114,9 +114,9 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend_labels>("labels", Labels);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendLabelsProperty>("labels", Labels);
             writer.WriteStringValue("metadata", Metadata);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("tunnels", Tunnels);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("tunnels", Tunnels);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -49,10 +49,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The tls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTLS? Tls { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTls? Tls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTLS Tls { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTls Tls { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendUpdate"/> and sets the default values.
@@ -83,7 +83,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
-                { "tls", n => { Tls = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTLS>(global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTLS.CreateFromDiscriminatorValue); } },
+                { "tls", n => { Tls = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTls>(global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTls.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTLS>("tls", Tls);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.StaticBackendTls>("tls", Tls);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

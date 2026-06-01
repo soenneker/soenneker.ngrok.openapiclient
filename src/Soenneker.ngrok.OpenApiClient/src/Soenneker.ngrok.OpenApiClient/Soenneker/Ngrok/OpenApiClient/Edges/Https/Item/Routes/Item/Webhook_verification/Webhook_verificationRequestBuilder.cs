@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Webhook_verification
 {
     /// <summary>
-    /// Builds and executes requests for operations under \edges\https\{edge_-id}\routes\{id}\webhook_verification
+    /// Builds and executes requests for operations under \edges\https\{edge-id}\routes\{id}\webhook_verification
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Webhook_verificationRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Webhook_ver
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Webhook_verificationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge_%2Did}/routes/{id}/webhook_verification", pathParameters)
+        public Webhook_verificationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge%2Did}/routes/{id}/webhook_verification", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Routes.Item.Webhook_ver
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Webhook_verificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge_%2Did}/routes/{id}/webhook_verification", rawUrl)
+        public Webhook_verificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/edges/https/{edge%2Did}/routes/{id}/webhook_verification", rawUrl)
         {
         }
         /// <summary>

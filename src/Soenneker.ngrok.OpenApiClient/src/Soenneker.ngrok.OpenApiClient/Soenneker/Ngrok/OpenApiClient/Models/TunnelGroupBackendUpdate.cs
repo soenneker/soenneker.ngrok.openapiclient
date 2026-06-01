@@ -33,10 +33,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>labels to watch for tunnels on, e.g. app-&gt;foo, dc-&gt;bar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdate_labels? Labels { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdateLabelsProperty? Labels { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdate_labels Labels { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdateLabelsProperty Labels { get; set; }
 #endif
         /// <summary>arbitrary user-defined machine-readable data of this backend. Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdate_labels>(global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdate_labels.CreateFromDiscriminatorValue); } },
+                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdateLabelsProperty>(global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdateLabelsProperty.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdate_labels>("labels", Labels);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendUpdateLabelsProperty>("labels", Labels);
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteAdditionalData(AdditionalData);
         }

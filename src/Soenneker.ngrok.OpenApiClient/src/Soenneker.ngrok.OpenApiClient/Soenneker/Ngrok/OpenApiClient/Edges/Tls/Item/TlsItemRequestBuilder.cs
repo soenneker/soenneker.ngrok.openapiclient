@@ -83,40 +83,40 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Tls.Item
         /// <summary>
         /// Get a TLS Edge by ID
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a TLS Edge by ID. If a module is not specified in the update, it will not be modified. However, each module configuration that is specified will completely replace the existing value. There is no way to delete an existing module via this API, instead use the delete module API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge?> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdgeUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge?> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdgeUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdgeUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdgeUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdge.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdge.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a TLS Edge by ID
@@ -164,11 +164,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Tls.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdgeUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdgeUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.TLSEdgeUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.TlsEdgeUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

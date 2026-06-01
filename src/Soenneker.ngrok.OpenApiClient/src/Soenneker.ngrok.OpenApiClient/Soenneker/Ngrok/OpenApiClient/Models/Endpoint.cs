@@ -41,18 +41,18 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Domain { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Domain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Domain { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Domain { get; set; }
 #endif
         /// <summary>The edge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Edge { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Edge { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Edge { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Edge { get; set; }
 #endif
         /// <summary>n/a</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,10 +101,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The principal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Principal { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Principal { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Principal { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Principal { get; set; }
 #endif
         /// <summary>protocol served by this endpoint. one of `http`, `https`, `tcp`, or `tls`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,10 +141,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The tcp_addr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? TcpAddr { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? TcpAddr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref TcpAddr { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType TcpAddr { get; set; }
 #endif
         /// <summary>The traffic policy attached to this endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,18 +157,18 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The tunnel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Tunnel { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Tunnel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Tunnel { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Tunnel { get; set; }
 #endif
         /// <summary>The tunnel_session property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? TunnelSession { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? TunnelSession { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref TunnelSession { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType TunnelSession { get; set; }
 #endif
         /// <summary>whether the endpoint is `ephemeral` (served directly by an agent-initiated tunnel) or `edge` (served by an edge) or `cloud (represents a cloud endpoint)`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -246,8 +246,8 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
                 { "bindings", n => { Bindings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "domain", n => { Domain = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
-                { "edge", n => { Edge = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "domain", n => { Domain = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
+                { "edge", n => { Edge = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "hostport", n => { Hostport = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -255,15 +255,15 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "pooling_enabled", n => { PoolingEnabled = n.GetBoolValue(); } },
                 { "port", n => { Port = n.GetIntValue(); } },
-                { "principal", n => { Principal = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "principal", n => { Principal = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "proto", n => { Proto = n.GetStringValue(); } },
                 { "public_url", n => { PublicUrl = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "scheme", n => { Scheme = n.GetStringValue(); } },
-                { "tcp_addr", n => { TcpAddr = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "tcp_addr", n => { TcpAddr = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "traffic_policy", n => { TrafficPolicy = n.GetStringValue(); } },
-                { "tunnel", n => { Tunnel = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
-                { "tunnel_session", n => { TunnelSession = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "tunnel", n => { Tunnel = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
+                { "tunnel_session", n => { TunnelSession = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "upstream_protocol", n => { UpstreamProtocol = n.GetStringValue(); } },
@@ -282,8 +282,8 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("bindings", Bindings);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("domain", Domain);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("edge", Edge);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("domain", Domain);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("edge", Edge);
             writer.WriteStringValue("host", Host);
             writer.WriteStringValue("hostport", Hostport);
             writer.WriteStringValue("id", Id);
@@ -291,15 +291,15 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("pooling_enabled", PoolingEnabled);
             writer.WriteIntValue("port", Port);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("principal", Principal);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("principal", Principal);
             writer.WriteStringValue("proto", Proto);
             writer.WriteStringValue("public_url", PublicUrl);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("scheme", Scheme);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("tcp_addr", TcpAddr);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("tcp_addr", TcpAddr);
             writer.WriteStringValue("traffic_policy", TrafficPolicy);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("tunnel", Tunnel);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("tunnel_session", TunnelSession);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("tunnel", Tunnel);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("tunnel_session", TunnelSession);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("upstream_protocol", UpstreamProtocol);

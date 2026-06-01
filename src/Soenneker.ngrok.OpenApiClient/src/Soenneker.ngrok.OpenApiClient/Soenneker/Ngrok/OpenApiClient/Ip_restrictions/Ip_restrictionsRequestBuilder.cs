@@ -49,40 +49,40 @@ namespace Soenneker.Ngrok.OpenApiClient.Ip_restrictions
         /// <summary>
         /// List all IP restrictions on this account
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.IPRestrictionList"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.IpRestrictionList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.IPRestrictionList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Ip_restrictions.Ip_restrictionsRequestBuilder.Ip_restrictionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.IpRestrictionList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Ip_restrictions.Ip_restrictionsRequestBuilder.Ip_restrictionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.IPRestrictionList> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Ip_restrictions.Ip_restrictionsRequestBuilder.Ip_restrictionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.IpRestrictionList> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Ip_restrictions.Ip_restrictionsRequestBuilder.Ip_restrictionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.IPRestrictionList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.IPRestrictionList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.IpRestrictionList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.IpRestrictionList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new IP restriction
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.IPRestriction"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.IpRestriction"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.IPRestriction?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.IPRestrictionCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.IpRestriction?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.IpRestrictionCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.IPRestriction> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.IPRestrictionCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.IpRestriction> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.IpRestrictionCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.IPRestriction>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.IPRestriction.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.IpRestriction>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.IpRestriction.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all IP restrictions on this account
@@ -111,11 +111,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Ip_restrictions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.IPRestrictionCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.IpRestrictionCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.IPRestrictionCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.IpRestrictionCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

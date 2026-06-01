@@ -53,40 +53,40 @@ namespace Soenneker.Ngrok.OpenApiClient.Ssh_host_certificates.Item
         /// <summary>
         /// Get detailed information about an SSH Host Certificate
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an SSH Host Certificate
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate?> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificateUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate?> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificateUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificateUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificateUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an SSH Host Certificate
@@ -134,11 +134,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Ssh_host_certificates.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificateUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificateUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.SSHHostCertificateUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.SshHostCertificateUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

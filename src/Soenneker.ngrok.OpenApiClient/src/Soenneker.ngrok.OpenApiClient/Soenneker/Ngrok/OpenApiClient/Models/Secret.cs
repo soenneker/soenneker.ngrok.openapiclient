@@ -25,10 +25,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? CreatedBy { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref CreatedBy { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType CreatedBy { get; set; }
 #endif
         /// <summary>description of Secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The last_updated_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? LastUpdatedBy { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? LastUpdatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref LastUpdatedBy { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType LastUpdatedBy { get; set; }
 #endif
         /// <summary>Arbitrary user-defined metadata for this Secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The vault property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Vault { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Vault { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Vault { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Vault { get; set; }
 #endif
         /// <summary>Name of the vault the secret is stored in</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,15 +128,15 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "last_updated_by", n => { LastUpdatedBy = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "last_updated_by", n => { LastUpdatedBy = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
-                { "vault", n => { Vault = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "vault", n => { Vault = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "vault_name", n => { VaultName = n.GetStringValue(); } },
             };
         }
@@ -148,15 +148,15 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("created_by", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("last_updated_by", LastUpdatedBy);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("last_updated_by", LastUpdatedBy);
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("uri", Uri);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("vault", Vault);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("vault", Vault);
             writer.WriteStringValue("vault_name", VaultName);
             writer.WriteAdditionalData(AdditionalData);
         }

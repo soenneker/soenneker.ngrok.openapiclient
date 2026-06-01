@@ -25,10 +25,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The credential property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Credential { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Credential { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Credential { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Credential { get; set; }
 #endif
         /// <summary>unique tunnel session resource identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_version", n => { AgentVersion = n.GetStringValue(); } },
-                { "credential", n => { Credential = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "credential", n => { Credential = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
@@ -139,7 +139,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_version", AgentVersion);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("credential", Credential);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("credential", Credential);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("ip", Ip);
             writer.WriteStringValue("metadata", Metadata);

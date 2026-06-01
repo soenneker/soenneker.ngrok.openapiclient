@@ -33,10 +33,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>Destinations to which these events will be sent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>? Destinations { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>? Destinations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.Ref> Destinations { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType> Destinations { get; set; }
 #endif
         /// <summary>Unique identifier for this Event Subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
                 { "sources", n => { Sources = n.GetCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.EventSource>(global::Soenneker.Ngrok.OpenApiClient.Models.EventSource.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -113,7 +113,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("destinations", Destinations);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("destinations", Destinations);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.EventSource>("sources", Sources);

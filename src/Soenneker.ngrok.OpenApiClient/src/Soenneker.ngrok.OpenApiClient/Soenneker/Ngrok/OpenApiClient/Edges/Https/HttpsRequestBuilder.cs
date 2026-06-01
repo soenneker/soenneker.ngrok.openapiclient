@@ -20,14 +20,14 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https
     {
         /// <summary>Gets an item from the Soenneker.ngrok.OpenApiClient.edges.https.item collection</summary>
         /// <param name="position">a resource identifier</param>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Edge_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Edge_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.EdgeItemRequestBuilder"/></returns>
+        public global::Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.EdgeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("edge_%2Did", position);
-                return new global::Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Edge_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("edge%2Did", position);
+                return new global::Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.EdgeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -49,40 +49,40 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https
         /// <summary>
         /// Returns a list of all HTTPS Edges on this account
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdgeList"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdgeList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Edges.Https.HttpsRequestBuilder.HttpsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Edges.Https.HttpsRequestBuilder.HttpsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdgeList> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Edges.Https.HttpsRequestBuilder.HttpsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeList> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Edges.Https.HttpsRequestBuilder.HttpsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdgeList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdgeList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an HTTPS Edge
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdge"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdge"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdge?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdgeCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdge?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdge> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdgeCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdge> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdge>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdge.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdge>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdge.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of all HTTPS Edges on this account
@@ -111,11 +111,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdgeCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.HTTPSEdgeCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

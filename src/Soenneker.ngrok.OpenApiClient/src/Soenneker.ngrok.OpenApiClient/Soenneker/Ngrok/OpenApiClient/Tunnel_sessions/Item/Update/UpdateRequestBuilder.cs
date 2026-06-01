@@ -36,22 +36,22 @@ namespace Soenneker.Ngrok.OpenApiClient.Tunnel_sessions.Item.Update
         /// <summary>
         /// &quot;Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent&apos;s configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Tunnel_sessions.Item.Update.UpdatePostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.DefaultResponseResponseJson6"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Tunnel_sessions.Item.Update.UpdatePostResponse?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionsUpdateBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.DefaultResponseResponseJson6?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionsUpdateBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Tunnel_sessions.Item.Update.UpdatePostResponse> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionsUpdateBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.DefaultResponseResponseJson6> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionsUpdateBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Tunnel_sessions.Item.Update.UpdatePostResponse>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Tunnel_sessions.Item.Update.UpdatePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.DefaultResponseResponseJson6>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.DefaultResponseResponseJson6.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent&apos;s configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted&quot;

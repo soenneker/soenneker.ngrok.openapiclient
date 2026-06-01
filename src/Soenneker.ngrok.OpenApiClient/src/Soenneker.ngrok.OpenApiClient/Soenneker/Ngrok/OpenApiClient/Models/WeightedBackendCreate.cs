@@ -17,10 +17,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>the ids of the child backends to their weights [0-10000]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreate_backends? Backends { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreateBackendsProperty? Backends { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreate_backends Backends { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreateBackendsProperty Backends { get; set; }
 #endif
         /// <summary>human-readable description of this backend. Optional</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "backends", n => { Backends = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreate_backends>(global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreate_backends.CreateFromDiscriminatorValue); } },
+                { "backends", n => { Backends = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreateBackendsProperty>(global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreateBackendsProperty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreate_backends>("backends", Backends);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.WeightedBackendCreateBackendsProperty>("backends", Backends);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteAdditionalData(AdditionalData);

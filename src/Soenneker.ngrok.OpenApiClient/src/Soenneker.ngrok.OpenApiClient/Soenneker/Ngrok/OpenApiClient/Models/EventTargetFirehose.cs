@@ -17,10 +17,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The auth property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.AWSAuth? Auth { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth? Auth { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.AWSAuth Auth { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth Auth { get; set; }
 #endif
         /// <summary>An Amazon Resource Name specifying the Firehose delivery stream to deposit events into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.AWSAuth>(global::Soenneker.Ngrok.OpenApiClient.Models.AWSAuth.CreateFromDiscriminatorValue); } },
+                { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth>(global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth.CreateFromDiscriminatorValue); } },
                 { "delivery_stream_arn", n => { DeliveryStreamArn = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.AWSAuth>("auth", Auth);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth>("auth", Auth);
             writer.WriteStringValue("delivery_stream_arn", DeliveryStreamArn);
             writer.WriteAdditionalData(AdditionalData);
         }

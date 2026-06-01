@@ -25,10 +25,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref? Certificate { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Certificate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.Ref Certificate { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Certificate { get; set; }
 #endif
         /// <summary>The certificate_management_policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "acme_challenge_cname_target", n => { AcmeChallengeCnameTarget = n.GetStringValue(); } },
-                { "certificate", n => { Certificate = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>(global::Soenneker.Ngrok.OpenApiClient.Models.Ref.CreateFromDiscriminatorValue); } },
+                { "certificate", n => { Certificate = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "certificate_management_policy", n => { CertificateManagementPolicy = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy>(global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy.CreateFromDiscriminatorValue); } },
                 { "certificate_management_status", n => { CertificateManagementStatus = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus>(global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus.CreateFromDiscriminatorValue); } },
                 { "cname_target", n => { CnameTarget = n.GetStringValue(); } },
@@ -166,7 +166,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("acme_challenge_cname_target", AcmeChallengeCnameTarget);
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.Ref>("certificate", Certificate);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("certificate", Certificate);
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy>("certificate_management_policy", CertificateManagementPolicy);
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus>("certificate_management_status", CertificateManagementStatus);
             writer.WriteStringValue("cname_target", CnameTarget);

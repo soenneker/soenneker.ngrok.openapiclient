@@ -15,10 +15,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>a map of header key to header value that will be injected into the HTTP Request before being sent to the upstream application server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders_add? Add { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeadersAddProperty? Add { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders_add Add { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeadersAddProperty Add { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "add", n => { Add = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders_add>(global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders_add.CreateFromDiscriminatorValue); } },
+                { "add", n => { Add = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeadersAddProperty>(global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeadersAddProperty.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "remove", n => { Remove = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders_add>("add", Add);
+            writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeadersAddProperty>("add", Add);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfPrimitiveValues<string>("remove", Remove);
             writer.WriteAdditionalData(AdditionalData);
