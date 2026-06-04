@@ -98,7 +98,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Event_subscriptions
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Event_subscriptions.Event_subscriptionsRequestBuilder.Event_subscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/event_subscriptions{?before_id*,filter*,limit*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -119,7 +119,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Event_subscriptions
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/event_subscriptions", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

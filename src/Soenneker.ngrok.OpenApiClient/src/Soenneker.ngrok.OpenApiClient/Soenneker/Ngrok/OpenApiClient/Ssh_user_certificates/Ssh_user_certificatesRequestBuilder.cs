@@ -98,7 +98,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Ssh_user_certificates
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Ssh_user_certificates.Ssh_user_certificatesRequestBuilder.Ssh_user_certificatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/ssh_user_certificates{?before_id*,limit*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -119,7 +119,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Ssh_user_certificates
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/ssh_user_certificates", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
