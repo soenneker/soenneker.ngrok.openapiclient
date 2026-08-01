@@ -195,7 +195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/AgentIngressesDelete204Response"
                 }
               }
             }
@@ -392,7 +392,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/ApiKeysDelete204Response"
                 }
               }
             }
@@ -579,7 +579,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/ApplicationSessionsDelete204Response"
                 }
               }
             }
@@ -690,7 +690,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
+                  "$ref": "#/components/schemas/ApplicationUsersDelete204Response"
                 }
               }
             }
@@ -822,7 +822,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
+                  "$ref": "#/components/schemas/TunnelSessionsRestart201Response"
                 }
               }
             }
@@ -867,7 +867,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
+                  "$ref": "#/components/schemas/TunnelSessionsStop201Response"
                 }
               }
             }
@@ -911,7 +911,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
+                  "$ref": "#/components/schemas/TunnelSessionsUpdate201Response"
                 }
               }
             }
@@ -1022,7 +1022,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
+                  "$ref": "#/components/schemas/FailoverBackendsDelete204Response"
                 }
               }
             }
@@ -1206,7 +1206,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
+                  "$ref": "#/components/schemas/HttpResponseBackendsDelete204Response"
                 }
               }
             }
@@ -1391,7 +1391,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
+                  "$ref": "#/components/schemas/StaticBackendsDelete204Response"
                 }
               }
             }
@@ -1578,7 +1578,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
+                  "$ref": "#/components/schemas/TunnelGroupBackendsDelete204Response"
                 }
               }
             }
@@ -1765,7 +1765,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson11"
+                  "$ref": "#/components/schemas/WeightedBackendsDelete204Response"
                 }
               }
             }
@@ -1952,7 +1952,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson12"
+                  "$ref": "#/components/schemas/BotUsersDelete204Response"
                 }
               }
             }
@@ -2149,7 +2149,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson13"
+                  "$ref": "#/components/schemas/CertificateAuthoritiesDelete204Response"
                 }
               }
             }
@@ -2346,7 +2346,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson14"
+                  "$ref": "#/components/schemas/CredentialsDelete204Response"
                 }
               }
             }
@@ -2607,7 +2607,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson15"
+                  "$ref": "#/components/schemas/EdgesHttpsRoutesDelete204Response"
                 }
               }
             }
@@ -2795,7 +2795,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson16"
+                  "$ref": "#/components/schemas/EdgesHttpsDelete204Response"
                 }
               }
             }
@@ -2904,7 +2904,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson17"
+                  "$ref": "#/components/schemas/HttpsEdgeMutualTlsModuleDelete204Response"
                 }
               }
             }
@@ -3013,7 +3013,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson18"
+                  "$ref": "#/components/schemas/HttpsEdgeTlsTerminationModuleDelete204Response"
                 }
               }
             }
@@ -3148,7 +3148,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson19"
+                  "$ref": "#/components/schemas/EdgeRouteBackendModuleDelete204Response"
                 }
               }
             }
@@ -3283,7 +3283,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson20"
+                  "$ref": "#/components/schemas/EdgeRouteIpRestrictionModuleDelete204Response"
                 }
               }
             }
@@ -3418,7 +3418,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson21"
+                  "$ref": "#/components/schemas/EdgeRouteRequestHeadersModuleDelete204Response"
                 }
               }
             }
@@ -3553,7 +3553,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson22"
+                  "$ref": "#/components/schemas/EdgeRouteResponseHeadersModuleDelete204Response"
                 }
               }
             }
@@ -3688,7 +3688,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson23"
+                  "$ref": "#/components/schemas/EdgeRouteCompressionModuleDelete204Response"
                 }
               }
             }
@@ -3823,7 +3823,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson24"
+                  "$ref": "#/components/schemas/EdgeRouteCircuitBreakerModuleDelete204Response"
                 }
               }
             }
@@ -3958,7 +3958,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson25"
+                  "$ref": "#/components/schemas/EdgeRouteWebhookVerificationModuleDelete204Response"
                 }
               }
             }
@@ -4093,7 +4093,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson26"
+                  "$ref": "#/components/schemas/EdgeRouteOAuthModuleDelete204Response"
                 }
               }
             }
@@ -4228,7 +4228,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson27"
+                  "$ref": "#/components/schemas/EdgeRouteSamlModuleDelete204Response"
                 }
               }
             }
@@ -4363,7 +4363,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson28"
+                  "$ref": "#/components/schemas/EdgeRouteOidcModuleDelete204Response"
                 }
               }
             }
@@ -4498,7 +4498,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson29"
+                  "$ref": "#/components/schemas/EdgeRouteWebsocketTcpConverterModuleDelete204Response"
                 }
               }
             }
@@ -4633,7 +4633,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson30"
+                  "$ref": "#/components/schemas/EdgeRouteUserAgentFilterModuleDelete204Response"
                 }
               }
             }
@@ -4768,7 +4768,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson31"
+                  "$ref": "#/components/schemas/EdgeRouteTrafficPolicyModuleDelete204Response"
                 }
               }
             }
@@ -4956,7 +4956,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson32"
+                  "$ref": "#/components/schemas/EdgesTcpDelete204Response"
                 }
               }
             }
@@ -5065,7 +5065,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson33"
+                  "$ref": "#/components/schemas/TcpEdgeBackendModuleDelete204Response"
                 }
               }
             }
@@ -5174,7 +5174,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson34"
+                  "$ref": "#/components/schemas/TcpEdgeIpRestrictionModuleDelete204Response"
                 }
               }
             }
@@ -5283,7 +5283,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson35"
+                  "$ref": "#/components/schemas/TcpEdgeTrafficPolicyModuleDelete204Response"
                 }
               }
             }
@@ -5471,7 +5471,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
+                  "$ref": "#/components/schemas/EdgesTlsDelete204Response"
                 }
               }
             }
@@ -5580,7 +5580,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
+                  "$ref": "#/components/schemas/TlsEdgeBackendModuleDelete204Response"
                 }
               }
             }
@@ -5689,7 +5689,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
+                  "$ref": "#/components/schemas/TlsEdgeIpRestrictionModuleDelete204Response"
                 }
               }
             }
@@ -5798,7 +5798,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
+                  "$ref": "#/components/schemas/TlsEdgeMutualTlsModuleDelete204Response"
                 }
               }
             }
@@ -5907,7 +5907,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson40"
+                  "$ref": "#/components/schemas/TlsEdgeTlsTerminationModuleDelete204Response"
                 }
               }
             }
@@ -6016,7 +6016,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson41"
+                  "$ref": "#/components/schemas/TlsEdgeTrafficPolicyModuleDelete204Response"
                 }
               }
             }
@@ -6238,7 +6238,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson42"
+                  "$ref": "#/components/schemas/EndpointsDelete204Response"
                 }
               }
             }
@@ -6359,7 +6359,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson43"
+                  "$ref": "#/components/schemas/EventDestinationsDelete204Response"
                 }
               }
             }
@@ -6557,7 +6557,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson44"
+                  "$ref": "#/components/schemas/EventSubscriptionsDelete204Response"
                 }
               }
             }
@@ -6758,7 +6758,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson45"
+                  "$ref": "#/components/schemas/EventSourcesDelete204Response"
                 }
               }
             }
@@ -6974,7 +6974,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson46"
+                  "$ref": "#/components/schemas/IpPoliciesDelete204Response"
                 }
               }
             }
@@ -7171,7 +7171,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson47"
+                  "$ref": "#/components/schemas/IpPolicyRulesDelete204Response"
                 }
               }
             }
@@ -7368,7 +7368,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson48"
+                  "$ref": "#/components/schemas/IpRestrictionsDelete204Response"
                 }
               }
             }
@@ -7565,7 +7565,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson49"
+                  "$ref": "#/components/schemas/ReservedAddrsDelete204Response"
                 }
               }
             }
@@ -7762,7 +7762,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson50"
+                  "$ref": "#/components/schemas/ReservedDomainsDelete204Response"
                 }
               }
             }
@@ -7874,7 +7874,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson51"
+                  "$ref": "#/components/schemas/ReservedDomainsDeleteCertificate204Response"
                 }
               }
             }
@@ -7910,7 +7910,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson52"
+                  "$ref": "#/components/schemas/ReservedDomainsDeleteCertificateManagementPolicy204Response"
                 }
               }
             }
@@ -8074,7 +8074,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson53"
+                  "$ref": "#/components/schemas/SecretsDelete204Response"
                 }
               }
             }
@@ -8229,7 +8229,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson54"
+                  "$ref": "#/components/schemas/ServiceUsersDelete204Response"
                 }
               }
             }
@@ -8426,7 +8426,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson55"
+                  "$ref": "#/components/schemas/SshCertificateAuthoritiesDelete204Response"
                 }
               }
             }
@@ -8623,7 +8623,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson56"
+                  "$ref": "#/components/schemas/SshCredentialsDelete204Response"
                 }
               }
             }
@@ -8810,7 +8810,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson57"
+                  "$ref": "#/components/schemas/SshHostCertificatesDelete204Response"
                 }
               }
             }
@@ -8997,7 +8997,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson58"
+                  "$ref": "#/components/schemas/SshUserCertificatesDelete204Response"
                 }
               }
             }
@@ -9194,7 +9194,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson59"
+                  "$ref": "#/components/schemas/TlsCertificatesDelete204Response"
                 }
               }
             }
@@ -9511,7 +9511,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson60"
+                  "$ref": "#/components/schemas/VaultsDelete204Response"
                 }
               }
             }
@@ -15080,307 +15080,307 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "DefaultResponse": {
+      "AgentIngressesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson": {
+      "ApiKeysDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson2": {
+      "ApplicationSessionsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson3": {
+      "ApplicationUsersDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson4": {
+      "TunnelSessionsRestart201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson5": {
+      "TunnelSessionsStop201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson6": {
+      "TunnelSessionsUpdate201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson7": {
+      "FailoverBackendsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson8": {
+      "HttpResponseBackendsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson9": {
+      "StaticBackendsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson10": {
+      "TunnelGroupBackendsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson11": {
+      "WeightedBackendsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson12": {
+      "BotUsersDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson13": {
+      "CertificateAuthoritiesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson14": {
+      "CredentialsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson15": {
+      "EdgesHttpsRoutesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson16": {
+      "EdgesHttpsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson17": {
+      "HttpsEdgeMutualTlsModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson18": {
+      "HttpsEdgeTlsTerminationModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson19": {
+      "EdgeRouteBackendModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson20": {
+      "EdgeRouteIpRestrictionModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson21": {
+      "EdgeRouteRequestHeadersModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson22": {
+      "EdgeRouteResponseHeadersModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson23": {
+      "EdgeRouteCompressionModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson24": {
+      "EdgeRouteCircuitBreakerModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson25": {
+      "EdgeRouteWebhookVerificationModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson26": {
+      "EdgeRouteOAuthModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson27": {
+      "EdgeRouteSamlModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson28": {
+      "EdgeRouteOidcModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson29": {
+      "EdgeRouteWebsocketTcpConverterModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson30": {
+      "EdgeRouteUserAgentFilterModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson31": {
+      "EdgeRouteTrafficPolicyModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson32": {
+      "EdgesTcpDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson33": {
+      "TcpEdgeBackendModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson34": {
+      "TcpEdgeIpRestrictionModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson35": {
+      "TcpEdgeTrafficPolicyModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson36": {
+      "EdgesTlsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson37": {
+      "TlsEdgeBackendModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson38": {
+      "TlsEdgeIpRestrictionModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson39": {
+      "TlsEdgeMutualTlsModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson40": {
+      "TlsEdgeTlsTerminationModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson41": {
+      "TlsEdgeTrafficPolicyModuleDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson42": {
+      "EndpointsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson43": {
+      "EventDestinationsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson44": {
+      "EventSubscriptionsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson45": {
+      "EventSourcesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson46": {
+      "IpPoliciesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson47": {
+      "IpPolicyRulesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson48": {
+      "IpRestrictionsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson49": {
+      "ReservedAddrsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson50": {
+      "ReservedDomainsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson51": {
+      "ReservedDomainsDeleteCertificate204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson52": {
+      "ReservedDomainsDeleteCertificateManagementPolicy204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson53": {
+      "SecretsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson54": {
+      "ServiceUsersDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson55": {
+      "SshCertificateAuthoritiesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson56": {
+      "SshCredentialsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson57": {
+      "SshHostCertificatesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson58": {
+      "SshUserCertificatesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson59": {
+      "TlsCertificatesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson60": {
+      "VaultsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
