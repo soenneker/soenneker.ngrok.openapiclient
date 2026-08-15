@@ -150,7 +150,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Certificate_authorities
             [QueryParameter("before_id")]
             public string BeforeId { get; set; }
 #endif
-            /// <summary>&quot;A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.&quot;</summary>
+            /// <summary>A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]

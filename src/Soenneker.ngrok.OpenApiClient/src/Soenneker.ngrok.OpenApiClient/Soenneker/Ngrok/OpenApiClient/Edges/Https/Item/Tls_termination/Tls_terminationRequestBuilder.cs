@@ -104,7 +104,6 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Https.Item.Tls_termination
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

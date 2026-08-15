@@ -54,7 +54,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string Metadata { get; set; }
 #endif
-        /// <summary>&quot;deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)&quot;</summary>
+        /// <summary>deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }

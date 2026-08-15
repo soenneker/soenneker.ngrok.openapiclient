@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Ngrok.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\&quot;permit-pty\&quot;: \&quot;\&quot;, \&quot;permit-user-rc\&quot;: \&quot;\&quot;}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.&quot;
+    /// A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{&quot;permit-pty&quot;: &quot;&quot;, &quot;permit-user-rc&quot;: &quot;&quot;}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SshUserCertificateExtensionsProperty : IAdditionalDataHolder, IParsable

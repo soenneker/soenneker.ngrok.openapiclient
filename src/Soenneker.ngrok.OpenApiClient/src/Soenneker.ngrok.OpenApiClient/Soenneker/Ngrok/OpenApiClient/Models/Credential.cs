@@ -54,7 +54,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string Metadata { get; set; }
 #endif
-        /// <summary>&quot;If supplied at credential creation, ownership will be assigned to the specified User or Service User. Only admins may specify an owner other than themselves. Defaults to the authenticated User or Service User. Accepts one of: User ID, User email, or SCIM User ID.&quot;</summary>
+        /// <summary>If supplied at credential creation, ownership will be assigned to the specified User or Service User. Only admins may specify an owner other than themselves. Defaults to the authenticated User or Service User. Accepts one of: User ID, User email, or SCIM User ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerId { get; set; }

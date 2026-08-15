@@ -78,7 +78,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointIpPolicy IpRestriction { get; set; }
 #endif
-        /// <summary>&quot;Route selector: \&quot;/blog\&quot; or \&quot;example.com\&quot; or \&quot;example.com/blog\&quot;&quot;</summary>
+        /// <summary>Route selector: &quot;/blog&quot; or &quot;example.com&quot; or &quot;example.com/blog&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Match { get; set; }

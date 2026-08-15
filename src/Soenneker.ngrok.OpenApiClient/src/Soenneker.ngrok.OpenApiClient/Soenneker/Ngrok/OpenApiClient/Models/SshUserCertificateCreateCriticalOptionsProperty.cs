@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Ngrok.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.&quot;
+    /// A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SshUserCertificateCreateCriticalOptionsProperty : IAdditionalDataHolder, IParsable

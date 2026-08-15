@@ -56,7 +56,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string Metadata { get; set; }
 #endif
-        /// <summary>&quot;the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: `dashboard`, `api`, `agent`, and `endpoints`&quot;</summary>
+        /// <summary>the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: `dashboard`, `api`, `agent`, and `endpoints`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

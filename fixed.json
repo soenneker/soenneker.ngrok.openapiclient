@@ -147,7 +147,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -191,14 +191,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AgentIngressesDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an Agent Ingress by ID\n"
           }
         }
       },
@@ -344,7 +337,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -388,14 +381,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiKeysDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an API key by ID\n"
           }
         }
       },
@@ -575,14 +561,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApplicationSessionsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an application session by ID.\n"
           }
         }
       }
@@ -686,14 +665,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApplicationUsersDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an application user by ID.\n"
           }
         }
       }
@@ -729,7 +701,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -817,15 +789,8 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TunnelSessionsRestart201Response"
-                }
-              }
-            }
+          "204": {
+            "description": "Issues a command instructing the ngrok agent to restart. The agent restarts itself by calling exec() on platforms that support it. This operation is notably not supported on Windows. When an agent restarts, it reconnects with a new tunnel session ID.\n"
           }
         }
       }
@@ -862,15 +827,8 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TunnelSessionsStop201Response"
-                }
-              }
-            }
+          "204": {
+            "description": "Issues a command instructing the ngrok agent that started this tunnel session to exit.\n"
           }
         }
       }
@@ -881,7 +839,7 @@
           "TunnelSessions"
         ],
         "summary": "Update",
-        "description": "\"Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent's configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted\n\"",
+        "description": "Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent's configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted\n",
         "operationId": "TunnelSessionsUpdate",
         "parameters": [
           {
@@ -906,15 +864,8 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TunnelSessionsUpdate201Response"
-                }
-              }
-            }
+          "204": {
+            "description": "Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent's configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted\n"
           }
         }
       }
@@ -1018,14 +969,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FailoverBackendsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a Failover backend by ID.\n"
           }
         }
       },
@@ -1202,14 +1146,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpResponseBackendsDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       },
@@ -1387,14 +1324,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StaticBackendsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a static backend by ID.\n"
           }
         }
       },
@@ -1574,14 +1504,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TunnelGroupBackendsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a TunnelGroup backend by ID.\n"
           }
         }
       },
@@ -1761,14 +1684,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/WeightedBackendsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a Weighted backend by ID.\n"
           }
         }
       },
@@ -1948,14 +1864,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BotUsersDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a bot user by ID\n"
           }
         }
       },
@@ -2101,7 +2010,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -2145,14 +2054,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CertificateAuthoritiesDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a Certificate Authority\n"
           }
         }
       },
@@ -2298,7 +2200,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -2342,14 +2244,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CredentialsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a tunnel authtoken credential by ID\n"
           }
         }
       },
@@ -2603,14 +2498,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgesHttpsRoutesDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an HTTPS Edge Route by ID\n"
           }
         }
       }
@@ -2791,14 +2679,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgesHttpsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an HTTPS Edge by ID\n"
           }
         }
       }
@@ -2900,14 +2781,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpsEdgeMutualTlsModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -3009,14 +2883,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpsEdgeTlsTerminationModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -3144,14 +3011,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteBackendModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -3279,14 +3139,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteIpRestrictionModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -3414,14 +3267,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteRequestHeadersModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -3549,14 +3395,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteResponseHeadersModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -3684,14 +3523,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteCompressionModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -3819,14 +3651,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteCircuitBreakerModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -3954,14 +3779,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteWebhookVerificationModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -4089,14 +3907,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteOAuthModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -4224,14 +4035,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteSamlModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -4359,14 +4163,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteOidcModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -4494,14 +4291,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteWebsocketTcpConverterModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -4629,14 +4419,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteUserAgentFilterModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -4764,14 +4547,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgeRouteTrafficPolicyModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -4952,14 +4728,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgesTcpDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a TCP Edge by ID\n"
           }
         }
       }
@@ -5061,14 +4830,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TcpEdgeBackendModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -5170,14 +4932,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TcpEdgeIpRestrictionModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -5279,14 +5034,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TcpEdgeTrafficPolicyModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -5467,14 +5215,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EdgesTlsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a TLS Edge by ID\n"
           }
         }
       }
@@ -5576,14 +5317,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TlsEdgeBackendModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -5685,14 +5419,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TlsEdgeIpRestrictionModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -5794,14 +5521,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TlsEdgeMutualTlsModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -5903,14 +5623,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TlsEdgeTlsTerminationModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -6012,14 +5725,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TlsEdgeTrafficPolicyModuleDelete204Response"
-                }
-              }
-            }
+            "description": "n/a"
           }
         }
       }
@@ -6089,7 +5795,7 @@
           {
             "name": "id",
             "in": "query",
-            "description": "\"Filter results by endpoint IDs. Deprecated: use `filter` instead.\n\"",
+            "description": "Filter results by endpoint IDs. Deprecated: use `filter` instead.\n",
             "schema": {
               "type": "array",
               "items": {
@@ -6101,7 +5807,7 @@
           {
             "name": "url",
             "in": "query",
-            "description": "\"Filter results by endpoint URLs. Deprecated: use `filter` instead.\n\"",
+            "description": "Filter results by endpoint URLs. Deprecated: use `filter` instead.\n",
             "schema": {
               "type": "array",
               "items": {
@@ -6113,7 +5819,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -6234,14 +5940,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EndpointsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an Endpoint by ID, currently available only for cloud endpoints\n"
           }
         }
       }
@@ -6311,7 +6010,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -6355,14 +6054,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EventDestinationsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an Event Destination. If the Event Destination is still referenced by an Event Subscription.\n"
           }
         }
       },
@@ -6509,7 +6201,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -6553,14 +6245,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EventSubscriptionsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an Event Subscription.\n"
           }
         }
       },
@@ -6754,14 +6439,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EventSourcesDelete204Response"
-                }
-              }
-            }
+            "description": "Remove a type for which this event subscription will trigger\n"
           }
         }
       },
@@ -6926,7 +6604,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -6970,14 +6648,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IpPoliciesDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an IP policy. If the IP policy is referenced by another object for the purposes of traffic restriction it will be treated as if the IP policy remains but has zero rules.\n"
           }
         }
       },
@@ -7123,7 +6794,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -7167,14 +6838,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IpPolicyRulesDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an IP policy rule.\n"
           }
         }
       },
@@ -7320,7 +6984,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -7364,14 +7028,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IpRestrictionsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an IP restriction\n"
           }
         }
       },
@@ -7517,7 +7174,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -7561,14 +7218,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReservedAddrsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a reserved address.\n"
           }
         }
       },
@@ -7714,7 +7364,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -7758,14 +7408,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReservedDomainsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a reserved domain.\n"
           }
         }
       },
@@ -7870,14 +7513,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReservedDomainsDeleteCertificate204Response"
-                }
-              }
-            }
+            "description": "Detach the certificate attached to a reserved domain.\n"
           }
         }
       }
@@ -7906,14 +7542,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReservedDomainsDeleteCertificateManagementPolicy204Response"
-                }
-              }
-            }
+            "description": "Detach the certificate management policy attached to a reserved domain.\n"
           }
         }
       }
@@ -7983,7 +7612,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -8070,14 +7699,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SecretsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a Secret\n"
           }
         }
       },
@@ -8181,7 +7803,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -8225,14 +7847,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ServiceUsersDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a service user by ID\n"
           }
         }
       },
@@ -8378,7 +7993,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -8422,14 +8037,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SshCertificateAuthoritiesDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an SSH Certificate Authority\n"
           }
         }
       },
@@ -8575,7 +8183,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -8619,14 +8227,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SshCredentialsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an ssh_credential by ID\n"
           }
         }
       },
@@ -8806,14 +8407,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SshHostCertificatesDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an SSH Host Certificate\n"
           }
         }
       },
@@ -8993,14 +8587,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SshUserCertificatesDelete204Response"
-                }
-              }
-            }
+            "description": "Delete an SSH User Certificate\n"
           }
         }
       },
@@ -9146,7 +8733,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -9190,14 +8777,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TlsCertificatesDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a TLS certificate\n"
           }
         }
       },
@@ -9420,7 +9000,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\"",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
             "schema": {
               "type": "string"
             }
@@ -9507,14 +9087,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VaultsDelete204Response"
-                }
-              }
-            }
+            "description": "Delete a Vault\n"
           }
         }
       },
@@ -9644,7 +9217,7 @@
           },
           "filter": {
             "type": "string",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\""
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
           }
         }
       },
@@ -10964,7 +10537,7 @@
           },
           "owner_id": {
             "type": "string",
-            "description": "\"If supplied at credential creation, ownership will be assigned to the specified User or Service User. Only admins may specify an owner other than themselves. Defaults to the authenticated User or Service User. Accepts one of: User ID, User email, or SCIM User ID.\n\""
+            "description": "If supplied at credential creation, ownership will be assigned to the specified User or Service User. Only admins may specify an owner other than themselves. Defaults to the authenticated User or Service User. Accepts one of: User ID, User email, or SCIM User ID.\n"
           }
         }
       },
@@ -11028,7 +10601,7 @@
           },
           "owner_id": {
             "type": "string",
-            "description": "\"If supplied at credential creation, ownership will be assigned to the specified User or Service User. Only admins may specify an owner other than themselves. Defaults to the authenticated User or Service User. Accepts one of: User ID, User email, or SCIM User ID.\n\""
+            "description": "If supplied at credential creation, ownership will be assigned to the specified User or Service User. Only admins may specify an owner other than themselves. Defaults to the authenticated User or Service User. Accepts one of: User ID, User email, or SCIM User ID.\n"
           }
         }
       },
@@ -11846,7 +11419,7 @@
           },
           "match": {
             "type": "string",
-            "description": "\"Route selector: \\\"/blog\\\" or \\\"example.com\\\" or \\\"example.com/blog\\\"\n\""
+            "description": "Route selector: \"/blog\" or \"example.com\" or \"example.com/blog\"\n"
           },
           "description": {
             "type": "string",
@@ -11914,7 +11487,7 @@
           },
           "match": {
             "type": "string",
-            "description": "\"Route selector: \\\"/blog\\\" or \\\"example.com\\\" or \\\"example.com/blog\\\"\n\""
+            "description": "Route selector: \"/blog\" or \"example.com\" or \"example.com/blog\"\n"
           },
           "description": {
             "type": "string",
@@ -11986,7 +11559,7 @@
           },
           "match": {
             "type": "string",
-            "description": "\"Route selector: \\\"/blog\\\" or \\\"example.com\\\" or \\\"example.com/blog\\\"\n\""
+            "description": "Route selector: \"/blog\" or \"example.com\" or \"example.com/blog\"\n"
           },
           "uri": {
             "type": "string",
@@ -12727,7 +12300,7 @@
           },
           "public_url": {
             "type": "string",
-            "description": "\"deprecated [replaced by URL]: URL of the hostport served by this endpoint\n\""
+            "description": "deprecated [replaced by URL]: URL of the hostport served by this endpoint\n"
           },
           "proto": {
             "type": "string",
@@ -12893,18 +12466,18 @@
             "items": {
               "type": "string"
             },
-            "description": "\"Filter results by endpoint IDs. Deprecated: use `filter` instead.\n\""
+            "description": "Filter results by endpoint IDs. Deprecated: use `filter` instead.\n"
           },
           "url": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "\"Filter results by endpoint URLs. Deprecated: use `filter` instead.\n\""
+            "description": "Filter results by endpoint URLs. Deprecated: use `filter` instead.\n"
           },
           "filter": {
             "type": "string",
-            "description": "\"A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n\""
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
           }
         }
       },
@@ -13602,7 +13175,7 @@
           },
           "type": {
             "type": "string",
-            "description": "\"the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: `dashboard`, `api`, `agent`, and `endpoints`\n\""
+            "description": "the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: `dashboard`, `api`, `agent`, and `endpoints`\n"
           },
           "ip_policy_ids": {
             "type": "array",
@@ -13670,7 +13243,7 @@
           },
           "type": {
             "type": "string",
-            "description": "\"the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: `dashboard`, `api`, `agent`, and `endpoints`\n\""
+            "description": "the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: `dashboard`, `api`, `agent`, and `endpoints`\n"
           },
           "ip_policies": {
             "type": "array",
@@ -13797,7 +13370,7 @@
           },
           "region": {
             "type": "string",
-            "description": "\"deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)\n\""
+            "description": "deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)\n"
           },
           "description": {
             "type": "string",
@@ -13883,7 +13456,7 @@
           },
           "region": {
             "type": "string",
-            "description": "\"deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)\n\""
+            "description": "deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)\n"
           },
           "cname_target": {
             "type": "string",
@@ -15058,19 +14631,19 @@
       },
       "SshUserCertificateCreateCriticalOptions": {
         "type": "object",
-        "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateCreateExtensions": {
         "type": "object",
-        "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\"permit-pty\": \"\", \"permit-user-rc\": \"\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateCriticalOptions": {
         "type": "object",
-        "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateExtensions": {
         "type": "object",
-        "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\"permit-pty\": \"\", \"permit-user-rc\": \"\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "TunnelLabels": {
         "type": "object",
@@ -15079,311 +14652,6 @@
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
-      },
-      "AgentIngressesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "ApiKeysDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "ApplicationSessionsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "ApplicationUsersDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TunnelSessionsRestart201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TunnelSessionsStop201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TunnelSessionsUpdate201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "FailoverBackendsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "HttpResponseBackendsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "StaticBackendsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TunnelGroupBackendsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "WeightedBackendsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "BotUsersDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "CertificateAuthoritiesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "CredentialsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgesHttpsRoutesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgesHttpsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "HttpsEdgeMutualTlsModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "HttpsEdgeTlsTerminationModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteBackendModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteIpRestrictionModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteRequestHeadersModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteResponseHeadersModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteCompressionModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteCircuitBreakerModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteWebhookVerificationModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteOAuthModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteSamlModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteOidcModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteWebsocketTcpConverterModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteUserAgentFilterModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgeRouteTrafficPolicyModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgesTcpDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TcpEdgeBackendModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TcpEdgeIpRestrictionModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TcpEdgeTrafficPolicyModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EdgesTlsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TlsEdgeBackendModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TlsEdgeIpRestrictionModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TlsEdgeMutualTlsModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TlsEdgeTlsTerminationModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TlsEdgeTrafficPolicyModuleDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EndpointsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EventDestinationsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EventSubscriptionsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "EventSourcesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "IpPoliciesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "IpPolicyRulesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "IpRestrictionsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "ReservedAddrsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "ReservedDomainsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "ReservedDomainsDeleteCertificate204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "ReservedDomainsDeleteCertificateManagementPolicy204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "SecretsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "ServiceUsersDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "SshCertificateAuthoritiesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "SshCredentialsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "SshHostCertificatesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "SshUserCertificatesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "TlsCertificatesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "VaultsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "HttpResponseBackendHeadersProperty": {
         "type": "object",
@@ -15431,19 +14699,19 @@
       },
       "SshUserCertificateCreateCriticalOptionsProperty": {
         "type": "object",
-        "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateCreateExtensionsProperty": {
         "type": "object",
-        "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\"permit-pty\": \"\", \"permit-user-rc\": \"\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateCriticalOptionsProperty": {
         "type": "object",
-        "description": "\"A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateExtensionsProperty": {
         "type": "object",
-        "description": "\"A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\\\"permit-pty\\\": \\\"\\\", \\\"permit-user-rc\\\": \\\"\\\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n\""
+        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\"permit-pty\": \"\", \"permit-user-rc\": \"\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "TunnelLabelsProperty": {
         "type": "object",
@@ -15465,12 +14733,6 @@
       "authentication": {
         "type": "http",
         "scheme": "bearer"
-      },
-      "assets_jwt": {
-        "type": "http",
-        "description": "JWT used for assets upload",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
       }
     }
   },
