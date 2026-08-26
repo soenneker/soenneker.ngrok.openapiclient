@@ -54,7 +54,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string Metadata { get; set; }
 #endif
-        /// <summary>DNS resolver targets configured for the reserved domain, or empty for &quot;global&quot; resolution.</summary>
+        /// <summary>Region and IP resolution targets configured for the Domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry>? ResolvesTo { get; set; }

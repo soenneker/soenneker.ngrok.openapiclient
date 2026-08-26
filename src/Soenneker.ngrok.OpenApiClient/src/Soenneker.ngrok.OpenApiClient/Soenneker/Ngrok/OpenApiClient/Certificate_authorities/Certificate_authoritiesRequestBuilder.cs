@@ -52,6 +52,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Certificate_authorities
         /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthorityList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthorityList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Certificate_authorities.Certificate_authoritiesRequestBuilder.Certificate_authoritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Certificate_authorities
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthorityList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthorityList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthorityList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthorityList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload a new Certificate Authority
@@ -71,6 +76,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Certificate_authorities
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthority?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthorityCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,7 +88,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Certificate_authorities
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthority>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthority.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthority>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.CertificateAuthority.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all Certificate Authority on this account
@@ -150,7 +160,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Certificate_authorities
             [QueryParameter("before_id")]
             public string BeforeId { get; set; }
 #endif
-            /// <summary>A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.</summary>
+            /// <summary>A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.Filterable fields: id, created_at, description, metadata, subject_common_name, not_before, not_after</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]

@@ -52,6 +52,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Tcp
         /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdgeList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdgeList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Edges.Tcp.TcpRequestBuilder.TcpRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Tcp
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdgeList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdgeList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdgeList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdgeList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a TCP Edge
@@ -71,6 +76,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Tcp
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdge?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdgeCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,7 +88,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Edges.Tcp
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdge>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdge.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdge>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TcpEdge.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of all TCP Edges on this account

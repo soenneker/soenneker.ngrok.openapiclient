@@ -52,6 +52,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Backends.Tunnel_group
         /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Backends.Tunnel_group.Tunnel_groupRequestBuilder.Tunnel_groupRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Backends.Tunnel_group
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new TunnelGroup backend
@@ -71,6 +76,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Backends.Tunnel_group
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackendCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,7 +88,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Backends.Tunnel_group
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TunnelGroupBackend.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all TunnelGroup backends on this account

@@ -52,6 +52,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Tunnel_sessions
         /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Tunnel_sessions.Tunnel_sessionsRequestBuilder.Tunnel_sessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Tunnel_sessions
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.TunnelSessionList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all online tunnel sessions running on this account.
@@ -108,7 +113,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Tunnel_sessions
             [QueryParameter("before_id")]
             public string BeforeId { get; set; }
 #endif
-            /// <summary>A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.</summary>
+            /// <summary>A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.Filterable fields: id, metadata, agent_version, ip, os, region, started_at, credential</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]

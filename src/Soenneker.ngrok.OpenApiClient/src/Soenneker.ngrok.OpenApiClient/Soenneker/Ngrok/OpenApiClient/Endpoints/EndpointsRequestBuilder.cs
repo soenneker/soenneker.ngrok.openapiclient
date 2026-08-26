@@ -35,7 +35,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EndpointsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/endpoints{?before_id*,filter*,id*,limit*,url*}", pathParameters)
+        public EndpointsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/endpoints{?before_id*,filter*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EndpointsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/endpoints{?before_id*,filter*,id*,limit*,url*}", rawUrl)
+        public EndpointsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/endpoints{?before_id*,filter*,limit*}", rawUrl)
         {
         }
         /// <summary>
@@ -52,6 +52,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
         /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EndpointList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Ngrok.OpenApiClient.Endpoints.EndpointsRequestBuilder.EndpointsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.EndpointList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.EndpointList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create an endpoint, currently available only for cloud endpoints
@@ -71,6 +76,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint?> PostAsync(global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,7 +88,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all active endpoints on the account
@@ -150,7 +160,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
             [QueryParameter("before_id")]
             public string BeforeId { get; set; }
 #endif
-            /// <summary>A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.</summary>
+            /// <summary>A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.Filterable fields: id, url, type, pooling_enabled, region, scheme, description, metadata, name, created_at, principal.id, bindings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]
@@ -159,16 +169,6 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
 #else
             [QueryParameter("filter")]
             public string Filter { get; set; }
-#endif
-            /// <summary>Filter results by endpoint IDs. Deprecated: use `filter` instead.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("id")]
-            public string[]? Id { get; set; }
-#nullable restore
-#else
-            [QueryParameter("id")]
-            public string[] Id { get; set; }
 #endif
             /// <summary>Constrains the number of results in the dataset. See the [API Overview](https://ngrok.com/docs/api/index#pagination) for details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,16 +179,6 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
 #else
             [QueryParameter("limit")]
             public string Limit { get; set; }
-#endif
-            /// <summary>Filter results by endpoint URLs. Deprecated: use `filter` instead.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("url")]
-            public string[]? Url { get; set; }
-#nullable restore
-#else
-            [QueryParameter("url")]
-            public string[] Url { get; set; }
 #endif
         }
     }

@@ -12,7 +12,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     public partial class BotUser : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>whether or not the bot is active</summary>
+        /// <summary>whether or not the service user is active</summary>
         public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>human-readable name used to identify the bot</summary>
+        /// <summary>human-readable name used to identify the service user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>URI to the API resource of this bot user</summary>
+        /// <summary>URI to the API resource of this service user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uri { get; set; }

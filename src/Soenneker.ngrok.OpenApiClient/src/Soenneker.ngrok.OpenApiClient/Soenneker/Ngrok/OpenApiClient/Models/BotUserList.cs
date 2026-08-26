@@ -14,7 +14,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>the list of all bot users on this account</summary>
+        /// <summary>the list of all service users on this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Ngrok.OpenApiClient.Models.BotUser>? BotUsers { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string NextPageUri { get; set; }
 #endif
-        /// <summary>URI of the bot users list API resource</summary>
+        /// <summary>URI of the service users list API resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uri { get; set; }

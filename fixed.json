@@ -2,6 +2,7 @@
   "openapi": "3.0.4",
   "info": {
     "title": "ngrok OpenAPI",
+    "description": "The ngrok REST API at https://api.ngrok.com provides programmatic access to provision and configure every ngrok resource: endpoints, domains, API keys, IP policies, tunnels, certificates, and more. Full documentation: https://ngrok.com/docs/api\n\n**Authentication:** Send an API key as a bearer token: \"Authorization: Bearer {API key}\". Create and revoke keys at https://dashboard.ngrok.com/api-keys or via the /api_keys resource. Requests without credentials receive an error with code ERR_NGROK_200.\n\n**Versioning and deprecation policy:** Every request must include the \"ngrok-version: 2\" header; a missing header returns HTTP 400 with error code ERR_NGROK_218. Version 2 is the current version; all earlier versions are deprecated. ngrok never makes breaking changes to a published API version. Breaking changes ship only as a new version that clients explicitly opt in to via this header. Additive changes (new resources, methods, and fields, and bug fixes that match documented behavior) may ship to a live version. Full policy: https://ngrok.com/docs/api#versioning-and-api-stability\n\n**Rate limits:** By default, the API allows 120 requests per rolling 60-second window per account; some plans have higher limits. Exceeding the limit returns HTTP 429 with error code ERR_NGROK_226; wait for the window to pass before retrying. Details: https://ngrok.com/docs/errors/err_ngrok_226\n\n**Errors:** Every 4xx and 5xx response carries the Error schema: the status_code, a human-readable msg, and in most cases a globally unique machine-readable error_code and a details object. Every error code is documented at https://ngrok.com/docs/errors\n",
     "version": "1.0.0"
   },
   "servers": [
@@ -42,6 +43,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -78,6 +85,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -114,6 +127,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -147,7 +166,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, domain\n",
             "schema": {
               "type": "string"
             }
@@ -163,6 +182,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -192,6 +217,12 @@
         "responses": {
           "204": {
             "description": "Delete an Agent Ingress by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -226,6 +257,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -268,6 +305,444 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    },
+    "/ai_gateway_provider_keys": {
+      "post": {
+        "tags": [
+          "AIGatewayProviderKeys"
+        ],
+        "summary": "Create",
+        "description": "Create a new AI Gateway Provider Key\n",
+        "operationId": "AiGatewayProviderKeysCreate",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AiGatewayProviderKeyCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Create a new AI Gateway Provider Key\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayProviderKey"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "AIGatewayProviderKeys"
+        ],
+        "summary": "List",
+        "description": "List AI Gateway Provider Keys\n",
+        "operationId": "AiGatewayProviderKeysList",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "before_id",
+            "in": "query",
+            "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Constrains the number of results in the dataset.\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ai_gateway_api_key_id",
+            "in": "query",
+            "description": "Filter by the AI Gateway API Key ID this provider key is attached to.\n",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List AI Gateway Provider Keys\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayProviderKeyList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    },
+    "/ai_gateway_provider_keys/{id}": {
+      "patch": {
+        "tags": [
+          "AIGatewayProviderKeys"
+        ],
+        "summary": "Update",
+        "description": "Update an existing AI Gateway Provider Key by ID\n",
+        "operationId": "AiGatewayProviderKeysUpdate",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "unique identifier for this provider key\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AiGatewayProviderKeyUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update an existing AI Gateway Provider Key by ID\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayProviderKey"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AIGatewayProviderKeys"
+        ],
+        "summary": "Delete",
+        "description": "Delete an AI Gateway Provider Key\n",
+        "operationId": "AiGatewayProviderKeysDelete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "a resource identifier\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete an AI Gateway Provider Key\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "AIGatewayProviderKeys"
+        ],
+        "summary": "Get",
+        "description": "Get an AI Gateway Provider Key by ID\n",
+        "operationId": "AiGatewayProviderKeysGet",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "a resource identifier\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get an AI Gateway Provider Key by ID\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayProviderKey"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    },
+    "/ai_gateway_api_keys": {
+      "post": {
+        "tags": [
+          "AIGatewayAPIKeys"
+        ],
+        "summary": "Create",
+        "description": "Create a new AI Gateway API Key\n",
+        "operationId": "AiGatewayApiKeysCreate",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AiGatewayApiKeyCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Create a new AI Gateway API Key\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayApiKey"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "AIGatewayAPIKeys"
+        ],
+        "summary": "List",
+        "description": "List all AI Gateway API Keys owned by account\n",
+        "operationId": "AiGatewayApiKeysList",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "before_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List all AI Gateway API Keys owned by account\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayApiKeyList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    },
+    "/ai_gateway_api_keys/{id}": {
+      "patch": {
+        "tags": [
+          "AIGatewayAPIKeys"
+        ],
+        "summary": "Update",
+        "description": "Update an existing AI Gateway API Key by ID\n",
+        "operationId": "AiGatewayApiKeysUpdate",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "unique identifier for this API key\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AiGatewayApiKeyUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update an existing AI Gateway API Key by ID\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayApiKey"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AIGatewayAPIKeys"
+        ],
+        "summary": "Delete",
+        "description": "Delete an AI Gateway API Key\n",
+        "operationId": "AiGatewayApiKeysDelete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "a resource identifier\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete an AI Gateway API Key\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "AIGatewayAPIKeys"
+        ],
+        "summary": "Get",
+        "description": "Get an AI Gateway API Key by ID\n",
+        "operationId": "AiGatewayApiKeysGet",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "a resource identifier\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get an AI Gateway API Key by ID\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayApiKey"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -304,6 +779,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -337,7 +818,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, owner_id, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -353,6 +834,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -382,6 +869,12 @@
         "responses": {
           "204": {
             "description": "Delete an API key by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -416,6 +909,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -458,6 +957,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -499,6 +1004,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -535,6 +1046,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -562,6 +1079,12 @@
         "responses": {
           "204": {
             "description": "Delete an application session by ID.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -603,6 +1126,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -639,6 +1168,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -666,6 +1201,12 @@
         "responses": {
           "204": {
             "description": "Delete an application user by ID.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -701,7 +1242,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, metadata, agent_version, ip, os, region, started_at, credential\n",
             "schema": {
               "type": "string"
             }
@@ -717,6 +1258,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -753,6 +1300,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -791,6 +1344,12 @@
         "responses": {
           "204": {
             "description": "Issues a command instructing the ngrok agent to restart. The agent restarts itself by calling exec() on platforms that support it. This operation is notably not supported on Windows. When an agent restarts, it reconnects with a new tunnel session ID.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -829,6 +1388,12 @@
         "responses": {
           "204": {
             "description": "Issues a command instructing the ngrok agent that started this tunnel session to exit.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -866,6 +1431,12 @@
         "responses": {
           "204": {
             "description": "Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent's configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -902,6 +1473,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -941,6 +1518,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -970,6 +1553,12 @@
         "responses": {
           "204": {
             "description": "Delete a Failover backend by ID.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1004,6 +1593,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1046,6 +1641,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1081,6 +1682,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1119,6 +1726,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1147,6 +1760,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1180,6 +1799,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1221,6 +1846,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1257,6 +1888,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1296,6 +1933,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1325,6 +1968,12 @@
         "responses": {
           "204": {
             "description": "Delete a static backend by ID.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1359,6 +2008,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1401,6 +2056,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1437,6 +2098,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1476,6 +2143,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1505,6 +2178,12 @@
         "responses": {
           "204": {
             "description": "Delete a TunnelGroup backend by ID.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1539,6 +2218,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1581,6 +2266,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1617,6 +2308,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1656,6 +2353,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1685,6 +2388,12 @@
         "responses": {
           "204": {
             "description": "Delete a Weighted backend by ID.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1719,6 +2428,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1761,6 +2476,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1797,6 +2518,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1836,6 +2563,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1865,6 +2598,12 @@
         "responses": {
           "204": {
             "description": "Delete a bot user by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1899,6 +2638,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -1941,6 +2686,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -1977,6 +2728,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2010,7 +2767,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, subject_common_name, not_before, not_after\n",
             "schema": {
               "type": "string"
             }
@@ -2026,6 +2783,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2055,6 +2818,12 @@
         "responses": {
           "204": {
             "description": "Delete a Certificate Authority\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2089,6 +2858,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2131,6 +2906,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2167,6 +2948,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2200,7 +2987,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, owner_id, acl, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -2216,6 +3003,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2245,6 +3038,12 @@
         "responses": {
           "204": {
             "description": "Delete a tunnel authtoken credential by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2279,6 +3078,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2321,6 +3126,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2366,6 +3177,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2411,6 +3228,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2463,6 +3286,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2499,6 +3328,12 @@
         "responses": {
           "204": {
             "description": "Delete an HTTPS Edge Route by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2535,6 +3370,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2574,6 +3415,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2610,6 +3457,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2653,6 +3506,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2680,6 +3539,12 @@
         "responses": {
           "204": {
             "description": "Delete an HTTPS Edge by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2723,6 +3588,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2756,6 +3627,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2782,6 +3659,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2825,6 +3708,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2858,6 +3747,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2884,6 +3779,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -2935,6 +3836,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -2977,6 +3884,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3012,6 +3925,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -3063,6 +3982,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3105,6 +4030,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3140,6 +4071,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -3191,6 +4128,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3233,6 +4176,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3268,6 +4217,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -3319,6 +4274,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3361,6 +4322,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3396,6 +4363,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -3447,6 +4420,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3489,6 +4468,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3524,6 +4509,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -3575,6 +4566,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3617,6 +4614,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3652,6 +4655,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -3703,6 +4712,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3745,6 +4760,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3780,6 +4801,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -3831,6 +4858,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3873,6 +4906,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -3908,6 +4947,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -3959,6 +5004,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4001,6 +5052,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4036,6 +5093,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -4087,6 +5150,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4129,6 +5198,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4164,6 +5239,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -4215,6 +5296,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4257,6 +5344,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4292,6 +5385,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -4343,6 +5442,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4385,6 +5490,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4420,6 +5531,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -4471,6 +5588,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4513,6 +5636,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4548,6 +5677,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -4584,6 +5719,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4623,6 +5764,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -4659,6 +5806,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4702,6 +5855,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4729,6 +5888,12 @@
         "responses": {
           "204": {
             "description": "Delete a TCP Edge by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -4772,6 +5937,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4805,6 +5976,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4831,6 +6008,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -4874,6 +6057,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4907,6 +6096,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -4933,6 +6128,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -4976,6 +6177,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5009,6 +6216,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5035,6 +6248,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5071,6 +6290,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5110,6 +6335,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5146,6 +6377,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5189,6 +6426,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5216,6 +6459,12 @@
         "responses": {
           "204": {
             "description": "Delete a TLS Edge by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5259,6 +6508,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5292,6 +6547,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5318,6 +6579,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5361,6 +6628,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5394,6 +6667,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5420,6 +6699,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5463,6 +6748,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5496,6 +6787,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5522,6 +6819,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5565,6 +6868,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5598,6 +6907,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5624,6 +6939,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5667,6 +6988,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5700,6 +7027,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5726,6 +7059,12 @@
         "responses": {
           "204": {
             "description": "n/a"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5762,6 +7101,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5793,33 +7138,9 @@
             }
           },
           {
-            "name": "id",
-            "in": "query",
-            "description": "Filter results by endpoint IDs. Deprecated: use `filter` instead.\n",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "description": "Fallback array item schema"
-              }
-            }
-          },
-          {
-            "name": "url",
-            "in": "query",
-            "description": "Filter results by endpoint URLs. Deprecated: use `filter` instead.\n",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "description": "Fallback array item schema"
-              }
-            }
-          },
-          {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, url, type, pooling_enabled, region, scheme, description, metadata, name, created_at, principal.id, bindings\n",
             "schema": {
               "type": "string"
             }
@@ -5835,6 +7156,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5871,6 +7198,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5914,6 +7247,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -5941,6 +7280,12 @@
         "responses": {
           "204": {
             "description": "Delete an Endpoint by ID, currently available only for cloud endpoints\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -5977,6 +7322,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6010,7 +7361,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -6026,6 +7377,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6055,6 +7412,12 @@
         "responses": {
           "204": {
             "description": "Delete an Event Destination. If the Event Destination is still referenced by an Event Subscription.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6089,6 +7452,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6132,6 +7501,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6168,6 +7543,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6201,7 +7582,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -6217,6 +7598,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6246,6 +7633,12 @@
         "responses": {
           "204": {
             "description": "Delete an Event Subscription.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6280,6 +7673,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6323,6 +7722,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6368,6 +7773,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6402,6 +7813,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6440,6 +7857,12 @@
         "responses": {
           "204": {
             "description": "Remove a type for which this event subscription will trigger\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6483,6 +7906,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6535,6 +7964,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6571,6 +8006,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6604,7 +8045,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, name\n",
             "schema": {
               "type": "string"
             }
@@ -6620,6 +8061,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6649,6 +8096,12 @@
         "responses": {
           "204": {
             "description": "Delete an IP policy. If the IP policy is referenced by another object for the purposes of traffic restriction it will be treated as if the IP policy remains but has zero rules.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6683,6 +8136,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6725,6 +8184,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6761,6 +8226,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6794,7 +8265,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, cidr, ip_policy_id, action\n",
             "schema": {
               "type": "string"
             }
@@ -6810,6 +8281,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6839,6 +8316,12 @@
         "responses": {
           "204": {
             "description": "Delete an IP policy rule.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6873,6 +8356,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6915,6 +8404,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -6951,6 +8446,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -6984,7 +8485,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata\n",
             "schema": {
               "type": "string"
             }
@@ -7000,6 +8501,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7029,6 +8536,12 @@
         "responses": {
           "204": {
             "description": "Delete an IP restriction\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7063,6 +8576,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7105,6 +8624,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7141,6 +8666,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7174,7 +8705,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, addr, region, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -7190,6 +8721,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7219,6 +8756,12 @@
         "responses": {
           "204": {
             "description": "Delete a reserved address.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7253,6 +8796,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7295,6 +8844,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7331,6 +8886,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7364,7 +8925,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, domain, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -7380,6 +8941,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7409,6 +8976,12 @@
         "responses": {
           "204": {
             "description": "Delete a reserved domain.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7443,6 +9016,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7485,6 +9064,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7514,6 +9099,12 @@
         "responses": {
           "204": {
             "description": "Detach the certificate attached to a reserved domain.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7543,6 +9134,12 @@
         "responses": {
           "204": {
             "description": "Detach the certificate management policy attached to a reserved domain.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7579,6 +9176,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7612,7 +9215,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, name\n",
             "schema": {
               "type": "string"
             }
@@ -7628,6 +9231,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7673,6 +9282,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7700,6 +9315,12 @@
         "responses": {
           "204": {
             "description": "Delete a Secret\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7734,6 +9355,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7770,6 +9397,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7803,7 +9436,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, name, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -7819,6 +9452,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7848,6 +9487,12 @@
         "responses": {
           "204": {
             "description": "Delete a service user by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7882,6 +9527,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7924,6 +9575,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -7960,6 +9617,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -7993,7 +9656,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata\n",
             "schema": {
               "type": "string"
             }
@@ -8009,6 +9672,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8038,6 +9707,12 @@
         "responses": {
           "204": {
             "description": "Delete an SSH Certificate Authority\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8072,6 +9747,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8114,6 +9795,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8150,6 +9837,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8183,7 +9876,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, owner_id, acl, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -8199,6 +9892,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8228,6 +9927,12 @@
         "responses": {
           "204": {
             "description": "Delete an ssh_credential by ID\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8262,6 +9967,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8304,6 +10015,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8340,6 +10057,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8379,6 +10102,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8408,6 +10137,12 @@
         "responses": {
           "204": {
             "description": "Delete an SSH Host Certificate\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8442,6 +10177,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8484,6 +10225,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8520,6 +10267,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8559,6 +10312,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8588,6 +10347,12 @@
         "responses": {
           "204": {
             "description": "Delete an SSH User Certificate\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8622,6 +10387,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8664,6 +10435,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8700,6 +10477,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8733,7 +10516,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, subject_common_name, not_before, not_after, serial_number, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -8749,6 +10532,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8778,6 +10567,12 @@
         "responses": {
           "204": {
             "description": "Delete a TLS certificate\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8812,6 +10607,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -8854,6 +10655,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8895,6 +10702,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8931,6 +10744,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -8967,6 +10786,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -9000,7 +10825,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, name\n",
             "schema": {
               "type": "string"
             }
@@ -9016,6 +10841,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -9061,6 +10892,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -9088,6 +10925,12 @@
         "responses": {
           "204": {
             "description": "Delete a Vault\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       },
@@ -9122,6 +10965,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -9172,6 +11021,12 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
           }
         }
       }
@@ -9179,6 +11034,31 @@
   },
   "components": {
     "schemas": {
+      "Error": {
+        "required": [
+          "status_code",
+          "msg"
+        ],
+        "type": "object",
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "description": "Globally unique machine-readable error code, for example ERR_NGROK_226. Each code is documented at https://ngrok.com/docs/errors/reference. Omitted on transport-level errors such as a plain 404 for an unknown path.\n"
+          },
+          "status_code": {
+            "type": "integer",
+            "description": "The HTTP status code of the response, duplicated in the body.\n"
+          },
+          "msg": {
+            "type": "string",
+            "description": "Human-readable description of the error and how to resolve it.\n"
+          },
+          "details": {
+            "$ref": "#/components/schemas/ErrorDetailsProperty"
+          }
+        },
+        "description": "The error body every api.ngrok.com 4xx and 5xx response returns. Every error condition has a globally unique, documented error code; see https://ngrok.com/docs/errors\n"
+      },
       "Empty": {
         "type": "object"
       },
@@ -9477,6 +11357,295 @@
           "retries_at": {
             "type": "string",
             "description": "timestamp when the provisioning job will be retried\n"
+          }
+        }
+      },
+      "AiGatewayProviderKeyCreate": {
+        "required": [
+          "ai_gateway_api_key_id",
+          "provider_id",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "ai_gateway_api_key_id": {
+            "type": "string",
+            "description": "unique identifier of the AI Gateway API Key this provider key is attached to\n"
+          },
+          "provider_id": {
+            "type": "string",
+            "description": "which AI provider this key is for, e.g. \"openai\", \"anthropic\"\n"
+          },
+          "value": {
+            "type": "string",
+            "description": "plaintext provider key value — write-only input\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this provider key\n"
+          },
+          "metadata": {
+            "type": "string",
+            "description": "arbitrary user-defined metadata for this provider key\n"
+          }
+        }
+      },
+      "AiGatewayProviderKeyUpdate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "unique identifier for this provider key\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this provider key\n"
+          },
+          "metadata": {
+            "type": "string",
+            "description": "arbitrary user-defined metadata for this provider key\n"
+          }
+        }
+      },
+      "AiGatewayProviderKey": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "unique identifier for this provider key\n"
+          },
+          "uri": {
+            "type": "string",
+            "description": "URI of this AI Gateway Provider Key API resource\n"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Timestamp when the provider key was created (RFC 3339 format)\n"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Timestamp when the provider key was last updated (RFC 3339 format)\n"
+          },
+          "provider_id": {
+            "type": "string",
+            "description": "which AI provider this key is for, e.g. \"openai\", \"anthropic\"\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this provider key\n"
+          },
+          "metadata": {
+            "type": "string",
+            "description": "arbitrary user-defined metadata for this provider key\n"
+          },
+          "created_by": {
+            "$ref": "#/components/schemas/RefType"
+          },
+          "last_updated_by": {
+            "$ref": "#/components/schemas/RefType"
+          },
+          "ai_gateway_api_key": {
+            "$ref": "#/components/schemas/RefType"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "redacted display form of the key value, e.g. sk-abc***xyz\n"
+          },
+          "last_used": {
+            "type": "string",
+            "description": "Timestamp when the provider key was last used (RFC 3339 format)\n"
+          }
+        }
+      },
+      "AiGatewayProviderKeyPaging": {
+        "type": "object",
+        "properties": {
+          "before_id": {
+            "type": "string",
+            "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n"
+          },
+          "limit": {
+            "type": "string",
+            "description": "Constrains the number of results in the dataset.\n"
+          },
+          "ai_gateway_api_key_id": {
+            "type": "string",
+            "description": "Filter by the AI Gateway API Key ID this provider key is attached to.\n"
+          }
+        }
+      },
+      "AiGatewayProviderKeyList": {
+        "type": "object",
+        "properties": {
+          "ai_gateway_provider_keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayProviderKey"
+            },
+            "description": "the list of AI Gateway Provider Keys for this AI Gateway API Key\n"
+          },
+          "uri": {
+            "type": "string",
+            "description": "n/a"
+          },
+          "next_page_uri": {
+            "type": "string",
+            "description": "URI of the next page of results, or null if there is no next page\n"
+          }
+        }
+      },
+      "AiGatewayApiKeyCreate": {
+        "required": [
+          "endpoint_id"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this API key\n"
+          },
+          "metadata": {
+            "type": "string",
+            "description": "arbitrary user-defined metadata for this API key\n"
+          },
+          "endpoint_id": {
+            "type": "string",
+            "description": "unique identifier of the AI Gateway endpoint this key is associated with\n"
+          },
+          "provider_keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayApiKeyProviderKeyCreate"
+            },
+            "description": "optional list of provider keys to attach to this managed key at create time\n"
+          }
+        }
+      },
+      "AiGatewayApiKeyUpdate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "unique identifier for this API key\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this API key\n"
+          },
+          "metadata": {
+            "type": "string",
+            "description": "arbitrary user-defined metadata for this API key\n"
+          },
+          "endpoint_id": {
+            "type": "string",
+            "description": "unique identifier of the AI Gateway endpoint to associate this key with\n"
+          }
+        }
+      },
+      "AiGatewayApiKey": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "unique identifier for this API key\n"
+          },
+          "uri": {
+            "type": "string",
+            "description": "URI of this AI Gateway API Key API resource\n"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Timestamp when the API key was created (RFC 3339 format)\n"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Timestamp when the API key was last updated (RFC 3339 format)\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this API key\n"
+          },
+          "metadata": {
+            "type": "string",
+            "description": "arbitrary user-defined metadata for this API key\n"
+          },
+          "created_by": {
+            "$ref": "#/components/schemas/RefType"
+          },
+          "last_updated_by": {
+            "$ref": "#/components/schemas/RefType"
+          },
+          "endpoint": {
+            "$ref": "#/components/schemas/RefType"
+          },
+          "token": {
+            "type": "string",
+            "description": "the API key token. Only provided when the key is first created.\n"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "n/a"
+          },
+          "last_used": {
+            "type": "string",
+            "description": "n/a"
+          },
+          "provider_keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayProviderKey"
+            },
+            "description": "provider keys attached to this managed key\n"
+          }
+        }
+      },
+      "AiGatewayApiKeyProviderKeyCreate": {
+        "required": [
+          "provider_id",
+          "name",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "provider_id": {
+            "type": "string",
+            "description": "which AI provider this key is for, ex: \"openai\" / \"anthropic\"\n"
+          },
+          "name": {
+            "type": "string",
+            "description": "user-friendly label for this key\n"
+          },
+          "value": {
+            "type": "string",
+            "description": "plaintext provider key value — write-only input\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this provider key\n"
+          },
+          "metadata": {
+            "type": "string",
+            "description": "arbitrary user-defined metadata for this provider key\n"
+          }
+        }
+      },
+      "AiGatewayApiKeyList": {
+        "type": "object",
+        "properties": {
+          "ai_gateway_api_keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayApiKey"
+            },
+            "description": "the list of AI Gateway API Keys for this account\n"
+          },
+          "uri": {
+            "type": "string",
+            "description": "n/a"
+          },
+          "next_page_uri": {
+            "type": "string",
+            "description": "URI of the next page of results, or null if there is no next page\n"
           }
         }
       },
@@ -10339,15 +12508,15 @@
           },
           "uri": {
             "type": "string",
-            "description": "URI to the API resource of this bot user\n"
+            "description": "URI to the API resource of this service user\n"
           },
           "name": {
             "type": "string",
-            "description": "human-readable name used to identify the bot\n"
+            "description": "human-readable name used to identify the service user\n"
           },
           "active": {
             "type": "boolean",
-            "description": "whether or not the bot is active\n"
+            "description": "whether or not the service user is active\n"
           },
           "created_at": {
             "type": "string",
@@ -10360,11 +12529,11 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "human-readable name used to identify the bot\n"
+            "description": "human-readable name used to identify the service user\n"
           },
           "active": {
             "type": "boolean",
-            "description": "whether or not the bot is active\n"
+            "description": "whether or not the service user is active\n"
           }
         }
       },
@@ -10377,11 +12546,11 @@
           },
           "name": {
             "type": "string",
-            "description": "human-readable name used to identify the bot\n"
+            "description": "human-readable name used to identify the service user\n"
           },
           "active": {
             "type": "boolean",
-            "description": "whether or not the bot is active\n"
+            "description": "whether or not the service user is active\n"
           }
         }
       },
@@ -10393,11 +12562,11 @@
             "items": {
               "$ref": "#/components/schemas/BotUser"
             },
-            "description": "the list of all bot users on this account\n"
+            "description": "the list of all service users on this account\n"
           },
           "uri": {
             "type": "string",
-            "description": "URI of the bot users list API resource\n"
+            "description": "URI of the service users list API resource\n"
           },
           "next_page_uri": {
             "type": "string",
@@ -12461,20 +14630,6 @@
             "type": "string",
             "description": "Constrains the number of results in the dataset. See the [API Overview](https://ngrok.com/docs/api/index#pagination) for details.\n"
           },
-          "id": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Filter results by endpoint IDs. Deprecated: use `filter` instead.\n"
-          },
-          "url": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Filter results by endpoint URLs. Deprecated: use `filter` instead.\n"
-          },
           "filter": {
             "type": "string",
             "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
@@ -13392,7 +15547,7 @@
             "items": {
               "$ref": "#/components/schemas/ReservedDomainResolvesToEntry"
             },
-            "description": "DNS resolver targets configured for the reserved domain, or empty for \"global\" resolution.\n"
+            "description": "Region and IP resolution targets configured for the Domain.\n"
           }
         }
       },
@@ -13423,7 +15578,7 @@
             "items": {
               "$ref": "#/components/schemas/ReservedDomainResolvesToEntry"
             },
-            "description": "DNS resolver targets configured for the reserved domain, or empty for \"global\" resolution.\n"
+            "description": "Region and IP resolution targets configured for the Domain.\n"
           }
         }
       },
@@ -13480,7 +15635,7 @@
             "items": {
               "$ref": "#/components/schemas/ReservedDomainResolvesToEntry"
             },
-            "description": "DNS resolver targets configured for the reserved domain, or empty for \"global\" resolution.\n"
+            "description": "Region and IP resolution targets configured for the Domain.\n"
           }
         }
       },
@@ -14585,6 +16740,13 @@
           }
         }
       },
+      "ErrorDetails": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Additional error context. details.operation_id identifies the failed request when contacting support.\n"
+      },
       "HttpResponseBackendHeaders": {
         "type": "object",
         "description": "headers to return\n"
@@ -14653,6 +16815,13 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
+      "ErrorDetailsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Additional error context. details.operation_id identifies the failed request when contacting support.\n"
+      },
       "HttpResponseBackendHeadersProperty": {
         "type": "object",
         "description": "headers to return\n"
@@ -14716,6 +16885,18 @@
       "TunnelLabelsProperty": {
         "type": "object",
         "description": "the labels the tunnel group backends will match against, if this is a backend tunnel\n"
+      }
+    },
+    "responses": {
+      "Error": {
+        "description": "An error. The body carries a machine-readable error_code and a human-readable msg; every code is documented at https://ngrok.com/docs/errors. A 429 with error code ERR_NGROK_226 means the account exceeded the documented request-rate limit.\n",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
       }
     },
     "parameters": {
