@@ -3425,7 +3425,7 @@
         }
       }
     },
-    "/edges/https/{id}": {
+    "/edges/https/{edgeId}": {
       "get": {
         "tags": [
           "EdgesHTTPS"
@@ -3438,7 +3438,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "id",
+            "name": "edgeId",
             "in": "path",
             "description": "a resource identifier\n",
             "required": true,
@@ -3478,7 +3478,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "id",
+            "name": "edgeId",
             "in": "path",
             "description": "unique identifier of this edge\n",
             "required": true,
@@ -3527,7 +3527,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "id",
+            "name": "edgeId",
             "in": "path",
             "description": "a resource identifier\n",
             "required": true,
@@ -3549,7 +3549,7 @@
         }
       }
     },
-    "/edges/https/{id}/mutual_tls": {
+    "/edges/https/{edgeId}/mutual_tls": {
       "put": {
         "tags": [
           "HTTPSEdgeMutualTLSModule"
@@ -3561,7 +3561,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3608,7 +3608,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "id",
+            "name": "edgeId",
             "in": "path",
             "description": "a resource identifier\n",
             "required": true,
@@ -3647,7 +3647,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "id",
+            "name": "edgeId",
             "in": "path",
             "description": "a resource identifier\n",
             "required": true,
@@ -3669,7 +3669,7 @@
         }
       }
     },
-    "/edges/https/{id}/tls_termination": {
+    "/edges/https/{edgeId}/tls_termination": {
       "put": {
         "tags": [
           "HTTPSEdgeTLSTerminationModule"
@@ -3681,7 +3681,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "id",
+            "name": "edgeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3728,7 +3728,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "id",
+            "name": "edgeId",
             "in": "path",
             "description": "a resource identifier\n",
             "required": true,
@@ -3767,7 +3767,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "id",
+            "name": "edgeId",
             "in": "path",
             "description": "a resource identifier\n",
             "required": true,
@@ -7732,7 +7732,7 @@
         }
       }
     },
-    "/event_subscriptions/{subscriptionId}/sources": {
+    "/event_subscriptions/{id}/sources": {
       "post": {
         "tags": [
           "EventSources"
@@ -7745,7 +7745,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscriptionId",
+            "name": "id",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
@@ -7794,7 +7794,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscriptionId",
+            "name": "id",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
@@ -7823,7 +7823,7 @@
         }
       }
     },
-    "/event_subscriptions/{subscriptionId}/sources/{type}": {
+    "/event_subscriptions/{id}/sources/{type}": {
       "delete": {
         "tags": [
           "EventSources"
@@ -7836,7 +7836,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscriptionId",
+            "name": "id",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
@@ -7878,7 +7878,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscriptionId",
+            "name": "id",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
@@ -7927,7 +7927,7 @@
             "$ref": "#/components/parameters/ngrokVersion"
           },
           {
-            "name": "subscriptionId",
+            "name": "id",
             "in": "path",
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n",
             "required": true,
