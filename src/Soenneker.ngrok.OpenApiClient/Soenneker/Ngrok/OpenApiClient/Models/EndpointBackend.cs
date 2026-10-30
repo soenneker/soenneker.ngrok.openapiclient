@@ -17,8 +17,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("backend") is { } nullNodeBackend && nullNodeBackend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Backend = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("backend") is null) { _explicitNullValueBackend = default!; _explicitNullProperties?.Remove("backend"); }
+            else if (parseNode.GetChildNode("backend") is { } nullNodeBackend && nullNodeBackend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Backend = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The backend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Backend { get => _explicitNullValueBackend; set { _explicitNullValueBackend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend"); else _explicitNullProperties?.Remove("backend"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Backend { get => _explicitNullValueBackend; set { _explicitNullValueBackend = value; AdditionalData?.Remove("backend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend"); else _explicitNullProperties?.Remove("backend"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.RefType? _explicitNullValueBackend = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Backend { get => _explicitNullValueBackend; set { _explicitNullValueBackend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend"); else _explicitNullProperties?.Remove("backend"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Backend { get => _explicitNullValueBackend; set { _explicitNullValueBackend = value; AdditionalData?.Remove("backend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend"); else _explicitNullProperties?.Remove("backend"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueBackend = default!;
 #endif
         /// <summary>`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EndpointBackend"/> and sets the default values.

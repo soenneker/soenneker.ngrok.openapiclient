@@ -17,8 +17,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("provisioning_job") is { } nullNodeProvisioningJob && nullNodeProvisioningJob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisioningJob = null;
-            if (parseNode.GetChildNode("renews_at") is { } nullNodeRenewsAt && nullNodeRenewsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenewsAt = null;
+            if (parseNode.GetChildNode("provisioning_job") is null) { _explicitNullValueProvisioningJob = default!; _explicitNullProperties?.Remove("provisioning_job"); }
+            else if (parseNode.GetChildNode("provisioning_job") is { } nullNodeProvisioningJob && nullNodeProvisioningJob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisioningJob = null;
+            if (parseNode.GetChildNode("renews_at") is null) { _explicitNullValueRenewsAt = default!; _explicitNullProperties?.Remove("renews_at"); }
+            else if (parseNode.GetChildNode("renews_at") is { } nullNodeRenewsAt && nullNodeRenewsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenewsAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The provisioning_job property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.AgentIngressCertJob? ProvisioningJob { get => _explicitNullValueProvisioningJob; set { _explicitNullValueProvisioningJob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioning_job"); else _explicitNullProperties?.Remove("provisioning_job"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.AgentIngressCertJob? ProvisioningJob { get => _explicitNullValueProvisioningJob; set { _explicitNullValueProvisioningJob = value; AdditionalData?.Remove("provisioning_job"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioning_job"); else _explicitNullProperties?.Remove("provisioning_job"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.AgentIngressCertJob? _explicitNullValueProvisioningJob = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.AgentIngressCertJob ProvisioningJob { get => _explicitNullValueProvisioningJob; set { _explicitNullValueProvisioningJob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioning_job"); else _explicitNullProperties?.Remove("provisioning_job"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.AgentIngressCertJob ProvisioningJob { get => _explicitNullValueProvisioningJob; set { _explicitNullValueProvisioningJob = value; AdditionalData?.Remove("provisioning_job"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioning_job"); else _explicitNullProperties?.Remove("provisioning_job"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.AgentIngressCertJob _explicitNullValueProvisioningJob = default!;
 #endif
         /// <summary>timestamp when the next renewal will be requested, RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RenewsAt { get => _explicitNullValueRenewsAt; set { _explicitNullValueRenewsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renews_at"); else _explicitNullProperties?.Remove("renews_at"); } }
+        public string? RenewsAt { get => _explicitNullValueRenewsAt; set { _explicitNullValueRenewsAt = value; AdditionalData?.Remove("renews_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renews_at"); else _explicitNullProperties?.Remove("renews_at"); } }
         private string? _explicitNullValueRenewsAt = default!;
 #nullable restore
 #else
-        public string RenewsAt { get => _explicitNullValueRenewsAt; set { _explicitNullValueRenewsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renews_at"); else _explicitNullProperties?.Remove("renews_at"); } }
+        public string RenewsAt { get => _explicitNullValueRenewsAt; set { _explicitNullValueRenewsAt = value; AdditionalData?.Remove("renews_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renews_at"); else _explicitNullProperties?.Remove("renews_at"); } }
         private string _explicitNullValueRenewsAt = default!;
 #endif
         /// <summary>

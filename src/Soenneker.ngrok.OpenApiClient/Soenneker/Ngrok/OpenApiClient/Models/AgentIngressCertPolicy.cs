@@ -17,8 +17,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authority") is { } nullNodeAuthority && nullNodeAuthority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authority = null;
-            if (parseNode.GetChildNode("private_key_type") is { } nullNodePrivateKeyType && nullNodePrivateKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateKeyType = null;
+            if (parseNode.GetChildNode("authority") is null) { _explicitNullValueAuthority = default!; _explicitNullProperties?.Remove("authority"); }
+            else if (parseNode.GetChildNode("authority") is { } nullNodeAuthority && nullNodeAuthority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authority = null;
+            if (parseNode.GetChildNode("private_key_type") is null) { _explicitNullValuePrivateKeyType = default!; _explicitNullProperties?.Remove("private_key_type"); }
+            else if (parseNode.GetChildNode("private_key_type") is { } nullNodePrivateKeyType && nullNodePrivateKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateKeyType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>certificate authority to request certificates from. The only supported value is letsencrypt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Authority { get => _explicitNullValueAuthority; set { _explicitNullValueAuthority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authority"); else _explicitNullProperties?.Remove("authority"); } }
+        public string? Authority { get => _explicitNullValueAuthority; set { _explicitNullValueAuthority = value; AdditionalData?.Remove("authority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authority"); else _explicitNullProperties?.Remove("authority"); } }
         private string? _explicitNullValueAuthority = default!;
 #nullable restore
 #else
-        public string Authority { get => _explicitNullValueAuthority; set { _explicitNullValueAuthority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authority"); else _explicitNullProperties?.Remove("authority"); } }
+        public string Authority { get => _explicitNullValueAuthority; set { _explicitNullValueAuthority = value; AdditionalData?.Remove("authority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authority"); else _explicitNullProperties?.Remove("authority"); } }
         private string _explicitNullValueAuthority = default!;
 #endif
         /// <summary>type of private key to use when requesting certificates. Defaults to rsa, can be either rsa or ecdsa.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
+        public string? PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; AdditionalData?.Remove("private_key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
         private string? _explicitNullValuePrivateKeyType = default!;
 #nullable restore
 #else
-        public string PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
+        public string PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; AdditionalData?.Remove("private_key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
         private string _explicitNullValuePrivateKeyType = default!;
 #endif
         /// <summary>

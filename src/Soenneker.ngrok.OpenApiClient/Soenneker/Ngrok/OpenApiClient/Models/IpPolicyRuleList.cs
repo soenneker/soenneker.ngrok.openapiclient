@@ -17,9 +17,12 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ip_policy_rules") is { } nullNodeIpPolicyRules && nullNodeIpPolicyRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpPolicyRules = null;
-            if (parseNode.GetChildNode("next_page_uri") is { } nullNodeNextPageUri && nullNodeNextPageUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageUri = null;
-            if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
+            if (parseNode.GetChildNode("ip_policy_rules") is null) { _explicitNullValueIpPolicyRules = default!; _explicitNullProperties?.Remove("ip_policy_rules"); }
+            else if (parseNode.GetChildNode("ip_policy_rules") is { } nullNodeIpPolicyRules && nullNodeIpPolicyRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpPolicyRules = null;
+            if (parseNode.GetChildNode("next_page_uri") is null) { _explicitNullValueNextPageUri = default!; _explicitNullProperties?.Remove("next_page_uri"); }
+            else if (parseNode.GetChildNode("next_page_uri") is { } nullNodeNextPageUri && nullNodeNextPageUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageUri = null;
+            if (parseNode.GetChildNode("uri") is null) { _explicitNullValueUri = default!; _explicitNullProperties?.Remove("uri"); }
+            else if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>the list of all IP policy rules on this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.IpPolicyRule>? IpPolicyRules { get => _explicitNullValueIpPolicyRules; set { _explicitNullValueIpPolicyRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_policy_rules"); else _explicitNullProperties?.Remove("ip_policy_rules"); } }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.IpPolicyRule>? IpPolicyRules { get => _explicitNullValueIpPolicyRules; set { _explicitNullValueIpPolicyRules = value; AdditionalData?.Remove("ip_policy_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_policy_rules"); else _explicitNullProperties?.Remove("ip_policy_rules"); } }
         private List<global::Soenneker.Ngrok.OpenApiClient.Models.IpPolicyRule>? _explicitNullValueIpPolicyRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.IpPolicyRule> IpPolicyRules { get => _explicitNullValueIpPolicyRules; set { _explicitNullValueIpPolicyRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_policy_rules"); else _explicitNullProperties?.Remove("ip_policy_rules"); } }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.IpPolicyRule> IpPolicyRules { get => _explicitNullValueIpPolicyRules; set { _explicitNullValueIpPolicyRules = value; AdditionalData?.Remove("ip_policy_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_policy_rules"); else _explicitNullProperties?.Remove("ip_policy_rules"); } }
         private List<global::Soenneker.Ngrok.OpenApiClient.Models.IpPolicyRule> _explicitNullValueIpPolicyRules = default!;
 #endif
         /// <summary>URI of the next page, or null if there is no next page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
+        public string? NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; AdditionalData?.Remove("next_page_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
         private string? _explicitNullValueNextPageUri = default!;
 #nullable restore
 #else
-        public string NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
+        public string NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; AdditionalData?.Remove("next_page_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
         private string _explicitNullValueNextPageUri = default!;
 #endif
         /// <summary>URI of the IP policy rule list API resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
         private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
         private string _explicitNullValueUri = default!;
 #endif
         /// <summary>

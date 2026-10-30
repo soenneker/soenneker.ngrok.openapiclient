@@ -17,34 +17,37 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("min_version") is { } nullNodeMinVersion && nullNodeMinVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinVersion = null;
-            if (parseNode.GetChildNode("terminate_at") is { } nullNodeTerminateAt && nullNodeTerminateAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminateAt = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("min_version") is null) { _explicitNullValueMinVersion = default!; _explicitNullProperties?.Remove("min_version"); }
+            else if (parseNode.GetChildNode("min_version") is { } nullNodeMinVersion && nullNodeMinVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinVersion = null;
+            if (parseNode.GetChildNode("terminate_at") is null) { _explicitNullValueTerminateAt = default!; _explicitNullProperties?.Remove("terminate_at"); }
+            else if (parseNode.GetChildNode("terminate_at") is { } nullNodeTerminateAt && nullNodeTerminateAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminateAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The minimum TLS version used for termination and advertised to the client during the TLS handshake. if unspecified, ngrok will choose an industry-safe default. This value must be null if `terminate_at` is set to `upstream`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinVersion { get => _explicitNullValueMinVersion; set { _explicitNullValueMinVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_version"); else _explicitNullProperties?.Remove("min_version"); } }
+        public string? MinVersion { get => _explicitNullValueMinVersion; set { _explicitNullValueMinVersion = value; AdditionalData?.Remove("min_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_version"); else _explicitNullProperties?.Remove("min_version"); } }
         private string? _explicitNullValueMinVersion = default!;
 #nullable restore
 #else
-        public string MinVersion { get => _explicitNullValueMinVersion; set { _explicitNullValueMinVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_version"); else _explicitNullProperties?.Remove("min_version"); } }
+        public string MinVersion { get => _explicitNullValueMinVersion; set { _explicitNullValueMinVersion = value; AdditionalData?.Remove("min_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_version"); else _explicitNullProperties?.Remove("min_version"); } }
         private string _explicitNullValueMinVersion = default!;
 #endif
         /// <summary>`edge` if the ngrok edge should terminate TLS traffic, `upstream` if TLS traffic should be passed through to the upstream ngrok agent / application server for termination. if `upstream` is chosen, most other modules will be disallowed because they rely on the ngrok edge being able to access the underlying traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TerminateAt { get => _explicitNullValueTerminateAt; set { _explicitNullValueTerminateAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminate_at"); else _explicitNullProperties?.Remove("terminate_at"); } }
+        public string? TerminateAt { get => _explicitNullValueTerminateAt; set { _explicitNullValueTerminateAt = value; AdditionalData?.Remove("terminate_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminate_at"); else _explicitNullProperties?.Remove("terminate_at"); } }
         private string? _explicitNullValueTerminateAt = default!;
 #nullable restore
 #else
-        public string TerminateAt { get => _explicitNullValueTerminateAt; set { _explicitNullValueTerminateAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminate_at"); else _explicitNullProperties?.Remove("terminate_at"); } }
+        public string TerminateAt { get => _explicitNullValueTerminateAt; set { _explicitNullValueTerminateAt = value; AdditionalData?.Remove("terminate_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminate_at"); else _explicitNullProperties?.Remove("terminate_at"); } }
         private string _explicitNullValueTerminateAt = default!;
 #endif
         /// <summary>

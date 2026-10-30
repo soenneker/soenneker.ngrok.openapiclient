@@ -17,8 +17,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("certificate_authority_ids") is { } nullNodeCertificateAuthorityIds && nullNodeCertificateAuthorityIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthorityIds = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("certificate_authority_ids") is null) { _explicitNullValueCertificateAuthorityIds = default!; _explicitNullProperties?.Remove("certificate_authority_ids"); }
+            else if (parseNode.GetChildNode("certificate_authority_ids") is { } nullNodeCertificateAuthorityIds && nullNodeCertificateAuthorityIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthorityIds = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>list of certificate authorities that will be used to validate the TLS client certificate presented by the initiator of the TLS connection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CertificateAuthorityIds { get => _explicitNullValueCertificateAuthorityIds; set { _explicitNullValueCertificateAuthorityIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority_ids"); else _explicitNullProperties?.Remove("certificate_authority_ids"); } }
+        public List<string>? CertificateAuthorityIds { get => _explicitNullValueCertificateAuthorityIds; set { _explicitNullValueCertificateAuthorityIds = value; AdditionalData?.Remove("certificate_authority_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority_ids"); else _explicitNullProperties?.Remove("certificate_authority_ids"); } }
         private List<string>? _explicitNullValueCertificateAuthorityIds = default!;
 #nullable restore
 #else
-        public List<string> CertificateAuthorityIds { get => _explicitNullValueCertificateAuthorityIds; set { _explicitNullValueCertificateAuthorityIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority_ids"); else _explicitNullProperties?.Remove("certificate_authority_ids"); } }
+        public List<string> CertificateAuthorityIds { get => _explicitNullValueCertificateAuthorityIds; set { _explicitNullValueCertificateAuthorityIds = value; AdditionalData?.Remove("certificate_authority_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority_ids"); else _explicitNullProperties?.Remove("certificate_authority_ids"); } }
         private List<string> _explicitNullValueCertificateAuthorityIds = default!;
 #endif
         /// <summary>`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EndpointMutualTlsMutate"/> and sets the default values.

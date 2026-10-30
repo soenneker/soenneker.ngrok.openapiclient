@@ -17,8 +17,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth") is { } nullNodeAuth && nullNodeAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Auth = null;
-            if (parseNode.GetChildNode("delivery_stream_arn") is { } nullNodeDeliveryStreamArn && nullNodeDeliveryStreamArn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryStreamArn = null;
+            if (parseNode.GetChildNode("auth") is null) { _explicitNullValueAuth = default!; _explicitNullProperties?.Remove("auth"); }
+            else if (parseNode.GetChildNode("auth") is { } nullNodeAuth && nullNodeAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Auth = null;
+            if (parseNode.GetChildNode("delivery_stream_arn") is null) { _explicitNullValueDeliveryStreamArn = default!; _explicitNullProperties?.Remove("delivery_stream_arn"); }
+            else if (parseNode.GetChildNode("delivery_stream_arn") is { } nullNodeDeliveryStreamArn && nullNodeDeliveryStreamArn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryStreamArn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The auth property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth? Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth? Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; AdditionalData?.Remove("auth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth? _explicitNullValueAuth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; AdditionalData?.Remove("auth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth _explicitNullValueAuth = default!;
 #endif
         /// <summary>An Amazon Resource Name specifying the Firehose delivery stream to deposit events into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryStreamArn { get => _explicitNullValueDeliveryStreamArn; set { _explicitNullValueDeliveryStreamArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_stream_arn"); else _explicitNullProperties?.Remove("delivery_stream_arn"); } }
+        public string? DeliveryStreamArn { get => _explicitNullValueDeliveryStreamArn; set { _explicitNullValueDeliveryStreamArn = value; AdditionalData?.Remove("delivery_stream_arn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_stream_arn"); else _explicitNullProperties?.Remove("delivery_stream_arn"); } }
         private string? _explicitNullValueDeliveryStreamArn = default!;
 #nullable restore
 #else
-        public string DeliveryStreamArn { get => _explicitNullValueDeliveryStreamArn; set { _explicitNullValueDeliveryStreamArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_stream_arn"); else _explicitNullProperties?.Remove("delivery_stream_arn"); } }
+        public string DeliveryStreamArn { get => _explicitNullValueDeliveryStreamArn; set { _explicitNullValueDeliveryStreamArn = value; AdditionalData?.Remove("delivery_stream_arn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_stream_arn"); else _explicitNullProperties?.Remove("delivery_stream_arn"); } }
         private string _explicitNullValueDeliveryStreamArn = default!;
 #endif
         /// <summary>

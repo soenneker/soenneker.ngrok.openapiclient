@@ -17,14 +17,22 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amazon") is { } nullNodeAmazon && nullNodeAmazon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amazon = null;
-            if (parseNode.GetChildNode("facebook") is { } nullNodeFacebook && nullNodeFacebook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facebook = null;
-            if (parseNode.GetChildNode("github") is { } nullNodeGithub && nullNodeGithub.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Github = null;
-            if (parseNode.GetChildNode("gitlab") is { } nullNodeGitlab && nullNodeGitlab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gitlab = null;
-            if (parseNode.GetChildNode("google") is { } nullNodeGoogle && nullNodeGoogle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Google = null;
-            if (parseNode.GetChildNode("linkedin") is { } nullNodeLinkedin && nullNodeLinkedin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Linkedin = null;
-            if (parseNode.GetChildNode("microsoft") is { } nullNodeMicrosoft && nullNodeMicrosoft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Microsoft = null;
-            if (parseNode.GetChildNode("twitch") is { } nullNodeTwitch && nullNodeTwitch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Twitch = null;
+            if (parseNode.GetChildNode("amazon") is null) { _explicitNullValueAmazon = default!; _explicitNullProperties?.Remove("amazon"); }
+            else if (parseNode.GetChildNode("amazon") is { } nullNodeAmazon && nullNodeAmazon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amazon = null;
+            if (parseNode.GetChildNode("facebook") is null) { _explicitNullValueFacebook = default!; _explicitNullProperties?.Remove("facebook"); }
+            else if (parseNode.GetChildNode("facebook") is { } nullNodeFacebook && nullNodeFacebook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facebook = null;
+            if (parseNode.GetChildNode("github") is null) { _explicitNullValueGithub = default!; _explicitNullProperties?.Remove("github"); }
+            else if (parseNode.GetChildNode("github") is { } nullNodeGithub && nullNodeGithub.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Github = null;
+            if (parseNode.GetChildNode("gitlab") is null) { _explicitNullValueGitlab = default!; _explicitNullProperties?.Remove("gitlab"); }
+            else if (parseNode.GetChildNode("gitlab") is { } nullNodeGitlab && nullNodeGitlab.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gitlab = null;
+            if (parseNode.GetChildNode("google") is null) { _explicitNullValueGoogle = default!; _explicitNullProperties?.Remove("google"); }
+            else if (parseNode.GetChildNode("google") is { } nullNodeGoogle && nullNodeGoogle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Google = null;
+            if (parseNode.GetChildNode("linkedin") is null) { _explicitNullValueLinkedin = default!; _explicitNullProperties?.Remove("linkedin"); }
+            else if (parseNode.GetChildNode("linkedin") is { } nullNodeLinkedin && nullNodeLinkedin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Linkedin = null;
+            if (parseNode.GetChildNode("microsoft") is null) { _explicitNullValueMicrosoft = default!; _explicitNullProperties?.Remove("microsoft"); }
+            else if (parseNode.GetChildNode("microsoft") is { } nullNodeMicrosoft && nullNodeMicrosoft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Microsoft = null;
+            if (parseNode.GetChildNode("twitch") is null) { _explicitNullValueTwitch = default!; _explicitNullProperties?.Remove("twitch"); }
+            else if (parseNode.GetChildNode("twitch") is { } nullNodeTwitch && nullNodeTwitch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Twitch = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,81 +40,81 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The amazon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthAmazon? Amazon { get => _explicitNullValueAmazon; set { _explicitNullValueAmazon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amazon"); else _explicitNullProperties?.Remove("amazon"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthAmazon? Amazon { get => _explicitNullValueAmazon; set { _explicitNullValueAmazon = value; AdditionalData?.Remove("amazon"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amazon"); else _explicitNullProperties?.Remove("amazon"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthAmazon? _explicitNullValueAmazon = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthAmazon Amazon { get => _explicitNullValueAmazon; set { _explicitNullValueAmazon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amazon"); else _explicitNullProperties?.Remove("amazon"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthAmazon Amazon { get => _explicitNullValueAmazon; set { _explicitNullValueAmazon = value; AdditionalData?.Remove("amazon"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amazon"); else _explicitNullProperties?.Remove("amazon"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthAmazon _explicitNullValueAmazon = default!;
 #endif
         /// <summary>The facebook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthFacebook? Facebook { get => _explicitNullValueFacebook; set { _explicitNullValueFacebook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facebook"); else _explicitNullProperties?.Remove("facebook"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthFacebook? Facebook { get => _explicitNullValueFacebook; set { _explicitNullValueFacebook = value; AdditionalData?.Remove("facebook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facebook"); else _explicitNullProperties?.Remove("facebook"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthFacebook? _explicitNullValueFacebook = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthFacebook Facebook { get => _explicitNullValueFacebook; set { _explicitNullValueFacebook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facebook"); else _explicitNullProperties?.Remove("facebook"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthFacebook Facebook { get => _explicitNullValueFacebook; set { _explicitNullValueFacebook = value; AdditionalData?.Remove("facebook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facebook"); else _explicitNullProperties?.Remove("facebook"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthFacebook _explicitNullValueFacebook = default!;
 #endif
         /// <summary>The github property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitHub? Github { get => _explicitNullValueGithub; set { _explicitNullValueGithub = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("github"); else _explicitNullProperties?.Remove("github"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitHub? Github { get => _explicitNullValueGithub; set { _explicitNullValueGithub = value; AdditionalData?.Remove("github"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("github"); else _explicitNullProperties?.Remove("github"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitHub? _explicitNullValueGithub = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitHub Github { get => _explicitNullValueGithub; set { _explicitNullValueGithub = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("github"); else _explicitNullProperties?.Remove("github"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitHub Github { get => _explicitNullValueGithub; set { _explicitNullValueGithub = value; AdditionalData?.Remove("github"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("github"); else _explicitNullProperties?.Remove("github"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitHub _explicitNullValueGithub = default!;
 #endif
         /// <summary>The gitlab property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitLab? Gitlab { get => _explicitNullValueGitlab; set { _explicitNullValueGitlab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlab"); else _explicitNullProperties?.Remove("gitlab"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitLab? Gitlab { get => _explicitNullValueGitlab; set { _explicitNullValueGitlab = value; AdditionalData?.Remove("gitlab"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlab"); else _explicitNullProperties?.Remove("gitlab"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitLab? _explicitNullValueGitlab = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitLab Gitlab { get => _explicitNullValueGitlab; set { _explicitNullValueGitlab = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlab"); else _explicitNullProperties?.Remove("gitlab"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitLab Gitlab { get => _explicitNullValueGitlab; set { _explicitNullValueGitlab = value; AdditionalData?.Remove("gitlab"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitlab"); else _explicitNullProperties?.Remove("gitlab"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGitLab _explicitNullValueGitlab = default!;
 #endif
         /// <summary>The google property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGoogle? Google { get => _explicitNullValueGoogle; set { _explicitNullValueGoogle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google"); else _explicitNullProperties?.Remove("google"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGoogle? Google { get => _explicitNullValueGoogle; set { _explicitNullValueGoogle = value; AdditionalData?.Remove("google"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google"); else _explicitNullProperties?.Remove("google"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGoogle? _explicitNullValueGoogle = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGoogle Google { get => _explicitNullValueGoogle; set { _explicitNullValueGoogle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google"); else _explicitNullProperties?.Remove("google"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGoogle Google { get => _explicitNullValueGoogle; set { _explicitNullValueGoogle = value; AdditionalData?.Remove("google"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google"); else _explicitNullProperties?.Remove("google"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthGoogle _explicitNullValueGoogle = default!;
 #endif
         /// <summary>The linkedin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthLinkedIn? Linkedin { get => _explicitNullValueLinkedin; set { _explicitNullValueLinkedin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedin"); else _explicitNullProperties?.Remove("linkedin"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthLinkedIn? Linkedin { get => _explicitNullValueLinkedin; set { _explicitNullValueLinkedin = value; AdditionalData?.Remove("linkedin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedin"); else _explicitNullProperties?.Remove("linkedin"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthLinkedIn? _explicitNullValueLinkedin = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthLinkedIn Linkedin { get => _explicitNullValueLinkedin; set { _explicitNullValueLinkedin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedin"); else _explicitNullProperties?.Remove("linkedin"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthLinkedIn Linkedin { get => _explicitNullValueLinkedin; set { _explicitNullValueLinkedin = value; AdditionalData?.Remove("linkedin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedin"); else _explicitNullProperties?.Remove("linkedin"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthLinkedIn _explicitNullValueLinkedin = default!;
 #endif
         /// <summary>The microsoft property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthMicrosoft? Microsoft { get => _explicitNullValueMicrosoft; set { _explicitNullValueMicrosoft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microsoft"); else _explicitNullProperties?.Remove("microsoft"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthMicrosoft? Microsoft { get => _explicitNullValueMicrosoft; set { _explicitNullValueMicrosoft = value; AdditionalData?.Remove("microsoft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microsoft"); else _explicitNullProperties?.Remove("microsoft"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthMicrosoft? _explicitNullValueMicrosoft = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthMicrosoft Microsoft { get => _explicitNullValueMicrosoft; set { _explicitNullValueMicrosoft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microsoft"); else _explicitNullProperties?.Remove("microsoft"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthMicrosoft Microsoft { get => _explicitNullValueMicrosoft; set { _explicitNullValueMicrosoft = value; AdditionalData?.Remove("microsoft"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("microsoft"); else _explicitNullProperties?.Remove("microsoft"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthMicrosoft _explicitNullValueMicrosoft = default!;
 #endif
         /// <summary>The twitch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthTwitch? Twitch { get => _explicitNullValueTwitch; set { _explicitNullValueTwitch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitch"); else _explicitNullProperties?.Remove("twitch"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthTwitch? Twitch { get => _explicitNullValueTwitch; set { _explicitNullValueTwitch = value; AdditionalData?.Remove("twitch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitch"); else _explicitNullProperties?.Remove("twitch"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthTwitch? _explicitNullValueTwitch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthTwitch Twitch { get => _explicitNullValueTwitch; set { _explicitNullValueTwitch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitch"); else _explicitNullProperties?.Remove("twitch"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthTwitch Twitch { get => _explicitNullValueTwitch; set { _explicitNullValueTwitch = value; AdditionalData?.Remove("twitch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitch"); else _explicitNullProperties?.Remove("twitch"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthTwitch _explicitNullValueTwitch = default!;
 #endif
         /// <summary>

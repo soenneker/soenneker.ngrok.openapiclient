@@ -17,9 +17,12 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("event_subscriptions") is { } nullNodeEventSubscriptions && nullNodeEventSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventSubscriptions = null;
-            if (parseNode.GetChildNode("next_page_uri") is { } nullNodeNextPageUri && nullNodeNextPageUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageUri = null;
-            if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
+            if (parseNode.GetChildNode("event_subscriptions") is null) { _explicitNullValueEventSubscriptions = default!; _explicitNullProperties?.Remove("event_subscriptions"); }
+            else if (parseNode.GetChildNode("event_subscriptions") is { } nullNodeEventSubscriptions && nullNodeEventSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventSubscriptions = null;
+            if (parseNode.GetChildNode("next_page_uri") is null) { _explicitNullValueNextPageUri = default!; _explicitNullProperties?.Remove("next_page_uri"); }
+            else if (parseNode.GetChildNode("next_page_uri") is { } nullNodeNextPageUri && nullNodeNextPageUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageUri = null;
+            if (parseNode.GetChildNode("uri") is null) { _explicitNullValueUri = default!; _explicitNullProperties?.Remove("uri"); }
+            else if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The list of all Event Subscriptions on this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.EventSubscription>? EventSubscriptions { get => _explicitNullValueEventSubscriptions; set { _explicitNullValueEventSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_subscriptions"); else _explicitNullProperties?.Remove("event_subscriptions"); } }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.EventSubscription>? EventSubscriptions { get => _explicitNullValueEventSubscriptions; set { _explicitNullValueEventSubscriptions = value; AdditionalData?.Remove("event_subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_subscriptions"); else _explicitNullProperties?.Remove("event_subscriptions"); } }
         private List<global::Soenneker.Ngrok.OpenApiClient.Models.EventSubscription>? _explicitNullValueEventSubscriptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.EventSubscription> EventSubscriptions { get => _explicitNullValueEventSubscriptions; set { _explicitNullValueEventSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_subscriptions"); else _explicitNullProperties?.Remove("event_subscriptions"); } }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.EventSubscription> EventSubscriptions { get => _explicitNullValueEventSubscriptions; set { _explicitNullValueEventSubscriptions = value; AdditionalData?.Remove("event_subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_subscriptions"); else _explicitNullProperties?.Remove("event_subscriptions"); } }
         private List<global::Soenneker.Ngrok.OpenApiClient.Models.EventSubscription> _explicitNullValueEventSubscriptions = default!;
 #endif
         /// <summary>URI of next page, or null if there is no next page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
+        public string? NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; AdditionalData?.Remove("next_page_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
         private string? _explicitNullValueNextPageUri = default!;
 #nullable restore
 #else
-        public string NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
+        public string NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; AdditionalData?.Remove("next_page_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
         private string _explicitNullValueNextPageUri = default!;
 #endif
         /// <summary>URI of the Event Subscriptions list API resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
         private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
         private string _explicitNullValueUri = default!;
 #endif
         /// <summary>

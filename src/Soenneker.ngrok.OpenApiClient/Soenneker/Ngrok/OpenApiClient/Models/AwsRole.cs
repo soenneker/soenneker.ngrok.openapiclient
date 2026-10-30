@@ -17,7 +17,8 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("role_arn") is { } nullNodeRoleArn && nullNodeRoleArn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleArn = null;
+            if (parseNode.GetChildNode("role_arn") is null) { _explicitNullValueRoleArn = default!; _explicitNullProperties?.Remove("role_arn"); }
+            else if (parseNode.GetChildNode("role_arn") is { } nullNodeRoleArn && nullNodeRoleArn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleArn = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>An ARN that specifies the role that ngrok should use to deliver to the configured target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleArn { get => _explicitNullValueRoleArn; set { _explicitNullValueRoleArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_arn"); else _explicitNullProperties?.Remove("role_arn"); } }
+        public string? RoleArn { get => _explicitNullValueRoleArn; set { _explicitNullValueRoleArn = value; AdditionalData?.Remove("role_arn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_arn"); else _explicitNullProperties?.Remove("role_arn"); } }
         private string? _explicitNullValueRoleArn = default!;
 #nullable restore
 #else
-        public string RoleArn { get => _explicitNullValueRoleArn; set { _explicitNullValueRoleArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_arn"); else _explicitNullProperties?.Remove("role_arn"); } }
+        public string RoleArn { get => _explicitNullValueRoleArn; set { _explicitNullValueRoleArn = value; AdditionalData?.Remove("role_arn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_arn"); else _explicitNullProperties?.Remove("role_arn"); } }
         private string _explicitNullValueRoleArn = default!;
 #endif
         /// <summary>

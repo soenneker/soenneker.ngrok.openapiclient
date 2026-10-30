@@ -17,11 +17,16 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("azure_logs_ingestion") is { } nullNodeAzureLogsIngestion && nullNodeAzureLogsIngestion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AzureLogsIngestion = null;
-            if (parseNode.GetChildNode("cloudwatch_logs") is { } nullNodeCloudwatchLogs && nullNodeCloudwatchLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudwatchLogs = null;
-            if (parseNode.GetChildNode("datadog") is { } nullNodeDatadog && nullNodeDatadog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datadog = null;
-            if (parseNode.GetChildNode("firehose") is { } nullNodeFirehose && nullNodeFirehose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Firehose = null;
-            if (parseNode.GetChildNode("kinesis") is { } nullNodeKinesis && nullNodeKinesis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kinesis = null;
+            if (parseNode.GetChildNode("azure_logs_ingestion") is null) { _explicitNullValueAzureLogsIngestion = default!; _explicitNullProperties?.Remove("azure_logs_ingestion"); }
+            else if (parseNode.GetChildNode("azure_logs_ingestion") is { } nullNodeAzureLogsIngestion && nullNodeAzureLogsIngestion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AzureLogsIngestion = null;
+            if (parseNode.GetChildNode("cloudwatch_logs") is null) { _explicitNullValueCloudwatchLogs = default!; _explicitNullProperties?.Remove("cloudwatch_logs"); }
+            else if (parseNode.GetChildNode("cloudwatch_logs") is { } nullNodeCloudwatchLogs && nullNodeCloudwatchLogs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudwatchLogs = null;
+            if (parseNode.GetChildNode("datadog") is null) { _explicitNullValueDatadog = default!; _explicitNullProperties?.Remove("datadog"); }
+            else if (parseNode.GetChildNode("datadog") is { } nullNodeDatadog && nullNodeDatadog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datadog = null;
+            if (parseNode.GetChildNode("firehose") is null) { _explicitNullValueFirehose = default!; _explicitNullProperties?.Remove("firehose"); }
+            else if (parseNode.GetChildNode("firehose") is { } nullNodeFirehose && nullNodeFirehose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Firehose = null;
+            if (parseNode.GetChildNode("kinesis") is null) { _explicitNullValueKinesis = default!; _explicitNullProperties?.Remove("kinesis"); }
+            else if (parseNode.GetChildNode("kinesis") is { } nullNodeKinesis && nullNodeKinesis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kinesis = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>The azure_logs_ingestion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion? AzureLogsIngestion { get => _explicitNullValueAzureLogsIngestion; set { _explicitNullValueAzureLogsIngestion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("azure_logs_ingestion"); else _explicitNullProperties?.Remove("azure_logs_ingestion"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion? AzureLogsIngestion { get => _explicitNullValueAzureLogsIngestion; set { _explicitNullValueAzureLogsIngestion = value; AdditionalData?.Remove("azure_logs_ingestion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("azure_logs_ingestion"); else _explicitNullProperties?.Remove("azure_logs_ingestion"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion? _explicitNullValueAzureLogsIngestion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion AzureLogsIngestion { get => _explicitNullValueAzureLogsIngestion; set { _explicitNullValueAzureLogsIngestion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("azure_logs_ingestion"); else _explicitNullProperties?.Remove("azure_logs_ingestion"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion AzureLogsIngestion { get => _explicitNullValueAzureLogsIngestion; set { _explicitNullValueAzureLogsIngestion = value; AdditionalData?.Remove("azure_logs_ingestion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("azure_logs_ingestion"); else _explicitNullProperties?.Remove("azure_logs_ingestion"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion _explicitNullValueAzureLogsIngestion = default!;
 #endif
         /// <summary>The cloudwatch_logs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetCloudwatchLogs? CloudwatchLogs { get => _explicitNullValueCloudwatchLogs; set { _explicitNullValueCloudwatchLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudwatch_logs"); else _explicitNullProperties?.Remove("cloudwatch_logs"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetCloudwatchLogs? CloudwatchLogs { get => _explicitNullValueCloudwatchLogs; set { _explicitNullValueCloudwatchLogs = value; AdditionalData?.Remove("cloudwatch_logs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudwatch_logs"); else _explicitNullProperties?.Remove("cloudwatch_logs"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetCloudwatchLogs? _explicitNullValueCloudwatchLogs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetCloudwatchLogs CloudwatchLogs { get => _explicitNullValueCloudwatchLogs; set { _explicitNullValueCloudwatchLogs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudwatch_logs"); else _explicitNullProperties?.Remove("cloudwatch_logs"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetCloudwatchLogs CloudwatchLogs { get => _explicitNullValueCloudwatchLogs; set { _explicitNullValueCloudwatchLogs = value; AdditionalData?.Remove("cloudwatch_logs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudwatch_logs"); else _explicitNullProperties?.Remove("cloudwatch_logs"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetCloudwatchLogs _explicitNullValueCloudwatchLogs = default!;
 #endif
         /// <summary>The datadog property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetDatadog? Datadog { get => _explicitNullValueDatadog; set { _explicitNullValueDatadog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadog"); else _explicitNullProperties?.Remove("datadog"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetDatadog? Datadog { get => _explicitNullValueDatadog; set { _explicitNullValueDatadog = value; AdditionalData?.Remove("datadog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadog"); else _explicitNullProperties?.Remove("datadog"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetDatadog? _explicitNullValueDatadog = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetDatadog Datadog { get => _explicitNullValueDatadog; set { _explicitNullValueDatadog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadog"); else _explicitNullProperties?.Remove("datadog"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetDatadog Datadog { get => _explicitNullValueDatadog; set { _explicitNullValueDatadog = value; AdditionalData?.Remove("datadog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datadog"); else _explicitNullProperties?.Remove("datadog"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetDatadog _explicitNullValueDatadog = default!;
 #endif
         /// <summary>The firehose property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetFirehose? Firehose { get => _explicitNullValueFirehose; set { _explicitNullValueFirehose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firehose"); else _explicitNullProperties?.Remove("firehose"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetFirehose? Firehose { get => _explicitNullValueFirehose; set { _explicitNullValueFirehose = value; AdditionalData?.Remove("firehose"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firehose"); else _explicitNullProperties?.Remove("firehose"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetFirehose? _explicitNullValueFirehose = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetFirehose Firehose { get => _explicitNullValueFirehose; set { _explicitNullValueFirehose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firehose"); else _explicitNullProperties?.Remove("firehose"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetFirehose Firehose { get => _explicitNullValueFirehose; set { _explicitNullValueFirehose = value; AdditionalData?.Remove("firehose"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firehose"); else _explicitNullProperties?.Remove("firehose"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetFirehose _explicitNullValueFirehose = default!;
 #endif
         /// <summary>The kinesis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis? Kinesis { get => _explicitNullValueKinesis; set { _explicitNullValueKinesis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kinesis"); else _explicitNullProperties?.Remove("kinesis"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis? Kinesis { get => _explicitNullValueKinesis; set { _explicitNullValueKinesis = value; AdditionalData?.Remove("kinesis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kinesis"); else _explicitNullProperties?.Remove("kinesis"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis? _explicitNullValueKinesis = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis Kinesis { get => _explicitNullValueKinesis; set { _explicitNullValueKinesis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kinesis"); else _explicitNullProperties?.Remove("kinesis"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis Kinesis { get => _explicitNullValueKinesis; set { _explicitNullValueKinesis = value; AdditionalData?.Remove("kinesis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kinesis"); else _explicitNullProperties?.Remove("kinesis"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis _explicitNullValueKinesis = default!;
 #endif
         /// <summary>

@@ -17,12 +17,18 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("certificate_id") is { } nullNodeCertificateId && nullNodeCertificateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateId = null;
-            if (parseNode.GetChildNode("certificate_management_policy") is { } nullNodeCertificateManagementPolicy && nullNodeCertificateManagementPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateManagementPolicy = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
-            if (parseNode.GetChildNode("resolves_to") is { } nullNodeResolvesTo && nullNodeResolvesTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvesTo = null;
+            if (parseNode.GetChildNode("certificate_id") is null) { _explicitNullValueCertificateId = default!; _explicitNullProperties?.Remove("certificate_id"); }
+            else if (parseNode.GetChildNode("certificate_id") is { } nullNodeCertificateId && nullNodeCertificateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateId = null;
+            if (parseNode.GetChildNode("certificate_management_policy") is null) { _explicitNullValueCertificateManagementPolicy = default!; _explicitNullProperties?.Remove("certificate_management_policy"); }
+            else if (parseNode.GetChildNode("certificate_management_policy") is { } nullNodeCertificateManagementPolicy && nullNodeCertificateManagementPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateManagementPolicy = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("resolves_to") is null) { _explicitNullValueResolvesTo = default!; _explicitNullProperties?.Remove("resolves_to"); }
+            else if (parseNode.GetChildNode("resolves_to") is { } nullNodeResolvesTo && nullNodeResolvesTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvesTo = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>ID of a user-uploaded TLS certificate to use for connections to targeting this domain. Optional, mutually exclusive with `certificate_management_policy`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateId { get => _explicitNullValueCertificateId; set { _explicitNullValueCertificateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_id"); else _explicitNullProperties?.Remove("certificate_id"); } }
+        public string? CertificateId { get => _explicitNullValueCertificateId; set { _explicitNullValueCertificateId = value; AdditionalData?.Remove("certificate_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_id"); else _explicitNullProperties?.Remove("certificate_id"); } }
         private string? _explicitNullValueCertificateId = default!;
 #nullable restore
 #else
-        public string CertificateId { get => _explicitNullValueCertificateId; set { _explicitNullValueCertificateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_id"); else _explicitNullProperties?.Remove("certificate_id"); } }
+        public string CertificateId { get => _explicitNullValueCertificateId; set { _explicitNullValueCertificateId = value; AdditionalData?.Remove("certificate_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_id"); else _explicitNullProperties?.Remove("certificate_id"); } }
         private string _explicitNullValueCertificateId = default!;
 #endif
         /// <summary>The certificate_management_policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy? CertificateManagementPolicy { get => _explicitNullValueCertificateManagementPolicy; set { _explicitNullValueCertificateManagementPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_management_policy"); else _explicitNullProperties?.Remove("certificate_management_policy"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy? CertificateManagementPolicy { get => _explicitNullValueCertificateManagementPolicy; set { _explicitNullValueCertificateManagementPolicy = value; AdditionalData?.Remove("certificate_management_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_management_policy"); else _explicitNullProperties?.Remove("certificate_management_policy"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy? _explicitNullValueCertificateManagementPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy CertificateManagementPolicy { get => _explicitNullValueCertificateManagementPolicy; set { _explicitNullValueCertificateManagementPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_management_policy"); else _explicitNullProperties?.Remove("certificate_management_policy"); } }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy CertificateManagementPolicy { get => _explicitNullValueCertificateManagementPolicy; set { _explicitNullValueCertificateManagementPolicy = value; AdditionalData?.Remove("certificate_management_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_management_policy"); else _explicitNullProperties?.Remove("certificate_management_policy"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy _explicitNullValueCertificateManagementPolicy = default!;
 #endif
         /// <summary>human-readable description of what this reserved domain will be used for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>n/a</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>arbitrary user-defined machine-readable data of this reserved domain. Optional, max 4096 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private string? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private string _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Region and IP resolution targets configured for the Domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry>? ResolvesTo { get => _explicitNullValueResolvesTo; set { _explicitNullValueResolvesTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolves_to"); else _explicitNullProperties?.Remove("resolves_to"); } }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry>? ResolvesTo { get => _explicitNullValueResolvesTo; set { _explicitNullValueResolvesTo = value; AdditionalData?.Remove("resolves_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolves_to"); else _explicitNullProperties?.Remove("resolves_to"); } }
         private List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry>? _explicitNullValueResolvesTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry> ResolvesTo { get => _explicitNullValueResolvesTo; set { _explicitNullValueResolvesTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolves_to"); else _explicitNullProperties?.Remove("resolves_to"); } }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry> ResolvesTo { get => _explicitNullValueResolvesTo; set { _explicitNullValueResolvesTo = value; AdditionalData?.Remove("resolves_to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolves_to"); else _explicitNullProperties?.Remove("resolves_to"); } }
         private List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry> _explicitNullValueResolvesTo = default!;
 #endif
         /// <summary>

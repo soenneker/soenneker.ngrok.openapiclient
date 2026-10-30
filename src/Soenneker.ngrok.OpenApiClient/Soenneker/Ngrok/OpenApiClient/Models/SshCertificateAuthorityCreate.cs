@@ -17,11 +17,16 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("elliptic_curve") is { } nullNodeEllipticCurve && nullNodeEllipticCurve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EllipticCurve = null;
-            if (parseNode.GetChildNode("key_size") is { } nullNodeKeySize && nullNodeKeySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeySize = null;
-            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
-            if (parseNode.GetChildNode("private_key_type") is { } nullNodePrivateKeyType && nullNodePrivateKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateKeyType = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("elliptic_curve") is null) { _explicitNullValueEllipticCurve = default!; _explicitNullProperties?.Remove("elliptic_curve"); }
+            else if (parseNode.GetChildNode("elliptic_curve") is { } nullNodeEllipticCurve && nullNodeEllipticCurve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EllipticCurve = null;
+            if (parseNode.GetChildNode("key_size") is null) { _explicitNullValueKeySize = default!; _explicitNullProperties?.Remove("key_size"); }
+            else if (parseNode.GetChildNode("key_size") is { } nullNodeKeySize && nullNodeKeySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeySize = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("private_key_type") is null) { _explicitNullValuePrivateKeyType = default!; _explicitNullProperties?.Remove("private_key_type"); }
+            else if (parseNode.GetChildNode("private_key_type") is { } nullNodePrivateKeyType && nullNodePrivateKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateKeyType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>human-readable description of this SSH Certificate Authority. optional, max 255 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>the type of elliptic curve to use when creating an ECDSA key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EllipticCurve { get => _explicitNullValueEllipticCurve; set { _explicitNullValueEllipticCurve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elliptic_curve"); else _explicitNullProperties?.Remove("elliptic_curve"); } }
+        public string? EllipticCurve { get => _explicitNullValueEllipticCurve; set { _explicitNullValueEllipticCurve = value; AdditionalData?.Remove("elliptic_curve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elliptic_curve"); else _explicitNullProperties?.Remove("elliptic_curve"); } }
         private string? _explicitNullValueEllipticCurve = default!;
 #nullable restore
 #else
-        public string EllipticCurve { get => _explicitNullValueEllipticCurve; set { _explicitNullValueEllipticCurve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elliptic_curve"); else _explicitNullProperties?.Remove("elliptic_curve"); } }
+        public string EllipticCurve { get => _explicitNullValueEllipticCurve; set { _explicitNullValueEllipticCurve = value; AdditionalData?.Remove("elliptic_curve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elliptic_curve"); else _explicitNullProperties?.Remove("elliptic_curve"); } }
         private string _explicitNullValueEllipticCurve = default!;
 #endif
         /// <summary>the key size to use when creating an RSA key. one of `2048` or `4096`</summary>
-        public int? KeySize { get => _explicitNullValueKeySize; set { _explicitNullValueKeySize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_size"); else _explicitNullProperties?.Remove("key_size"); } }
+        public int? KeySize { get => _explicitNullValueKeySize; set { _explicitNullValueKeySize = value; AdditionalData?.Remove("key_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_size"); else _explicitNullProperties?.Remove("key_size"); } }
         private int? _explicitNullValueKeySize = default!;
         /// <summary>arbitrary user-defined machine-readable data of this SSH Certificate Authority. optional, max 4096 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private string? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private string _explicitNullValueMetadata = default!;
 #endif
         /// <summary>the type of private key to generate. one of `rsa`, `ecdsa`, `ed25519`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
+        public string? PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; AdditionalData?.Remove("private_key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
         private string? _explicitNullValuePrivateKeyType = default!;
 #nullable restore
 #else
-        public string PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
+        public string PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; AdditionalData?.Remove("private_key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
         private string _explicitNullValuePrivateKeyType = default!;
 #endif
         /// <summary>
