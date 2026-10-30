@@ -11,96 +11,136 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ApplicationSession : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("application_user") is { } nullNodeApplicationUser && nullNodeApplicationUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationUser = null;
+            if (parseNode.GetChildNode("browser_session") is { } nullNodeBrowserSession && nullNodeBrowserSession.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserSession = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("edge") is { } nullNodeEdge && nullNodeEdge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edge = null;
+            if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
+            if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_active") is { } nullNodeLastActive && nullNodeLastActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastActive = null;
+            if (parseNode.GetChildNode("public_url") is { } nullNodePublicUrl && nullNodePublicUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicUrl = null;
+            if (parseNode.GetChildNode("route") is { } nullNodeRoute && nullNodeRoute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Route = null;
+            if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The application_user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? ApplicationUser { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? ApplicationUser { get => _explicitNullValueApplicationUser; set { _explicitNullValueApplicationUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_user"); else _explicitNullProperties?.Remove("application_user"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType? _explicitNullValueApplicationUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType ApplicationUser { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType ApplicationUser { get => _explicitNullValueApplicationUser; set { _explicitNullValueApplicationUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_user"); else _explicitNullProperties?.Remove("application_user"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueApplicationUser = default!;
 #endif
         /// <summary>The browser_session property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession? BrowserSession { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession? BrowserSession { get => _explicitNullValueBrowserSession; set { _explicitNullValueBrowserSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_session"); else _explicitNullProperties?.Remove("browser_session"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession? _explicitNullValueBrowserSession = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession BrowserSession { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession BrowserSession { get => _explicitNullValueBrowserSession; set { _explicitNullValueBrowserSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_session"); else _explicitNullProperties?.Remove("browser_session"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession _explicitNullValueBrowserSession = default!;
 #endif
         /// <summary>timestamp when the user was created in RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The edge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Edge { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Edge { get => _explicitNullValueEdge; set { _explicitNullValueEdge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge"); else _explicitNullProperties?.Remove("edge"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType? _explicitNullValueEdge = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Edge { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Edge { get => _explicitNullValueEdge; set { _explicitNullValueEdge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge"); else _explicitNullProperties?.Remove("edge"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueEdge = default!;
 #endif
         /// <summary>The endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Endpoint { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType? _explicitNullValueEndpoint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Endpoint { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueEndpoint = default!;
 #endif
         /// <summary>timestamp when session expires in RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get; set; }
+        public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string? _explicitNullValueExpiresAt = default!;
 #nullable restore
 #else
-        public string ExpiresAt { get; set; }
+        public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string _explicitNullValueExpiresAt = default!;
 #endif
         /// <summary>unique application session resource identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>timestamp when the user was last active in RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastActive { get; set; }
+        public string? LastActive { get => _explicitNullValueLastActive; set { _explicitNullValueLastActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_active"); else _explicitNullProperties?.Remove("last_active"); } }
+        private string? _explicitNullValueLastActive = default!;
 #nullable restore
 #else
-        public string LastActive { get; set; }
+        public string LastActive { get => _explicitNullValueLastActive; set { _explicitNullValueLastActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_active"); else _explicitNullProperties?.Remove("last_active"); } }
+        private string _explicitNullValueLastActive = default!;
 #endif
         /// <summary>URL of the hostport served by this endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicUrl { get; set; }
+        public string? PublicUrl { get => _explicitNullValuePublicUrl; set { _explicitNullValuePublicUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_url"); else _explicitNullProperties?.Remove("public_url"); } }
+        private string? _explicitNullValuePublicUrl = default!;
 #nullable restore
 #else
-        public string PublicUrl { get; set; }
+        public string PublicUrl { get => _explicitNullValuePublicUrl; set { _explicitNullValuePublicUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_url"); else _explicitNullProperties?.Remove("public_url"); } }
+        private string _explicitNullValuePublicUrl = default!;
 #endif
         /// <summary>The route property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Route { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Route { get => _explicitNullValueRoute; set { _explicitNullValueRoute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("route"); else _explicitNullProperties?.Remove("route"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType? _explicitNullValueRoute = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Route { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Route { get => _explicitNullValueRoute; set { _explicitNullValueRoute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("route"); else _explicitNullProperties?.Remove("route"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueRoute = default!;
 #endif
         /// <summary>URI of the application session API resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get; set; }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get; set; }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string _explicitNullValueUri = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession"/> and sets the default values.
@@ -117,7 +157,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,6 +198,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("public_url", PublicUrl);
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("route", Route);
             writer.WriteStringValue("uri", Uri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

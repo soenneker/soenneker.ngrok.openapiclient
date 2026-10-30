@@ -11,112 +11,158 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReservedDomain : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acme_challenge_cname_target") is { } nullNodeAcmeChallengeCnameTarget && nullNodeAcmeChallengeCnameTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcmeChallengeCnameTarget = null;
+            if (parseNode.GetChildNode("certificate") is { } nullNodeCertificate && nullNodeCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Certificate = null;
+            if (parseNode.GetChildNode("certificate_management_policy") is { } nullNodeCertificateManagementPolicy && nullNodeCertificateManagementPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateManagementPolicy = null;
+            if (parseNode.GetChildNode("certificate_management_status") is { } nullNodeCertificateManagementStatus && nullNodeCertificateManagementStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateManagementStatus = null;
+            if (parseNode.GetChildNode("cname_target") is { } nullNodeCnameTarget && nullNodeCnameTarget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CnameTarget = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("resolves_to") is { } nullNodeResolvesTo && nullNodeResolvesTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvesTo = null;
+            if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
+        }
+
         /// <summary>DNS CNAME target for the host _acme-challenge.example.com, where example.com is your reserved domain name. This is required to issue certificates for wildcard, non-ngrok reserved domains. Must be null for non-wildcard domains and ngrok subdomains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcmeChallengeCnameTarget { get; set; }
+        public string? AcmeChallengeCnameTarget { get => _explicitNullValueAcmeChallengeCnameTarget; set { _explicitNullValueAcmeChallengeCnameTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_challenge_cname_target"); else _explicitNullProperties?.Remove("acme_challenge_cname_target"); } }
+        private string? _explicitNullValueAcmeChallengeCnameTarget = default!;
 #nullable restore
 #else
-        public string AcmeChallengeCnameTarget { get; set; }
+        public string AcmeChallengeCnameTarget { get => _explicitNullValueAcmeChallengeCnameTarget; set { _explicitNullValueAcmeChallengeCnameTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_challenge_cname_target"); else _explicitNullProperties?.Remove("acme_challenge_cname_target"); } }
+        private string _explicitNullValueAcmeChallengeCnameTarget = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Certificate { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Certificate { get => _explicitNullValueCertificate; set { _explicitNullValueCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate"); else _explicitNullProperties?.Remove("certificate"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType? _explicitNullValueCertificate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Certificate { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Certificate { get => _explicitNullValueCertificate; set { _explicitNullValueCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate"); else _explicitNullProperties?.Remove("certificate"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueCertificate = default!;
 #endif
         /// <summary>The certificate_management_policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy? CertificateManagementPolicy { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy? CertificateManagementPolicy { get => _explicitNullValueCertificateManagementPolicy; set { _explicitNullValueCertificateManagementPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_management_policy"); else _explicitNullProperties?.Remove("certificate_management_policy"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy? _explicitNullValueCertificateManagementPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy CertificateManagementPolicy { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy CertificateManagementPolicy { get => _explicitNullValueCertificateManagementPolicy; set { _explicitNullValueCertificateManagementPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_management_policy"); else _explicitNullProperties?.Remove("certificate_management_policy"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertPolicy _explicitNullValueCertificateManagementPolicy = default!;
 #endif
         /// <summary>The certificate_management_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus? CertificateManagementStatus { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus? CertificateManagementStatus { get => _explicitNullValueCertificateManagementStatus; set { _explicitNullValueCertificateManagementStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_management_status"); else _explicitNullProperties?.Remove("certificate_management_status"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus? _explicitNullValueCertificateManagementStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus CertificateManagementStatus { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus CertificateManagementStatus { get => _explicitNullValueCertificateManagementStatus; set { _explicitNullValueCertificateManagementStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_management_status"); else _explicitNullProperties?.Remove("certificate_management_status"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus _explicitNullValueCertificateManagementStatus = default!;
 #endif
         /// <summary>DNS CNAME target for a custom hostname, or null if the reserved domain is a subdomain of an ngrok owned domain (e.g. *.ngrok.app)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CnameTarget { get; set; }
+        public string? CnameTarget { get => _explicitNullValueCnameTarget; set { _explicitNullValueCnameTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_target"); else _explicitNullProperties?.Remove("cname_target"); } }
+        private string? _explicitNullValueCnameTarget = default!;
 #nullable restore
 #else
-        public string CnameTarget { get; set; }
+        public string CnameTarget { get => _explicitNullValueCnameTarget; set { _explicitNullValueCnameTarget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_target"); else _explicitNullProperties?.Remove("cname_target"); } }
+        private string _explicitNullValueCnameTarget = default!;
 #endif
         /// <summary>timestamp when the reserved domain was created, RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>human-readable description of what this reserved domain will be used for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>hostname of the reserved domain</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>unique reserved domain resource identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>arbitrary user-defined machine-readable data of this reserved domain. Optional, max 4096 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metadata { get; set; }
+        public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public string Metadata { get; set; }
+        public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string _explicitNullValueMetadata = default!;
 #endif
         /// <summary>deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>Region and IP resolution targets configured for the Domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry>? ResolvesTo { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry>? ResolvesTo { get => _explicitNullValueResolvesTo; set { _explicitNullValueResolvesTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolves_to"); else _explicitNullProperties?.Remove("resolves_to"); } }
+        private List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry>? _explicitNullValueResolvesTo = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry> ResolvesTo { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry> ResolvesTo { get => _explicitNullValueResolvesTo; set { _explicitNullValueResolvesTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolves_to"); else _explicitNullProperties?.Remove("resolves_to"); } }
+        private List<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry> _explicitNullValueResolvesTo = default!;
 #endif
         /// <summary>URI of the reserved domain API resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get; set; }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get; set; }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string _explicitNullValueUri = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomain"/> and sets the default values.
@@ -133,7 +179,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomain CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomain();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomain(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -178,6 +224,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainResolvesToEntry>("resolves_to", ResolvesTo);
             writer.WriteStringValue("uri", Uri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

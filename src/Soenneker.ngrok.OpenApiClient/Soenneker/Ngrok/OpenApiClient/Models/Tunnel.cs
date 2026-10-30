@@ -11,96 +11,136 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Tunnel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("backends") is { } nullNodeBackends && nullNodeBackends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Backends = null;
+            if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
+            if (parseNode.GetChildNode("forwards_to") is { } nullNodeForwardsTo && nullNodeForwardsTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForwardsTo = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("labels") is { } nullNodeLabels && nullNodeLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Labels = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("proto") is { } nullNodeProto && nullNodeProto.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proto = null;
+            if (parseNode.GetChildNode("public_url") is { } nullNodePublicUrl && nullNodePublicUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicUrl = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("tunnel_session") is { } nullNodeTunnelSession && nullNodeTunnelSession.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TunnelSession = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>tunnel group backends served by this backend tunnel</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>? Backends { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>? Backends { get => _explicitNullValueBackends; set { _explicitNullValueBackends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backends"); else _explicitNullProperties?.Remove("backends"); } }
+        private List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>? _explicitNullValueBackends = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType> Backends { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType> Backends { get => _explicitNullValueBackends; set { _explicitNullValueBackends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backends"); else _explicitNullProperties?.Remove("backends"); } }
+        private List<global::Soenneker.Ngrok.OpenApiClient.Models.RefType> _explicitNullValueBackends = default!;
 #endif
         /// <summary>The endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Endpoint { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType? _explicitNullValueEndpoint = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Endpoint { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueEndpoint = default!;
 #endif
         /// <summary>upstream address the ngrok agent forwards traffic over this tunnel to. this may be expressed as a URL or a network address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ForwardsTo { get; set; }
+        public string? ForwardsTo { get => _explicitNullValueForwardsTo; set { _explicitNullValueForwardsTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forwards_to"); else _explicitNullProperties?.Remove("forwards_to"); } }
+        private string? _explicitNullValueForwardsTo = default!;
 #nullable restore
 #else
-        public string ForwardsTo { get; set; }
+        public string ForwardsTo { get => _explicitNullValueForwardsTo; set { _explicitNullValueForwardsTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("forwards_to"); else _explicitNullProperties?.Remove("forwards_to"); } }
+        private string _explicitNullValueForwardsTo = default!;
 #endif
         /// <summary>unique tunnel resource identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>the labels the tunnel group backends will match against, if this is a backend tunnel</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelLabelsProperty? Labels { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelLabelsProperty? Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.TunnelLabelsProperty? _explicitNullValueLabels = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelLabelsProperty Labels { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.TunnelLabelsProperty Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.TunnelLabelsProperty _explicitNullValueLabels = default!;
 #endif
         /// <summary>user-supplied metadata for the tunnel defined in the ngrok configuration file. See the tunnel [metadata configuration option](https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config#common-tunnel-configuration-properties) In API version 0, this value was instead pulled from the top-level [metadata configuration option](https://ngrok.com/docs/secure-tunnels/ngrok-agent/reference/config#metadata).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metadata { get; set; }
+        public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public string Metadata { get; set; }
+        public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string _explicitNullValueMetadata = default!;
 #endif
         /// <summary>tunnel protocol for ephemeral tunnels. one of `http`, `https`, `tcp` or `tls`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Proto { get; set; }
+        public string? Proto { get => _explicitNullValueProto; set { _explicitNullValueProto = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proto"); else _explicitNullProperties?.Remove("proto"); } }
+        private string? _explicitNullValueProto = default!;
 #nullable restore
 #else
-        public string Proto { get; set; }
+        public string Proto { get => _explicitNullValueProto; set { _explicitNullValueProto = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proto"); else _explicitNullProperties?.Remove("proto"); } }
+        private string _explicitNullValueProto = default!;
 #endif
         /// <summary>URL of the ephemeral tunnel&apos;s public endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicUrl { get; set; }
+        public string? PublicUrl { get => _explicitNullValuePublicUrl; set { _explicitNullValuePublicUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_url"); else _explicitNullProperties?.Remove("public_url"); } }
+        private string? _explicitNullValuePublicUrl = default!;
 #nullable restore
 #else
-        public string PublicUrl { get; set; }
+        public string PublicUrl { get => _explicitNullValuePublicUrl; set { _explicitNullValuePublicUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_url"); else _explicitNullProperties?.Remove("public_url"); } }
+        private string _explicitNullValuePublicUrl = default!;
 #endif
         /// <summary>identifier of tune region where the tunnel is running</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>timestamp when the tunnel was initiated in RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartedAt { get; set; }
+        public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string? _explicitNullValueStartedAt = default!;
 #nullable restore
 #else
-        public string StartedAt { get; set; }
+        public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private string _explicitNullValueStartedAt = default!;
 #endif
         /// <summary>The tunnel_session property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? TunnelSession { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType? TunnelSession { get => _explicitNullValueTunnelSession; set { _explicitNullValueTunnelSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_session"); else _explicitNullProperties?.Remove("tunnel_session"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType? _explicitNullValueTunnelSession = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType TunnelSession { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.RefType TunnelSession { get => _explicitNullValueTunnelSession; set { _explicitNullValueTunnelSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_session"); else _explicitNullProperties?.Remove("tunnel_session"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueTunnelSession = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.Tunnel"/> and sets the default values.
@@ -117,7 +157,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.Tunnel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.Tunnel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.Tunnel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,6 +198,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("started_at", StartedAt);
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>("tunnel_session", TunnelSession);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

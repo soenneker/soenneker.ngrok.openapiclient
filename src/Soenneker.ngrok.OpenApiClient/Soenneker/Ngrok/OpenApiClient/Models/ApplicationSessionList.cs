@@ -11,32 +11,48 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ApplicationSessionList : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("application_sessions") is { } nullNodeApplicationSessions && nullNodeApplicationSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationSessions = null;
+            if (parseNode.GetChildNode("next_page_uri") is { } nullNodeNextPageUri && nullNodeNextPageUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageUri = null;
+            if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>list of all application sessions on this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession>? ApplicationSessions { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession>? ApplicationSessions { get => _explicitNullValueApplicationSessions; set { _explicitNullValueApplicationSessions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_sessions"); else _explicitNullProperties?.Remove("application_sessions"); } }
+        private List<global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession>? _explicitNullValueApplicationSessions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession> ApplicationSessions { get; set; }
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession> ApplicationSessions { get => _explicitNullValueApplicationSessions; set { _explicitNullValueApplicationSessions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("application_sessions"); else _explicitNullProperties?.Remove("application_sessions"); } }
+        private List<global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession> _explicitNullValueApplicationSessions = default!;
 #endif
         /// <summary>URI of the next page, or null if there is no next page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextPageUri { get; set; }
+        public string? NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
+        private string? _explicitNullValueNextPageUri = default!;
 #nullable restore
 #else
-        public string NextPageUri { get; set; }
+        public string NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
+        private string _explicitNullValueNextPageUri = default!;
 #endif
         /// <summary>URI of the application session list API resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get; set; }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get; set; }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string _explicitNullValueUri = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSessionList"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSessionList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSessionList();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSessionList(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.ApplicationSession>("application_sessions", ApplicationSessions);
             writer.WriteStringValue("next_page_uri", NextPageUri);
             writer.WriteStringValue("uri", Uri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

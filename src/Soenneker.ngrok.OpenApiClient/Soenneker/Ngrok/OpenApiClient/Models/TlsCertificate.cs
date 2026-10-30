@@ -11,176 +11,246 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TlsCertificate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("certificate_pem") is { } nullNodeCertificatePem && nullNodeCertificatePem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificatePem = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("extended_key_usages") is { } nullNodeExtendedKeyUsages && nullNodeExtendedKeyUsages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedKeyUsages = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("issued_at") is { } nullNodeIssuedAt && nullNodeIssuedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuedAt = null;
+            if (parseNode.GetChildNode("issuer_common_name") is { } nullNodeIssuerCommonName && nullNodeIssuerCommonName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerCommonName = null;
+            if (parseNode.GetChildNode("key_usages") is { } nullNodeKeyUsages && nullNodeKeyUsages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyUsages = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("not_after") is { } nullNodeNotAfter && nullNodeNotAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotAfter = null;
+            if (parseNode.GetChildNode("not_before") is { } nullNodeNotBefore && nullNodeNotBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotBefore = null;
+            if (parseNode.GetChildNode("private_key_type") is { } nullNodePrivateKeyType && nullNodePrivateKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateKeyType = null;
+            if (parseNode.GetChildNode("serial_number") is { } nullNodeSerialNumber && nullNodeSerialNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SerialNumber = null;
+            if (parseNode.GetChildNode("subject_alternative_names") is { } nullNodeSubjectAlternativeNames && nullNodeSubjectAlternativeNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectAlternativeNames = null;
+            if (parseNode.GetChildNode("subject_common_name") is { } nullNodeSubjectCommonName && nullNodeSubjectCommonName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectCommonName = null;
+            if (parseNode.GetChildNode("subject_country") is { } nullNodeSubjectCountry && nullNodeSubjectCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectCountry = null;
+            if (parseNode.GetChildNode("subject_locality") is { } nullNodeSubjectLocality && nullNodeSubjectLocality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectLocality = null;
+            if (parseNode.GetChildNode("subject_organization") is { } nullNodeSubjectOrganization && nullNodeSubjectOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectOrganization = null;
+            if (parseNode.GetChildNode("subject_organizational_unit") is { } nullNodeSubjectOrganizationalUnit && nullNodeSubjectOrganizationalUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectOrganizationalUnit = null;
+            if (parseNode.GetChildNode("subject_province") is { } nullNodeSubjectProvince && nullNodeSubjectProvince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectProvince = null;
+            if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>chain of PEM-encoded certificates, leaf first. See [Certificate Bundles](https://ngrok.com/docs/cloud-edge/endpoints#certificate-chains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificatePem { get; set; }
+        public string? CertificatePem { get => _explicitNullValueCertificatePem; set { _explicitNullValueCertificatePem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_pem"); else _explicitNullProperties?.Remove("certificate_pem"); } }
+        private string? _explicitNullValueCertificatePem = default!;
 #nullable restore
 #else
-        public string CertificatePem { get; set; }
+        public string CertificatePem { get => _explicitNullValueCertificatePem; set { _explicitNullValueCertificatePem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_pem"); else _explicitNullProperties?.Remove("certificate_pem"); } }
+        private string _explicitNullValueCertificatePem = default!;
 #endif
         /// <summary>timestamp when the TLS certificate was created, RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>human-readable description of this TLS certificate. optional, max 255 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>extended set of actions the private key of this TLS certificate can be used for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExtendedKeyUsages { get; set; }
+        public List<string>? ExtendedKeyUsages { get => _explicitNullValueExtendedKeyUsages; set { _explicitNullValueExtendedKeyUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_key_usages"); else _explicitNullProperties?.Remove("extended_key_usages"); } }
+        private List<string>? _explicitNullValueExtendedKeyUsages = default!;
 #nullable restore
 #else
-        public List<string> ExtendedKeyUsages { get; set; }
+        public List<string> ExtendedKeyUsages { get => _explicitNullValueExtendedKeyUsages; set { _explicitNullValueExtendedKeyUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_key_usages"); else _explicitNullProperties?.Remove("extended_key_usages"); } }
+        private List<string> _explicitNullValueExtendedKeyUsages = default!;
 #endif
         /// <summary>unique identifier for this TLS certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>timestamp (in RFC 3339 format) when this TLS certificate was issued automatically, or null if this certificate was user-uploaded</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuedAt { get; set; }
+        public string? IssuedAt { get => _explicitNullValueIssuedAt; set { _explicitNullValueIssuedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issued_at"); else _explicitNullProperties?.Remove("issued_at"); } }
+        private string? _explicitNullValueIssuedAt = default!;
 #nullable restore
 #else
-        public string IssuedAt { get; set; }
+        public string IssuedAt { get => _explicitNullValueIssuedAt; set { _explicitNullValueIssuedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issued_at"); else _explicitNullProperties?.Remove("issued_at"); } }
+        private string _explicitNullValueIssuedAt = default!;
 #endif
         /// <summary>issuer common name from the leaf of this TLS certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerCommonName { get; set; }
+        public string? IssuerCommonName { get => _explicitNullValueIssuerCommonName; set { _explicitNullValueIssuerCommonName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer_common_name"); else _explicitNullProperties?.Remove("issuer_common_name"); } }
+        private string? _explicitNullValueIssuerCommonName = default!;
 #nullable restore
 #else
-        public string IssuerCommonName { get; set; }
+        public string IssuerCommonName { get => _explicitNullValueIssuerCommonName; set { _explicitNullValueIssuerCommonName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer_common_name"); else _explicitNullProperties?.Remove("issuer_common_name"); } }
+        private string _explicitNullValueIssuerCommonName = default!;
 #endif
         /// <summary>set of actions the private key of this TLS certificate can be used for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? KeyUsages { get; set; }
+        public List<string>? KeyUsages { get => _explicitNullValueKeyUsages; set { _explicitNullValueKeyUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_usages"); else _explicitNullProperties?.Remove("key_usages"); } }
+        private List<string>? _explicitNullValueKeyUsages = default!;
 #nullable restore
 #else
-        public List<string> KeyUsages { get; set; }
+        public List<string> KeyUsages { get => _explicitNullValueKeyUsages; set { _explicitNullValueKeyUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_usages"); else _explicitNullProperties?.Remove("key_usages"); } }
+        private List<string> _explicitNullValueKeyUsages = default!;
 #endif
         /// <summary>arbitrary user-defined machine-readable data of this TLS certificate. optional, max 4096 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metadata { get; set; }
+        public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public string Metadata { get; set; }
+        public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string _explicitNullValueMetadata = default!;
 #endif
         /// <summary>timestamp when this TLS certificate becomes invalid, RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotAfter { get; set; }
+        public string? NotAfter { get => _explicitNullValueNotAfter; set { _explicitNullValueNotAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_after"); else _explicitNullProperties?.Remove("not_after"); } }
+        private string? _explicitNullValueNotAfter = default!;
 #nullable restore
 #else
-        public string NotAfter { get; set; }
+        public string NotAfter { get => _explicitNullValueNotAfter; set { _explicitNullValueNotAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_after"); else _explicitNullProperties?.Remove("not_after"); } }
+        private string _explicitNullValueNotAfter = default!;
 #endif
         /// <summary>timestamp when this TLS certificate becomes valid, RFC 3339 format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotBefore { get; set; }
+        public string? NotBefore { get => _explicitNullValueNotBefore; set { _explicitNullValueNotBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_before"); else _explicitNullProperties?.Remove("not_before"); } }
+        private string? _explicitNullValueNotBefore = default!;
 #nullable restore
 #else
-        public string NotBefore { get; set; }
+        public string NotBefore { get => _explicitNullValueNotBefore; set { _explicitNullValueNotBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_before"); else _explicitNullProperties?.Remove("not_before"); } }
+        private string _explicitNullValueNotBefore = default!;
 #endif
         /// <summary>type of the private key of this TLS certificate. One of rsa, ecdsa, or ed25519.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivateKeyType { get; set; }
+        public string? PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
+        private string? _explicitNullValuePrivateKeyType = default!;
 #nullable restore
 #else
-        public string PrivateKeyType { get; set; }
+        public string PrivateKeyType { get => _explicitNullValuePrivateKeyType; set { _explicitNullValuePrivateKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key_type"); else _explicitNullProperties?.Remove("private_key_type"); } }
+        private string _explicitNullValuePrivateKeyType = default!;
 #endif
         /// <summary>serial number of the leaf of this TLS certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber { get; set; }
+        public string? SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serial_number"); else _explicitNullProperties?.Remove("serial_number"); } }
+        private string? _explicitNullValueSerialNumber = default!;
 #nullable restore
 #else
-        public string SerialNumber { get; set; }
+        public string SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serial_number"); else _explicitNullProperties?.Remove("serial_number"); } }
+        private string _explicitNullValueSerialNumber = default!;
 #endif
         /// <summary>The subject_alternative_names property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificateSaNs? SubjectAlternativeNames { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificateSaNs? SubjectAlternativeNames { get => _explicitNullValueSubjectAlternativeNames; set { _explicitNullValueSubjectAlternativeNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_alternative_names"); else _explicitNullProperties?.Remove("subject_alternative_names"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificateSaNs? _explicitNullValueSubjectAlternativeNames = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificateSaNs SubjectAlternativeNames { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificateSaNs SubjectAlternativeNames { get => _explicitNullValueSubjectAlternativeNames; set { _explicitNullValueSubjectAlternativeNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_alternative_names"); else _explicitNullProperties?.Remove("subject_alternative_names"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificateSaNs _explicitNullValueSubjectAlternativeNames = default!;
 #endif
         /// <summary>subject common name from the leaf of this TLS certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectCommonName { get; set; }
+        public string? SubjectCommonName { get => _explicitNullValueSubjectCommonName; set { _explicitNullValueSubjectCommonName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_common_name"); else _explicitNullProperties?.Remove("subject_common_name"); } }
+        private string? _explicitNullValueSubjectCommonName = default!;
 #nullable restore
 #else
-        public string SubjectCommonName { get; set; }
+        public string SubjectCommonName { get => _explicitNullValueSubjectCommonName; set { _explicitNullValueSubjectCommonName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_common_name"); else _explicitNullProperties?.Remove("subject_common_name"); } }
+        private string _explicitNullValueSubjectCommonName = default!;
 #endif
         /// <summary>subject country from the leaf of this TLS certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectCountry { get; set; }
+        public string? SubjectCountry { get => _explicitNullValueSubjectCountry; set { _explicitNullValueSubjectCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_country"); else _explicitNullProperties?.Remove("subject_country"); } }
+        private string? _explicitNullValueSubjectCountry = default!;
 #nullable restore
 #else
-        public string SubjectCountry { get; set; }
+        public string SubjectCountry { get => _explicitNullValueSubjectCountry; set { _explicitNullValueSubjectCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_country"); else _explicitNullProperties?.Remove("subject_country"); } }
+        private string _explicitNullValueSubjectCountry = default!;
 #endif
         /// <summary>subject locality from the leaf of this TLS certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectLocality { get; set; }
+        public string? SubjectLocality { get => _explicitNullValueSubjectLocality; set { _explicitNullValueSubjectLocality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_locality"); else _explicitNullProperties?.Remove("subject_locality"); } }
+        private string? _explicitNullValueSubjectLocality = default!;
 #nullable restore
 #else
-        public string SubjectLocality { get; set; }
+        public string SubjectLocality { get => _explicitNullValueSubjectLocality; set { _explicitNullValueSubjectLocality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_locality"); else _explicitNullProperties?.Remove("subject_locality"); } }
+        private string _explicitNullValueSubjectLocality = default!;
 #endif
         /// <summary>subject organization from the leaf of this TLS certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectOrganization { get; set; }
+        public string? SubjectOrganization { get => _explicitNullValueSubjectOrganization; set { _explicitNullValueSubjectOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_organization"); else _explicitNullProperties?.Remove("subject_organization"); } }
+        private string? _explicitNullValueSubjectOrganization = default!;
 #nullable restore
 #else
-        public string SubjectOrganization { get; set; }
+        public string SubjectOrganization { get => _explicitNullValueSubjectOrganization; set { _explicitNullValueSubjectOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_organization"); else _explicitNullProperties?.Remove("subject_organization"); } }
+        private string _explicitNullValueSubjectOrganization = default!;
 #endif
         /// <summary>subject organizational unit from the leaf of this TLS certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectOrganizationalUnit { get; set; }
+        public string? SubjectOrganizationalUnit { get => _explicitNullValueSubjectOrganizationalUnit; set { _explicitNullValueSubjectOrganizationalUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_organizational_unit"); else _explicitNullProperties?.Remove("subject_organizational_unit"); } }
+        private string? _explicitNullValueSubjectOrganizationalUnit = default!;
 #nullable restore
 #else
-        public string SubjectOrganizationalUnit { get; set; }
+        public string SubjectOrganizationalUnit { get => _explicitNullValueSubjectOrganizationalUnit; set { _explicitNullValueSubjectOrganizationalUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_organizational_unit"); else _explicitNullProperties?.Remove("subject_organizational_unit"); } }
+        private string _explicitNullValueSubjectOrganizationalUnit = default!;
 #endif
         /// <summary>subject province from the leaf of this TLS certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectProvince { get; set; }
+        public string? SubjectProvince { get => _explicitNullValueSubjectProvince; set { _explicitNullValueSubjectProvince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_province"); else _explicitNullProperties?.Remove("subject_province"); } }
+        private string? _explicitNullValueSubjectProvince = default!;
 #nullable restore
 #else
-        public string SubjectProvince { get; set; }
+        public string SubjectProvince { get => _explicitNullValueSubjectProvince; set { _explicitNullValueSubjectProvince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject_province"); else _explicitNullProperties?.Remove("subject_province"); } }
+        private string _explicitNullValueSubjectProvince = default!;
 #endif
         /// <summary>URI of the TLS certificate API resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get; set; }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get; set; }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string _explicitNullValueUri = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificate"/> and sets the default values.
@@ -197,7 +267,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.TlsCertificate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -258,6 +328,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("subject_organizational_unit", SubjectOrganizationalUnit);
             writer.WriteStringValue("subject_province", SubjectProvince);
             writer.WriteStringValue("uri", Uri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

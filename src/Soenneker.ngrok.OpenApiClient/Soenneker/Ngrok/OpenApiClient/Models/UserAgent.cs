@@ -11,56 +11,81 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UserAgent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("browser_name") is { } nullNodeBrowserName && nullNodeBrowserName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserName = null;
+            if (parseNode.GetChildNode("browser_version") is { } nullNodeBrowserVersion && nullNodeBrowserVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserVersion = null;
+            if (parseNode.GetChildNode("device_type") is { } nullNodeDeviceType && nullNodeDeviceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceType = null;
+            if (parseNode.GetChildNode("os_name") is { } nullNodeOsName && nullNodeOsName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsName = null;
+            if (parseNode.GetChildNode("os_version") is { } nullNodeOsVersion && nullNodeOsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsVersion = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>browser name (e.g. Chrome)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrowserName { get; set; }
+        public string? BrowserName { get => _explicitNullValueBrowserName; set { _explicitNullValueBrowserName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_name"); else _explicitNullProperties?.Remove("browser_name"); } }
+        private string? _explicitNullValueBrowserName = default!;
 #nullable restore
 #else
-        public string BrowserName { get; set; }
+        public string BrowserName { get => _explicitNullValueBrowserName; set { _explicitNullValueBrowserName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_name"); else _explicitNullProperties?.Remove("browser_name"); } }
+        private string _explicitNullValueBrowserName = default!;
 #endif
         /// <summary>browser version (e.g. 102)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrowserVersion { get; set; }
+        public string? BrowserVersion { get => _explicitNullValueBrowserVersion; set { _explicitNullValueBrowserVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_version"); else _explicitNullProperties?.Remove("browser_version"); } }
+        private string? _explicitNullValueBrowserVersion = default!;
 #nullable restore
 #else
-        public string BrowserVersion { get; set; }
+        public string BrowserVersion { get => _explicitNullValueBrowserVersion; set { _explicitNullValueBrowserVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_version"); else _explicitNullProperties?.Remove("browser_version"); } }
+        private string _explicitNullValueBrowserVersion = default!;
 #endif
         /// <summary>type of device (e.g. Desktop)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceType { get; set; }
+        public string? DeviceType { get => _explicitNullValueDeviceType; set { _explicitNullValueDeviceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_type"); else _explicitNullProperties?.Remove("device_type"); } }
+        private string? _explicitNullValueDeviceType = default!;
 #nullable restore
 #else
-        public string DeviceType { get; set; }
+        public string DeviceType { get => _explicitNullValueDeviceType; set { _explicitNullValueDeviceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_type"); else _explicitNullProperties?.Remove("device_type"); } }
+        private string _explicitNullValueDeviceType = default!;
 #endif
         /// <summary>operating system name (e.g. MacOS)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsName { get; set; }
+        public string? OsName { get => _explicitNullValueOsName; set { _explicitNullValueOsName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_name"); else _explicitNullProperties?.Remove("os_name"); } }
+        private string? _explicitNullValueOsName = default!;
 #nullable restore
 #else
-        public string OsName { get; set; }
+        public string OsName { get => _explicitNullValueOsName; set { _explicitNullValueOsName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_name"); else _explicitNullProperties?.Remove("os_name"); } }
+        private string _explicitNullValueOsName = default!;
 #endif
         /// <summary>operating system version (e.g. 10.15.7)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion { get; set; }
+        public string? OsVersion { get => _explicitNullValueOsVersion; set { _explicitNullValueOsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_version"); else _explicitNullProperties?.Remove("os_version"); } }
+        private string? _explicitNullValueOsVersion = default!;
 #nullable restore
 #else
-        public string OsVersion { get; set; }
+        public string OsVersion { get => _explicitNullValueOsVersion; set { _explicitNullValueOsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_version"); else _explicitNullProperties?.Remove("os_version"); } }
+        private string _explicitNullValueOsVersion = default!;
 #endif
         /// <summary>raw User-Agent request header</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Raw { get; set; }
+        public string? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public string Raw { get; set; }
+        public string Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string _explicitNullValueRaw = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.UserAgent"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.UserAgent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.UserAgent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.UserAgent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("os_name", OsName);
             writer.WriteStringValue("os_version", OsVersion);
             writer.WriteStringValue("raw", Raw);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

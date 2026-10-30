@@ -11,80 +11,114 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SshUserCertificateCreate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("critical_options") is { } nullNodeCriticalOptions && nullNodeCriticalOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriticalOptions = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("extensions") is { } nullNodeExtensions && nullNodeExtensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extensions = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("principals") is { } nullNodePrincipals && nullNodePrincipals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Principals = null;
+            if (parseNode.GetChildNode("public_key") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("ssh_certificate_authority_id") is { } nullNodeSshCertificateAuthorityId && nullNodeSshCertificateAuthorityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SshCertificateAuthorityId = null;
+            if (parseNode.GetChildNode("valid_after") is { } nullNodeValidAfter && nullNodeValidAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidAfter = null;
+            if (parseNode.GetChildNode("valid_until") is { } nullNodeValidUntil && nullNodeValidUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidUntil = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateCriticalOptionsProperty? CriticalOptions { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateCriticalOptionsProperty? CriticalOptions { get => _explicitNullValueCriticalOptions; set { _explicitNullValueCriticalOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical_options"); else _explicitNullProperties?.Remove("critical_options"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateCriticalOptionsProperty? _explicitNullValueCriticalOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateCriticalOptionsProperty CriticalOptions { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateCriticalOptionsProperty CriticalOptions { get => _explicitNullValueCriticalOptions; set { _explicitNullValueCriticalOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("critical_options"); else _explicitNullProperties?.Remove("critical_options"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateCriticalOptionsProperty _explicitNullValueCriticalOptions = default!;
 #endif
         /// <summary>human-readable description of this SSH User Certificate. optional, max 255 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{&quot;permit-pty&quot;: &quot;&quot;, &quot;permit-user-rc&quot;: &quot;&quot;}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateExtensionsProperty? Extensions { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateExtensionsProperty? Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateExtensionsProperty? _explicitNullValueExtensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateExtensionsProperty Extensions { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateExtensionsProperty Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreateExtensionsProperty _explicitNullValueExtensions = default!;
 #endif
         /// <summary>arbitrary user-defined machine-readable data of this SSH User Certificate. optional, max 4096 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metadata { get; set; }
+        public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public string Metadata { get; set; }
+        public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string _explicitNullValueMetadata = default!;
 #endif
         /// <summary>the list of principals included in the ssh user certificate. This is the list of usernames that the certificate holder may sign in as on a machine authorizing the signing certificate authority. Dangerously, if no principals are specified, this certificate may be used to log in as any user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Principals { get; set; }
+        public List<string>? Principals { get => _explicitNullValuePrincipals; set { _explicitNullValuePrincipals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("principals"); else _explicitNullProperties?.Remove("principals"); } }
+        private List<string>? _explicitNullValuePrincipals = default!;
 #nullable restore
 #else
-        public List<string> Principals { get; set; }
+        public List<string> Principals { get => _explicitNullValuePrincipals; set { _explicitNullValuePrincipals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("principals"); else _explicitNullProperties?.Remove("principals"); } }
+        private List<string> _explicitNullValuePrincipals = default!;
 #endif
         /// <summary>a public key in OpenSSH Authorized Keys format that this certificate signs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKey { get; set; }
+        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        private string? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public string PublicKey { get; set; }
+        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        private string _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>the ssh certificate authority that is used to sign this ssh user certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SshCertificateAuthorityId { get; set; }
+        public string? SshCertificateAuthorityId { get => _explicitNullValueSshCertificateAuthorityId; set { _explicitNullValueSshCertificateAuthorityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_certificate_authority_id"); else _explicitNullProperties?.Remove("ssh_certificate_authority_id"); } }
+        private string? _explicitNullValueSshCertificateAuthorityId = default!;
 #nullable restore
 #else
-        public string SshCertificateAuthorityId { get; set; }
+        public string SshCertificateAuthorityId { get => _explicitNullValueSshCertificateAuthorityId; set { _explicitNullValueSshCertificateAuthorityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssh_certificate_authority_id"); else _explicitNullProperties?.Remove("ssh_certificate_authority_id"); } }
+        private string _explicitNullValueSshCertificateAuthorityId = default!;
 #endif
         /// <summary>The time when the user certificate becomes valid, in RFC 3339 format. Defaults to the current time if unspecified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidAfter { get; set; }
+        public string? ValidAfter { get => _explicitNullValueValidAfter; set { _explicitNullValueValidAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_after"); else _explicitNullProperties?.Remove("valid_after"); } }
+        private string? _explicitNullValueValidAfter = default!;
 #nullable restore
 #else
-        public string ValidAfter { get; set; }
+        public string ValidAfter { get => _explicitNullValueValidAfter; set { _explicitNullValueValidAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_after"); else _explicitNullProperties?.Remove("valid_after"); } }
+        private string _explicitNullValueValidAfter = default!;
 #endif
         /// <summary>The time when this host certificate becomes invalid, in RFC 3339 format. If unspecified, a default value of 24 hours will be used. The OpenSSH certificates RFC calls this `valid_before`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidUntil { get; set; }
+        public string? ValidUntil { get => _explicitNullValueValidUntil; set { _explicitNullValueValidUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_until"); else _explicitNullProperties?.Remove("valid_until"); } }
+        private string? _explicitNullValueValidUntil = default!;
 #nullable restore
 #else
-        public string ValidUntil { get; set; }
+        public string ValidUntil { get => _explicitNullValueValidUntil; set { _explicitNullValueValidUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valid_until"); else _explicitNullProperties?.Remove("valid_until"); } }
+        private string _explicitNullValueValidUntil = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreate"/> and sets the default values.
@@ -101,7 +135,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.SshUserCertificateCreate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -138,6 +172,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("ssh_certificate_authority_id", SshCertificateAuthorityId);
             writer.WriteStringValue("valid_after", ValidAfter);
             writer.WriteStringValue("valid_until", ValidUntil);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

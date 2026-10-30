@@ -11,24 +11,37 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EventTargetKinesis : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth") is { } nullNodeAuth && nullNodeAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Auth = null;
+            if (parseNode.GetChildNode("stream_arn") is { } nullNodeStreamArn && nullNodeStreamArn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamArn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auth property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth? Auth { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth? Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth? _explicitNullValueAuth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth Auth { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth _explicitNullValueAuth = default!;
 #endif
         /// <summary>An Amazon Resource Name specifying the Kinesis stream to deposit events into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StreamArn { get; set; }
+        public string? StreamArn { get => _explicitNullValueStreamArn; set { _explicitNullValueStreamArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_arn"); else _explicitNullProperties?.Remove("stream_arn"); } }
+        private string? _explicitNullValueStreamArn = default!;
 #nullable restore
 #else
-        public string StreamArn { get; set; }
+        public string StreamArn { get => _explicitNullValueStreamArn; set { _explicitNullValueStreamArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_arn"); else _explicitNullProperties?.Remove("stream_arn"); } }
+        private string _explicitNullValueStreamArn = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetKinesis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.AwsAuth>("auth", Auth);
             writer.WriteStringValue("stream_arn", StreamArn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

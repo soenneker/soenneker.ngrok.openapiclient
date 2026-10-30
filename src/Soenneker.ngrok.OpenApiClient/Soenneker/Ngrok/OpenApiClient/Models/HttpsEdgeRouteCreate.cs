@@ -11,152 +11,213 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class HttpsEdgeRouteCreate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("backend") is { } nullNodeBackend && nullNodeBackend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Backend = null;
+            if (parseNode.GetChildNode("circuit_breaker") is { } nullNodeCircuitBreaker && nullNodeCircuitBreaker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CircuitBreaker = null;
+            if (parseNode.GetChildNode("compression") is { } nullNodeCompression && nullNodeCompression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compression = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("edge_id") is { } nullNodeEdgeId && nullNodeEdgeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EdgeId = null;
+            if (parseNode.GetChildNode("ip_restriction") is { } nullNodeIpRestriction && nullNodeIpRestriction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpRestriction = null;
+            if (parseNode.GetChildNode("match") is { } nullNodeMatch && nullNodeMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Match = null;
+            if (parseNode.GetChildNode("match_type") is { } nullNodeMatchType && nullNodeMatchType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchType = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("oauth") is { } nullNodeOauth && nullNodeOauth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth = null;
+            if (parseNode.GetChildNode("oidc") is { } nullNodeOidc && nullNodeOidc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oidc = null;
+            if (parseNode.GetChildNode("request_headers") is { } nullNodeRequestHeaders && nullNodeRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestHeaders = null;
+            if (parseNode.GetChildNode("response_headers") is { } nullNodeResponseHeaders && nullNodeResponseHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseHeaders = null;
+            if (parseNode.GetChildNode("saml") is { } nullNodeSaml && nullNodeSaml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Saml = null;
+            if (parseNode.GetChildNode("traffic_policy") is { } nullNodeTrafficPolicy && nullNodeTrafficPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficPolicy = null;
+            if (parseNode.GetChildNode("user_agent_filter") is { } nullNodeUserAgentFilter && nullNodeUserAgentFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgentFilter = null;
+            if (parseNode.GetChildNode("webhook_verification") is { } nullNodeWebhookVerification && nullNodeWebhookVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookVerification = null;
+            if (parseNode.GetChildNode("websocket_tcp_converter") is { } nullNodeWebsocketTcpConverter && nullNodeWebsocketTcpConverter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebsocketTcpConverter = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The backend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointBackendMutate? Backend { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointBackendMutate? Backend { get => _explicitNullValueBackend; set { _explicitNullValueBackend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend"); else _explicitNullProperties?.Remove("backend"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointBackendMutate? _explicitNullValueBackend = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointBackendMutate Backend { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointBackendMutate Backend { get => _explicitNullValueBackend; set { _explicitNullValueBackend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend"); else _explicitNullProperties?.Remove("backend"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointBackendMutate _explicitNullValueBackend = default!;
 #endif
         /// <summary>The circuit_breaker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCircuitBreaker? CircuitBreaker { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCircuitBreaker? CircuitBreaker { get => _explicitNullValueCircuitBreaker; set { _explicitNullValueCircuitBreaker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("circuit_breaker"); else _explicitNullProperties?.Remove("circuit_breaker"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCircuitBreaker? _explicitNullValueCircuitBreaker = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCircuitBreaker CircuitBreaker { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCircuitBreaker CircuitBreaker { get => _explicitNullValueCircuitBreaker; set { _explicitNullValueCircuitBreaker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("circuit_breaker"); else _explicitNullProperties?.Remove("circuit_breaker"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCircuitBreaker _explicitNullValueCircuitBreaker = default!;
 #endif
         /// <summary>The compression property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCompression? Compression { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCompression? Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCompression? _explicitNullValueCompression = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCompression Compression { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCompression Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCompression _explicitNullValueCompression = default!;
 #endif
         /// <summary>human-readable description of what this edge will be used for; optional, max 255 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>unique identifier of this edge</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeId { get; set; }
+        public string? EdgeId { get => _explicitNullValueEdgeId; set { _explicitNullValueEdgeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_id"); else _explicitNullProperties?.Remove("edge_id"); } }
+        private string? _explicitNullValueEdgeId = default!;
 #nullable restore
 #else
-        public string EdgeId { get; set; }
+        public string EdgeId { get => _explicitNullValueEdgeId; set { _explicitNullValueEdgeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge_id"); else _explicitNullProperties?.Remove("edge_id"); } }
+        private string _explicitNullValueEdgeId = default!;
 #endif
         /// <summary>The ip_restriction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointIpPolicyMutate? IpRestriction { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointIpPolicyMutate? IpRestriction { get => _explicitNullValueIpRestriction; set { _explicitNullValueIpRestriction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_restriction"); else _explicitNullProperties?.Remove("ip_restriction"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointIpPolicyMutate? _explicitNullValueIpRestriction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointIpPolicyMutate IpRestriction { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointIpPolicyMutate IpRestriction { get => _explicitNullValueIpRestriction; set { _explicitNullValueIpRestriction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip_restriction"); else _explicitNullProperties?.Remove("ip_restriction"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointIpPolicyMutate _explicitNullValueIpRestriction = default!;
 #endif
         /// <summary>Route selector: &quot;/blog&quot; or &quot;example.com&quot; or &quot;example.com/blog&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Match { get; set; }
+        public string? Match { get => _explicitNullValueMatch; set { _explicitNullValueMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match"); else _explicitNullProperties?.Remove("match"); } }
+        private string? _explicitNullValueMatch = default!;
 #nullable restore
 #else
-        public string Match { get; set; }
+        public string Match { get => _explicitNullValueMatch; set { _explicitNullValueMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match"); else _explicitNullProperties?.Remove("match"); } }
+        private string _explicitNullValueMatch = default!;
 #endif
         /// <summary>Type of match to use for this route. Valid values are &quot;exact_path&quot; and &quot;path_prefix&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MatchType { get; set; }
+        public string? MatchType { get => _explicitNullValueMatchType; set { _explicitNullValueMatchType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_type"); else _explicitNullProperties?.Remove("match_type"); } }
+        private string? _explicitNullValueMatchType = default!;
 #nullable restore
 #else
-        public string MatchType { get; set; }
+        public string MatchType { get => _explicitNullValueMatchType; set { _explicitNullValueMatchType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_type"); else _explicitNullProperties?.Remove("match_type"); } }
+        private string _explicitNullValueMatchType = default!;
 #endif
         /// <summary>arbitrary user-defined machine-readable data of this edge. Optional, max 4096 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metadata { get; set; }
+        public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public string Metadata { get; set; }
+        public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private string _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The oauth property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth? Oauth { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth? Oauth { get => _explicitNullValueOauth; set { _explicitNullValueOauth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth"); else _explicitNullProperties?.Remove("oauth"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth? _explicitNullValueOauth = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth Oauth { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth Oauth { get => _explicitNullValueOauth; set { _explicitNullValueOauth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth"); else _explicitNullProperties?.Remove("oauth"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth _explicitNullValueOauth = default!;
 #endif
         /// <summary>The oidc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOidc? Oidc { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOidc? Oidc { get => _explicitNullValueOidc; set { _explicitNullValueOidc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidc"); else _explicitNullProperties?.Remove("oidc"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOidc? _explicitNullValueOidc = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOidc Oidc { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOidc Oidc { get => _explicitNullValueOidc; set { _explicitNullValueOidc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oidc"); else _explicitNullProperties?.Remove("oidc"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOidc _explicitNullValueOidc = default!;
 #endif
         /// <summary>The request_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders? RequestHeaders { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders? RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders? _explicitNullValueRequestHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders RequestHeaders { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointRequestHeaders _explicitNullValueRequestHeaders = default!;
 #endif
         /// <summary>The response_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointResponseHeaders? ResponseHeaders { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointResponseHeaders? ResponseHeaders { get => _explicitNullValueResponseHeaders; set { _explicitNullValueResponseHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_headers"); else _explicitNullProperties?.Remove("response_headers"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointResponseHeaders? _explicitNullValueResponseHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointResponseHeaders ResponseHeaders { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointResponseHeaders ResponseHeaders { get => _explicitNullValueResponseHeaders; set { _explicitNullValueResponseHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_headers"); else _explicitNullProperties?.Remove("response_headers"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointResponseHeaders _explicitNullValueResponseHeaders = default!;
 #endif
         /// <summary>The saml property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSamlMutate? Saml { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSamlMutate? Saml { get => _explicitNullValueSaml; set { _explicitNullValueSaml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml"); else _explicitNullProperties?.Remove("saml"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSamlMutate? _explicitNullValueSaml = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSamlMutate Saml { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSamlMutate Saml { get => _explicitNullValueSaml; set { _explicitNullValueSaml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saml"); else _explicitNullProperties?.Remove("saml"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSamlMutate _explicitNullValueSaml = default!;
 #endif
         /// <summary>The traffic_policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointTrafficPolicy? TrafficPolicy { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointTrafficPolicy? TrafficPolicy { get => _explicitNullValueTrafficPolicy; set { _explicitNullValueTrafficPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_policy"); else _explicitNullProperties?.Remove("traffic_policy"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointTrafficPolicy? _explicitNullValueTrafficPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointTrafficPolicy TrafficPolicy { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointTrafficPolicy TrafficPolicy { get => _explicitNullValueTrafficPolicy; set { _explicitNullValueTrafficPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_policy"); else _explicitNullProperties?.Remove("traffic_policy"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointTrafficPolicy _explicitNullValueTrafficPolicy = default!;
 #endif
         /// <summary>The user_agent_filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointUserAgentFilter? UserAgentFilter { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointUserAgentFilter? UserAgentFilter { get => _explicitNullValueUserAgentFilter; set { _explicitNullValueUserAgentFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_agent_filter"); else _explicitNullProperties?.Remove("user_agent_filter"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointUserAgentFilter? _explicitNullValueUserAgentFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointUserAgentFilter UserAgentFilter { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointUserAgentFilter UserAgentFilter { get => _explicitNullValueUserAgentFilter; set { _explicitNullValueUserAgentFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_agent_filter"); else _explicitNullProperties?.Remove("user_agent_filter"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointUserAgentFilter _explicitNullValueUserAgentFilter = default!;
 #endif
         /// <summary>The webhook_verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebhookValidation? WebhookVerification { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebhookValidation? WebhookVerification { get => _explicitNullValueWebhookVerification; set { _explicitNullValueWebhookVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_verification"); else _explicitNullProperties?.Remove("webhook_verification"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebhookValidation? _explicitNullValueWebhookVerification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebhookValidation WebhookVerification { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebhookValidation WebhookVerification { get => _explicitNullValueWebhookVerification; set { _explicitNullValueWebhookVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_verification"); else _explicitNullProperties?.Remove("webhook_verification"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebhookValidation _explicitNullValueWebhookVerification = default!;
 #endif
         /// <summary>The websocket_tcp_converter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter? WebsocketTcpConverter { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter? WebsocketTcpConverter { get => _explicitNullValueWebsocketTcpConverter; set { _explicitNullValueWebsocketTcpConverter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("websocket_tcp_converter"); else _explicitNullProperties?.Remove("websocket_tcp_converter"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter? _explicitNullValueWebsocketTcpConverter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter WebsocketTcpConverter { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter WebsocketTcpConverter { get => _explicitNullValueWebsocketTcpConverter; set { _explicitNullValueWebsocketTcpConverter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("websocket_tcp_converter"); else _explicitNullProperties?.Remove("websocket_tcp_converter"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter _explicitNullValueWebsocketTcpConverter = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeRouteCreate"/> and sets the default values.
@@ -173,7 +234,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeRouteCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeRouteCreate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.HttpsEdgeRouteCreate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -228,6 +289,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointUserAgentFilter>("user_agent_filter", UserAgentFilter);
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebhookValidation>("webhook_verification", WebhookVerification);
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointWebsocketTcpConverter>("websocket_tcp_converter", WebsocketTcpConverter);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

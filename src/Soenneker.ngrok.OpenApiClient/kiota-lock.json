@@ -2,7 +2,7 @@
   "descriptionHash": "66AB96C8B4A5686ABAE63BB6C77267ADE779D5CA6BA8CE2D8FEA6A76237823EA95E27942EA7CCE4727756863CDE25831D55CAE337DA6382800C92ACDA0EE1337",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "ngrokOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.ngrok.OpenApiClient",

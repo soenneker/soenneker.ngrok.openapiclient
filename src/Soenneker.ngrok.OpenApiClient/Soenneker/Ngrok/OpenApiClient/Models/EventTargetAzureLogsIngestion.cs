@@ -11,56 +11,81 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EventTargetAzureLogsIngestion : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_secret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
+            if (parseNode.GetChildNode("data_collection_rule_id") is { } nullNodeDataCollectionRuleId && nullNodeDataCollectionRuleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollectionRuleId = null;
+            if (parseNode.GetChildNode("data_collection_stream_name") is { } nullNodeDataCollectionStreamName && nullNodeDataCollectionStreamName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollectionStreamName = null;
+            if (parseNode.GetChildNode("logs_ingestion_uri") is { } nullNodeLogsIngestionUri && nullNodeLogsIngestionUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogsIngestionUri = null;
+            if (parseNode.GetChildNode("tenant_id") is { } nullNodeTenantId && nullNodeTenantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenantId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Client ID for the application client</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>Client Secret for the application client</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret { get; set; }
+        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        private string? _explicitNullValueClientSecret = default!;
 #nullable restore
 #else
-        public string ClientSecret { get; set; }
+        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        private string _explicitNullValueClientSecret = default!;
 #endif
         /// <summary>Data collection rule immutable ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataCollectionRuleId { get; set; }
+        public string? DataCollectionRuleId { get => _explicitNullValueDataCollectionRuleId; set { _explicitNullValueDataCollectionRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_rule_id"); else _explicitNullProperties?.Remove("data_collection_rule_id"); } }
+        private string? _explicitNullValueDataCollectionRuleId = default!;
 #nullable restore
 #else
-        public string DataCollectionRuleId { get; set; }
+        public string DataCollectionRuleId { get => _explicitNullValueDataCollectionRuleId; set { _explicitNullValueDataCollectionRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_rule_id"); else _explicitNullProperties?.Remove("data_collection_rule_id"); } }
+        private string _explicitNullValueDataCollectionRuleId = default!;
 #endif
         /// <summary>Data collection stream name to use as destination, located inside the DCR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataCollectionStreamName { get; set; }
+        public string? DataCollectionStreamName { get => _explicitNullValueDataCollectionStreamName; set { _explicitNullValueDataCollectionStreamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_stream_name"); else _explicitNullProperties?.Remove("data_collection_stream_name"); } }
+        private string? _explicitNullValueDataCollectionStreamName = default!;
 #nullable restore
 #else
-        public string DataCollectionStreamName { get; set; }
+        public string DataCollectionStreamName { get => _explicitNullValueDataCollectionStreamName; set { _explicitNullValueDataCollectionStreamName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_stream_name"); else _explicitNullProperties?.Remove("data_collection_stream_name"); } }
+        private string _explicitNullValueDataCollectionStreamName = default!;
 #endif
         /// <summary>Data collection endpoint logs ingestion URI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogsIngestionUri { get; set; }
+        public string? LogsIngestionUri { get => _explicitNullValueLogsIngestionUri; set { _explicitNullValueLogsIngestionUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs_ingestion_uri"); else _explicitNullProperties?.Remove("logs_ingestion_uri"); } }
+        private string? _explicitNullValueLogsIngestionUri = default!;
 #nullable restore
 #else
-        public string LogsIngestionUri { get; set; }
+        public string LogsIngestionUri { get => _explicitNullValueLogsIngestionUri; set { _explicitNullValueLogsIngestionUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logs_ingestion_uri"); else _explicitNullProperties?.Remove("logs_ingestion_uri"); } }
+        private string _explicitNullValueLogsIngestionUri = default!;
 #endif
         /// <summary>Tenant ID for the Azure account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId { get; set; }
+        public string? TenantId { get => _explicitNullValueTenantId; set { _explicitNullValueTenantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_id"); else _explicitNullProperties?.Remove("tenant_id"); } }
+        private string? _explicitNullValueTenantId = default!;
 #nullable restore
 #else
-        public string TenantId { get; set; }
+        public string TenantId { get => _explicitNullValueTenantId; set { _explicitNullValueTenantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenant_id"); else _explicitNullProperties?.Remove("tenant_id"); } }
+        private string _explicitNullValueTenantId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteStringValue("data_collection_stream_name", DataCollectionStreamName);
             writer.WriteStringValue("logs_ingestion_uri", LogsIngestionUri);
             writer.WriteStringValue("tenant_id", TenantId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

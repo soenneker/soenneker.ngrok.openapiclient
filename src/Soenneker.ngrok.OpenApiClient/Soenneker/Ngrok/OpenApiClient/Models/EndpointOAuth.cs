@@ -11,34 +11,57 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EndpointOAuth : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_check_interval") is { } nullNodeAuthCheckInterval && nullNodeAuthCheckInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCheckInterval = null;
+            if (parseNode.GetChildNode("cookie_prefix") is { } nullNodeCookiePrefix && nullNodeCookiePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CookiePrefix = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("inactivity_timeout") is { } nullNodeInactivityTimeout && nullNodeInactivityTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InactivityTimeout = null;
+            if (parseNode.GetChildNode("maximum_duration") is { } nullNodeMaximumDuration && nullNodeMaximumDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumDuration = null;
+            if (parseNode.GetChildNode("options_passthrough") is { } nullNodeOptionsPassthrough && nullNodeOptionsPassthrough.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsPassthrough = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Integer number of seconds after which ngrok guarantees it will refresh user state from the identity provider and recheck whether the user is still authorized to access the endpoint. This is the preferred tunable to use to enforce a minimum amount of time after which a revoked user will no longer be able to access the resource.</summary>
-        public int? AuthCheckInterval { get; set; }
+        public int? AuthCheckInterval { get => _explicitNullValueAuthCheckInterval; set { _explicitNullValueAuthCheckInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_check_interval"); else _explicitNullProperties?.Remove("auth_check_interval"); } }
+        private int? _explicitNullValueAuthCheckInterval = default!;
         /// <summary>the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is &apos;ngrok.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CookiePrefix { get; set; }
+        public string? CookiePrefix { get => _explicitNullValueCookiePrefix; set { _explicitNullValueCookiePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie_prefix"); else _explicitNullProperties?.Remove("cookie_prefix"); } }
+        private string? _explicitNullValueCookiePrefix = default!;
 #nullable restore
 #else
-        public string CookiePrefix { get; set; }
+        public string CookiePrefix { get => _explicitNullValueCookiePrefix; set { _explicitNullValueCookiePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie_prefix"); else _explicitNullProperties?.Remove("cookie_prefix"); } }
+        private string _explicitNullValueCookiePrefix = default!;
 #endif
         /// <summary>`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Integer number of seconds of inactivity after which if the user has not accessed the endpoint, their session will time out and they will be forced to reauthenticate.</summary>
-        public int? InactivityTimeout { get; set; }
+        public int? InactivityTimeout { get => _explicitNullValueInactivityTimeout; set { _explicitNullValueInactivityTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inactivity_timeout"); else _explicitNullProperties?.Remove("inactivity_timeout"); } }
+        private int? _explicitNullValueInactivityTimeout = default!;
         /// <summary>Integer number of seconds of the maximum duration of an authenticated session. After this period is exceeded, a user must reauthenticate.</summary>
-        public int? MaximumDuration { get; set; }
+        public int? MaximumDuration { get => _explicitNullValueMaximumDuration; set { _explicitNullValueMaximumDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_duration"); else _explicitNullProperties?.Remove("maximum_duration"); } }
+        private int? _explicitNullValueMaximumDuration = default!;
         /// <summary>Do not enforce authentication on HTTP OPTIONS requests. necessary if you are supporting CORS.</summary>
-        public bool? OptionsPassthrough { get; set; }
+        public bool? OptionsPassthrough { get => _explicitNullValueOptionsPassthrough; set { _explicitNullValueOptionsPassthrough = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options_passthrough"); else _explicitNullProperties?.Remove("options_passthrough"); } }
+        private bool? _explicitNullValueOptionsPassthrough = default!;
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthProvider? Provider { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthProvider? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthProvider Provider { get; set; }
+        public global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthProvider Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthProvider _explicitNullValueProvider = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth"/> and sets the default values.
@@ -55,7 +78,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuth(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteIntValue("maximum_duration", MaximumDuration);
             writer.WriteBoolValue("options_passthrough", OptionsPassthrough);
             writer.WriteObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthProvider>("provider", Provider);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

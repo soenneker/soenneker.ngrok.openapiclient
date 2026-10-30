@@ -11,92 +11,138 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EndpointSaml : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_idp_initiated") is { } nullNodeAllowIdpInitiated && nullNodeAllowIdpInitiated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowIdpInitiated = null;
+            if (parseNode.GetChildNode("assertion_consumer_service_url") is { } nullNodeAssertionConsumerServiceUrl && nullNodeAssertionConsumerServiceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssertionConsumerServiceUrl = null;
+            if (parseNode.GetChildNode("authorized_groups") is { } nullNodeAuthorizedGroups && nullNodeAuthorizedGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizedGroups = null;
+            if (parseNode.GetChildNode("cookie_prefix") is { } nullNodeCookiePrefix && nullNodeCookiePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CookiePrefix = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("entity_id") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
+            if (parseNode.GetChildNode("force_authn") is { } nullNodeForceAuthn && nullNodeForceAuthn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceAuthn = null;
+            if (parseNode.GetChildNode("idp_metadata") is { } nullNodeIdpMetadata && nullNodeIdpMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpMetadata = null;
+            if (parseNode.GetChildNode("inactivity_timeout") is { } nullNodeInactivityTimeout && nullNodeInactivityTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InactivityTimeout = null;
+            if (parseNode.GetChildNode("maximum_duration") is { } nullNodeMaximumDuration && nullNodeMaximumDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumDuration = null;
+            if (parseNode.GetChildNode("metadata_url") is { } nullNodeMetadataUrl && nullNodeMetadataUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetadataUrl = null;
+            if (parseNode.GetChildNode("nameid_format") is { } nullNodeNameidFormat && nullNodeNameidFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameidFormat = null;
+            if (parseNode.GetChildNode("options_passthrough") is { } nullNodeOptionsPassthrough && nullNodeOptionsPassthrough.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsPassthrough = null;
+            if (parseNode.GetChildNode("request_signing_certificate_pem") is { } nullNodeRequestSigningCertificatePem && nullNodeRequestSigningCertificatePem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestSigningCertificatePem = null;
+            if (parseNode.GetChildNode("single_logout_url") is { } nullNodeSingleLogoutUrl && nullNodeSingleLogoutUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingleLogoutUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, the IdP may initiate a login directly (e.g. the user does not need to visit the endpoint first and then be redirected). The IdP should set the `RelayState` parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.</summary>
-        public bool? AllowIdpInitiated { get; set; }
+        public bool? AllowIdpInitiated { get => _explicitNullValueAllowIdpInitiated; set { _explicitNullValueAllowIdpInitiated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_idp_initiated"); else _explicitNullProperties?.Remove("allow_idp_initiated"); } }
+        private bool? _explicitNullValueAllowIdpInitiated = default!;
         /// <summary>The public URL of the SP&apos;s Assertion Consumer Service. This is where the IdP will redirect to during an authentication flow. This will need to be specified to the IdP as configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssertionConsumerServiceUrl { get; set; }
+        public string? AssertionConsumerServiceUrl { get => _explicitNullValueAssertionConsumerServiceUrl; set { _explicitNullValueAssertionConsumerServiceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assertion_consumer_service_url"); else _explicitNullProperties?.Remove("assertion_consumer_service_url"); } }
+        private string? _explicitNullValueAssertionConsumerServiceUrl = default!;
 #nullable restore
 #else
-        public string AssertionConsumerServiceUrl { get; set; }
+        public string AssertionConsumerServiceUrl { get => _explicitNullValueAssertionConsumerServiceUrl; set { _explicitNullValueAssertionConsumerServiceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assertion_consumer_service_url"); else _explicitNullProperties?.Remove("assertion_consumer_service_url"); } }
+        private string _explicitNullValueAssertionConsumerServiceUrl = default!;
 #endif
         /// <summary>If present, only users who are a member of one of the listed groups may access the target endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AuthorizedGroups { get; set; }
+        public List<string>? AuthorizedGroups { get => _explicitNullValueAuthorizedGroups; set { _explicitNullValueAuthorizedGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_groups"); else _explicitNullProperties?.Remove("authorized_groups"); } }
+        private List<string>? _explicitNullValueAuthorizedGroups = default!;
 #nullable restore
 #else
-        public List<string> AuthorizedGroups { get; set; }
+        public List<string> AuthorizedGroups { get => _explicitNullValueAuthorizedGroups; set { _explicitNullValueAuthorizedGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorized_groups"); else _explicitNullProperties?.Remove("authorized_groups"); } }
+        private List<string> _explicitNullValueAuthorizedGroups = default!;
 #endif
         /// <summary>the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is &apos;ngrok.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CookiePrefix { get; set; }
+        public string? CookiePrefix { get => _explicitNullValueCookiePrefix; set { _explicitNullValueCookiePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie_prefix"); else _explicitNullProperties?.Remove("cookie_prefix"); } }
+        private string? _explicitNullValueCookiePrefix = default!;
 #nullable restore
 #else
-        public string CookiePrefix { get; set; }
+        public string CookiePrefix { get => _explicitNullValueCookiePrefix; set { _explicitNullValueCookiePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cookie_prefix"); else _explicitNullProperties?.Remove("cookie_prefix"); } }
+        private string _explicitNullValueCookiePrefix = default!;
 #endif
         /// <summary>`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The SP Entity&apos;s unique ID. This always takes the form of a URL. In ngrok&apos;s implementation, this URL is the same as the metadata URL. This will need to be specified to the IdP as configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityId { get; set; }
+        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        private string? _explicitNullValueEntityId = default!;
 #nullable restore
 #else
-        public string EntityId { get; set; }
+        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
+        private string _explicitNullValueEntityId = default!;
 #endif
         /// <summary>If true, indicates that whenever we redirect a user to the IdP for authentication that the IdP must prompt the user for authentication credentials even if the user already has a valid session with the IdP.</summary>
-        public bool? ForceAuthn { get; set; }
+        public bool? ForceAuthn { get => _explicitNullValueForceAuthn; set { _explicitNullValueForceAuthn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_authn"); else _explicitNullProperties?.Remove("force_authn"); } }
+        private bool? _explicitNullValueForceAuthn = default!;
         /// <summary>The full XML IdP EntityDescriptor. Your IdP may provide this to you as a a file to download or as a URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdpMetadata { get; set; }
+        public string? IdpMetadata { get => _explicitNullValueIdpMetadata; set { _explicitNullValueIdpMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_metadata"); else _explicitNullProperties?.Remove("idp_metadata"); } }
+        private string? _explicitNullValueIdpMetadata = default!;
 #nullable restore
 #else
-        public string IdpMetadata { get; set; }
+        public string IdpMetadata { get => _explicitNullValueIdpMetadata; set { _explicitNullValueIdpMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp_metadata"); else _explicitNullProperties?.Remove("idp_metadata"); } }
+        private string _explicitNullValueIdpMetadata = default!;
 #endif
         /// <summary>Integer number of seconds of inactivity after which if the user has not accessed the endpoint, their session will time out and they will be forced to reauthenticate.</summary>
-        public int? InactivityTimeout { get; set; }
+        public int? InactivityTimeout { get => _explicitNullValueInactivityTimeout; set { _explicitNullValueInactivityTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inactivity_timeout"); else _explicitNullProperties?.Remove("inactivity_timeout"); } }
+        private int? _explicitNullValueInactivityTimeout = default!;
         /// <summary>Integer number of seconds of the maximum duration of an authenticated session. After this period is exceeded, a user must reauthenticate.</summary>
-        public int? MaximumDuration { get; set; }
+        public int? MaximumDuration { get => _explicitNullValueMaximumDuration; set { _explicitNullValueMaximumDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_duration"); else _explicitNullProperties?.Remove("maximum_duration"); } }
+        private int? _explicitNullValueMaximumDuration = default!;
         /// <summary>A public URL where the SP&apos;s metadata is hosted. If an IdP supports dynamic configuration, this is the URL it can use to retrieve the SP metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetadataUrl { get; set; }
+        public string? MetadataUrl { get => _explicitNullValueMetadataUrl; set { _explicitNullValueMetadataUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata_url"); else _explicitNullProperties?.Remove("metadata_url"); } }
+        private string? _explicitNullValueMetadataUrl = default!;
 #nullable restore
 #else
-        public string MetadataUrl { get; set; }
+        public string MetadataUrl { get => _explicitNullValueMetadataUrl; set { _explicitNullValueMetadataUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata_url"); else _explicitNullProperties?.Remove("metadata_url"); } }
+        private string _explicitNullValueMetadataUrl = default!;
 #endif
         /// <summary>Defines the name identifier format the SP expects the IdP to use in its assertions to identify subjects. If unspecified, a default value of `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent` will be used. A subset of the allowed values enumerated by the SAML specification are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NameidFormat { get; set; }
+        public string? NameidFormat { get => _explicitNullValueNameidFormat; set { _explicitNullValueNameidFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameid_format"); else _explicitNullProperties?.Remove("nameid_format"); } }
+        private string? _explicitNullValueNameidFormat = default!;
 #nullable restore
 #else
-        public string NameidFormat { get; set; }
+        public string NameidFormat { get => _explicitNullValueNameidFormat; set { _explicitNullValueNameidFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameid_format"); else _explicitNullProperties?.Remove("nameid_format"); } }
+        private string _explicitNullValueNameidFormat = default!;
 #endif
         /// <summary>Do not enforce authentication on HTTP OPTIONS requests. necessary if you are supporting CORS.</summary>
-        public bool? OptionsPassthrough { get; set; }
+        public bool? OptionsPassthrough { get => _explicitNullValueOptionsPassthrough; set { _explicitNullValueOptionsPassthrough = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options_passthrough"); else _explicitNullProperties?.Remove("options_passthrough"); } }
+        private bool? _explicitNullValueOptionsPassthrough = default!;
         /// <summary>PEM-encoded x.509 certificate of the key pair that is used to sign all SAML requests that the ngrok SP makes to the IdP. Many IdPs do not support request signing verification, but we highly recommend specifying this in the IdP&apos;s configuration if it is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestSigningCertificatePem { get; set; }
+        public string? RequestSigningCertificatePem { get => _explicitNullValueRequestSigningCertificatePem; set { _explicitNullValueRequestSigningCertificatePem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_signing_certificate_pem"); else _explicitNullProperties?.Remove("request_signing_certificate_pem"); } }
+        private string? _explicitNullValueRequestSigningCertificatePem = default!;
 #nullable restore
 #else
-        public string RequestSigningCertificatePem { get; set; }
+        public string RequestSigningCertificatePem { get => _explicitNullValueRequestSigningCertificatePem; set { _explicitNullValueRequestSigningCertificatePem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_signing_certificate_pem"); else _explicitNullProperties?.Remove("request_signing_certificate_pem"); } }
+        private string _explicitNullValueRequestSigningCertificatePem = default!;
 #endif
         /// <summary>The public URL of the SP&apos;s Single Logout Service. This is where the IdP will redirect to during a single logout flow. This will optionally need to be specified to the IdP as configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingleLogoutUrl { get; set; }
+        public string? SingleLogoutUrl { get => _explicitNullValueSingleLogoutUrl; set { _explicitNullValueSingleLogoutUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_logout_url"); else _explicitNullProperties?.Remove("single_logout_url"); } }
+        private string? _explicitNullValueSingleLogoutUrl = default!;
 #nullable restore
 #else
-        public string SingleLogoutUrl { get; set; }
+        public string SingleLogoutUrl { get => _explicitNullValueSingleLogoutUrl; set { _explicitNullValueSingleLogoutUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("single_logout_url"); else _explicitNullProperties?.Remove("single_logout_url"); } }
+        private string _explicitNullValueSingleLogoutUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSaml"/> and sets the default values.
@@ -113,7 +159,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public static global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSaml CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSaml();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.EndpointSaml(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,6 +208,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             writer.WriteBoolValue("options_passthrough", OptionsPassthrough);
             writer.WriteStringValue("request_signing_certificate_pem", RequestSigningCertificatePem);
             writer.WriteStringValue("single_logout_url", SingleLogoutUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
