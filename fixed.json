@@ -2,7 +2,7 @@
   "openapi": "3.0.4",
   "info": {
     "title": "ngrok OpenAPI",
-    "description": "The ngrok REST API at https://api.ngrok.com provides programmatic access to provision and configure every ngrok resource: endpoints, domains, API keys, IP policies, tunnels, certificates, and more. Full documentation: https://ngrok.com/docs/api\n\n**Authentication:** Send an API key as a bearer token: \"Authorization: Bearer {API key}\". Create and revoke keys at https://dashboard.ngrok.com/api-keys or via the /api_keys resource. Requests without credentials receive an error with code ERR_NGROK_200.\n\n**Versioning and deprecation policy:** Every request must include the \"ngrok-version: 2\" header; a missing header returns HTTP 400 with error code ERR_NGROK_218. Version 2 is the current version; all earlier versions are deprecated. ngrok never makes breaking changes to a published API version. Breaking changes ship only as a new version that clients explicitly opt in to via this header. Additive changes (new resources, methods, and fields, and bug fixes that match documented behavior) may ship to a live version. Full policy: https://ngrok.com/docs/api#versioning-and-api-stability\n\n**Rate limits:** By default, the API allows 120 requests per rolling 60-second window per account; some plans have higher limits. Exceeding the limit returns HTTP 429 with error code ERR_NGROK_226; wait for the window to pass before retrying. Details: https://ngrok.com/docs/errors/err_ngrok_226\n\n**Errors:** Every 4xx and 5xx response carries the Error schema: the status_code, a human-readable msg, and in most cases a globally unique machine-readable error_code and a details object. Every error code is documented at https://ngrok.com/docs/errors\n",
+    "description": "The ngrok REST API at https://api.ngrok.com provides programmatic access to provision and configure every ngrok resource: endpoints, domains, API keys, IP policies, tunnels, certificates, and more. Full documentation: https://ngrok.com/docs/api\n\n**Authentication:** Send an API key as a bearer token: \u0022Authorization: Bearer {API key}\u0022. Create and revoke keys at https://dashboard.ngrok.com/api-keys or via the /api_keys resource. Requests without credentials receive an error with code ERR_NGROK_200.\n\n**Versioning and deprecation policy:** Every request must include the \u0022ngrok-version: 2\u0022 header; a missing header returns HTTP 400 with error code ERR_NGROK_218. Version 2 is the current version; all earlier versions are deprecated. ngrok never makes breaking changes to a published API version. Breaking changes ship only as a new version that clients explicitly opt in to via this header. Additive changes (new resources, methods, and fields, and bug fixes that match documented behavior) may ship to a live version. Full policy: https://ngrok.com/docs/api#versioning-and-api-stability\n\n**Rate limits:** By default, the API allows 120 requests per rolling 60-second window per account; some plans have higher limits. Exceeding the limit returns HTTP 429 with error code ERR_NGROK_226; wait for the window to pass before retrying. Details: https://ngrok.com/docs/errors/err_ngrok_226\n\n**Errors:** Every 4xx and 5xx response carries the Error schema: the status_code, a human-readable msg, and in most cases a globally unique machine-readable error_code and a details object. Every error code is documented at https://ngrok.com/docs/errors\n",
     "version": "1.0.0"
   },
   "servers": [
@@ -49,6 +49,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Creates a new abuse report which will be reviewed by our system and abuse response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbuseReport"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -133,6 +144,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new Agent Ingress. The ngrok agent can be configured to connect to ngrok via the new set of addresses on the returned Agent Ingress.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentIngress"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -166,7 +188,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, domain\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, domain\n",
             "schema": {
               "type": "string"
             }
@@ -353,6 +375,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new AI Gateway Provider Key\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayProviderKey"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -574,6 +607,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new AI Gateway API Key\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayApiKey"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -785,6 +829,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new API key. The generated API key can be used to authenticate to the ngrok API.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKey"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -818,7 +873,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, owner_id, created_at\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, owner_id, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -1242,7 +1297,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, metadata, agent_version, ip, os, region, started_at, credential\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, metadata, agent_version, ip, os, region, started_at, credential\n",
             "schema": {
               "type": "string"
             }
@@ -1404,7 +1459,7 @@
           "TunnelSessions"
         ],
         "summary": "Update",
-        "description": "Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent's configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted\n",
+        "description": "Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent\u0027s configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted\n",
         "operationId": "TunnelSessionsUpdate",
         "parameters": [
           {
@@ -1430,7 +1485,7 @@
         },
         "responses": {
           "204": {
-            "description": "Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent's configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted\n"
+            "description": "Issues a command instructing the ngrok agent to update itself to the latest version. After this call completes successfully, the ngrok agent will be in the update process. A caller should wait some amount of time to allow the update to complete (at least 10 seconds) before making a call to the Restart endpoint to request that the agent restart itself to start using the new code. This call will never update an ngrok agent to a new major version which could cause breaking compatibility issues. If you wish to update to a new major version, that must be done manually. Still, please be aware that updating your ngrok agent could break your integration. This call will fail in any of the following circumstances: there is no update available the ngrok agent\u0027s configuration disabled update checks the agent is currently in process of updating the agent has already successfully updated but has not yet been restarted\n"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -1479,6 +1534,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new Failover backend\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FailoverBackend"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -1688,6 +1754,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "n/a",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpResponseBackend"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -1894,6 +1971,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new static backend\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StaticBackend"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -2104,6 +2192,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new TunnelGroup backend\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TunnelGroupBackend"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -2314,6 +2413,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new Weighted backend\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeightedBackend"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -2524,6 +2634,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new bot user\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BotUser"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -2734,6 +2855,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Upload a new Certificate Authority\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CertificateAuthority"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -2767,7 +2899,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, subject_common_name, not_before, not_after\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, subject_common_name, not_before, not_after\n",
             "schema": {
               "type": "string"
             }
@@ -2954,6 +3086,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new tunnel authtoken credential. This authtoken credential can be used to start a new tunnel session. The response to this API call is the only time the generated token is available. If you need it for future use, you must save it securely yourself.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Credential"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -2987,7 +3130,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, owner_id, acl, created_at\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, owner_id, acl, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -3183,6 +3326,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create an HTTPS Edge Route\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpsEdgeRoute"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3376,6 +3530,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create an HTTPS Edge\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpsEdge"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -5725,6 +5890,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a TCP Edge\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TcpEdge"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -6296,6 +6472,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a TLS Edge\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TlsEdge"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -7107,6 +7294,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create an endpoint, currently available only for cloud endpoints\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Endpoint"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -7140,7 +7338,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, url, type, pooling_enabled, region, scheme, description, metadata, name, created_at, principal.id, bindings\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, url, type, pooling_enabled, region, scheme, description, metadata, name, created_at, principal.id, bindings\n",
             "schema": {
               "type": "string"
             }
@@ -7328,6 +7526,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new Event Destination. It will not apply to anything until it is associated with an Event Subscription.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventDestination"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -7361,7 +7570,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, created_at\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -7549,6 +7758,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create an Event Subscription.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventSubscription"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -7557,7 +7777,7 @@
           "EventSubscriptions"
         ],
         "summary": "List",
-        "description": "List this Account's Event Subscriptions.\n",
+        "description": "List this Account\u0027s Event Subscriptions.\n",
         "operationId": "EventSubscriptionsList",
         "parameters": [
           {
@@ -7582,7 +7802,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, created_at\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -7590,7 +7810,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List this Account's Event Subscriptions.\n",
+            "description": "List this Account\u0027s Event Subscriptions.\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -7779,6 +7999,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Add an additional type for which this event subscription will trigger\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventSource"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -8012,6 +8243,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new IP policy. It will not apply to any traffic until you associate to a traffic source via an endpoint configuration or IP restriction.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpPolicy"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -8045,7 +8287,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, name\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, name\n",
             "schema": {
               "type": "string"
             }
@@ -8232,6 +8474,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new IP policy rule attached to an IP Policy.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpPolicyRule"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -8265,7 +8518,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, cidr, ip_policy_id, action\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, cidr, ip_policy_id, action\n",
             "schema": {
               "type": "string"
             }
@@ -8452,6 +8705,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new IP restriction\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpRestriction"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -8485,7 +8749,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata\n",
             "schema": {
               "type": "string"
             }
@@ -8672,6 +8936,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new reserved address.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservedAddr"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -8705,7 +8980,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, addr, region, created_at\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, addr, region, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -8892,6 +9167,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new reserved domain.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReservedDomain"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -8925,7 +9211,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, domain, created_at\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, domain, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -9182,6 +9468,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new Secret\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -9215,7 +9512,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, name\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, name\n",
             "schema": {
               "type": "string"
             }
@@ -9403,6 +9700,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new service user\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceUser"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -9436,7 +9744,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, name, created_at\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, name, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -9623,6 +9931,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new SSH Certificate Authority\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SshCertificateAuthority"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -9656,7 +9975,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata\n",
             "schema": {
               "type": "string"
             }
@@ -9811,7 +10130,7 @@
           "SSHCredentials"
         ],
         "summary": "Create",
-        "description": "Create a new ssh_credential from an uploaded public SSH key. This ssh credential can be used to start new tunnels via ngrok's SSH gateway.\n",
+        "description": "Create a new ssh_credential from an uploaded public SSH key. This ssh credential can be used to start new tunnels via ngrok\u0027s SSH gateway.\n",
         "operationId": "SshCredentialsCreate",
         "parameters": [
           {
@@ -9829,7 +10148,7 @@
         },
         "responses": {
           "201": {
-            "description": "Create a new ssh_credential from an uploaded public SSH key. This ssh credential can be used to start new tunnels via ngrok's SSH gateway.\n",
+            "description": "Create a new ssh_credential from an uploaded public SSH key. This ssh credential can be used to start new tunnels via ngrok\u0027s SSH gateway.\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -9843,6 +10162,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new ssh_credential from an uploaded public SSH key. This ssh credential can be used to start new tunnels via ngrok\u0027s SSH gateway.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SshCredential"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -9876,7 +10206,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, owner_id, acl, created_at\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, owner_id, acl, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -10063,6 +10393,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new SSH Host Certificate\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SshHostCertificate"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -10273,6 +10614,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new SSH User Certificate\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SshUserCertificate"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -10483,6 +10835,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Upload a new TLS certificate\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TlsCertificate"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -10516,7 +10879,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, subject_common_name, not_before, not_after, serial_number, created_at\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, metadata, subject_common_name, not_before, not_after, serial_number, created_at\n",
             "schema": {
               "type": "string"
             }
@@ -10792,6 +11155,17 @@
           },
           "5XX": {
             "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new Vault\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vault"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -10825,7 +11199,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, name\n",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, created_at, description, metadata, name\n",
             "schema": {
               "type": "string"
             }
@@ -11097,7 +11471,7 @@
           },
           "filter": {
             "type": "string",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
           }
         }
       },
@@ -11159,7 +11533,7 @@
           },
           "status": {
             "type": "string",
-            "description": "Indicates whether ngrok has processed the abuse report. one of `PENDING`, `PROCESSED`, or `PARTIALLY_PROCESSED`\n"
+            "description": "Indicates whether ngrok has processed the abuse report. one of \u0060PENDING\u0060, \u0060PROCESSED\u0060, or \u0060PARTIALLY_PROCESSED\u0060\n"
           },
           "hostnames": {
             "type": "array",
@@ -11179,7 +11553,7 @@
           },
           "status": {
             "type": "string",
-            "description": "indicates what action ngrok has taken against the hostname. one of `PENDING`, `BANNED`, `UNBANNED`, or `IGNORE`\n"
+            "description": "indicates what action ngrok has taken against the hostname. one of \u0060PENDING\u0060, \u0060BANNED\u0060, \u0060UNBANNED\u0060, or \u0060IGNORE\u0060\n"
           }
         }
       },
@@ -11374,11 +11748,11 @@
           },
           "provider_id": {
             "type": "string",
-            "description": "which AI provider this key is for, e.g. \"openai\", \"anthropic\"\n"
+            "description": "which AI provider this key is for, e.g. \u0022openai\u0022, \u0022anthropic\u0022\n"
           },
           "value": {
             "type": "string",
-            "description": "plaintext provider key value — write-only input\n"
+            "description": "plaintext provider key value \u2014 write-only input\n"
           },
           "description": {
             "type": "string",
@@ -11428,7 +11802,7 @@
           },
           "provider_id": {
             "type": "string",
-            "description": "which AI provider this key is for, e.g. \"openai\", \"anthropic\"\n"
+            "description": "which AI provider this key is for, e.g. \u0022openai\u0022, \u0022anthropic\u0022\n"
           },
           "description": {
             "type": "string",
@@ -11609,7 +11983,7 @@
         "properties": {
           "provider_id": {
             "type": "string",
-            "description": "which AI provider this key is for, ex: \"openai\" / \"anthropic\"\n"
+            "description": "which AI provider this key is for, ex: \u0022openai\u0022 / \u0022anthropic\u0022\n"
           },
           "name": {
             "type": "string",
@@ -11617,7 +11991,7 @@
           },
           "value": {
             "type": "string",
-            "description": "plaintext provider key value — write-only input\n"
+            "description": "plaintext provider key value \u2014 write-only input\n"
           },
           "description": {
             "type": "string",
@@ -11978,7 +12352,7 @@
           },
           "transport": {
             "type": "string",
-            "description": "the transport protocol used to start the tunnel session. Either `ngrok/v2` or `ssh`\n"
+            "description": "the transport protocol used to start the tunnel session. Either \u0060ngrok/v2\u0060 or \u0060ssh\u0060\n"
           },
           "uri": {
             "type": "string",
@@ -12702,7 +13076,7 @@
             "items": {
               "type": "string"
             },
-            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the `bind` rule. The `bind` rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule `bind:example.ngrok.io`. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of `bind:*.example.com` which will allow `x.example.com`, `y.example.com`, `*.example.com`, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of `bind:*=example` which will allow `x=example`, `y=example`, etc. A rule of `'*'` is equivalent to no acl at all and will explicitly permit all actions.\n"
+            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the \u0060bind\u0060 rule. The \u0060bind\u0060 rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule \u0060bind:example.ngrok.io\u0060. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of \u0060bind:*.example.com\u0060 which will allow \u0060x.example.com\u0060, \u0060y.example.com\u0060, \u0060*.example.com\u0060, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of \u0060bind:*=example\u0060 which will allow \u0060x=example\u0060, \u0060y=example\u0060, etc. A rule of \u0060\u0027*\u0027\u0060 is equivalent to no acl at all and will explicitly permit all actions.\n"
           },
           "owner_id": {
             "type": "string",
@@ -12730,7 +13104,7 @@
             "items": {
               "type": "string"
             },
-            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the `bind` rule. The `bind` rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule `bind:example.ngrok.io`. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of `bind:*.example.com` which will allow `x.example.com`, `y.example.com`, `*.example.com`, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of `bind:*=example` which will allow `x=example`, `y=example`, etc. A rule of `'*'` is equivalent to no acl at all and will explicitly permit all actions.\n"
+            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the \u0060bind\u0060 rule. The \u0060bind\u0060 rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule \u0060bind:example.ngrok.io\u0060. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of \u0060bind:*.example.com\u0060 which will allow \u0060x.example.com\u0060, \u0060y.example.com\u0060, \u0060*.example.com\u0060, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of \u0060bind:*=example\u0060 which will allow \u0060x=example\u0060, \u0060y=example\u0060, etc. A rule of \u0060\u0027*\u0027\u0060 is equivalent to no acl at all and will explicitly permit all actions.\n"
           }
         }
       },
@@ -12759,14 +13133,14 @@
           },
           "token": {
             "type": "string",
-            "description": "the credential's authtoken that can be used to authenticate an ngrok agent. **This value is only available one time, on the API response from credential creation, otherwise it is null.**\n"
+            "description": "the credential\u0027s authtoken that can be used to authenticate an ngrok agent. **This value is only available one time, on the API response from credential creation, otherwise it is null.**\n"
           },
           "acl": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the `bind` rule. The `bind` rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule `bind:example.ngrok.io`. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of `bind:*.example.com` which will allow `x.example.com`, `y.example.com`, `*.example.com`, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of `bind:*=example` which will allow `x=example`, `y=example`, etc. A rule of `'*'` is equivalent to no acl at all and will explicitly permit all actions.\n"
+            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the \u0060bind\u0060 rule. The \u0060bind\u0060 rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule \u0060bind:example.ngrok.io\u0060. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of \u0060bind:*.example.com\u0060 which will allow \u0060x.example.com\u0060, \u0060y.example.com\u0060, \u0060*.example.com\u0060, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of \u0060bind:*=example\u0060 which will allow \u0060x=example\u0060, \u0060y=example\u0060, etc. A rule of \u0060\u0027*\u0027\u0060 is equivalent to no acl at all and will explicitly permit all actions.\n"
           },
           "owner_id": {
             "type": "string",
@@ -12799,7 +13173,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "provider": {
             "type": "string",
@@ -12816,7 +13190,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           }
         }
       },
@@ -12825,7 +13199,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "certificate_authorities": {
             "type": "array",
@@ -12841,7 +13215,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "certificate_authority_ids": {
             "type": "array",
@@ -12857,15 +13231,15 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "terminate_at": {
             "type": "string",
-            "description": "`edge` if the ngrok edge should terminate TLS traffic, `upstream` if TLS traffic should be passed through to the upstream ngrok agent / application server for termination. if `upstream` is chosen, most other modules will be disallowed because they rely on the ngrok edge being able to access the underlying traffic.\n"
+            "description": "\u0060edge\u0060 if the ngrok edge should terminate TLS traffic, \u0060upstream\u0060 if TLS traffic should be passed through to the upstream ngrok agent / application server for termination. if \u0060upstream\u0060 is chosen, most other modules will be disallowed because they rely on the ngrok edge being able to access the underlying traffic.\n"
           },
           "min_version": {
             "type": "string",
-            "description": "The minimum TLS version used for termination and advertised to the client during the TLS handshake. if unspecified, ngrok will choose an industry-safe default. This value must be null if `terminate_at` is set to `upstream`.\n"
+            "description": "The minimum TLS version used for termination and advertised to the client during the TLS handshake. if unspecified, ngrok will choose an industry-safe default. This value must be null if \u0060terminate_at\u0060 is set to \u0060upstream\u0060.\n"
           }
         }
       },
@@ -12874,11 +13248,11 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "min_version": {
             "type": "string",
-            "description": "The minimum TLS version used for termination and advertised to the client during the TLS handshake. if unspecified, ngrok will choose an industry-safe default. This value must be null if `terminate_at` is set to `upstream`.\n"
+            "description": "The minimum TLS version used for termination and advertised to the client during the TLS handshake. if unspecified, ngrok will choose an industry-safe default. This value must be null if \u0060terminate_at\u0060 is set to \u0060upstream\u0060.\n"
           }
         }
       },
@@ -12887,7 +13261,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "add": {
             "$ref": "#/components/schemas/EndpointRequestHeadersAddProperty"
@@ -12906,7 +13280,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "add": {
             "$ref": "#/components/schemas/EndpointResponseHeadersAddProperty"
@@ -12925,7 +13299,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "ip_policies": {
             "type": "array",
@@ -12941,7 +13315,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "ip_policy_ids": {
             "type": "array",
@@ -12957,7 +13331,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "tripped_duration": {
             "type": "integer",
@@ -12986,7 +13360,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "provider": {
             "$ref": "#/components/schemas/EndpointOAuthProvider"
@@ -12997,7 +13371,7 @@
           },
           "cookie_prefix": {
             "type": "string",
-            "description": "the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is 'ngrok.'\n"
+            "description": "the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is \u0027ngrok.\u0027\n"
           },
           "inactivity_timeout": {
             "type": "integer",
@@ -13047,18 +13421,18 @@
         "properties": {
           "client_id": {
             "type": "string",
-            "description": "the OAuth app client ID. retrieve it from the identity provider's dashboard where you created your own OAuth app. optional. if unspecified, ngrok will use its own managed oauth application which has additional restrictions. see the OAuth module docs for more details. if present, client_secret must be present as well.\n"
+            "description": "the OAuth app client ID. retrieve it from the identity provider\u0027s dashboard where you created your own OAuth app. optional. if unspecified, ngrok will use its own managed oauth application which has additional restrictions. see the OAuth module docs for more details. if present, client_secret must be present as well.\n"
           },
           "client_secret": {
             "type": "string",
-            "description": "the OAuth app client secret. retrieve if from the identity provider's dashboard where you created your own OAuth app. optional, see all of the caveats in the docs for `client_id`.\n"
+            "description": "the OAuth app client secret. retrieve if from the identity provider\u0027s dashboard where you created your own OAuth app. optional, see all of the caveats in the docs for \u0060client_id\u0060.\n"
           },
           "scopes": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both `client_id` and `client_secret` to set scopes)\n"
+            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
           },
           "email_addresses": {
             "type": "array",
@@ -13079,14 +13453,14 @@
             "items": {
               "type": "string"
             },
-            "description": "a list of github teams identifiers. users will be allowed access to the endpoint if they are a member of any of these teams. identifiers should be in the 'slug' format qualified with the org name, e.g. `org-name/team-name`\n"
+            "description": "a list of github teams identifiers. users will be allowed access to the endpoint if they are a member of any of these teams. identifiers should be in the \u0027slug\u0027 format qualified with the org name, e.g. \u0060org-name/team-name\u0060\n"
           },
           "organizations": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "a list of github org identifiers. users who are members of any of the listed organizations will be allowed access. identifiers should be the organization's 'slug'\n"
+            "description": "a list of github org identifiers. users who are members of any of the listed organizations will be allowed access. identifiers should be the organization\u0027s \u0027slug\u0027\n"
           }
         }
       },
@@ -13095,18 +13469,18 @@
         "properties": {
           "client_id": {
             "type": "string",
-            "description": "the OAuth app client ID. retrieve it from the identity provider's dashboard where you created your own OAuth app. optional. if unspecified, ngrok will use its own managed oauth application which has additional restrictions. see the OAuth module docs for more details. if present, client_secret must be present as well.\n"
+            "description": "the OAuth app client ID. retrieve it from the identity provider\u0027s dashboard where you created your own OAuth app. optional. if unspecified, ngrok will use its own managed oauth application which has additional restrictions. see the OAuth module docs for more details. if present, client_secret must be present as well.\n"
           },
           "client_secret": {
             "type": "string",
-            "description": "the OAuth app client secret. retrieve if from the identity provider's dashboard where you created your own OAuth app. optional, see all of the caveats in the docs for `client_id`.\n"
+            "description": "the OAuth app client secret. retrieve if from the identity provider\u0027s dashboard where you created your own OAuth app. optional, see all of the caveats in the docs for \u0060client_id\u0060.\n"
           },
           "scopes": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both `client_id` and `client_secret` to set scopes)\n"
+            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
           },
           "email_addresses": {
             "type": "array",
@@ -13129,18 +13503,18 @@
         "properties": {
           "client_id": {
             "type": "string",
-            "description": "the OAuth app client ID. retrieve it from the identity provider's dashboard where you created your own OAuth app. optional. if unspecified, ngrok will use its own managed oauth application which has additional restrictions. see the OAuth module docs for more details. if present, client_secret must be present as well.\n"
+            "description": "the OAuth app client ID. retrieve it from the identity provider\u0027s dashboard where you created your own OAuth app. optional. if unspecified, ngrok will use its own managed oauth application which has additional restrictions. see the OAuth module docs for more details. if present, client_secret must be present as well.\n"
           },
           "client_secret": {
             "type": "string",
-            "description": "the OAuth app client secret. retrieve if from the identity provider's dashboard where you created your own OAuth app. optional, see all of the caveats in the docs for `client_id`.\n"
+            "description": "the OAuth app client secret. retrieve if from the identity provider\u0027s dashboard where you created your own OAuth app. optional, see all of the caveats in the docs for \u0060client_id\u0060.\n"
           },
           "scopes": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both `client_id` and `client_secret` to set scopes)\n"
+            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
           },
           "email_addresses": {
             "type": "array",
@@ -13163,18 +13537,18 @@
         "properties": {
           "client_id": {
             "type": "string",
-            "description": "the OAuth app client ID. retrieve it from the identity provider's dashboard where you created your own OAuth app. optional. if unspecified, ngrok will use its own managed oauth application which has additional restrictions. see the OAuth module docs for more details. if present, client_secret must be present as well.\n"
+            "description": "the OAuth app client ID. retrieve it from the identity provider\u0027s dashboard where you created your own OAuth app. optional. if unspecified, ngrok will use its own managed oauth application which has additional restrictions. see the OAuth module docs for more details. if present, client_secret must be present as well.\n"
           },
           "client_secret": {
             "type": "string",
-            "description": "the OAuth app client secret. retrieve if from the identity provider's dashboard where you created your own OAuth app. optional, see all of the caveats in the docs for `client_id`.\n"
+            "description": "the OAuth app client secret. retrieve if from the identity provider\u0027s dashboard where you created your own OAuth app. optional, see all of the caveats in the docs for \u0060client_id\u0060.\n"
           },
           "scopes": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both `client_id` and `client_secret` to set scopes)\n"
+            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
           },
           "email_addresses": {
             "type": "array",
@@ -13333,7 +13707,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "options_passthrough": {
             "type": "boolean",
@@ -13341,7 +13715,7 @@
           },
           "cookie_prefix": {
             "type": "string",
-            "description": "the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is 'ngrok.'\n"
+            "description": "the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is \u0027ngrok.\u0027\n"
           },
           "inactivity_timeout": {
             "type": "integer",
@@ -13361,7 +13735,7 @@
           },
           "allow_idp_initiated": {
             "type": "boolean",
-            "description": "If true, the IdP may initiate a login directly (e.g. the user does not need to visit the endpoint first and then be redirected). The IdP should set the `RelayState` parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.\n"
+            "description": "If true, the IdP may initiate a login directly (e.g. the user does not need to visit the endpoint first and then be redirected). The IdP should set the \u0060RelayState\u0060 parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.\n"
           },
           "authorized_groups": {
             "type": "array",
@@ -13372,27 +13746,27 @@
           },
           "entity_id": {
             "type": "string",
-            "description": "The SP Entity's unique ID. This always takes the form of a URL. In ngrok's implementation, this URL is the same as the metadata URL. This will need to be specified to the IdP as configuration.\n"
+            "description": "The SP Entity\u0027s unique ID. This always takes the form of a URL. In ngrok\u0027s implementation, this URL is the same as the metadata URL. This will need to be specified to the IdP as configuration.\n"
           },
           "assertion_consumer_service_url": {
             "type": "string",
-            "description": "The public URL of the SP's Assertion Consumer Service. This is where the IdP will redirect to during an authentication flow. This will need to be specified to the IdP as configuration.\n"
+            "description": "The public URL of the SP\u0027s Assertion Consumer Service. This is where the IdP will redirect to during an authentication flow. This will need to be specified to the IdP as configuration.\n"
           },
           "single_logout_url": {
             "type": "string",
-            "description": "The public URL of the SP's Single Logout Service. This is where the IdP will redirect to during a single logout flow. This will optionally need to be specified to the IdP as configuration.\n"
+            "description": "The public URL of the SP\u0027s Single Logout Service. This is where the IdP will redirect to during a single logout flow. This will optionally need to be specified to the IdP as configuration.\n"
           },
           "request_signing_certificate_pem": {
             "type": "string",
-            "description": "PEM-encoded x.509 certificate of the key pair that is used to sign all SAML requests that the ngrok SP makes to the IdP. Many IdPs do not support request signing verification, but we highly recommend specifying this in the IdP's configuration if it is supported.\n"
+            "description": "PEM-encoded x.509 certificate of the key pair that is used to sign all SAML requests that the ngrok SP makes to the IdP. Many IdPs do not support request signing verification, but we highly recommend specifying this in the IdP\u0027s configuration if it is supported.\n"
           },
           "metadata_url": {
             "type": "string",
-            "description": "A public URL where the SP's metadata is hosted. If an IdP supports dynamic configuration, this is the URL it can use to retrieve the SP metadata.\n"
+            "description": "A public URL where the SP\u0027s metadata is hosted. If an IdP supports dynamic configuration, this is the URL it can use to retrieve the SP metadata.\n"
           },
           "nameid_format": {
             "type": "string",
-            "description": "Defines the name identifier format the SP expects the IdP to use in its assertions to identify subjects. If unspecified, a default value of `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent` will be used. A subset of the allowed values enumerated by the SAML specification are supported.\n"
+            "description": "Defines the name identifier format the SP expects the IdP to use in its assertions to identify subjects. If unspecified, a default value of \u0060urn:oasis:names:tc:SAML:2.0:nameid-format:persistent\u0060 will be used. A subset of the allowed values enumerated by the SAML specification are supported.\n"
           }
         }
       },
@@ -13401,7 +13775,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "options_passthrough": {
             "type": "boolean",
@@ -13409,7 +13783,7 @@
           },
           "cookie_prefix": {
             "type": "string",
-            "description": "the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is 'ngrok.'\n"
+            "description": "the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is \u0027ngrok.\u0027\n"
           },
           "inactivity_timeout": {
             "type": "integer",
@@ -13429,7 +13803,7 @@
           },
           "allow_idp_initiated": {
             "type": "boolean",
-            "description": "If true, the IdP may initiate a login directly (e.g. the user does not need to visit the endpoint first and then be redirected). The IdP should set the `RelayState` parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.\n"
+            "description": "If true, the IdP may initiate a login directly (e.g. the user does not need to visit the endpoint first and then be redirected). The IdP should set the \u0060RelayState\u0060 parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.\n"
           },
           "authorized_groups": {
             "type": "array",
@@ -13440,7 +13814,7 @@
           },
           "nameid_format": {
             "type": "string",
-            "description": "Defines the name identifier format the SP expects the IdP to use in its assertions to identify subjects. If unspecified, a default value of `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent` will be used. A subset of the allowed values enumerated by the SAML specification are supported.\n"
+            "description": "Defines the name identifier format the SP expects the IdP to use in its assertions to identify subjects. If unspecified, a default value of \u0060urn:oasis:names:tc:SAML:2.0:nameid-format:persistent\u0060 will be used. A subset of the allowed values enumerated by the SAML specification are supported.\n"
           }
         }
       },
@@ -13449,7 +13823,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "options_passthrough": {
             "type": "boolean",
@@ -13457,7 +13831,7 @@
           },
           "cookie_prefix": {
             "type": "string",
-            "description": "the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is 'ngrok.'\n"
+            "description": "the prefix of the session cookie that ngrok sets on the http client to cache authentication. default is \u0027ngrok.\u0027\n"
           },
           "inactivity_timeout": {
             "type": "integer",
@@ -13469,15 +13843,15 @@
           },
           "issuer": {
             "type": "string",
-            "description": "URL of the OIDC \"OpenID provider\". This is the base URL used for discovery.\n"
+            "description": "URL of the OIDC \u0022OpenID provider\u0022. This is the base URL used for discovery.\n"
           },
           "client_id": {
             "type": "string",
-            "description": "The OIDC app's client ID and OIDC audience.\n"
+            "description": "The OIDC app\u0027s client ID and OIDC audience.\n"
           },
           "client_secret": {
             "type": "string",
-            "description": "The OIDC app's client secret.\n"
+            "description": "The OIDC app\u0027s client secret.\n"
           },
           "scopes": {
             "type": "array",
@@ -13493,7 +13867,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "backend": {
             "$ref": "#/components/schemas/RefType"
@@ -13505,7 +13879,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "backend_id": {
             "type": "string",
@@ -13518,7 +13892,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           }
         }
       },
@@ -13550,7 +13924,7 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified\n"
+            "description": "\u0060true\u0060 if the module will be applied to traffic, \u0060false\u0060 to disable. default \u0060true\u0060 if unspecified\n"
           },
           "value": {
             "type": "string",
@@ -13584,11 +13958,11 @@
           },
           "match_type": {
             "type": "string",
-            "description": "Type of match to use for this route. Valid values are \"exact_path\" and \"path_prefix\".\n"
+            "description": "Type of match to use for this route. Valid values are \u0022exact_path\u0022 and \u0022path_prefix\u0022.\n"
           },
           "match": {
             "type": "string",
-            "description": "Route selector: \"/blog\" or \"example.com\" or \"example.com/blog\"\n"
+            "description": "Route selector: \u0022/blog\u0022 or \u0022example.com\u0022 or \u0022example.com/blog\u0022\n"
           },
           "description": {
             "type": "string",
@@ -13652,11 +14026,11 @@
           },
           "match_type": {
             "type": "string",
-            "description": "Type of match to use for this route. Valid values are \"exact_path\" and \"path_prefix\".\n"
+            "description": "Type of match to use for this route. Valid values are \u0022exact_path\u0022 and \u0022path_prefix\u0022.\n"
           },
           "match": {
             "type": "string",
-            "description": "Route selector: \"/blog\" or \"example.com\" or \"example.com/blog\"\n"
+            "description": "Route selector: \u0022/blog\u0022 or \u0022example.com\u0022 or \u0022example.com/blog\u0022\n"
           },
           "description": {
             "type": "string",
@@ -13724,11 +14098,11 @@
           },
           "match_type": {
             "type": "string",
-            "description": "Type of match to use for this route. Valid values are \"exact_path\" and \"path_prefix\".\n"
+            "description": "Type of match to use for this route. Valid values are \u0022exact_path\u0022 and \u0022path_prefix\u0022.\n"
           },
           "match": {
             "type": "string",
-            "description": "Route selector: \"/blog\" or \"example.com\" or \"example.com/blog\"\n"
+            "description": "Route selector: \u0022/blog\u0022 or \u0022example.com\u0022 or \u0022example.com/blog\u0022\n"
           },
           "uri": {
             "type": "string",
@@ -14473,7 +14847,7 @@
           },
           "proto": {
             "type": "string",
-            "description": "protocol served by this endpoint. one of `http`, `https`, `tcp`, or `tls`\n"
+            "description": "protocol served by this endpoint. one of \u0060http\u0060, \u0060https\u0060, \u0060tcp\u0060, or \u0060tls\u0060\n"
           },
           "scheme": {
             "type": "string",
@@ -14481,7 +14855,7 @@
           },
           "hostport": {
             "type": "string",
-            "description": "hostport served by this endpoint (hostname:port) -> soon to be deprecated\n"
+            "description": "hostport served by this endpoint (hostname:port) -\u003E soon to be deprecated\n"
           },
           "host": {
             "type": "string",
@@ -14493,7 +14867,7 @@
           },
           "type": {
             "type": "string",
-            "description": "whether the endpoint is `ephemeral` (served directly by an agent-initiated tunnel) or `edge` (served by an edge) or `cloud (represents a cloud endpoint)`\n"
+            "description": "whether the endpoint is \u0060ephemeral\u0060 (served directly by an agent-initiated tunnel) or \u0060edge\u0060 (served by an edge) or \u0060cloud (represents a cloud endpoint)\u0060\n"
           },
           "metadata": {
             "type": "string",
@@ -14592,7 +14966,7 @@
           },
           "type": {
             "type": "string",
-            "description": "Type of endpoint. Only 'cloud' is currently supported (represents a cloud endpoint). Defaults to 'cloud' if not specified.\n"
+            "description": "Type of endpoint. Only \u0027cloud\u0027 is currently supported (represents a cloud endpoint). Defaults to \u0027cloud\u0027 if not specified.\n"
           },
           "traffic_policy": {
             "type": "string",
@@ -14632,7 +15006,7 @@
           },
           "filter": {
             "type": "string",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as `id`, `metadata`, `created_at`, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
           }
         }
       },
@@ -14685,7 +15059,7 @@
           },
           "format": {
             "type": "string",
-            "description": "The output format you would like to serialize events into when sending to their target. Currently the only accepted value is `JSON`.\n"
+            "description": "The output format you would like to serialize events into when sending to their target. Currently the only accepted value is \u0060JSON\u0060.\n"
           },
           "target": {
             "$ref": "#/components/schemas/EventTarget"
@@ -14709,7 +15083,7 @@
           },
           "format": {
             "type": "string",
-            "description": "The output format you would like to serialize events into when sending to their target. Currently the only accepted value is `JSON`.\n"
+            "description": "The output format you would like to serialize events into when sending to their target. Currently the only accepted value is \u0060JSON\u0060.\n"
           },
           "target": {
             "$ref": "#/components/schemas/EventTarget"
@@ -14737,7 +15111,7 @@
           },
           "format": {
             "type": "string",
-            "description": "The output format you would like to serialize events into when sending to their target. Currently the only accepted value is `JSON`.\n"
+            "description": "The output format you would like to serialize events into when sending to their target. Currently the only accepted value is \u0060JSON\u0060.\n"
           },
           "target": {
             "$ref": "#/components/schemas/EventTarget"
@@ -15125,7 +15499,7 @@
             "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n"
           }
         },
-        "description": "This is needed instead of Paging because the parameters are different. We also don't need the typical pagination params because pagination of this isn't necessary or supported.\n"
+        "description": "This is needed instead of Paging because the parameters are different. We also don\u0027t need the typical pagination params because pagination of this isn\u0027t necessary or supported.\n"
       },
       "IpPolicyCreate": {
         "type": "object",
@@ -15228,7 +15602,7 @@
           },
           "action": {
             "type": "string",
-            "description": "the action to apply to the policy rule, either `allow` or `deny`\n"
+            "description": "the action to apply to the policy rule, either \u0060allow\u0060 or \u0060deny\u0060\n"
           }
         }
       },
@@ -15285,7 +15659,7 @@
           },
           "action": {
             "type": "string",
-            "description": "the action to apply to the policy rule, either `allow` or `deny`\n"
+            "description": "the action to apply to the policy rule, either \u0060allow\u0060 or \u0060deny\u0060\n"
           }
         }
       },
@@ -15330,7 +15704,7 @@
           },
           "type": {
             "type": "string",
-            "description": "the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: `dashboard`, `api`, `agent`, and `endpoints`\n"
+            "description": "the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: \u0060dashboard\u0060, \u0060api\u0060, \u0060agent\u0060, and \u0060endpoints\u0060\n"
           },
           "ip_policy_ids": {
             "type": "array",
@@ -15398,7 +15772,7 @@
           },
           "type": {
             "type": "string",
-            "description": "the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: `dashboard`, `api`, `agent`, and `endpoints`\n"
+            "description": "the type of IP restriction. this defines what traffic will be restricted with the attached policies. four values are currently supported: \u0060dashboard\u0060, \u0060api\u0060, \u0060agent\u0060, and \u0060endpoints\u0060\n"
           },
           "ip_policies": {
             "type": "array",
@@ -15537,7 +15911,7 @@
           },
           "certificate_id": {
             "type": "string",
-            "description": "ID of a user-uploaded TLS certificate to use for connections to targeting this domain. Optional, mutually exclusive with `certificate_management_policy`.\n"
+            "description": "ID of a user-uploaded TLS certificate to use for connections to targeting this domain. Optional, mutually exclusive with \u0060certificate_management_policy\u0060.\n"
           },
           "certificate_management_policy": {
             "$ref": "#/components/schemas/ReservedDomainCertPolicy"
@@ -15568,7 +15942,7 @@
           },
           "certificate_id": {
             "type": "string",
-            "description": "ID of a user-uploaded TLS certificate to use for connections to targeting this domain. Optional, mutually exclusive with `certificate_management_policy`.\n"
+            "description": "ID of a user-uploaded TLS certificate to use for connections to targeting this domain. Optional, mutually exclusive with \u0060certificate_management_policy\u0060.\n"
           },
           "certificate_management_policy": {
             "$ref": "#/components/schemas/ReservedDomainCertPolicy"
@@ -15710,7 +16084,7 @@
         "properties": {
           "value": {
             "type": "string",
-            "description": "accepts an ngrok point-of-presence shortcode, or \"global\"\n"
+            "description": "accepts an ngrok point-of-presence shortcode, or \u0022global\u0022\n"
           }
         }
       },
@@ -15922,7 +16296,7 @@
           },
           "private_key_type": {
             "type": "string",
-            "description": "the type of private key to generate. one of `rsa`, `ecdsa`, `ed25519`\n"
+            "description": "the type of private key to generate. one of \u0060rsa\u0060, \u0060ecdsa\u0060, \u0060ed25519\u0060\n"
           },
           "elliptic_curve": {
             "type": "string",
@@ -15930,7 +16304,7 @@
           },
           "key_size": {
             "type": "integer",
-            "description": "the key size to use when creating an RSA key. one of `2048` or `4096`\n"
+            "description": "the key size to use when creating an RSA key. one of \u00602048\u0060 or \u00604096\u0060\n"
           }
         }
       },
@@ -16023,7 +16397,7 @@
             "items": {
               "type": "string"
             },
-            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the `bind` rule. The `bind` rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule `bind:example.ngrok.io`. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of `bind:*.example.com` which will allow `x.example.com`, `y.example.com`, `*.example.com`, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of `bind:*=example` which will allow `x=example`, `y=example`, etc. A rule of `'*'` is equivalent to no acl at all and will explicitly permit all actions.\n"
+            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the \u0060bind\u0060 rule. The \u0060bind\u0060 rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule \u0060bind:example.ngrok.io\u0060. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of \u0060bind:*.example.com\u0060 which will allow \u0060x.example.com\u0060, \u0060y.example.com\u0060, \u0060*.example.com\u0060, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of \u0060bind:*=example\u0060 which will allow \u0060x=example\u0060, \u0060y=example\u0060, etc. A rule of \u0060\u0027*\u0027\u0060 is equivalent to no acl at all and will explicitly permit all actions.\n"
           },
           "public_key": {
             "type": "string",
@@ -16055,7 +16429,7 @@
             "items": {
               "type": "string"
             },
-            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the `bind` rule. The `bind` rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule `bind:example.ngrok.io`. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of `bind:*.example.com` which will allow `x.example.com`, `y.example.com`, `*.example.com`, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of `bind:*=example` which will allow `x=example`, `y=example`, etc. A rule of `'*'` is equivalent to no acl at all and will explicitly permit all actions.\n"
+            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the \u0060bind\u0060 rule. The \u0060bind\u0060 rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule \u0060bind:example.ngrok.io\u0060. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of \u0060bind:*.example.com\u0060 which will allow \u0060x.example.com\u0060, \u0060y.example.com\u0060, \u0060*.example.com\u0060, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of \u0060bind:*=example\u0060 which will allow \u0060x=example\u0060, \u0060y=example\u0060, etc. A rule of \u0060\u0027*\u0027\u0060 is equivalent to no acl at all and will explicitly permit all actions.\n"
           }
         }
       },
@@ -16091,7 +16465,7 @@
             "items": {
               "type": "string"
             },
-            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the `bind` rule. The `bind` rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule `bind:example.ngrok.io`. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of `bind:*.example.com` which will allow `x.example.com`, `y.example.com`, `*.example.com`, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of `bind:*=example` which will allow `x=example`, `y=example`, etc. A rule of `'*'` is equivalent to no acl at all and will explicitly permit all actions.\n"
+            "description": "optional list of ACL rules. If unspecified, the credential will have no restrictions. The only allowed ACL rule at this time is the \u0060bind\u0060 rule. The \u0060bind\u0060 rule allows the caller to restrict what domains, addresses, and labels the token is allowed to bind. For example, to allow the token to open a tunnel on example.ngrok.io your ACL would include the rule \u0060bind:example.ngrok.io\u0060. Bind rules for domains may specify a leading wildcard to match multiple domains with a common suffix. For example, you may specify a rule of \u0060bind:*.example.com\u0060 which will allow \u0060x.example.com\u0060, \u0060y.example.com\u0060, \u0060*.example.com\u0060, etc. Bind rules for labels may specify a wildcard key and/or value to match multiple labels. For example, you may specify a rule of \u0060bind:*=example\u0060 which will allow \u0060x=example\u0060, \u0060y=example\u0060, etc. A rule of \u0060\u0027*\u0027\u0060 is equivalent to no acl at all and will explicitly permit all actions.\n"
           },
           "owner_id": {
             "type": "string",
@@ -16147,7 +16521,7 @@
           },
           "valid_until": {
             "type": "string",
-            "description": "The time when this host certificate becomes invalid, in RFC 3339 format. If unspecified, a default value of one year in the future will be used. The OpenSSH certificates RFC calls this `valid_before`.\n"
+            "description": "The time when this host certificate becomes invalid, in RFC 3339 format. If unspecified, a default value of one year in the future will be used. The OpenSSH certificates RFC calls this \u0060valid_before\u0060.\n"
           },
           "description": {
             "type": "string",
@@ -16205,7 +16579,7 @@
           },
           "key_type": {
             "type": "string",
-            "description": "the key type of the `public_key`, one of `rsa`, `ecdsa` or `ed25519`\n"
+            "description": "the key type of the \u0060public_key\u0060, one of \u0060rsa\u0060, \u0060ecdsa\u0060 or \u0060ed25519\u0060\n"
           },
           "ssh_certificate_authority_id": {
             "type": "string",
@@ -16224,11 +16598,11 @@
           },
           "valid_until": {
             "type": "string",
-            "description": "the time after which the ssh host certificate becomes invalid, in RFC 3339 format. the OpenSSH certificates RFC calls this `valid_before`.\n"
+            "description": "the time after which the ssh host certificate becomes invalid, in RFC 3339 format. the OpenSSH certificates RFC calls this \u0060valid_before\u0060.\n"
           },
           "certificate": {
             "type": "string",
-            "description": "the signed SSH certificate in OpenSSH Authorized Keys format. this value should be placed in a `-cert.pub` certificate file on disk that should be referenced in your `sshd_config` configuration file with a `HostCertificate` directive\n"
+            "description": "the signed SSH certificate in OpenSSH Authorized Keys format. this value should be placed in a \u0060-cert.pub\u0060 certificate file on disk that should be referenced in your \u0060sshd_config\u0060 configuration file with a \u0060HostCertificate\u0060 directive\n"
           }
         }
       },
@@ -16286,7 +16660,7 @@
           },
           "valid_until": {
             "type": "string",
-            "description": "The time when this host certificate becomes invalid, in RFC 3339 format. If unspecified, a default value of 24 hours will be used. The OpenSSH certificates RFC calls this `valid_before`.\n"
+            "description": "The time when this host certificate becomes invalid, in RFC 3339 format. If unspecified, a default value of 24 hours will be used. The OpenSSH certificates RFC calls this \u0060valid_before\u0060.\n"
           },
           "description": {
             "type": "string",
@@ -16344,7 +16718,7 @@
           },
           "key_type": {
             "type": "string",
-            "description": "the key type of the `public_key`, one of `rsa`, `ecdsa` or `ed25519`\n"
+            "description": "the key type of the \u0060public_key\u0060, one of \u0060rsa\u0060, \u0060ecdsa\u0060 or \u0060ed25519\u0060\n"
           },
           "ssh_certificate_authority_id": {
             "type": "string",
@@ -16369,11 +16743,11 @@
           },
           "valid_until": {
             "type": "string",
-            "description": "the time after which the ssh host certificate becomes invalid, in RFC 3339 format. the OpenSSH certificates RFC calls this `valid_before`.\n"
+            "description": "the time after which the ssh host certificate becomes invalid, in RFC 3339 format. the OpenSSH certificates RFC calls this \u0060valid_before\u0060.\n"
           },
           "certificate": {
             "type": "string",
-            "description": "the signed SSH certificate in OpenSSH Authorized Keys Format. this value should be placed in a `-cert.pub` certificate file on disk that should be referenced in your `sshd_config` configuration file with a `HostCertificate` directive\n"
+            "description": "the signed SSH certificate in OpenSSH Authorized Keys Format. this value should be placed in a \u0060-cert.pub\u0060 certificate file on disk that should be referenced in your \u0060sshd_config\u0060 configuration file with a \u0060HostCertificate\u0060 directive\n"
           }
         }
       },
@@ -16581,7 +16955,7 @@
           },
           "public_url": {
             "type": "string",
-            "description": "URL of the ephemeral tunnel's public endpoint\n"
+            "description": "URL of the ephemeral tunnel\u0027s public endpoint\n"
           },
           "started_at": {
             "type": "string",
@@ -16593,7 +16967,7 @@
           },
           "proto": {
             "type": "string",
-            "description": "tunnel protocol for ephemeral tunnels. one of `http`, `https`, `tcp` or `tls`\n"
+            "description": "tunnel protocol for ephemeral tunnels. one of \u0060http\u0060, \u0060https\u0060, \u0060tcp\u0060 or \u0060tls\u0060\n"
           },
           "region": {
             "type": "string",
@@ -16761,15 +17135,15 @@
       },
       "TunnelGroupBackendLabels": {
         "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
       },
       "TunnelGroupBackendCreateLabels": {
         "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
       },
       "TunnelGroupBackendUpdateLabels": {
         "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
       },
       "WeightedBackendBackends": {
         "type": "object",
@@ -16793,19 +17167,19 @@
       },
       "SshUserCertificateCreateCriticalOptions": {
         "type": "object",
-        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: \u0060force-command\u0060 and \u0060source-address\u0060. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateCreateExtensions": {
         "type": "object",
-        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\"permit-pty\": \"\", \"permit-user-rc\": \"\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: \u0060{\u0022permit-pty\u0022: \u0022\u0022, \u0022permit-user-rc\u0022: \u0022\u0022}\u0060 OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateCriticalOptions": {
         "type": "object",
-        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: \u0060force-command\u0060 and \u0060source-address\u0060. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateExtensions": {
         "type": "object",
-        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\"permit-pty\": \"\", \"permit-user-rc\": \"\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: \u0060{\u0022permit-pty\u0022: \u0022\u0022, \u0022permit-user-rc\u0022: \u0022\u0022}\u0060 OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "TunnelLabels": {
         "type": "object",
@@ -16836,15 +17210,15 @@
       },
       "TunnelGroupBackendLabelsProperty": {
         "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
       },
       "TunnelGroupBackendCreateLabelsProperty": {
         "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
       },
       "TunnelGroupBackendUpdateLabelsProperty": {
         "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app->foo, dc->bar\n"
+        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
       },
       "WeightedBackendBackendsProperty": {
         "type": "object",
@@ -16868,19 +17242,19 @@
       },
       "SshUserCertificateCreateCriticalOptionsProperty": {
         "type": "object",
-        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: \u0060force-command\u0060 and \u0060source-address\u0060. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateCreateExtensionsProperty": {
         "type": "object",
-        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\"permit-pty\": \"\", \"permit-user-rc\": \"\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: \u0060{\u0022permit-pty\u0022: \u0022\u0022, \u0022permit-user-rc\u0022: \u0022\u0022}\u0060 OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateCriticalOptionsProperty": {
         "type": "object",
-        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: `force-command` and `source-address`. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: \u0060force-command\u0060 and \u0060source-address\u0060. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "SshUserCertificateExtensionsProperty": {
         "type": "object",
-        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: `{\"permit-pty\": \"\", \"permit-user-rc\": \"\"}` OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: \u0060{\u0022permit-pty\u0022: \u0022\u0022, \u0022permit-user-rc\u0022: \u0022\u0022}\u0060 OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
       },
       "TunnelLabelsProperty": {
         "type": "object",
@@ -16919,7 +17293,7 @@
   },
   "security": [
     {
-      "authentication": [ ]
+      "authentication": []
     }
   ]
 }
