@@ -11433,62 +11433,12 @@
         },
         "description": "The error body every api.ngrok.com 4xx and 5xx response returns. Every error condition has a globally unique, documented error code; see https://ngrok.com/docs/errors\n"
       },
-      "Empty": {
-        "type": "object"
-      },
       "ItemValue": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "description": "a resource identifier\n"
-          }
-        }
-      },
-      "Paging": {
-        "type": "object",
-        "properties": {
-          "before_id": {
-            "type": "string",
-            "description": "n/a"
-          },
-          "limit": {
-            "type": "string",
-            "description": "n/a"
-          }
-        }
-      },
-      "FilteredPaging": {
-        "type": "object",
-        "properties": {
-          "before_id": {
-            "type": "string",
-            "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n"
-          },
-          "limit": {
-            "type": "string",
-            "description": "Constrains the number of results in the dataset. See the [API Overview](https://ngrok.com/docs/api/index#pagination) for details.\n"
-          },
-          "filter": {
-            "type": "string",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
-          }
-        }
-      },
-      "ItemPaging": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "a resource identifier\n"
-          },
-          "before_id": {
-            "type": "string",
-            "description": "n/a"
-          },
-          "limit": {
-            "type": "string",
-            "description": "n/a"
           }
         }
       },
@@ -11828,23 +11778,6 @@
           "last_used": {
             "type": "string",
             "description": "Timestamp when the provider key was last used (RFC 3339 format)\n"
-          }
-        }
-      },
-      "AiGatewayProviderKeyPaging": {
-        "type": "object",
-        "properties": {
-          "before_id": {
-            "type": "string",
-            "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n"
-          },
-          "limit": {
-            "type": "string",
-            "description": "Constrains the number of results in the dataset.\n"
-          },
-          "ai_gateway_api_key_id": {
-            "type": "string",
-            "description": "Filter by the AI Gateway API Key ID this provider key is attached to.\n"
           }
         }
       },
@@ -13932,19 +13865,6 @@
           }
         }
       },
-      "EdgeRouteItem": {
-        "type": "object",
-        "properties": {
-          "edge_id": {
-            "type": "string",
-            "description": "unique identifier of this edge\n"
-          },
-          "id": {
-            "type": "string",
-            "description": "unique identifier of this edge route\n"
-          }
-        }
-      },
       "HttpsEdgeRouteCreate": {
         "required": [
           "match_type",
@@ -14993,23 +14913,6 @@
           }
         }
       },
-      "EndpointListArgs": {
-        "type": "object",
-        "properties": {
-          "before_id": {
-            "type": "string",
-            "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n"
-          },
-          "limit": {
-            "type": "string",
-            "description": "Constrains the number of results in the dataset. See the [API Overview](https://ngrok.com/docs/api/index#pagination) for details.\n"
-          },
-          "filter": {
-            "type": "string",
-            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
-          }
-        }
-      },
       "EndpointUpdate": {
         "type": "object",
         "properties": {
@@ -15476,30 +15379,6 @@
             "description": "Type of event for which an event subscription will trigger\n"
           }
         }
-      },
-      "EventSourceItem": {
-        "type": "object",
-        "properties": {
-          "subscription_id": {
-            "type": "string",
-            "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n"
-          },
-          "type": {
-            "type": "string",
-            "description": "Type of event for which an event subscription will trigger\n"
-          }
-        },
-        "description": "This is needed instead of Item because the parameters are different.\n"
-      },
-      "EventSourcePaging": {
-        "type": "object",
-        "properties": {
-          "subscription_id": {
-            "type": "string",
-            "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n"
-          }
-        },
-        "description": "This is needed instead of Paging because the parameters are different. We also don\u0027t need the typical pagination params because pagination of this isn\u0027t necessary or supported.\n"
       },
       "IpPolicyCreate": {
         "type": "object",
@@ -17114,81 +16993,6 @@
           }
         }
       },
-      "ErrorDetails": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "Additional error context. details.operation_id identifies the failed request when contacting support.\n"
-      },
-      "HttpResponseBackendHeaders": {
-        "type": "object",
-        "description": "headers to return\n"
-      },
-      "HttpResponseBackendCreateHeaders": {
-        "type": "object",
-        "description": "headers to return\n"
-      },
-      "HttpResponseBackendUpdateHeaders": {
-        "type": "object",
-        "description": "headers to return\n"
-      },
-      "TunnelGroupBackendLabels": {
-        "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
-      },
-      "TunnelGroupBackendCreateLabels": {
-        "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
-      },
-      "TunnelGroupBackendUpdateLabels": {
-        "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
-      },
-      "WeightedBackendBackends": {
-        "type": "object",
-        "description": "the ids of the child backends to their weights [0-10000]\n"
-      },
-      "WeightedBackendCreateBackends": {
-        "type": "object",
-        "description": "the ids of the child backends to their weights [0-10000]\n"
-      },
-      "WeightedBackendUpdateBackends": {
-        "type": "object",
-        "description": "the ids of the child backends to their weights [0-10000]\n"
-      },
-      "EndpointRequestHeadersAdd": {
-        "type": "object",
-        "description": "a map of header key to header value that will be injected into the HTTP Request before being sent to the upstream application server\n"
-      },
-      "EndpointResponseHeadersAdd": {
-        "type": "object",
-        "description": "a map of header key to header value that will be injected into the HTTP Response returned to the HTTP client\n"
-      },
-      "SshUserCertificateCreateCriticalOptions": {
-        "type": "object",
-        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: \u0060force-command\u0060 and \u0060source-address\u0060. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
-      },
-      "SshUserCertificateCreateExtensions": {
-        "type": "object",
-        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: \u0060{\u0022permit-pty\u0022: \u0022\u0022, \u0022permit-user-rc\u0022: \u0022\u0022}\u0060 OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
-      },
-      "SshUserCertificateCriticalOptions": {
-        "type": "object",
-        "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: \u0060force-command\u0060 and \u0060source-address\u0060. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
-      },
-      "SshUserCertificateExtensions": {
-        "type": "object",
-        "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: \u0060{\u0022permit-pty\u0022: \u0022\u0022, \u0022permit-user-rc\u0022: \u0022\u0022}\u0060 OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
-      },
-      "TunnelLabels": {
-        "type": "object",
-        "description": "the labels the tunnel group backends will match against, if this is a backend tunnel\n"
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
-      },
       "ErrorDetailsProperty": {
         "type": "object",
         "additionalProperties": {
@@ -17295,5 +17099,203 @@
     {
       "authentication": []
     }
-  ]
+  ],
+  "x-client-unused-schemas": {
+    "Empty": {
+      "type": "object"
+    },
+    "Paging": {
+      "type": "object",
+      "properties": {
+        "before_id": {
+          "type": "string",
+          "description": "n/a"
+        },
+        "limit": {
+          "type": "string",
+          "description": "n/a"
+        }
+      }
+    },
+    "FilteredPaging": {
+      "type": "object",
+      "properties": {
+        "before_id": {
+          "type": "string",
+          "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n"
+        },
+        "limit": {
+          "type": "string",
+          "description": "Constrains the number of results in the dataset. See the [API Overview](https://ngrok.com/docs/api/index#pagination) for details.\n"
+        },
+        "filter": {
+          "type": "string",
+          "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
+        }
+      }
+    },
+    "ItemPaging": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "a resource identifier\n"
+        },
+        "before_id": {
+          "type": "string",
+          "description": "n/a"
+        },
+        "limit": {
+          "type": "string",
+          "description": "n/a"
+        }
+      }
+    },
+    "AiGatewayProviderKeyPaging": {
+      "type": "object",
+      "properties": {
+        "before_id": {
+          "type": "string",
+          "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n"
+        },
+        "limit": {
+          "type": "string",
+          "description": "Constrains the number of results in the dataset.\n"
+        },
+        "ai_gateway_api_key_id": {
+          "type": "string",
+          "description": "Filter by the AI Gateway API Key ID this provider key is attached to.\n"
+        }
+      }
+    },
+    "EdgeRouteItem": {
+      "type": "object",
+      "properties": {
+        "edge_id": {
+          "type": "string",
+          "description": "unique identifier of this edge\n"
+        },
+        "id": {
+          "type": "string",
+          "description": "unique identifier of this edge route\n"
+        }
+      }
+    },
+    "EndpointListArgs": {
+      "type": "object",
+      "properties": {
+        "before_id": {
+          "type": "string",
+          "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n"
+        },
+        "limit": {
+          "type": "string",
+          "description": "Constrains the number of results in the dataset. See the [API Overview](https://ngrok.com/docs/api/index#pagination) for details.\n"
+        },
+        "filter": {
+          "type": "string",
+          "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\n"
+        }
+      }
+    },
+    "EventSourceItem": {
+      "type": "object",
+      "properties": {
+        "subscription_id": {
+          "type": "string",
+          "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of event for which an event subscription will trigger\n"
+        }
+      },
+      "description": "This is needed instead of Item because the parameters are different.\n"
+    },
+    "EventSourcePaging": {
+      "type": "object",
+      "properties": {
+        "subscription_id": {
+          "type": "string",
+          "description": "The unique identifier for the Event Subscription that this Event Source is attached to.\n"
+        }
+      },
+      "description": "This is needed instead of Paging because the parameters are different. We also don\u0027t need the typical pagination params because pagination of this isn\u0027t necessary or supported.\n"
+    },
+    "ErrorDetails": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Additional error context. details.operation_id identifies the failed request when contacting support.\n"
+    },
+    "HttpResponseBackendHeaders": {
+      "type": "object",
+      "description": "headers to return\n"
+    },
+    "HttpResponseBackendCreateHeaders": {
+      "type": "object",
+      "description": "headers to return\n"
+    },
+    "HttpResponseBackendUpdateHeaders": {
+      "type": "object",
+      "description": "headers to return\n"
+    },
+    "TunnelGroupBackendLabels": {
+      "type": "object",
+      "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
+    },
+    "TunnelGroupBackendCreateLabels": {
+      "type": "object",
+      "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
+    },
+    "TunnelGroupBackendUpdateLabels": {
+      "type": "object",
+      "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
+    },
+    "WeightedBackendBackends": {
+      "type": "object",
+      "description": "the ids of the child backends to their weights [0-10000]\n"
+    },
+    "WeightedBackendCreateBackends": {
+      "type": "object",
+      "description": "the ids of the child backends to their weights [0-10000]\n"
+    },
+    "WeightedBackendUpdateBackends": {
+      "type": "object",
+      "description": "the ids of the child backends to their weights [0-10000]\n"
+    },
+    "EndpointRequestHeadersAdd": {
+      "type": "object",
+      "description": "a map of header key to header value that will be injected into the HTTP Request before being sent to the upstream application server\n"
+    },
+    "EndpointResponseHeadersAdd": {
+      "type": "object",
+      "description": "a map of header key to header value that will be injected into the HTTP Response returned to the HTTP client\n"
+    },
+    "SshUserCertificateCreateCriticalOptions": {
+      "type": "object",
+      "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: \u0060force-command\u0060 and \u0060source-address\u0060. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+    },
+    "SshUserCertificateCreateExtensions": {
+      "type": "object",
+      "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: \u0060{\u0022permit-pty\u0022: \u0022\u0022, \u0022permit-user-rc\u0022: \u0022\u0022}\u0060 OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+    },
+    "SshUserCertificateCriticalOptions": {
+      "type": "object",
+      "description": "A map of critical options included in the certificate. Only two critical options are currently defined by OpenSSH: \u0060force-command\u0060 and \u0060source-address\u0060. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+    },
+    "SshUserCertificateExtensions": {
+      "type": "object",
+      "description": "A map of extensions included in the certificate. Extensions are additional metadata that can be interpreted by the SSH server for any purpose. These can be used to permit or deny the ability to open a terminal, do port forwarding, x11 forwarding, and more. If unspecified, the certificate will include limited permissions with the following extension map: \u0060{\u0022permit-pty\u0022: \u0022\u0022, \u0022permit-user-rc\u0022: \u0022\u0022}\u0060 OpenSSH understands a number of predefined extensions. See [the OpenSSH certificate protocol spec](https://github.com/openssh/openssh-portable/blob/master/PROTOCOL.certkeys) for additional details.\n"
+    },
+    "TunnelLabels": {
+      "type": "object",
+      "description": "the labels the tunnel group backends will match against, if this is a backend tunnel\n"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }
