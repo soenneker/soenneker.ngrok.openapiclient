@@ -9,7 +9,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AiGatewayApiKeyList : IAdditionalDataHolder, IParsable
+    public partial class PersonalAccessTokenList : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -17,27 +17,17 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ai_gateway_api_keys") is null) { _explicitNullValueAiGatewayApiKeys = default!; _explicitNullProperties?.Remove("ai_gateway_api_keys"); }
-            else if (parseNode.GetChildNode("ai_gateway_api_keys") is { } nullNodeAiGatewayApiKeys && nullNodeAiGatewayApiKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiGatewayApiKeys = null;
             if (parseNode.GetChildNode("next_page_uri") is null) { _explicitNullValueNextPageUri = default!; _explicitNullProperties?.Remove("next_page_uri"); }
             else if (parseNode.GetChildNode("next_page_uri") is { } nullNodeNextPageUri && nullNodeNextPageUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageUri = null;
+            if (parseNode.GetChildNode("tokens") is null) { _explicitNullValueTokens = default!; _explicitNullProperties?.Remove("tokens"); }
+            else if (parseNode.GetChildNode("tokens") is { } nullNodeTokens && nullNodeTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tokens = null;
             if (parseNode.GetChildNode("uri") is null) { _explicitNullValueUri = default!; _explicitNullProperties?.Remove("uri"); }
             else if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>the list of AI Gateway API Keys for this account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKey>? AiGatewayApiKeys { get => _explicitNullValueAiGatewayApiKeys; set { _explicitNullValueAiGatewayApiKeys = value; AdditionalData?.Remove("ai_gateway_api_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_gateway_api_keys"); else _explicitNullProperties?.Remove("ai_gateway_api_keys"); } }
-        private List<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKey>? _explicitNullValueAiGatewayApiKeys = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKey> AiGatewayApiKeys { get => _explicitNullValueAiGatewayApiKeys; set { _explicitNullValueAiGatewayApiKeys = value; AdditionalData?.Remove("ai_gateway_api_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ai_gateway_api_keys"); else _explicitNullProperties?.Remove("ai_gateway_api_keys"); } }
-        private List<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKey> _explicitNullValueAiGatewayApiKeys = default!;
-#endif
-        /// <summary>URI of the next page of results, or null if there is no next page</summary>
+        /// <summary>URI for the next page of results, or null if there are no more pages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; AdditionalData?.Remove("next_page_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
@@ -47,7 +37,17 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public string NextPageUri { get => _explicitNullValueNextPageUri; set { _explicitNullValueNextPageUri = value; AdditionalData?.Remove("next_page_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_uri"); else _explicitNullProperties?.Remove("next_page_uri"); } }
         private string _explicitNullValueNextPageUri = default!;
 #endif
-        /// <summary>n/a</summary>
+        /// <summary>list of access tokens visible to the authenticated account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken>? Tokens { get => _explicitNullValueTokens; set { _explicitNullValueTokens = value; AdditionalData?.Remove("tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokens"); else _explicitNullProperties?.Remove("tokens"); } }
+        private List<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken>? _explicitNullValueTokens = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken> Tokens { get => _explicitNullValueTokens; set { _explicitNullValueTokens = value; AdditionalData?.Remove("tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokens"); else _explicitNullProperties?.Remove("tokens"); } }
+        private List<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken> _explicitNullValueTokens = default!;
+#endif
+        /// <summary>URI of the access token API resource list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
@@ -58,21 +58,21 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         private string _explicitNullValueUri = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKeyList"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessTokenList"/> and sets the default values.
         /// </summary>
-        public AiGatewayApiKeyList()
+        public PersonalAccessTokenList()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKeyList"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessTokenList"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKeyList CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessTokenList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKeyList(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessTokenList(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,8 +82,8 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ai_gateway_api_keys", n => { AiGatewayApiKeys = n.GetCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKey>(global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKey.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "next_page_uri", n => { NextPageUri = n.GetStringValue(); } },
+                { "tokens", n => { Tokens = n.GetCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken>(global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -94,8 +94,8 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayApiKey>("ai_gateway_api_keys", AiGatewayApiKeys);
             writer.WriteStringValue("next_page_uri", NextPageUri);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken>("tokens", Tokens);
             writer.WriteStringValue("uri", Uri);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

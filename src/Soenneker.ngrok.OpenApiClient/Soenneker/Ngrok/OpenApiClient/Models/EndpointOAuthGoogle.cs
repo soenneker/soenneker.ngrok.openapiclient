@@ -71,7 +71,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public List<string> EmailDomains { get => _explicitNullValueEmailDomains; set { _explicitNullValueEmailDomains = value; AdditionalData?.Remove("email_domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_domains"); else _explicitNullProperties?.Remove("email_domains"); } }
         private List<string> _explicitNullValueEmailDomains = default!;
 #endif
-        /// <summary>a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both `client_id` and `client_secret` to set scopes)</summary>
+        /// <summary>a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (that is, you must pass both `client_id` and `client_secret` to set scopes)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }

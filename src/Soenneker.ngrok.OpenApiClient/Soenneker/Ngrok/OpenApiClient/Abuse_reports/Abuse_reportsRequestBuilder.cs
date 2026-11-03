@@ -47,7 +47,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Abuse_reports
         {
         }
         /// <summary>
-        /// Creates a new abuse report which will be reviewed by our system and abuse response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access
+        /// Creates a new abuse report which will be reviewed by the ngrok abuse system and response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.AbuseReport"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Abuse_reports
             return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.AbuseReport>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.AbuseReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new abuse report which will be reviewed by our system and abuse response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access
+        /// Creates a new abuse report which will be reviewed by the ngrok abuse system and response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

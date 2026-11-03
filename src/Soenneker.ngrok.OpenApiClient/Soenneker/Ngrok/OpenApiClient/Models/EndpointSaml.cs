@@ -51,7 +51,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If true, the IdP may initiate a login directly (e.g. the user does not need to visit the endpoint first and then be redirected). The IdP should set the `RelayState` parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.</summary>
+        /// <summary>If true, the IdP may initiate a login directly (for example, the user does not need to visit the endpoint first and then be redirected). The IdP should set the `RelayState` parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.</summary>
         public bool? AllowIdpInitiated { get => _explicitNullValueAllowIdpInitiated; set { _explicitNullValueAllowIdpInitiated = value; AdditionalData?.Remove("allow_idp_initiated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_idp_initiated"); else _explicitNullProperties?.Remove("allow_idp_initiated"); } }
         private bool? _explicitNullValueAllowIdpInitiated = default!;
         /// <summary>The public URL of the SP&apos;s Assertion Consumer Service. This is where the IdP will redirect to during an authentication flow. This will need to be specified to the IdP as configuration.</summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; AdditionalData?.Remove("entity_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_id"); else _explicitNullProperties?.Remove("entity_id"); } }
         private string _explicitNullValueEntityId = default!;
 #endif
-        /// <summary>If true, indicates that whenever we redirect a user to the IdP for authentication that the IdP must prompt the user for authentication credentials even if the user already has a valid session with the IdP.</summary>
+        /// <summary>If true, indicates that whenever ngrok redirects a user to the IdP for authentication that the IdP must prompt the user for authentication credentials even if the user already has a valid session with the IdP.</summary>
         public bool? ForceAuthn { get => _explicitNullValueForceAuthn; set { _explicitNullValueForceAuthn = value; AdditionalData?.Remove("force_authn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_authn"); else _explicitNullProperties?.Remove("force_authn"); } }
         private bool? _explicitNullValueForceAuthn = default!;
         /// <summary>The full XML IdP EntityDescriptor. Your IdP may provide this to you as a a file to download or as a URL.</summary>
@@ -139,7 +139,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>Do not enforce authentication on HTTP OPTIONS requests. necessary if you are supporting CORS.</summary>
         public bool? OptionsPassthrough { get => _explicitNullValueOptionsPassthrough; set { _explicitNullValueOptionsPassthrough = value; AdditionalData?.Remove("options_passthrough"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options_passthrough"); else _explicitNullProperties?.Remove("options_passthrough"); } }
         private bool? _explicitNullValueOptionsPassthrough = default!;
-        /// <summary>PEM-encoded x.509 certificate of the key pair that is used to sign all SAML requests that the ngrok SP makes to the IdP. Many IdPs do not support request signing verification, but we highly recommend specifying this in the IdP&apos;s configuration if it is supported.</summary>
+        /// <summary>PEM-encoded x.509 certificate of the key pair that is used to sign all SAML requests that the ngrok SP makes to the IdP. Many IdPs do not support request signing verification, but ngrok highly recommends specifying this in the IdP&apos;s configuration if it is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestSigningCertificatePem { get => _explicitNullValueRequestSigningCertificatePem; set { _explicitNullValueRequestSigningCertificatePem = value; AdditionalData?.Remove("request_signing_certificate_pem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_signing_certificate_pem"); else _explicitNullProperties?.Remove("request_signing_certificate_pem"); } }

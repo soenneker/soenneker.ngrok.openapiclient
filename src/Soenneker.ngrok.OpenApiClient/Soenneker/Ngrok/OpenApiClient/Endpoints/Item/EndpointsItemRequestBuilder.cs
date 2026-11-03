@@ -34,7 +34,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints.Item
         {
         }
         /// <summary>
-        /// Delete an Endpoint by ID, currently available only for cloud endpoints
+        /// Delete an Endpoint by ID, currently available only for Cloud Endpoints
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an Endpoint by ID, currently available only for cloud endpoints
+        /// Update an Endpoint by ID, currently available only for Cloud Endpoints
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an Endpoint by ID, currently available only for cloud endpoints
+        /// Delete an Endpoint by ID, currently available only for Cloud Endpoints
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +142,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an Endpoint by ID, currently available only for cloud endpoints
+        /// Update an Endpoint by ID, currently available only for Cloud Endpoints
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

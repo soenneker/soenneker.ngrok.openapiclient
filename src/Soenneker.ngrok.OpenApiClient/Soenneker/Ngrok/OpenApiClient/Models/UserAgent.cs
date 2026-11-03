@@ -33,7 +33,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>browser name (e.g. Chrome)</summary>
+        /// <summary>browser name (for example, Chrome)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BrowserName { get => _explicitNullValueBrowserName; set { _explicitNullValueBrowserName = value; AdditionalData?.Remove("browser_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_name"); else _explicitNullProperties?.Remove("browser_name"); } }
@@ -43,7 +43,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public string BrowserName { get => _explicitNullValueBrowserName; set { _explicitNullValueBrowserName = value; AdditionalData?.Remove("browser_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_name"); else _explicitNullProperties?.Remove("browser_name"); } }
         private string _explicitNullValueBrowserName = default!;
 #endif
-        /// <summary>browser version (e.g. 102)</summary>
+        /// <summary>browser version (for example, 102)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BrowserVersion { get => _explicitNullValueBrowserVersion; set { _explicitNullValueBrowserVersion = value; AdditionalData?.Remove("browser_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_version"); else _explicitNullProperties?.Remove("browser_version"); } }
@@ -53,7 +53,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public string BrowserVersion { get => _explicitNullValueBrowserVersion; set { _explicitNullValueBrowserVersion = value; AdditionalData?.Remove("browser_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_version"); else _explicitNullProperties?.Remove("browser_version"); } }
         private string _explicitNullValueBrowserVersion = default!;
 #endif
-        /// <summary>type of device (e.g. Desktop)</summary>
+        /// <summary>type of device (for example, Desktop)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceType { get => _explicitNullValueDeviceType; set { _explicitNullValueDeviceType = value; AdditionalData?.Remove("device_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_type"); else _explicitNullProperties?.Remove("device_type"); } }
@@ -63,7 +63,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public string DeviceType { get => _explicitNullValueDeviceType; set { _explicitNullValueDeviceType = value; AdditionalData?.Remove("device_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_type"); else _explicitNullProperties?.Remove("device_type"); } }
         private string _explicitNullValueDeviceType = default!;
 #endif
-        /// <summary>operating system name (e.g. MacOS)</summary>
+        /// <summary>operating system name (for example, MacOS)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsName { get => _explicitNullValueOsName; set { _explicitNullValueOsName = value; AdditionalData?.Remove("os_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_name"); else _explicitNullProperties?.Remove("os_name"); } }
@@ -73,7 +73,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public string OsName { get => _explicitNullValueOsName; set { _explicitNullValueOsName = value; AdditionalData?.Remove("os_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_name"); else _explicitNullProperties?.Remove("os_name"); } }
         private string _explicitNullValueOsName = default!;
 #endif
-        /// <summary>operating system version (e.g. 10.15.7)</summary>
+        /// <summary>operating system version (for example, 10.15.7)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsVersion { get => _explicitNullValueOsVersion; set { _explicitNullValueOsVersion = value; AdditionalData?.Remove("os_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os_version"); else _explicitNullProperties?.Remove("os_version"); } }

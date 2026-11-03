@@ -7,9 +7,8 @@ using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Ngrok.OpenApiClient.Abuse_reports;
+using Soenneker.Ngrok.OpenApiClient.Access_tokens;
 using Soenneker.Ngrok.OpenApiClient.Agent_ingresses;
-using Soenneker.Ngrok.OpenApiClient.Ai_gateway_api_keys;
-using Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys;
 using Soenneker.Ngrok.OpenApiClient.Api_keys;
 using Soenneker.Ngrok.OpenApiClient.App;
 using Soenneker.Ngrok.OpenApiClient.Backends;
@@ -52,20 +51,15 @@ namespace Soenneker.Ngrok.OpenApiClient
         {
             get => new global::Soenneker.Ngrok.OpenApiClient.Abuse_reports.Abuse_reportsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The access_tokens property</summary>
+        public global::Soenneker.Ngrok.OpenApiClient.Access_tokens.Access_tokensRequestBuilder Access_tokens
+        {
+            get => new global::Soenneker.Ngrok.OpenApiClient.Access_tokens.Access_tokensRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The agent_ingresses property</summary>
         public global::Soenneker.Ngrok.OpenApiClient.Agent_ingresses.Agent_ingressesRequestBuilder Agent_ingresses
         {
             get => new global::Soenneker.Ngrok.OpenApiClient.Agent_ingresses.Agent_ingressesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The ai_gateway_api_keys property</summary>
-        public global::Soenneker.Ngrok.OpenApiClient.Ai_gateway_api_keys.Ai_gateway_api_keysRequestBuilder Ai_gateway_api_keys
-        {
-            get => new global::Soenneker.Ngrok.OpenApiClient.Ai_gateway_api_keys.Ai_gateway_api_keysRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The ai_gateway_provider_keys property</summary>
-        public global::Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Ai_gateway_provider_keysRequestBuilder Ai_gateway_provider_keys
-        {
-            get => new global::Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Ai_gateway_provider_keysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The api_keys property</summary>
         public global::Soenneker.Ngrok.OpenApiClient.Api_keys.Api_keysRequestBuilder Api_keys

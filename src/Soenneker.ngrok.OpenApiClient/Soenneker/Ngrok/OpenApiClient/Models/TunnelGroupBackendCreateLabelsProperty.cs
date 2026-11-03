@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Ngrok.OpenApiClient.Models
 {
     /// <summary>
-    /// labels to watch for tunnels on, e.g. app-&gt;foo, dc-&gt;bar
+    /// labels to watch for tunnels on, for example app-&gt;foo, dc-&gt;bar
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TunnelGroupBackendCreateLabelsProperty : IAdditionalDataHolder, IParsable

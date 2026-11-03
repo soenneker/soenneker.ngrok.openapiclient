@@ -19,10 +19,14 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("api_key") is null) { _explicitNullValueApiKey = default!; _explicitNullProperties?.Remove("api_key"); }
             else if (parseNode.GetChildNode("api_key") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("auth_scheme") is null) { _explicitNullValueAuthScheme = default!; _explicitNullProperties?.Remove("auth_scheme"); }
+            else if (parseNode.GetChildNode("auth_scheme") is { } nullNodeAuthScheme && nullNodeAuthScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthScheme = null;
             if (parseNode.GetChildNode("ddsite") is null) { _explicitNullValueDdsite = default!; _explicitNullProperties?.Remove("ddsite"); }
             else if (parseNode.GetChildNode("ddsite") is { } nullNodeDdsite && nullNodeDdsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ddsite = null;
             if (parseNode.GetChildNode("ddtags") is null) { _explicitNullValueDdtags = default!; _explicitNullProperties?.Remove("ddtags"); }
             else if (parseNode.GetChildNode("ddtags") is { } nullNodeDdtags && nullNodeDdtags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ddtags = null;
+            if (parseNode.GetChildNode("intake_host") is null) { _explicitNullValueIntakeHost = default!; _explicitNullProperties?.Remove("intake_host"); }
+            else if (parseNode.GetChildNode("intake_host") is { } nullNodeIntakeHost && nullNodeIntakeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntakeHost = null;
             if (parseNode.GetChildNode("service") is null) { _explicitNullValueService = default!; _explicitNullProperties?.Remove("service"); }
             else if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
         }
@@ -38,6 +42,16 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; AdditionalData?.Remove("api_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key"); else _explicitNullProperties?.Remove("api_key"); } }
         private string _explicitNullValueApiKey = default!;
+#endif
+        /// <summary>How to send the API key. dd_api_key (the default) sends the DD-API-KEY header. bearer sends an Authorization: Bearer header.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AuthScheme { get => _explicitNullValueAuthScheme; set { _explicitNullValueAuthScheme = value; AdditionalData?.Remove("auth_scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_scheme"); else _explicitNullProperties?.Remove("auth_scheme"); } }
+        private string? _explicitNullValueAuthScheme = default!;
+#nullable restore
+#else
+        public string AuthScheme { get => _explicitNullValueAuthScheme; set { _explicitNullValueAuthScheme = value; AdditionalData?.Remove("auth_scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_scheme"); else _explicitNullProperties?.Remove("auth_scheme"); } }
+        private string _explicitNullValueAuthScheme = default!;
 #endif
         /// <summary>Datadog site to send event to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,6 +72,16 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 #else
         public string Ddtags { get => _explicitNullValueDdtags; set { _explicitNullValueDdtags = value; AdditionalData?.Remove("ddtags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ddtags"); else _explicitNullProperties?.Remove("ddtags"); } }
         private string _explicitNullValueDdtags = default!;
+#endif
+        /// <summary>Hostname of a Datadog-compatible log intake to send events to instead of a Datadog site, with an optional path prefix such as intake.example.com/dd. Events go to the /api/v2/logs path after the prefix over HTTPS. Set either this or ddsite, not both.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntakeHost { get => _explicitNullValueIntakeHost; set { _explicitNullValueIntakeHost = value; AdditionalData?.Remove("intake_host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intake_host"); else _explicitNullProperties?.Remove("intake_host"); } }
+        private string? _explicitNullValueIntakeHost = default!;
+#nullable restore
+#else
+        public string IntakeHost { get => _explicitNullValueIntakeHost; set { _explicitNullValueIntakeHost = value; AdditionalData?.Remove("intake_host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intake_host"); else _explicitNullProperties?.Remove("intake_host"); } }
+        private string _explicitNullValueIntakeHost = default!;
 #endif
         /// <summary>Service name to send with the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,8 +119,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api_key", n => { ApiKey = n.GetStringValue(); } },
+                { "auth_scheme", n => { AuthScheme = n.GetStringValue(); } },
                 { "ddsite", n => { Ddsite = n.GetStringValue(); } },
                 { "ddtags", n => { Ddtags = n.GetStringValue(); } },
+                { "intake_host", n => { IntakeHost = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
             };
         }
@@ -108,8 +134,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api_key", ApiKey);
+            writer.WriteStringValue("auth_scheme", AuthScheme);
             writer.WriteStringValue("ddsite", Ddsite);
             writer.WriteStringValue("ddtags", Ddtags);
+            writer.WriteStringValue("intake_host", IntakeHost);
             writer.WriteStringValue("service", Service);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

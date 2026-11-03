@@ -70,7 +70,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
             return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointList>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.EndpointList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an endpoint, currently available only for cloud endpoints
+        /// Create an endpoint, currently available only for Cloud Endpoints
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.Endpoint"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Endpoints
             return requestInfo;
         }
         /// <summary>
-        /// Create an endpoint, currently available only for cloud endpoints
+        /// Create an endpoint, currently available only for Cloud Endpoints
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

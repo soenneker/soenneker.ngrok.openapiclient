@@ -68,7 +68,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>n/a</summary>
         public bool? PoolingEnabled { get => _explicitNullValuePoolingEnabled; set { _explicitNullValuePoolingEnabled = value; AdditionalData?.Remove("pooling_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pooling_enabled"); else _explicitNullProperties?.Remove("pooling_enabled"); } }
         private bool? _explicitNullValuePoolingEnabled = default!;
-        /// <summary>The traffic policy attached to this endpoint</summary>
+        /// <summary>The Traffic Policy attached to this endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrafficPolicy { get => _explicitNullValueTrafficPolicy; set { _explicitNullValueTrafficPolicy = value; AdditionalData?.Remove("traffic_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_policy"); else _explicitNullProperties?.Remove("traffic_policy"); } }
@@ -78,7 +78,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public string TrafficPolicy { get => _explicitNullValueTrafficPolicy; set { _explicitNullValueTrafficPolicy = value; AdditionalData?.Remove("traffic_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_policy"); else _explicitNullProperties?.Remove("traffic_policy"); } }
         private string _explicitNullValueTrafficPolicy = default!;
 #endif
-        /// <summary>Type of endpoint. Only &apos;cloud&apos; is currently supported (represents a cloud endpoint). Defaults to &apos;cloud&apos; if not specified.</summary>
+        /// <summary>Type of endpoint. Only &apos;cloud&apos; is currently supported (represents a Cloud Endpoint). Defaults to &apos;cloud&apos; if not specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }

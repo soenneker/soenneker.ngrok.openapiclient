@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "928208D7C48E1DE32A5F8FA5D75D99448F67C855F57BF3EEDFEE7A0DEEE65D3E8A992D43C505A36F76EEA540EC43F761DCDBCB33153B70180423F28E7726AF3F",
+  "descriptionHash": "33233B7521EB5B0435452B1E0294CBD5076AFBC6645D0A8535463E0F0994CA28C073647FD922C45CCA8969BE56557DD3AA839797080B54D61C89F689D840B6DA",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.37.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "ngrokOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.ngrok.OpenApiClient",

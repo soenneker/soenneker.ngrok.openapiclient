@@ -41,7 +41,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If true, the IdP may initiate a login directly (e.g. the user does not need to visit the endpoint first and then be redirected). The IdP should set the `RelayState` parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.</summary>
+        /// <summary>If true, the IdP may initiate a login directly (for example, the user does not need to visit the endpoint first and then be redirected). The IdP should set the `RelayState` parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.</summary>
         public bool? AllowIdpInitiated { get => _explicitNullValueAllowIdpInitiated; set { _explicitNullValueAllowIdpInitiated = value; AdditionalData?.Remove("allow_idp_initiated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_idp_initiated"); else _explicitNullProperties?.Remove("allow_idp_initiated"); } }
         private bool? _explicitNullValueAllowIdpInitiated = default!;
         /// <summary>If present, only users who are a member of one of the listed groups may access the target endpoint.</summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <summary>`true` if the module will be applied to traffic, `false` to disable. default `true` if unspecified</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>If true, indicates that whenever we redirect a user to the IdP for authentication that the IdP must prompt the user for authentication credentials even if the user already has a valid session with the IdP.</summary>
+        /// <summary>If true, indicates that whenever ngrok redirects a user to the IdP for authentication that the IdP must prompt the user for authentication credentials even if the user already has a valid session with the IdP.</summary>
         public bool? ForceAuthn { get => _explicitNullValueForceAuthn; set { _explicitNullValueForceAuthn = value; AdditionalData?.Remove("force_authn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_authn"); else _explicitNullProperties?.Remove("force_authn"); } }
         private bool? _explicitNullValueForceAuthn = default!;
         /// <summary>The full XML IdP EntityDescriptor. Your IdP may provide this to you as a a file to download or as a URL.</summary>

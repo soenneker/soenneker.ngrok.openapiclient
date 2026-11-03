@@ -87,7 +87,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus CertificateManagementStatus { get => _explicitNullValueCertificateManagementStatus; set { _explicitNullValueCertificateManagementStatus = value; AdditionalData?.Remove("certificate_management_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_management_status"); else _explicitNullProperties?.Remove("certificate_management_status"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.ReservedDomainCertStatus _explicitNullValueCertificateManagementStatus = default!;
 #endif
-        /// <summary>DNS CNAME target for a custom hostname, or null if the reserved domain is a subdomain of an ngrok owned domain (e.g. *.ngrok.app)</summary>
+        /// <summary>DNS CNAME target for a custom hostname, or null if the reserved domain is a subdomain of an ngrok owned domain (for example, *.ngrok.app)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CnameTarget { get => _explicitNullValueCnameTarget; set { _explicitNullValueCnameTarget = value; AdditionalData?.Remove("cname_target"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname_target"); else _explicitNullProperties?.Remove("cname_target"); } }
@@ -147,7 +147,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private string _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)</summary>
+        /// <summary>deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (`au`, `eu`, `ap`, `us`, `jp`, `in`, `sa`)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }

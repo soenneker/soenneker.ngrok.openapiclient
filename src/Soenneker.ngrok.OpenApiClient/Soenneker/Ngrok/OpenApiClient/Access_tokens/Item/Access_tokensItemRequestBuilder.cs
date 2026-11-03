@@ -3,38 +3,44 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Ngrok.OpenApiClient.Access_tokens.Item.Revoke;
 using Soenneker.Ngrok.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item
+namespace Soenneker.Ngrok.OpenApiClient.Access_tokens.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ai_gateway_provider_keys\{id}
+    /// Builds and executes requests for operations under \access_tokens\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Ai_gateway_provider_keysItemRequestBuilder : BaseRequestBuilder
+    public partial class Access_tokensItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The revoke property</summary>
+        public global::Soenneker.Ngrok.OpenApiClient.Access_tokens.Item.Revoke.RevokeRequestBuilder Revoke
+        {
+            get => new global::Soenneker.Ngrok.OpenApiClient.Access_tokens.Item.Revoke.RevokeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item.Ai_gateway_provider_keysItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Access_tokens.Item.Access_tokensItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ai_gateway_provider_keysItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai_gateway_provider_keys/{id}", pathParameters)
+        public Access_tokensItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/access_tokens/{id}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item.Ai_gateway_provider_keysItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Ngrok.OpenApiClient.Access_tokens.Item.Access_tokensItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ai_gateway_provider_keysItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai_gateway_provider_keys/{id}", rawUrl)
+        public Access_tokensItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/access_tokens/{id}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete an AI Gateway Provider Key
+        /// Delete an access token by ID. The token stops working within about two minutes and disappears from Get/List, but is not permanently removed -- it may be restored by an ngrok operator as part of a support request.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,19 +62,19 @@ namespace Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an AI Gateway Provider Key by ID
+        /// Get an access token by ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -76,23 +82,23 @@ namespace Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item
             {
                 { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing AI Gateway Provider Key by ID
+        /// Update the description or scopes of an access token by ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Ngrok.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey?> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKeyUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken?> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessTokenUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKeyUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken> PatchAsync(global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessTokenUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -101,10 +107,10 @@ namespace Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item
             {
                 { "XXX", global::Soenneker.Ngrok.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken>(requestInfo, global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an AI Gateway Provider Key
+        /// Delete an access token by ID. The token stops working within about two minutes and disappears from Get/List, but is not permanently removed -- it may be restored by an ngrok operator as part of a support request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +129,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get an AI Gateway Provider Key by ID
+        /// Get an access token by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,18 +148,18 @@ namespace Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing AI Gateway Provider Key by ID
+        /// Update the description or scopes of an access token by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKeyUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessTokenUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.AiGatewayProviderKeyUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Ngrok.OpenApiClient.Models.PersonalAccessTokenUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -166,11 +172,11 @@ namespace Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item.Ai_gateway_provider_keysItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Ngrok.OpenApiClient.Access_tokens.Item.Access_tokensItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item.Ai_gateway_provider_keysItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Ngrok.OpenApiClient.Access_tokens.Item.Access_tokensItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Ngrok.OpenApiClient.Ai_gateway_provider_keys.Item.Ai_gateway_provider_keysItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Ngrok.OpenApiClient.Access_tokens.Item.Access_tokensItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

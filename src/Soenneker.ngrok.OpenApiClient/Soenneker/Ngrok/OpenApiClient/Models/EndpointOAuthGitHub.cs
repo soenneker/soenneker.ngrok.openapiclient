@@ -85,7 +85,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public List<string> Organizations { get => _explicitNullValueOrganizations; set { _explicitNullValueOrganizations = value; AdditionalData?.Remove("organizations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizations"); else _explicitNullProperties?.Remove("organizations"); } }
         private List<string> _explicitNullValueOrganizations = default!;
 #endif
-        /// <summary>a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both `client_id` and `client_secret` to set scopes)</summary>
+        /// <summary>a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (that is, you must pass both `client_id` and `client_secret` to set scopes)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
@@ -95,7 +95,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string> _explicitNullValueScopes = default!;
 #endif
-        /// <summary>a list of github teams identifiers. users will be allowed access to the endpoint if they are a member of any of these teams. identifiers should be in the &apos;slug&apos; format qualified with the org name, e.g. `org-name/team-name`</summary>
+        /// <summary>a list of github teams identifiers. users will be allowed access to the endpoint if they are a member of any of these teams. identifiers should be in the &apos;slug&apos; format qualified with the org name, for example `org-name/team-name`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Teams { get => _explicitNullValueTeams; set { _explicitNullValueTeams = value; AdditionalData?.Remove("teams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams"); else _explicitNullProperties?.Remove("teams"); } }

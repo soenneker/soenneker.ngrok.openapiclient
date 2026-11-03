@@ -17,7 +17,7 @@
           "AbuseReports"
         ],
         "summary": "Create",
-        "description": "Creates a new abuse report which will be reviewed by our system and abuse response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access\n",
+        "description": "Creates a new abuse report which will be reviewed by the ngrok abuse system and response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access\n",
         "operationId": "AbuseReportsCreate",
         "parameters": [
           {
@@ -35,7 +35,7 @@
         },
         "responses": {
           "201": {
-            "description": "Creates a new abuse report which will be reviewed by our system and abuse response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access\n",
+            "description": "Creates a new abuse report which will be reviewed by the ngrok abuse system and response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -51,7 +51,7 @@
             "$ref": "#/components/responses/Error"
           },
           "200": {
-            "description": "Creates a new abuse report which will be reviewed by our system and abuse response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access\n",
+            "description": "Creates a new abuse report which will be reviewed by the ngrok abuse system and response team. This API is only available to authorized accounts. Contact abuse@ngrok.com to request access\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -96,6 +96,282 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    },
+    "/access_tokens": {
+      "post": {
+        "tags": [
+          "PersonalAccessTokens"
+        ],
+        "summary": "Create",
+        "description": "Create a new access token. The token value is returned only in this response and can\u0027t be retrieved later. If you lose it, create a new token.\n",
+        "operationId": "PersonalAccessTokensCreate",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonalAccessTokenCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Create a new access token. The token value is returned only in this response and can\u0027t be retrieved later. If you lose it, create a new token.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonalAccessToken"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "200": {
+            "description": "Create a new access token. The token value is returned only in this response and can\u0027t be retrieved later. If you lose it, create a new token.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonalAccessToken"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "PersonalAccessTokens"
+        ],
+        "summary": "List",
+        "description": "List all access tokens for this account\n",
+        "operationId": "PersonalAccessTokensList",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "before_id",
+            "in": "query",
+            "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Constrains the number of results in the dataset. See the [API Overview](https://ngrok.com/docs/api/index#pagination) for details.\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "A CEL expression to filter the list results. Supports logical and comparison operators to match on fields such as \u0060id\u0060, \u0060metadata\u0060, \u0060created_at\u0060, and more. See ngrok API Filtering for syntax and field details: https://ngrok.com/docs/api/api-filtering.\nFilterable fields: id, description, owner_id, created_at, expires_at, revoked_at\n",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List all access tokens for this account\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonalAccessTokenList"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    },
+    "/access_tokens/{id}": {
+      "delete": {
+        "tags": [
+          "PersonalAccessTokens"
+        ],
+        "summary": "Delete",
+        "description": "Delete an access token by ID. The token stops working within about two minutes and disappears from Get/List, but is not permanently removed -- it may be restored by an ngrok operator as part of a support request.\n",
+        "operationId": "PersonalAccessTokensDelete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "a resource identifier\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete an access token by ID. The token stops working within about two minutes and disappears from Get/List, but is not permanently removed -- it may be restored by an ngrok operator as part of a support request.\n"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "PersonalAccessTokens"
+        ],
+        "summary": "Get",
+        "description": "Get an access token by ID.\n",
+        "operationId": "PersonalAccessTokensGet",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "a resource identifier\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get an access token by ID.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonalAccessToken"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "PersonalAccessTokens"
+        ],
+        "summary": "Update",
+        "description": "Update the description or scopes of an access token by ID.\n",
+        "operationId": "PersonalAccessTokensUpdate",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "unique identifier of the access token to update\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonalAccessTokenUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update the description or scopes of an access token by ID.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonalAccessToken"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    },
+    "/access_tokens/{id}/revoke": {
+      "post": {
+        "tags": [
+          "PersonalAccessTokens"
+        ],
+        "summary": "Revoke",
+        "description": "Revoke an access token by ID. The token stops working within about two minutes. Unlike Delete, a revoked token remains visible in Get/List responses.\n",
+        "operationId": "PersonalAccessTokensRevoke",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ngrokVersion"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "a resource identifier\n",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemValue"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Revoke an access token by ID. The token stops working within about two minutes. Unlike Delete, a revoked token remains visible in Get/List responses.\n"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -324,460 +600,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AgentIngress"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        }
-      }
-    },
-    "/ai_gateway_provider_keys": {
-      "post": {
-        "tags": [
-          "AIGatewayProviderKeys"
-        ],
-        "summary": "Create",
-        "description": "Create a new AI Gateway Provider Key\n",
-        "operationId": "AiGatewayProviderKeysCreate",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AiGatewayProviderKeyCreate"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Create a new AI Gateway Provider Key\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayProviderKey"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "200": {
-            "description": "Create a new AI Gateway Provider Key\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayProviderKey"
-                }
-              }
-            },
-            "x-client-success-response-status": "201"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "AIGatewayProviderKeys"
-        ],
-        "summary": "List",
-        "description": "List AI Gateway Provider Keys\n",
-        "operationId": "AiGatewayProviderKeysList",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          },
-          {
-            "name": "before_id",
-            "in": "query",
-            "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Constrains the number of results in the dataset.\n",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "ai_gateway_api_key_id",
-            "in": "query",
-            "description": "Filter by the AI Gateway API Key ID this provider key is attached to.\n",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List AI Gateway Provider Keys\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayProviderKeyList"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        }
-      }
-    },
-    "/ai_gateway_provider_keys/{id}": {
-      "patch": {
-        "tags": [
-          "AIGatewayProviderKeys"
-        ],
-        "summary": "Update",
-        "description": "Update an existing AI Gateway Provider Key by ID\n",
-        "operationId": "AiGatewayProviderKeysUpdate",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "unique identifier for this provider key\n",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AiGatewayProviderKeyUpdate"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Update an existing AI Gateway Provider Key by ID\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayProviderKey"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "AIGatewayProviderKeys"
-        ],
-        "summary": "Delete",
-        "description": "Delete an AI Gateway Provider Key\n",
-        "operationId": "AiGatewayProviderKeysDelete",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "a resource identifier\n",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Delete an AI Gateway Provider Key\n"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "AIGatewayProviderKeys"
-        ],
-        "summary": "Get",
-        "description": "Get an AI Gateway Provider Key by ID\n",
-        "operationId": "AiGatewayProviderKeysGet",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "a resource identifier\n",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Get an AI Gateway Provider Key by ID\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayProviderKey"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        }
-      }
-    },
-    "/ai_gateway_api_keys": {
-      "post": {
-        "tags": [
-          "AIGatewayAPIKeys"
-        ],
-        "summary": "Create",
-        "description": "Create a new AI Gateway API Key\n",
-        "operationId": "AiGatewayApiKeysCreate",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AiGatewayApiKeyCreate"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Create a new AI Gateway API Key\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayApiKey"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "200": {
-            "description": "Create a new AI Gateway API Key\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayApiKey"
-                }
-              }
-            },
-            "x-client-success-response-status": "201"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "AIGatewayAPIKeys"
-        ],
-        "summary": "List",
-        "description": "List all AI Gateway API Keys owned by account\n",
-        "operationId": "AiGatewayApiKeysList",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          },
-          {
-            "name": "before_id",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List all AI Gateway API Keys owned by account\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayApiKeyList"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        }
-      }
-    },
-    "/ai_gateway_api_keys/{id}": {
-      "patch": {
-        "tags": [
-          "AIGatewayAPIKeys"
-        ],
-        "summary": "Update",
-        "description": "Update an existing AI Gateway API Key by ID\n",
-        "operationId": "AiGatewayApiKeysUpdate",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "unique identifier for this API key\n",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AiGatewayApiKeyUpdate"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Update an existing AI Gateway API Key by ID\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayApiKey"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "AIGatewayAPIKeys"
-        ],
-        "summary": "Delete",
-        "description": "Delete an AI Gateway API Key\n",
-        "operationId": "AiGatewayApiKeysDelete",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "a resource identifier\n",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Delete an AI Gateway API Key\n"
-          },
-          "4XX": {
-            "$ref": "#/components/responses/Error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/Error"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "AIGatewayAPIKeys"
-        ],
-        "summary": "Get",
-        "description": "Get an AI Gateway API Key by ID\n",
-        "operationId": "AiGatewayApiKeysGet",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ngrokVersion"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "a resource identifier\n",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Get an AI Gateway API Key by ID\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AiGatewayApiKey"
                 }
               }
             }
@@ -7262,7 +7084,7 @@
           "Endpoints"
         ],
         "summary": "Create",
-        "description": "Create an endpoint, currently available only for cloud endpoints\n",
+        "description": "Create an endpoint, currently available only for Cloud Endpoints\n",
         "operationId": "EndpointsCreate",
         "parameters": [
           {
@@ -7280,7 +7102,7 @@
         },
         "responses": {
           "201": {
-            "description": "Create an endpoint, currently available only for cloud endpoints\n",
+            "description": "Create an endpoint, currently available only for Cloud Endpoints\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -7296,7 +7118,7 @@
             "$ref": "#/components/responses/Error"
           },
           "200": {
-            "description": "Create an endpoint, currently available only for cloud endpoints\n",
+            "description": "Create an endpoint, currently available only for Cloud Endpoints\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -7410,7 +7232,7 @@
           "Endpoints"
         ],
         "summary": "Update",
-        "description": "Update an Endpoint by ID, currently available only for cloud endpoints\n",
+        "description": "Update an Endpoint by ID, currently available only for Cloud Endpoints\n",
         "operationId": "EndpointsUpdate",
         "parameters": [
           {
@@ -7437,7 +7259,7 @@
         },
         "responses": {
           "200": {
-            "description": "Update an Endpoint by ID, currently available only for cloud endpoints\n",
+            "description": "Update an Endpoint by ID, currently available only for Cloud Endpoints\n",
             "content": {
               "application/json": {
                 "schema": {
@@ -7459,7 +7281,7 @@
           "Endpoints"
         ],
         "summary": "Delete",
-        "description": "Delete an Endpoint by ID, currently available only for cloud endpoints\n",
+        "description": "Delete an Endpoint by ID, currently available only for Cloud Endpoints\n",
         "operationId": "EndpointsDelete",
         "parameters": [
           {
@@ -7477,7 +7299,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete an Endpoint by ID, currently available only for cloud endpoints\n"
+            "description": "Delete an Endpoint by ID, currently available only for Cloud Endpoints\n"
           },
           "4XX": {
             "$ref": "#/components/responses/Error"
@@ -11526,6 +11348,106 @@
           }
         }
       },
+      "PersonalAccessTokenCreate": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this token. Optional, max 255 bytes.\n"
+          },
+          "expires_at": {
+            "type": "string",
+            "description": "optional expiration time for this token. If unset the token does not expire.\n"
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "scopes this token can use, for example \u0060[\u0022endpoints:read\u0022]\u0060. Each must be a scope you can grant.\n"
+          }
+        }
+      },
+      "PersonalAccessToken": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "unique identifier of the access token\n"
+          },
+          "uri": {
+            "type": "string",
+            "description": "URI of this access token API resource\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this token\n"
+          },
+          "token": {
+            "type": "string",
+            "description": "opaque bearer token secret. **Only present in the Create response.**\n"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "timestamp when the token was created, RFC 3339 format\n"
+          },
+          "expires_at": {
+            "type": "string",
+            "description": "optional expiration time, RFC 3339 format. Omitted if the token does not expire.\n"
+          },
+          "revoked_at": {
+            "type": "string",
+            "description": "optional timestamp when the token was revoked, RFC 3339 format. Omitted if not revoked.\n"
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "scopes this token was granted. Effective access is also limited by the owner\u0027s current role.\n"
+          }
+        }
+      },
+      "PersonalAccessTokenUpdate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "unique identifier of the access token to update\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "human-readable description of this token. Optional, max 255 bytes.\n"
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "replaces the token\u0027s scopes. Omit to keep them.\n"
+          }
+        }
+      },
+      "PersonalAccessTokenList": {
+        "type": "object",
+        "properties": {
+          "tokens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonalAccessToken"
+            },
+            "description": "list of access tokens visible to the authenticated account\n"
+          },
+          "uri": {
+            "type": "string",
+            "description": "URI of the access token API resource list\n"
+          },
+          "next_page_uri": {
+            "type": "string",
+            "description": "URI for the next page of results, or null if there are no more pages.\n"
+          }
+        }
+      },
       "AgentIngressCreate": {
         "required": [
           "domain"
@@ -11681,278 +11603,6 @@
           "retries_at": {
             "type": "string",
             "description": "timestamp when the provisioning job will be retried\n"
-          }
-        }
-      },
-      "AiGatewayProviderKeyCreate": {
-        "required": [
-          "ai_gateway_api_key_id",
-          "provider_id",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "ai_gateway_api_key_id": {
-            "type": "string",
-            "description": "unique identifier of the AI Gateway API Key this provider key is attached to\n"
-          },
-          "provider_id": {
-            "type": "string",
-            "description": "which AI provider this key is for, e.g. \u0022openai\u0022, \u0022anthropic\u0022\n"
-          },
-          "value": {
-            "type": "string",
-            "description": "plaintext provider key value \u2014 write-only input\n"
-          },
-          "description": {
-            "type": "string",
-            "description": "human-readable description of this provider key\n"
-          },
-          "metadata": {
-            "type": "string",
-            "description": "arbitrary user-defined metadata for this provider key\n"
-          }
-        }
-      },
-      "AiGatewayProviderKeyUpdate": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "unique identifier for this provider key\n"
-          },
-          "description": {
-            "type": "string",
-            "description": "human-readable description of this provider key\n"
-          },
-          "metadata": {
-            "type": "string",
-            "description": "arbitrary user-defined metadata for this provider key\n"
-          }
-        }
-      },
-      "AiGatewayProviderKey": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "unique identifier for this provider key\n"
-          },
-          "uri": {
-            "type": "string",
-            "description": "URI of this AI Gateway Provider Key API resource\n"
-          },
-          "created_at": {
-            "type": "string",
-            "description": "Timestamp when the provider key was created (RFC 3339 format)\n"
-          },
-          "updated_at": {
-            "type": "string",
-            "description": "Timestamp when the provider key was last updated (RFC 3339 format)\n"
-          },
-          "provider_id": {
-            "type": "string",
-            "description": "which AI provider this key is for, e.g. \u0022openai\u0022, \u0022anthropic\u0022\n"
-          },
-          "description": {
-            "type": "string",
-            "description": "human-readable description of this provider key\n"
-          },
-          "metadata": {
-            "type": "string",
-            "description": "arbitrary user-defined metadata for this provider key\n"
-          },
-          "created_by": {
-            "$ref": "#/components/schemas/RefType"
-          },
-          "last_updated_by": {
-            "$ref": "#/components/schemas/RefType"
-          },
-          "ai_gateway_api_key": {
-            "$ref": "#/components/schemas/RefType"
-          },
-          "display_name": {
-            "type": "string",
-            "description": "redacted display form of the key value, e.g. sk-abc***xyz\n"
-          },
-          "last_used": {
-            "type": "string",
-            "description": "Timestamp when the provider key was last used (RFC 3339 format)\n"
-          }
-        }
-      },
-      "AiGatewayProviderKeyList": {
-        "type": "object",
-        "properties": {
-          "ai_gateway_provider_keys": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AiGatewayProviderKey"
-            },
-            "description": "the list of AI Gateway Provider Keys for this AI Gateway API Key\n"
-          },
-          "uri": {
-            "type": "string",
-            "description": "n/a"
-          },
-          "next_page_uri": {
-            "type": "string",
-            "description": "URI of the next page of results, or null if there is no next page\n"
-          }
-        }
-      },
-      "AiGatewayApiKeyCreate": {
-        "required": [
-          "endpoint_id"
-        ],
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": "string",
-            "description": "human-readable description of this API key\n"
-          },
-          "metadata": {
-            "type": "string",
-            "description": "arbitrary user-defined metadata for this API key\n"
-          },
-          "endpoint_id": {
-            "type": "string",
-            "description": "unique identifier of the AI Gateway endpoint this key is associated with\n"
-          },
-          "provider_keys": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AiGatewayApiKeyProviderKeyCreate"
-            },
-            "description": "optional list of provider keys to attach to this managed key at create time\n"
-          }
-        }
-      },
-      "AiGatewayApiKeyUpdate": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "unique identifier for this API key\n"
-          },
-          "description": {
-            "type": "string",
-            "description": "human-readable description of this API key\n"
-          },
-          "metadata": {
-            "type": "string",
-            "description": "arbitrary user-defined metadata for this API key\n"
-          },
-          "endpoint_id": {
-            "type": "string",
-            "description": "unique identifier of the AI Gateway endpoint to associate this key with\n"
-          }
-        }
-      },
-      "AiGatewayApiKey": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "unique identifier for this API key\n"
-          },
-          "uri": {
-            "type": "string",
-            "description": "URI of this AI Gateway API Key API resource\n"
-          },
-          "created_at": {
-            "type": "string",
-            "description": "Timestamp when the API key was created (RFC 3339 format)\n"
-          },
-          "updated_at": {
-            "type": "string",
-            "description": "Timestamp when the API key was last updated (RFC 3339 format)\n"
-          },
-          "description": {
-            "type": "string",
-            "description": "human-readable description of this API key\n"
-          },
-          "metadata": {
-            "type": "string",
-            "description": "arbitrary user-defined metadata for this API key\n"
-          },
-          "created_by": {
-            "$ref": "#/components/schemas/RefType"
-          },
-          "last_updated_by": {
-            "$ref": "#/components/schemas/RefType"
-          },
-          "endpoint": {
-            "$ref": "#/components/schemas/RefType"
-          },
-          "token": {
-            "type": "string",
-            "description": "the API key token. Only provided when the key is first created.\n"
-          },
-          "display_name": {
-            "type": "string",
-            "description": "n/a"
-          },
-          "last_used": {
-            "type": "string",
-            "description": "n/a"
-          },
-          "provider_keys": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AiGatewayProviderKey"
-            },
-            "description": "provider keys attached to this managed key\n"
-          }
-        }
-      },
-      "AiGatewayApiKeyProviderKeyCreate": {
-        "required": [
-          "provider_id",
-          "name",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "provider_id": {
-            "type": "string",
-            "description": "which AI provider this key is for, ex: \u0022openai\u0022 / \u0022anthropic\u0022\n"
-          },
-          "name": {
-            "type": "string",
-            "description": "user-friendly label for this key\n"
-          },
-          "value": {
-            "type": "string",
-            "description": "plaintext provider key value \u2014 write-only input\n"
-          },
-          "description": {
-            "type": "string",
-            "description": "human-readable description of this provider key\n"
-          },
-          "metadata": {
-            "type": "string",
-            "description": "arbitrary user-defined metadata for this provider key\n"
-          }
-        }
-      },
-      "AiGatewayApiKeyList": {
-        "type": "object",
-        "properties": {
-          "ai_gateway_api_keys": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AiGatewayApiKey"
-            },
-            "description": "the list of AI Gateway API Keys for this account\n"
-          },
-          "uri": {
-            "type": "string",
-            "description": "n/a"
-          },
-          "next_page_uri": {
-            "type": "string",
-            "description": "URI of the next page of results, or null if there is no next page\n"
           }
         }
       },
@@ -12131,23 +11781,23 @@
           },
           "browser_name": {
             "type": "string",
-            "description": "browser name (e.g. Chrome)\n"
+            "description": "browser name (for example, Chrome)\n"
           },
           "browser_version": {
             "type": "string",
-            "description": "browser version (e.g. 102)\n"
+            "description": "browser version (for example, 102)\n"
           },
           "device_type": {
             "type": "string",
-            "description": "type of device (e.g. Desktop)\n"
+            "description": "type of device (for example, Desktop)\n"
           },
           "os_name": {
             "type": "string",
-            "description": "operating system name (e.g. MacOS)\n"
+            "description": "operating system name (for example, MacOS)\n"
           },
           "os_version": {
             "type": "string",
-            "description": "operating system version (e.g. 10.15.7)\n"
+            "description": "operating system version (for example, 10.15.7)\n"
           }
         }
       },
@@ -12241,11 +11891,11 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "name of the identity provider (e.g. Google)\n"
+            "description": "name of the identity provider (for example, Google)\n"
           },
           "url": {
             "type": "string",
-            "description": "URL of the identity provider (e.g. https://accounts.google.com)\n"
+            "description": "URL of the identity provider (for example, https://accounts.google.com)\n"
           }
         }
       },
@@ -13365,7 +13015,7 @@
             "items": {
               "type": "string"
             },
-            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
+            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (that is, you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
           },
           "email_addresses": {
             "type": "array",
@@ -13386,7 +13036,7 @@
             "items": {
               "type": "string"
             },
-            "description": "a list of github teams identifiers. users will be allowed access to the endpoint if they are a member of any of these teams. identifiers should be in the \u0027slug\u0027 format qualified with the org name, e.g. \u0060org-name/team-name\u0060\n"
+            "description": "a list of github teams identifiers. users will be allowed access to the endpoint if they are a member of any of these teams. identifiers should be in the \u0027slug\u0027 format qualified with the org name, for example \u0060org-name/team-name\u0060\n"
           },
           "organizations": {
             "type": "array",
@@ -13413,7 +13063,7 @@
             "items": {
               "type": "string"
             },
-            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
+            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (that is, you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
           },
           "email_addresses": {
             "type": "array",
@@ -13447,7 +13097,7 @@
             "items": {
               "type": "string"
             },
-            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
+            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (that is, you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
           },
           "email_addresses": {
             "type": "array",
@@ -13481,7 +13131,7 @@
             "items": {
               "type": "string"
             },
-            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (i.e. you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
+            "description": "a list of provider-specific OAuth scopes with the permissions your OAuth app would like to ask for. these may not be set if you are using the ngrok-managed oauth app (that is, you must pass both \u0060client_id\u0060 and \u0060client_secret\u0060 to set scopes)\n"
           },
           "email_addresses": {
             "type": "array",
@@ -13664,11 +13314,11 @@
           },
           "force_authn": {
             "type": "boolean",
-            "description": "If true, indicates that whenever we redirect a user to the IdP for authentication that the IdP must prompt the user for authentication credentials even if the user already has a valid session with the IdP.\n"
+            "description": "If true, indicates that whenever ngrok redirects a user to the IdP for authentication that the IdP must prompt the user for authentication credentials even if the user already has a valid session with the IdP.\n"
           },
           "allow_idp_initiated": {
             "type": "boolean",
-            "description": "If true, the IdP may initiate a login directly (e.g. the user does not need to visit the endpoint first and then be redirected). The IdP should set the \u0060RelayState\u0060 parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.\n"
+            "description": "If true, the IdP may initiate a login directly (for example, the user does not need to visit the endpoint first and then be redirected). The IdP should set the \u0060RelayState\u0060 parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.\n"
           },
           "authorized_groups": {
             "type": "array",
@@ -13691,7 +13341,7 @@
           },
           "request_signing_certificate_pem": {
             "type": "string",
-            "description": "PEM-encoded x.509 certificate of the key pair that is used to sign all SAML requests that the ngrok SP makes to the IdP. Many IdPs do not support request signing verification, but we highly recommend specifying this in the IdP\u0027s configuration if it is supported.\n"
+            "description": "PEM-encoded x.509 certificate of the key pair that is used to sign all SAML requests that the ngrok SP makes to the IdP. Many IdPs do not support request signing verification, but ngrok highly recommends specifying this in the IdP\u0027s configuration if it is supported.\n"
           },
           "metadata_url": {
             "type": "string",
@@ -13732,11 +13382,11 @@
           },
           "force_authn": {
             "type": "boolean",
-            "description": "If true, indicates that whenever we redirect a user to the IdP for authentication that the IdP must prompt the user for authentication credentials even if the user already has a valid session with the IdP.\n"
+            "description": "If true, indicates that whenever ngrok redirects a user to the IdP for authentication that the IdP must prompt the user for authentication credentials even if the user already has a valid session with the IdP.\n"
           },
           "allow_idp_initiated": {
             "type": "boolean",
-            "description": "If true, the IdP may initiate a login directly (e.g. the user does not need to visit the endpoint first and then be redirected). The IdP should set the \u0060RelayState\u0060 parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.\n"
+            "description": "If true, the IdP may initiate a login directly (for example, the user does not need to visit the endpoint first and then be redirected). The IdP should set the \u0060RelayState\u0060 parameter to the target URL of the resource they want the user to be redirected to after the SAML login assertion has been processed.\n"
           },
           "authorized_groups": {
             "type": "array",
@@ -13861,7 +13511,7 @@
           },
           "value": {
             "type": "string",
-            "description": "the traffic policy that should be applied to the traffic on your endpoint.\n"
+            "description": "the Traffic Policy that should be applied to the traffic on your endpoint.\n"
           }
         }
       },
@@ -14787,7 +14437,7 @@
           },
           "type": {
             "type": "string",
-            "description": "whether the endpoint is \u0060ephemeral\u0060 (served directly by an agent-initiated tunnel) or \u0060edge\u0060 (served by an edge) or \u0060cloud (represents a cloud endpoint)\u0060\n"
+            "description": "whether the endpoint is \u0060ephemeral\u0060 (served directly by an agent-initiated tunnel) or \u0060edge\u0060 (served by an edge) or \u0060cloud\u0060 (represents a Cloud Endpoint)\n"
           },
           "metadata": {
             "type": "string",
@@ -14826,7 +14476,7 @@
           },
           "traffic_policy": {
             "type": "string",
-            "description": "The traffic policy attached to this endpoint\n"
+            "description": "The Traffic Policy attached to this endpoint\n"
           },
           "bindings": {
             "type": "array",
@@ -14886,11 +14536,11 @@
           },
           "type": {
             "type": "string",
-            "description": "Type of endpoint. Only \u0027cloud\u0027 is currently supported (represents a cloud endpoint). Defaults to \u0027cloud\u0027 if not specified.\n"
+            "description": "Type of endpoint. Only \u0027cloud\u0027 is currently supported (represents a Cloud Endpoint). Defaults to \u0027cloud\u0027 if not specified.\n"
           },
           "traffic_policy": {
             "type": "string",
-            "description": "The traffic policy attached to this endpoint\n"
+            "description": "The Traffic Policy attached to this endpoint\n"
           },
           "description": {
             "type": "string",
@@ -14926,7 +14576,7 @@
           },
           "traffic_policy": {
             "type": "string",
-            "description": "The traffic policy attached to this endpoint\n"
+            "description": "The Traffic Policy attached to this endpoint\n"
           },
           "description": {
             "type": "string",
@@ -15119,6 +14769,14 @@
           "ddsite": {
             "type": "string",
             "description": "Datadog site to send event to.\n"
+          },
+          "intake_host": {
+            "type": "string",
+            "description": "Hostname of a Datadog-compatible log intake to send events to instead of a Datadog site, with an optional path prefix such as intake.example.com/dd. Events go to the /api/v2/logs path after the prefix over HTTPS. Set either this or ddsite, not both.\n"
+          },
+          "auth_scheme": {
+            "type": "string",
+            "description": "How to send the API key. dd_api_key (the default) sends the DD-API-KEY header. bearer sends an Authorization: Bearer header.\n"
           }
         }
       },
@@ -15695,7 +15353,7 @@
           },
           "region": {
             "type": "string",
-            "description": "reserve the address in this geographic ngrok datacenter. Optional, default is us. (au, eu, ap, us, jp, in, sa)\n"
+            "description": "reserve the address in this geographic ngrok datacenter. Optional, default is \u0060us\u0060. (\u0060au\u0060, \u0060eu\u0060, \u0060ap\u0060, \u0060us\u0060, \u0060jp\u0060, \u0060in\u0060, \u0060sa\u0060)\n"
           }
         }
       },
@@ -15745,7 +15403,7 @@
           },
           "region": {
             "type": "string",
-            "description": "reserve the address in this geographic ngrok datacenter. Optional, default is us. (au, eu, ap, us, jp, in, sa)\n"
+            "description": "reserve the address in this geographic ngrok datacenter. Optional, default is \u0060us\u0060. (\u0060au\u0060, \u0060eu\u0060, \u0060ap\u0060, \u0060us\u0060, \u0060jp\u0060, \u0060in\u0060, \u0060sa\u0060)\n"
           }
         }
       },
@@ -15778,7 +15436,7 @@
           },
           "region": {
             "type": "string",
-            "description": "deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)\n"
+            "description": "deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (\u0060au\u0060, \u0060eu\u0060, \u0060ap\u0060, \u0060us\u0060, \u0060jp\u0060, \u0060in\u0060, \u0060sa\u0060)\n"
           },
           "description": {
             "type": "string",
@@ -15864,11 +15522,11 @@
           },
           "region": {
             "type": "string",
-            "description": "deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (au, eu, ap, us, jp, in, sa)\n"
+            "description": "deprecated: With the launch of the ngrok Global Network domains traffic is now handled globally. This field applied only to endpoints. Note that agents may still connect to specific regions. Optional, null by default. (\u0060au\u0060, \u0060eu\u0060, \u0060ap\u0060, \u0060us\u0060, \u0060jp\u0060, \u0060in\u0060, \u0060sa\u0060)\n"
           },
           "cname_target": {
             "type": "string",
-            "description": "DNS CNAME target for a custom hostname, or null if the reserved domain is a subdomain of an ngrok owned domain (e.g. *.ngrok.app)\n"
+            "description": "DNS CNAME target for a custom hostname, or null if the reserved domain is a subdomain of an ngrok owned domain (for example, *.ngrok.app)\n"
           },
           "certificate": {
             "$ref": "#/components/schemas/RefType"
@@ -16109,6 +15767,13 @@
           "created_at": {
             "type": "string",
             "description": "timestamp when the api key was created, RFC 3339 format\n"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "roles the service user holds, in a fixed order. Accepts developer, developer-readonly, and team-manager. Roles limit the service user\u0027s access tokens. They do not limit its API keys.\n"
           }
         }
       },
@@ -16122,6 +15787,13 @@
           "active": {
             "type": "boolean",
             "description": "whether or not the service is active\n"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "roles the service user holds. Defaults to developer. Any other choice needs a plan with role-based access control.\n"
           }
         }
       },
@@ -16139,6 +15811,13 @@
           "active": {
             "type": "boolean",
             "description": "whether or not the service is active\n"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "roles that replace the service user\u0027s current roles. Any choice other than developer needs a plan with role-based access control.\n"
           }
         }
       },
@@ -17014,15 +16693,15 @@
       },
       "TunnelGroupBackendLabelsProperty": {
         "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
+        "description": "labels to watch for tunnels on, for example app-\u003Efoo, dc-\u003Ebar\n"
       },
       "TunnelGroupBackendCreateLabelsProperty": {
         "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
+        "description": "labels to watch for tunnels on, for example app-\u003Efoo, dc-\u003Ebar\n"
       },
       "TunnelGroupBackendUpdateLabelsProperty": {
         "type": "object",
-        "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
+        "description": "labels to watch for tunnels on, for example app-\u003Efoo, dc-\u003Ebar\n"
       },
       "WeightedBackendBackendsProperty": {
         "type": "object",
@@ -17151,23 +16830,6 @@
         }
       }
     },
-    "AiGatewayProviderKeyPaging": {
-      "type": "object",
-      "properties": {
-        "before_id": {
-          "type": "string",
-          "description": "Expects a resource ID as its input. Returns earlier entries in the result set, sorted by ID.\n"
-        },
-        "limit": {
-          "type": "string",
-          "description": "Constrains the number of results in the dataset.\n"
-        },
-        "ai_gateway_api_key_id": {
-          "type": "string",
-          "description": "Filter by the AI Gateway API Key ID this provider key is attached to.\n"
-        }
-      }
-    },
     "EdgeRouteItem": {
       "type": "object",
       "properties": {
@@ -17243,15 +16905,15 @@
     },
     "TunnelGroupBackendLabels": {
       "type": "object",
-      "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
+      "description": "labels to watch for tunnels on, for example app-\u003Efoo, dc-\u003Ebar\n"
     },
     "TunnelGroupBackendCreateLabels": {
       "type": "object",
-      "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
+      "description": "labels to watch for tunnels on, for example app-\u003Efoo, dc-\u003Ebar\n"
     },
     "TunnelGroupBackendUpdateLabels": {
       "type": "object",
-      "description": "labels to watch for tunnels on, e.g. app-\u003Efoo, dc-\u003Ebar\n"
+      "description": "labels to watch for tunnels on, for example app-\u003Efoo, dc-\u003Ebar\n"
     },
     "WeightedBackendBackends": {
       "type": "object",

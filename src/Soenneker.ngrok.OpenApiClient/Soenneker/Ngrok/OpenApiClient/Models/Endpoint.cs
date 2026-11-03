@@ -241,7 +241,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public global::Soenneker.Ngrok.OpenApiClient.Models.RefType TcpAddr { get => _explicitNullValueTcpAddr; set { _explicitNullValueTcpAddr = value; AdditionalData?.Remove("tcp_addr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcp_addr"); else _explicitNullProperties?.Remove("tcp_addr"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueTcpAddr = default!;
 #endif
-        /// <summary>The traffic policy attached to this endpoint</summary>
+        /// <summary>The Traffic Policy attached to this endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrafficPolicy { get => _explicitNullValueTrafficPolicy; set { _explicitNullValueTrafficPolicy = value; AdditionalData?.Remove("traffic_policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_policy"); else _explicitNullProperties?.Remove("traffic_policy"); } }
@@ -271,7 +271,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         public global::Soenneker.Ngrok.OpenApiClient.Models.RefType TunnelSession { get => _explicitNullValueTunnelSession; set { _explicitNullValueTunnelSession = value; AdditionalData?.Remove("tunnel_session"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tunnel_session"); else _explicitNullProperties?.Remove("tunnel_session"); } }
         private global::Soenneker.Ngrok.OpenApiClient.Models.RefType _explicitNullValueTunnelSession = default!;
 #endif
-        /// <summary>whether the endpoint is `ephemeral` (served directly by an agent-initiated tunnel) or `edge` (served by an edge) or `cloud (represents a cloud endpoint)`</summary>
+        /// <summary>whether the endpoint is `ephemeral` (served directly by an agent-initiated tunnel) or `edge` (served by an edge) or `cloud` (represents a Cloud Endpoint)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
