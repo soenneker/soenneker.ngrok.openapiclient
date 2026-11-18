@@ -104,7 +104,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "azure_logs_ingestion", n => { AzureLogsIngestion = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion>(global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetAzureLogsIngestion.CreateFromDiscriminatorValue); } },
                 { "cloudwatch_logs", n => { CloudwatchLogs = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetCloudwatchLogs>(global::Soenneker.Ngrok.OpenApiClient.Models.EventTargetCloudwatchLogs.CreateFromDiscriminatorValue); } },

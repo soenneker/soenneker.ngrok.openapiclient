@@ -272,7 +272,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(19)
             {
                 { "backend", n => { Backend = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointBackendMutate>(global::Soenneker.Ngrok.OpenApiClient.Models.EndpointBackendMutate.CreateFromDiscriminatorValue); } },
                 { "circuit_breaker", n => { CircuitBreaker = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCircuitBreaker>(global::Soenneker.Ngrok.OpenApiClient.Models.EndpointCircuitBreaker.CreateFromDiscriminatorValue); } },

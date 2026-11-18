@@ -176,7 +176,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "application_user", n => { ApplicationUser = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.RefType>(global::Soenneker.Ngrok.OpenApiClient.Models.RefType.CreateFromDiscriminatorValue); } },
                 { "browser_session", n => { BrowserSession = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession>(global::Soenneker.Ngrok.OpenApiClient.Models.BrowserSession.CreateFromDiscriminatorValue); } },

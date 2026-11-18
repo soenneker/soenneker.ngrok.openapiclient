@@ -140,7 +140,7 @@ namespace Soenneker.Ngrok.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "amazon", n => { Amazon = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthAmazon>(global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthAmazon.CreateFromDiscriminatorValue); } },
                 { "facebook", n => { Facebook = n.GetObjectValue<global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthFacebook>(global::Soenneker.Ngrok.OpenApiClient.Models.EndpointOAuthFacebook.CreateFromDiscriminatorValue); } },
